@@ -178,11 +178,22 @@ row2("max&#124;rowSums(W) − invariant&#124;", function(s) sprintf("%.2e", s$W_
 row2("Σ_j s_rj min",    function(s) fmt(s$share_sum_min, 6))
 row2("Σ_j s_rj mean",   function(s) fmt(s$share_sum_mean, 6))
 row2("Σ_j s_rj max",    function(s) fmt(s$share_sum_max, 6))
-row2("rows before sample rule", function(s) s$n_rows_prefilter)
+fd_rows <- function() {          # the 1,674 step lives in 06, not 07
+  f <- file.path("output", "06_run_log_total.txt")
+  if (!file.exists(f)) return("—")
+  m <- str_match(paste(readLines(f, warn = FALSE), collapse = "\n"),
+                 "First-differences panel: (\\d+) rows")
+  if (is.na(m[1, 2])) "—" else m[1, 2]
+}
+add(sprintf("| first-difference rows (558 × 3, before the estimation-universe rule) | %s | %s |",
+            fd_rows(), fd_rows()))
+add("| after dropping micro 13002 (no base-year tradable employment) | 1671 | 1671 |")
+row2("rows entering 07 (N_SAMPLE input)", function(s) s$n_rows_prefilter)
 row2("sample rows (N_SAMPLE)",  function(s) s$N_SAMPLE)
 row2("estimated N (N_EST)",     function(s) s$N_EST)
 row2("microregions",            function(s) s$n_micros)
-row2("state×year cells",        function(s) s$n_fe_cells)
+row2("state×year cells in the sample (3 Distrito Federal singletons drop in estimation, leaving 78)",
+     function(s) s$n_fe_cells)
 row2("industries (cols of W)",  function(s) s$n_industries)
 row2("sd(ΔEPW) on estimation sample", function(s) fmt(s$sd_epw, 6))
 row2("bust obs, pooled",  function(s) s$bust_counts[["pooled"]])
@@ -227,6 +238,7 @@ if ("total" %in% have) {
                                if (nrow(r)) r[[col]] else NA_real_ }
   gt <- function(cf, ct) sprintf("%s%s", fmt(g(cf, ct, "beta")),
                                  star(g(cf, ct, "beta"), g(cf, ct, "se_cl")))
+  mnf <- filter(frag$total$descriptives, grepl("Manuf", Variable))
   d <- tibble::tribble(
     ~item, ~old, ~old_src, ~new,
     "boom, dP^D (base ctrls)", "0.006", "tab_decomposition_v3.tex", gt("boom_D", "base"),
@@ -240,21 +252,23 @@ if ("total" %in% have) {
     "RI p, boom dP^D", "NEW (never permuted)", "—", fmt(g("boom_D", "base", "p_ri_plus1")),
     "RI p, boom dP^N", "NEW (never permuted)", "—", fmt(g("boom_N", "base", "p_ri_plus1")),
     "RI p, pooled dP^N", "NEW (never permuted)", "—", fmt(g("pooled_N", "base", "p_ri_plus1")),
-    "sd(dEPW), estimation sample", "1.866", "packet T / Table 2",
-      fmt(frag$total$sanity$sd_epw, 3),
+    "sd(dEPW), estimation sample (UNITS CHANGE, not a discrepancy: the treatment is now per total worker)",
+      "1.866", "Table 2 / packet T anchor", fmt(frag$total$sanity$sd_epw, 3),
     "mean effective shocks", "~2.4", "main.tex 3.4, 5.2, 6",
       fmt(mean(filter(frag$total$rotemberg, ctrls == "base")$eff_n), 2),
     "theta_r mean", "0.25", "main.tex 3.1",
       fmt(frag$total$sanity$theta[["mean"]], 3),
     "theta_r max", "0.68", "main.tex 3.1",
       fmt(frag$total$sanity$theta[["max"]], 3),
+    # MEMO_v2 §2.3: main.tex's row reads 0.637 / 0.257 / 0.449 / 0.692 / 0.852,
+    # i.e. mean / SD / P25 / median / P75 -- none of which is reproducible.
     "manuf. share of tradable: mean", "0.637", "main.tex Table 2",
-      fmt(filter(frag$total$descriptives,
-                 grepl("Manuf", Variable))$Mean, 4),
-    "manuf. share of tradable: SD", "0.257", "main.tex Table 2",
-      fmt(filter(frag$total$descriptives, grepl("Manuf", Variable))$SD, 4),
-    "manuf. share of tradable: median", "0.449", "main.tex Table 2",
-      fmt(filter(frag$total$descriptives, grepl("Manuf", Variable))$Median, 4))
+      fmt(mnf$Mean, 4),
+    "manuf. share of tradable: SD", "0.257", "main.tex Table 2", fmt(mnf$SD, 4),
+    "manuf. share of tradable: P25", "0.449", "main.tex Table 2", fmt(mnf$P25, 4),
+    "manuf. share of tradable: median", "0.692", "main.tex Table 2",
+      fmt(mnf$Median, 4),
+    "manuf. share of tradable: P75", "0.852", "main.tex Table 2", fmt(mnf$P75, 4))
   add("| item | old | source of old | new (`total`) |", "|---|---|---|---|")
   for (i in seq_len(nrow(d)))
     add(sprintf("| %s | %s | %s | **%s** |", d$item[i], d$old[i], d$old_src[i], d$new[i]))
