@@ -32,10 +32,12 @@
 #   [A-9] Sign-audit log written to output/sign_audit_log.txt.
 # =============================================================================
 
-source("C:/Users/Yago Ramalho/Documents/tema mestrado/data/códigos/_config.R")
+source("/Users/solenoide/Documents/dissertação/data/códigos/00_config.R")
+source("/Users/solenoide/Documents/dissertação/data/códigos/_estimation_functions.R")
 
 library(tidyverse)
 library(fixest)
+setFixest_notes(FALSE)     # silence per-call singleton NOTEs (RI loops -> log spam)
 
 set.seed(2026)
 
@@ -64,47 +66,72 @@ df_raw <- df_raw |>
 # -----------------------------------------------------------------------------
 # [G-1] ESTIMATION SAMPLE: stacked FDs only, t in {2014, 2018, 2022}
 # -----------------------------------------------------------------------------
-# ---- [A-10] EPW-UNIVERSE RESTRICTION (fatal-bug fix) ------------------------
-# A microregion can appear in the polarization/controls panels yet be ABSENT
-# from the RAIS-based EPW universe (no tradable-sector employment matched in
-# 2010). Such a micro has no exposure shares AND no state/mesoregion label
-# (those are carried by the EPW panel), so it cannot enter the state x year
-# fixed effects nor the AKM share matrix. Retaining it silently breaks the
-# secondary regime: ShiftShareSE::reg_ss builds its model frame with na.omit
-# (dropping the NA-state rows) while W keeps them, so the row counts diverge and
-# reg_ss aborts with "incompatible dimensions". feols likewise drops the rows,
-# desyncing N. This is DISTINCT from the [G-1] retention rule: that rule keeps
-# zero-tradable micros that ARE in the EPW universe (EPW = 0, state known);
-# micros outside the universe are excluded here. As of the v7 pipeline this is
-# exactly one micro (13002), reported below.
+# ---- [A-10] EPW-UNIVERSE RESTRICTION ----------------------------------------
+# A microregion can in principle appear in the polarization/controls panels yet
+# be ABSENT from the RAIS-based EPW universe. Such a micro has no exposure
+# shares AND no state/mesoregion label (those are carried by the EPW panel), so
+# it cannot enter the state x year fixed effects nor the AKM share matrix.
+# Retaining it silently breaks the secondary regime: ShiftShareSE::reg_ss builds
+# its model frame with na.omit (dropping the NA-state rows) while W keeps them,
+# so the row counts diverge and reg_ss aborts with "incompatible dimensions".
+# feols likewise drops the rows, desyncing N.
+#
+# [CORRECTION 2026-07] This block previously claimed to exclude exactly one
+# micro (13002). It does NOT, and never did in any run of the current code:
+# 13002 IS in the EPW universe, so the filter is a NO-OP (558 of 558 micros
+# retained). Verified against the saved artefacts. The exclusion of 13002 is
+# effected upstream, by the estimation-universe rule in 06 (zero base-year
+# tradable employment => manuf_share_of_tradable is 0/0, undefined). The filter
+# is KEPT as a genuine forward guard, not as the mechanism it was described as.
 epw_micros    <- unique(epw_v7$micro)
 excluded_micro <- setdiff(unique(df_raw$micro), epw_micros)
 cat("Excluded (not in EPW universe):",
-    if (length(excluded_micro)) paste(excluded_micro, collapse = ", ") else "none", "\n")
+    if (length(excluded_micro)) paste(excluded_micro, collapse = ", ") else "none",
+    sprintf("[%d of %d micros retained]\n", length(intersect(unique(df_raw$micro), epw_micros)),
+            n_distinct(df_raw$micro)))
 
 df <- df_raw |>
   filter(year != 2010) |>
-  filter(micro %in% epw_micros) |>
-  left_join(sumsh, by = "micro") |>
-  mutate(tradable_emp_share = replace_na(tradable_emp_share, 0),
-         delta_EPW          = replace_na(delta_EPW, 0),
-         manuf_share        = replace_na(manuf_share, 0))
-# Rule (unified, [A-5]): a microregion with zero bilateral tradable employment
-# in 2010 has structurally zero exposure and a zero sum of shares -- it is
-# RETAINED, with the BHJ control absorbing this as a baseline characteristic.
-# Exclusion happens upstream only if a microregion lacks the data to define
-# the outcome or denominator at all (handled by [A-10] above).
+  filter(micro %in% epw_micros)
 
-# [A-3] Diagnostic AFTER df exists:
-missing_micro <- df |>
-  filter(!micro %in% (sumsh |> filter(tradable_emp_share > 0) |> pull(micro))) |>
+# tradable_emp_share now arrives WITH the panel (06). The join is kept as a
+# fallback for panels built before that change; when the column is already
+# present the two are asserted to agree rather than one silently masking the
+# other.
+if ("tradable_emp_share" %in% names(df)) {
+  chk <- df |> distinct(micro, tradable_emp_share) |> inner_join(sumsh, by = "micro")
+  stopifnot("panel tradable_emp_share disagrees with tradable_emp_share_2010_v7.rds" =
+              max(abs(chk$tradable_emp_share.x - chk$tradable_emp_share.y)) < 1e-12)
+} else {
+  cat("[!] Panel predates the 06 BHJ-control change; joining sumsh directly.\n")
+  df <- df |> left_join(sumsh, by = "micro")
+}
+
+df <- df |>
+  mutate(tradable_emp_share = replace_na(tradable_emp_share, 0),
+         delta_EPW          = replace_na(delta_EPW, 0))
+
+# ---- ESTIMATION-UNIVERSE RULE (the 1,671 vs 1,668 resolution) ---------------
+# A microregion with zero base-year bilateral tradable employment has an
+# UNDEFINED tradable composition: manuf_share_of_tradable is 0/0, not 0.
+# Zero-filling it (the old behaviour here) was a convention, not a correction,
+# and it silently disagreed with the paper, which drops the unit. The rule is
+# now imposed once, in 06, and only ASSERTED here so the two cannot drift.
+undefined_micro <- df |>
+  filter(tradable_emp_share <= 0 | is.na(manuf_share_of_tradable)) |>
   distinct(micro, across(any_of(c("microregion_name", "state"))))
-cat("Microregions with zero bilateral tradable employment (retained, EPW = 0):\n")
-print(missing_micro)
+if (nrow(undefined_micro)) {
+  cat("\n[!] Microregions with undefined tradable composition reached 07 --\n",
+      "    06_panel_consolidation.R should already have dropped them:\n")
+  print(undefined_micro)
+  df <- df |> filter(!micro %in% undefined_micro$micro)
+}
 
 stopifnot(
   "2010 rows leaked into estimation sample" = all(df$year %in% c(2014, 2018, 2022)),
   "tradable_emp_share missing"              = !anyNA(df$tradable_emp_share),
+  "manuf_share_of_tradable missing"         = !anyNA(df$manuf_share_of_tradable),
+  "zero-tradable micro in estimation sample" = all(df$tradable_emp_share > 0),
   "delta_EPW missing"                       = !anyNA(df$delta_EPW),
   "state label missing"                     = !anyNA(df$state)
 )
@@ -120,7 +147,7 @@ cat("Estimation sample:", N_SAMPLE, "raw obs |", n_distinct(df$micro), "micros |
 # [G-2][G-3] STANDARDIZE on the estimation sample; define control sets
 # -----------------------------------------------------------------------------
 ctrl_base <- c("ln_gdp_pc", "ln_pop", "tradable_emp_share")
-ctrl_ext  <- c(ctrl_base, "urban_share", "educ_share", "manuf_share")
+ctrl_ext  <- c(ctrl_base, "urban_share", "educ_share", "manuf_share_of_tradable")
 
 outcomes  <- c("delta_P_dalton", "delta_P_center")
 zvars     <- unique(c(outcomes, "delta_EPW", ctrl_ext))
@@ -409,7 +436,7 @@ dict <- c(delta_EPW = "$\\Delta$ EPW", delta_P_dalton = "$\\Delta P^{D}$",
           ln_gdp_pc = "Log GDP per capita", ln_pop = "Log population",
           tradable_emp_share = "Tradable employment share",
           urban_share = "Urban share", educ_share = "Education share",
-          manuf_share = "Manufacturing share",
+          manuf_share_of_tradable = "Manuf.\\ share of tradable emp.",
           epw_boom = "$\\Delta$ EPW$^{+}$ (boom magnitude)",
           epw_bust = "$\\Delta$ EPW$^{-}$ (bust magnitude)",
           "state^year" = "State $\\times$ year")
@@ -437,5 +464,131 @@ etable(mod_decomp, dict = dict, digits = 3, fitstat = ~ n + war2,
                      sprintf("coefficient: %.3f ($\\Delta P^D$), %.3f ($\\Delta P^N$).",
                              p_bust_D, p_bust_N)),
        file = file.path("tables", "tab_decomposition_v3.tex"), replace = TRUE)
+
+# -----------------------------------------------------------------------------
+# 9. JOINT EPW / IPW  — import-competition channel (Part A.5)
+#    Runs only if the import treatment (03d) and common shares (03a) exist.
+#    Treatments are on the COMMON share denominator (03a) so EPW and IPW are
+#    commensurable (guard cor(EPW_common, EPW_v7) > 0.99 established in 03a).
+#      * joint spec  dP ~ EPW^+ + EPW^- + IPW | state^year
+#      * net exposure dP ~ (EPW - IPW) | state^year
+#      * asymmetric decomposition applied to IPW as well
+#      * RI permuting BOTH shock vectors JOINTLY (same industry permutation)
+#      * AKM/AKM0 reported alongside (weak-identification-robust complement)
+#    Every reported cell carries N, eff # shocks, RI p, AKM0 interval.
+#
+#    VINTAGE GUARD: the block additionally requires that the 03a/03d artefacts
+#    were built under the SAME SHARE_DENOM as this run. Mixing a "tradable"-
+#    normalised IPW with a "total"-normalised EPW would silently compare
+#    incommensurable treatments — the exact failure the common-share refactor
+#    exists to prevent. Missing or mismatched stamps SKIP the block with a
+#    diagnostic instead of producing a number nobody can interpret.
+# -----------------------------------------------------------------------------
+joint_files <- c("ipw_panel_isic_v1.rds", "epw_common_panel_v8.rds",
+                 "exposure_shares_common_v8.rds", "sectoral_import_shocks_v1.rds")
+joint_ok <- all(file.exists(joint_files))
+if (joint_ok) {
+  stamps <- vapply(c("epw_common_panel_v8.rds", "exposure_shares_common_v8.rds"),
+                   \(f) { s <- attr(readRDS(f), "share_denom")
+                          if (is.null(s)) NA_character_ else s },
+                   character(1))
+  if (anyNA(stamps) || !all(stamps == SHARE_DENOM)) {
+    joint_ok <- FALSE
+    cat("\n########## [9] JOINT EPW / IPW — SKIPPED ##########\n")
+    cat("Reason: the 03a/03d artefacts carry share_denom =",
+        paste(ifelse(is.na(stamps), "<unstamped>", stamps), collapse = " / "),
+        "but this run uses", SHARE_DENOM, "\n")
+    cat("Re-run 03a_shares_common.R and 03d_ipw_construction.R to enable the\n")
+    cat("import channel. Export-only results above are unaffected.\n")
+  }
+} else {
+  cat("\n########## [9] JOINT EPW / IPW — SKIPPED (missing 03a/03d outputs) ##########\n")
+}
+if (joint_ok) {
+  library(ShiftShareSE)
+  cat("\n########## [9] JOINT EPW / IPW (import channel) ##########\n")
+
+  ipw_p  <- readRDS("ipw_panel_isic_v1.rds")  |> mutate(micro = as.character(micro))
+  epw_c  <- readRDS("epw_common_panel_v8.rds")|> mutate(micro = as.character(micro))
+  sh_c   <- readRDS("exposure_shares_common_v8.rds") |> mutate(micro = as.character(micro))
+  g_exp  <- shocks                                         # export g_jt (v7)
+  m_imp  <- readRDS("sectoral_import_shocks_v1.rds")       # import m_lev
+
+  dj <- df_scaled |>
+    select(micro, year, state, mesoregion_code, all_of(outcomes),
+           all_of(ctrl_base)) |>                                  # already standardized
+    left_join(epw_c |> filter(year != 2010) |> select(micro, year, EPW_c = EPW_common),
+              by = c("micro", "year")) |>
+    left_join(ipw_p |> select(micro, year, IPW_total), by = c("micro", "year")) |>
+    mutate(EPW_c = replace_na(EPW_c, 0), IPW_total = replace_na(IPW_total, 0),
+           EPW_raw = EPW_c, IPW_raw = IPW_total)
+  sdE <- sd(dj$EPW_raw); sdI <- sd(dj$IPW_raw)
+  dj <- dj |>
+    mutate(epw_z = EPW_raw / sdE, ipw_z = IPW_raw / sdI,
+           net_z = as.numeric(scale(EPW_raw - IPW_raw)),
+           epw_boom = pmax( EPW_raw, 0) / sdE, epw_bust = pmax(-EPW_raw, 0) / sdE,
+           ipw_boom = pmax( IPW_raw, 0) / sdI, ipw_bust = pmax(-IPW_raw, 0) / sdI)
+
+  Wc  <- ss_build_W(sh_c, dj$micro)
+  gmE <- ss_build_gmat(g_exp, "g_jt",  Wc)
+  gmI <- ss_build_gmat(m_imp, "m_lev", Wc)
+  stopifnot(identical(rownames(gmE), rownames(gmI)))
+
+  m_joint <- feols(delta_P_dalton ~ epw_boom + epw_bust + ipw_z + ln_gdp_pc + ln_pop +
+                     tradable_emp_share | state^year, data = dj,
+                   cluster = ~ mesoregion_code^year)
+  m_net   <- feols(delta_P_dalton ~ net_z + ln_gdp_pc + ln_pop + tradable_emp_share |
+                     state^year, data = dj, cluster = ~ mesoregion_code^year)
+  m_ipwd  <- feols(delta_P_dalton ~ ipw_boom + ipw_bust + ln_gdp_pc + ln_pop +
+                     tradable_emp_share | state^year, data = dj,
+                   cluster = ~ mesoregion_code^year)
+  cat("Joint  (EPW+/EPW-/IPW): ",
+      sprintf("bust=%.4f boom=%.4f ipw=%.4f\n", coef(m_joint)["epw_bust"],
+              coef(m_joint)["epw_boom"], coef(m_joint)["ipw_z"]))
+  cat("Net exposure (EPW-IPW): ", sprintf("beta=%.4f (t=%.2f)\n",
+              coef(m_net)["net_z"], tstat(m_net)["net_z"]))
+  cat("IPW asymmetric        : ", sprintf("bust=%.4f boom=%.4f\n",
+              coef(m_ipwd)["ipw_bust"], coef(m_ipwd)["ipw_boom"]))
+
+  # eff # shocks for the import treatment on this sample
+  effn_ipw <- ss_eff_n(ss_rotemberg(dj, Wc, gmI, "IPW_raw", ctrl_base))
+  cat("Import-treatment eff_n by year:\n"); print(as.data.frame(effn_ipw), digits = 3)
+
+  # RI permuting BOTH shock paths jointly
+  yvj <- dj$year
+  refit_j <- function(tr) {
+    d <- dj |> mutate(e = tr$EPW / sdE, i = tr$IPW / sdI,
+                      eb = pmax(-tr$EPW, 0) / sdE, bo = pmax(tr$EPW, 0) / sdE)
+    mj <- feols(delta_P_dalton ~ eb + bo + i + ln_gdp_pc + ln_pop +
+                  tradable_emp_share | state^year, data = d, lean = TRUE)
+    c(epw_bust = unname(coef(mj)["eb"]), ipw = unname(coef(mj)["i"]))
+  }
+  bstar_j <- ss_ri(list(EPW = Wc, IPW = Wc), list(EPW = gmE, IPW = gmI), yvj,
+                   refit_j, B = 4999)
+  colnames(bstar_j) <- c("epw_bust", "ipw")
+  obs_j <- refit_j(list(EPW = ss_epw_from(Wc, gmE, yvj),
+                        IPW = ss_epw_from(Wc, gmI, yvj)))
+  p_epw_bust_j <- ss_ri_p(bstar_j[, "epw_bust"], obs_j["epw_bust"])
+  p_ipw_j      <- ss_ri_p(bstar_j[, "ipw"],      obs_j["ipw"])
+  cat(sprintf("Joint RI (B=4999): EPW-bust p=%.4f | IPW p=%.4f\n",
+              p_epw_bust_j, p_ipw_j))
+
+  # AKM0 for the IPW coefficient (weak-ID-robust complement)
+  akm_ipw <- ss_akm(dj, "delta_P_dalton", "IPW_raw", ctrl_base, Wc)
+  ci_ipw  <- ss_akm0_ci(akm_ipw)
+  cat(ss_report_row("Dalton ~ IPW (joint)", nobs(m_joint), mean(effn_ipw$eff_n),
+                    p_ipw_j, ci_ipw), "\n")
+
+  etable(list(joint = m_joint, net = m_net, ipw_decomp = m_ipwd),
+         dict = c(dict, epw_z = "$\\Delta$EPW", ipw_z = "$\\Delta$IPW",
+                  net_z = "Net (EPW$-$IPW)",
+                  ipw_boom = "$\\Delta$IPW$^{+}$", ipw_bust = "$\\Delta$IPW$^{-}$"),
+         digits = 3, fitstat = ~ n + war2, tex = TRUE,
+         title = "Export and import exposure: joint specification",
+         label = "tab:joint_epw_ipw", cluster = ~ mesoregion_code^year,
+         notes = sprintf("Common-share treatments (03a). Joint RI p: EPW-bust %.3f, IPW %.3f. AKM0 CI (IPW): [%s, %s].",
+                         p_epw_bust_j, p_ipw_j, ci_ipw[1], ci_ipw[2]),
+         file = file.path("tables", "tab_joint_epw_ipw.tex"), replace = TRUE)
+}
 
 cat("\nDone. Check output/sign_audit_log.txt for the MATCH/MISMATCH verdict.\n")

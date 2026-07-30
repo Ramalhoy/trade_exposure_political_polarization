@@ -17,7 +17,7 @@
 #   painel_votos_presidenciais_microregioes_2010_2022.rds
 #   painel_votos_governador_microregioes_2010_2022.rds
 # =============================================================================
-source("C:/Users/Yago Ramalho/Documents/tema mestrado/data/códigos/_config.R")
+source("/Users/solenoide/Documents/dissertação/data/códigos/00_config.R")
 
 library(basedosdados)
 library(dplyr)
@@ -166,6 +166,44 @@ imports <- read_sql("
 
 saveRDS(imports, "imports_national_ncm.rds")
 write_xlsx(imports, "imports_national.xlsx")
+
+
+# =============================================================================
+# BLOCK B2 — COMEX IMPORTS FROM CHINA, by year x NCM (2010–2022)
+# Feeds the IPW_china variant in 03d (Brazil's import competition from China
+# specifically). IDEMPOTENT + CACHED: skipped whole if the cache already exists,
+# so re-running 01 does not re-hit BigQuery. China's SISCOMEX país code is 160
+# (mainland China; Hong Kong 158 and Macao 159 are DELIBERATELY excluded to
+# match the "China only" definition). 03d currently sources IPW_china from BACI
+# (Brazil<-China, i=156,j=76) as an already-available fallback; this block
+# produces the Comex-native series so IPW_china is on the SAME source/units as
+# IPW_total. Once run, point 03d at imports_china_ncm.rds.
+# =============================================================================
+CHINA_COMEX_PAIS <- 160L      # SISCOMEX país code for mainland China
+
+if (!file.exists("imports_china_ncm.rds")) {
+  imports_china <- read_sql(sprintf("
+    SELECT dados.ano AS ano, dados.id_ncm AS id_ncm,
+           SUM(dados.valor_fob_dolar) AS valor_fob_dolar
+    FROM `basedosdados.br_me_comex_stat.ncm_importacao` AS dados
+    WHERE dados.ano BETWEEN 2010 AND 2022
+      AND dados.id_pais = '%d'
+    GROUP BY dados.ano, dados.id_ncm
+  ", CHINA_COMEX_PAIS), billing_project_id = get_billing_id()) |>
+    mutate(ano = as.numeric(ano), valor_fob_dolar = as.numeric(valor_fob_dolar))
+
+  # sanity: China should be ~15-25% of Brazil's total imports by value
+  chn_share <- sum(imports_china$valor_fob_dolar) / sum(imports$valor_fob_dolar)
+  cat(sprintf("[B2] China import share of Brazil total (2010-2022): %.1f%%\n",
+              100 * chn_share))
+  stopifnot("[B2] China import share implausible (check id_pais=160)" =
+              chn_share > 0.05 & chn_share < 0.40)
+
+  saveRDS(imports_china, "imports_china_ncm.rds")
+  write_xlsx(imports_china, "imports_china.xlsx")
+} else {
+  cat("[B2] imports_china_ncm.rds already cached — skipping BigQuery re-pull.\n")
+}
 
 
 # =============================================================================

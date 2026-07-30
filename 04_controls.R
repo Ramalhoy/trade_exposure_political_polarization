@@ -4,7 +4,7 @@
 # urban share, education share, GDP per capita, and manufacturing share.
 # Formerly "01_controls_micro.R".
 # =============================================================================
-source("C:/Users/Yago Ramalho/Documents/tema mestrado/data/códigos/_config.R")
+source("/Users/solenoide/Documents/dissertação/data/códigos/00_config.R")
 
 library(tidyverse)
 library(sidrar)
@@ -241,9 +241,19 @@ cat("\n")
 # =============================================================================
 
 
-#manufacturing as a share of tradable formal employment
-# [FIX] read the v7 exposure shares so manuf_share is built on the SAME
-# industry universe as the treatment (was reading the stale v4 file).
+# manufacturing as a share of TRADABLE formal employment.
+#
+# [RENAME] the variable is `manuf_share_of_tradable`, not `manuf_share`. The
+# denominator below is L_total_rais = tradable employment in the bilateral
+# universe, NOT total formal employment. The old name implied the latter and
+# was misread as such — reviewers flagged the 0.637 mean as implausible for a
+# manufacturing share of total employment, which it would be. It measures
+# tradable COMPOSITION (where within tradables a microregion sits), whereas
+# `tradable_emp_share` measures tradable INTENSITY. The paper labels it
+# "Manuf. share of tradable emp."
+#
+# [FIX] read the v7 exposure shares so it is built on the SAME industry
+# universe as the treatment (was reading the stale v4 file).
 shares <- readRDS("exposure_shares_isic_v7.rds")
 
 manuf_share_micro <- shares |>
@@ -252,12 +262,13 @@ manuf_share_micro <- shares |>
   summarise(
     L_manuf      = sum(L_rj_2010[is_manuf], na.rm = TRUE),
     L_total_rais = sum(L_rj_2010,           na.rm = TRUE),
-    manuf_share  = L_manuf / L_total_rais,
+    manuf_share_of_tradable = L_manuf / L_total_rais,
     .groups = "drop"
   )
 
-cat("Manufacturing share computed for", nrow(manuf_share_micro), "microregions\n")
-print(summary(manuf_share_micro$manuf_share))
+cat("Manufacturing share of tradable employment computed for",
+    nrow(manuf_share_micro), "microregions\n")
+print(summary(manuf_share_micro$manuf_share_of_tradable))
 cat("\n")
 
 
@@ -283,7 +294,7 @@ controls_micro <- pop_micro |>
   left_join(
     manuf_share_micro |>
       mutate(micro = as.character(micro)) |>
-      select(micro, manuf_share),
+      select(micro, manuf_share_of_tradable),
     by = "micro"
   )
 

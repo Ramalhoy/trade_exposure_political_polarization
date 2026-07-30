@@ -67,7 +67,7 @@
 #          output/00_v6_run_log.txt
 # =============================================================================
 
-source("C:/Users/Yago Ramalho/Documents/tema mestrado/data/códigos/_config.R")
+source("/Users/solenoide/Documents/dissertação/data/códigos/00_config.R")
 
 library(tidyverse)
 library(readxl)
@@ -91,7 +91,10 @@ paths <- list(
                   hs2017 = "hs2017_hs2012.csv",
                   hs2022 = "hs2022_hs2012.csv"),
   epw_v4      = "epw_panel_isic.rds",                     # [B-5], optional
-  manual_residual = "manual_residual_assignments.csv"     # [F-2], optional
+  manual_residual = "manual_residual_assignments.csv",    # [F-2], optional
+  # NOTE: this local list SHADOWS the `paths` defined in 00_config.R, so any key
+  # STEP 8 onwards needs must be repeated here.
+  share_sum   = "share_sum_theta_v9.rds"                  # realized sum_j s_rj
 )
 
 election_years <- c(2010, 2014, 2018, 2022)
@@ -358,6 +361,13 @@ if (file.exists(paths$manual_residual)) {
       "excluded (default, documented in the appendix).\n")
 }
 
+# ---- PERSIST the final NCM6->ISIC4 match table (source-independent) ----------
+# Saved so downstream scripts (03b instrument, 03d imports) READ this table
+# instead of REPLAYING the crosswalk logic and risking drift. The match table
+# is derived from the product-code dictionary + producer-primacy rule only,
+# NOT from export values, so it is reusable for the import side as-is.
+saveRDS(ncm_isic_v6, "ncm_isic_match_v7.rds")
+
 # =============================================================================
 # STEP 3b — IBGE CNAE 2.0 -> ISIC4 (employment side, single hop)
 #   Uniform 1/n splits are innocuous here: CNAE 2.0 nests within ISIC Rev.4
@@ -437,6 +447,12 @@ composite_map <- isic_signature |>
          n_in_group     = n()) |>
   ungroup() |>
   select(isic4, isic_composite, n_in_group)
+
+# ---- PERSIST the composite map (identified-composite aggregation) ------------
+# Derived from the export-side product-code SIGNATURE (same NCMs + weights),
+# hence source-independent: the import side must collapse the SAME ISIC classes
+# to preserve AKM independence / RI exchangeability across both treatments.
+saveRDS(composite_map, "composite_map_v7.rds")
 
 cnae_signature <- cnae_isic_w |>
   arrange(cnae4) |>
@@ -565,23 +581,20 @@ shocks |> filter(year != 2010) |> group_by(year) |>
   print()
 
 # =============================================================================
-# STEP 8 — EXPOSURE SHARES  s_rj = L_rj,2010 / L_r,2010
+# STEP 8 — EXPOSURE SHARES  s_rj = L_rj,2010 / D_r,2010
+#
+#   D_r = L_r_2010 (bilateral tradable employment)   if SHARE_DENOM = "tradable"
+#   D_r = L_r_all  (TOTAL formal employment)         if SHARE_DENOM = "total"
+#
+# See _config.R for why this matters. The two constructions differ by exactly
+# the multiplicative factor theta_r = L_r_2010 / L_r_all, asserted below.
+#
+# NOTE: the total-employment denominator is read FIRST (it used to live ~15
+# lines below, where it served only to build the BHJ control) because STEP 8
+# now needs it.
 # =============================================================================
-L_r_2010 <- rais_isic |> group_by(micro) |>
-  summarise(L_r_2010 = sum(workers, na.rm = TRUE), .groups = "drop")
 
-shares <- rais_isic |>
-  rename(L_rj_2010 = workers) |>
-  left_join(L_r_2010, by = "micro") |>
-  mutate(s_rj = L_rj_2010 / L_r_2010)
-
-stopifnot(all(abs(
-  shares |> group_by(micro) |> summarise(s = sum(s_rj)) |> pull(s) - 1
-) < 1e-6))
-
-# BHJ sum-of-shares control (exported for 01_): shares of TOTAL formal
-# employment in bilateral tradables. (The s_rj above are within-tradable
-# shares; the BHJ control needs tradable / total.)
+# ---- total formal employment, ALL sectors (all 670 CNAE classes) ------------
 if (RAIS_MEASURE == "fte") {
   L_r_total <- readRDS(paths$rais_fte) |>
     rename(micro = microregion_code, workers = total_fte)
@@ -592,11 +605,70 @@ if (RAIS_MEASURE == "fte") {
 L_r_total <- L_r_total |> group_by(micro) |>
   summarise(L_r_all = sum(workers, na.rm = TRUE), .groups = "drop")
 
+# ---- bilateral tradable employment (the shares NUMERATOR set) ---------------
+L_r_2010 <- rais_isic |> group_by(micro) |>
+  summarise(L_r_2010 = sum(workers, na.rm = TRUE), .groups = "drop")
+
+shares <- rais_isic |>
+  rename(L_rj_2010 = workers) |>
+  left_join(L_r_2010,  by = "micro") |>
+  left_join(L_r_total, by = "micro") |>
+  filter(L_r_2010 > 0, L_r_all > 0) |>
+  mutate(
+    theta_r     = L_r_2010 / L_r_all,               # tradable intensity
+    s_rj_trad   = L_rj_2010 / L_r_2010,             # within-tradable share
+    s_rj        = if (SHARE_DENOM == "total") L_rj_2010 / L_r_all else s_rj_trad
+  )
+
+# ---- the theta identity: s_total = theta_r * s_tradable, exactly ------------
+stopifnot(
+  "share identity s_total != theta_r * s_tradable" =
+    max(abs(shares$s_rj - (if (SHARE_DENOM == "total")
+                             shares$theta_r * shares$s_rj_trad
+                           else shares$s_rj_trad))) < 1e-12,
+  "s_rj is NA/NaN" = !anyNA(shares$s_rj)
+)
+
+# ---- realized sum of shares = the BHJ incomplete-shares control -------------
+# Under "tradable" this is identically 1 (degenerate, hence NOT usable as a
+# control); under "total" it equals theta_r over the bilateral numerator set,
+# which is exactly what tradable_emp_share has always measured.
+share_sum <- shares |> group_by(micro) |>
+  summarise(sum_s_rj = sum(s_rj), .groups = "drop")
+
+if (SHARE_DENOM == "tradable") {
+  stopifnot("within-tradable shares do not sum to 1" =
+              all(abs(share_sum$sum_s_rj - 1) < 1e-6))
+} else {
+  stopifnot("share sum outside (0, 1]" =
+              all(share_sum$sum_s_rj > 0 & share_sum$sum_s_rj <= 1 + 1e-9))
+}
+cat(sprintf("\nSHARE_DENOM = %s | sum_j s_rj: mean %.4f | min %.4f | median %.4f | max %.4f\n",
+            SHARE_DENOM, mean(share_sum$sum_s_rj), min(share_sum$sum_s_rj),
+            median(share_sum$sum_s_rj), max(share_sum$sum_s_rj)))
+saveRDS(share_sum, paths$share_sum)
+
+# BHJ sum-of-shares control (exported for 06_/07_): bilateral tradable
+# employment as a fraction of TOTAL formal employment. Defined for every
+# microregion, including those with zero bilateral tradable employment (which
+# are absent from `shares` entirely and get 0 here).
 tradable_emp_share <- L_r_2010 |>
   right_join(L_r_total, by = "micro") |>
   mutate(L_r_2010 = replace_na(L_r_2010, 0),
          tradable_emp_share = L_r_2010 / L_r_all) |>
   select(micro, tradable_emp_share)
+
+# THE TRAP (see CODE_CHANGES_TODO.md 1b): the BHJ control is only the right
+# control if it is measured over the SAME numerator set as the shares. Under
+# "total" the realized share sum IS that control, so the two must coincide
+# exactly; assert it rather than trusting it.
+if (SHARE_DENOM == "total") {
+  trap <- share_sum |> inner_join(tradable_emp_share, by = "micro")
+  stopifnot("tradable_emp_share != sum_j s_rj over the bilateral numerator set" =
+              max(abs(trap$sum_s_rj - trap$tradable_emp_share)) < 1e-9)
+  cat("BHJ control check PASS: sum_j s_rj == tradable_emp_share for",
+      nrow(trap), "microregions\n")
+}
 
 # =============================================================================
 # STEP 9 — EPW PANEL  EPW_rt = sum_j s_rj * g_jt
@@ -606,11 +678,38 @@ epw_panel <- shares |>
   left_join(shocks |> select(isic4, year, g_jt), by = c("isic4", "year")) |>
   mutate(g_jt = replace_na(g_jt, 0),   # post-v6: guard only; all bilateral
                                         # industry-years carry explicit g_jt
-         epw_component = s_rj * g_jt) |>
+         epw_component     = s_rj      * g_jt,
+         epw_component_trad = s_rj_trad * g_jt) |>
   group_by(micro, year,
            across(any_of(c("state", "mesoregion_code", "mesoregion_name")))) |>
   summarise(EPW = sum(epw_component, na.rm = TRUE),
+            EPW_trad = sum(epw_component_trad, na.rm = TRUE),
             n_industries = n_distinct(isic4[g_jt != 0]), .groups = "drop")
+
+# ---- FREE UNIT TEST: EPW_total == EPW_tradable * theta_r, to machine precision
+# This is the whole content of the denominator change. It holds by construction
+# only if the numerator set is the same on both sides -- which is why it is
+# worth asserting: it is the cheapest possible detector of a numerator/control
+# mismatch. (CODE_CHANGES_TODO.md 1b, "Free unit test".)
+epw_chk <- epw_panel |>
+  inner_join(share_sum |> rename(theta_bilat = sum_s_rj), by = "micro") |>
+  mutate(gap = abs(EPW - EPW_trad *
+                     (if (SHARE_DENOM == "total") theta_bilat else 1)))
+stopifnot("EPW != EPW_tradable * theta_r" = max(epw_chk$gap) < 1e-10)
+cat(sprintf("Theta identity PASS (max gap %.2e).\n", max(epw_chk$gap)))
+
+# Report how far the treatment has moved relative to the within-tradable
+# normalisation. Under "total" this is ~0.93, well below the 0.99 guard in 03a
+# -- expected and intended; see _config.R.
+if (SHARE_DENOM == "total") {
+  mv <- epw_panel |> filter(year != 2010) |> group_by(year) |>
+    summarise(cor_total_vs_tradable = cor(EPW, EPW_trad),
+              rank_cor = cor(EPW, EPW_trad, method = "spearman"),
+              sd_total = sd(EPW), sd_tradable = sd(EPW_trad), .groups = "drop")
+  cat("\n--- Treatment movement vs the within-tradable normalisation ---\n")
+  print(as.data.frame(mv), digits = 4)
+}
+epw_panel <- epw_panel |> select(-EPW_trad)
 
 # ---- Sanity checks ----------------------------------------------------------
 cat("\n--- SANITY CHECKS ---\n")
@@ -642,6 +741,13 @@ if (file.exists(paths$epw_v4)) {
 # =============================================================================
 # STEP 10 — SAVE (all outputs _v6)
 # =============================================================================
+# Stamp the share convention onto both artefacts so a downstream script can
+# detect a mixed-vintage build (e.g. 03a re-run under "total" against an
+# epw_panel still built under "tradable") instead of silently comparing
+# incommensurable objects.
+attr(epw_panel, "share_denom") <- SHARE_DENOM
+attr(shares,    "share_denom") <- SHARE_DENOM
+
 saveRDS(epw_panel,          "epw_panel_isic_v7.rds")
 saveRDS(shocks,             "sectoral_shocks_isic_v7.rds")
 saveRDS(shares,             "exposure_shares_isic_v7.rds")

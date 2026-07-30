@@ -6,7 +6,7 @@
 # Formerly "00_-_painel_ideologia_gov_revisar.R" (the function-based revision
 # that supersedes the April "00 - painel ideologia.R").
 # =============================================================================
-source("C:/Users/Yago Ramalho/Documents/tema mestrado/data/códigos/_config.R")
+source("/Users/solenoide/Documents/dissertação/data/códigos/00_config.R")
 
 library(dplyr)
 library(tibble)

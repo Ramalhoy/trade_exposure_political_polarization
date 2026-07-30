@@ -3,7 +3,7 @@
 # Joins the EPW treatment (v7) + polarization indices + controls into the
 # stacked first-difference estimation frame. Formerly "DF panel final.R".
 # =============================================================================
-source("C:/Users/Yago Ramalho/Documents/tema mestrado/data/códigos/_config.R")
+source("/Users/solenoide/Documents/dissertação/data/códigos/00_config.R")
 
 library(tidyverse)
 
@@ -17,10 +17,16 @@ epw_panel <- readRDS("epw_panel_isic_v7.rds")
 # "dalton_panel.rds" left over from the old April ideology script).
 dalton     <- readRDS("dalton_panel_presidencial.rds")
 controls   <- readRDS("controls_micro.rds")
+# BHJ sum-of-shares control. Built by 03 over the SAME export-bilateral
+# numerator as the exposure shares (asserted there). Previously this file was
+# read separately by 03c/07 and never entered df_estimation, so anything built
+# off the saved panel silently omitted the tradable-intensity control.
+sumsh      <- readRDS("tradable_emp_share_2010_v7.rds")
 
 cat("EPW panel:   ", nrow(epw_panel),  "rows |", n_distinct(epw_panel$micro),  "micros\n")
 cat("Dalton panel:", nrow(dalton),     "rows |", n_distinct(dalton$microregion_code), "micros\n")
-cat("Controls:    ", nrow(controls),   "rows |", n_distinct(controls$micro),   "micros\n\n")
+cat("Controls:    ", nrow(controls),   "rows |", n_distinct(controls$micro),   "micros\n")
+cat("Sum-of-shares:", nrow(sumsh),     "micros\n\n")
 
 
 # =============================================================================
@@ -41,6 +47,10 @@ dalton <- dalton |>
 controls <- controls |>
   mutate(microregion_code = as.character(micro)) |>
   select(-micro)
+
+sumsh <- sumsh |>
+  mutate(microregion_code = as.character(micro)) |>
+  select(microregion_code, tradable_emp_share)
 
 
 # =============================================================================
@@ -99,15 +109,17 @@ df <- df_raw |>
   left_join(
     controls |> select(microregion_code,
                        ln_pop, urban_share, educ_share,
-                       ln_gdp_pc, manuf_share),
+                       ln_gdp_pc, manuf_share_of_tradable),
     by = "microregion_code"
   ) |>
+  left_join(sumsh, by = "microregion_code") |>
+  mutate(tradable_emp_share = replace_na(tradable_emp_share, 0)) |>
   select(
     # Identifiers
     microregion_code,
     any_of(c("state", "mesoregion_code", "mesoregion_name")),
     year,
-    P_dalton, P_center,                 
+    P_dalton, P_center,
     # Outcome variables
     delta_P_dalton, delta_P_center,
     # Treatment
@@ -115,9 +127,48 @@ df <- df_raw |>
     # Baseline polarization (pre-trend controls)
     P_dalton_2010, P_center_2010,
     # Cross-sectional controls (2010 baseline)
-    ln_pop, urban_share, educ_share, ln_gdp_pc, manuf_share
+    ln_pop, urban_share, educ_share, ln_gdp_pc,
+    manuf_share_of_tradable,
+    tradable_emp_share                  # <- BHJ sum-of-shares control
   ) |>
   arrange(microregion_code, year)
+
+stopifnot("tradable_emp_share missing from estimation panel" =
+            "tradable_emp_share" %in% names(df),
+          "tradable_emp_share has NAs" = !anyNA(df$tradable_emp_share))
+
+# =============================================================================
+# STEP 6b — ESTIMATION-UNIVERSE RULE (the 1,671 vs 1,668 resolution)
+#
+# A microregion with ZERO base-year bilateral tradable employment has no
+# exposure share and no defined tradable composition: manuf_share_of_tradable
+# is 0/0 — UNDEFINED, not zero — so zero-filling it would be a convention, not
+# a correction. Such a unit contributes nothing to identification and is
+# DROPPED here, once, rather than being silently imputed downstream.
+#
+# As of the v7 pipeline this is exactly one microregion, 13002 (Médio Amazonas,
+# AM). The resulting frame is 557 micros x 3 differences = 1,671 rows, and the
+# regressions report 1,668 after feols absorbs the three Distrito Federal
+# state x year singletons — matching the paper's Table 3 and the §3 attrition
+# sentence. 07/03c/07b assert this rule rather than re-imposing it.
+# =============================================================================
+undefined_micro <- df |>
+  filter(tradable_emp_share <= 0 | is.na(manuf_share_of_tradable)) |>
+  distinct(microregion_code) |> pull(microregion_code)
+
+cat("\n--- Estimation-universe rule ---\n")
+cat("Dropped (no base-year tradable employment => undefined composition):",
+    if (length(undefined_micro)) paste(undefined_micro, collapse = ", ") else "none",
+    "\n")
+
+df <- df |> filter(!microregion_code %in% undefined_micro)
+
+stopifnot(
+  "manuf_share_of_tradable still has NAs after the universe rule" =
+    !anyNA(df$manuf_share_of_tradable),
+  "zero-tradable micros survived the universe rule" =
+    all(df$tradable_emp_share > 0)
+)
 
 
 # =============================================================================
@@ -125,8 +176,8 @@ df <- df_raw |>
 # =============================================================================
 
 cat("=== Final estimation dataframe ===\n")
-cat("Rows:          ", nrow(df), "\n")
-cat("Microregions:  ", n_distinct(df$microregion_code), "\n")
+cat("Rows:          ", nrow(df), "(target: 1,671 = 557 x 3)\n")
+cat("Microregions:  ", n_distinct(df$microregion_code), "(target: 557)\n")
 cat("Years:         ", paste(sort(unique(df$year)), collapse = ", "), "\n\n")
 
 cat("--- Missing values per variable ---\n")
@@ -140,7 +191,8 @@ if (nrow(missing_summary) == 0) cat("No missing values.\n") else print(missing_s
 cat("\n--- Distribution of key variables ---\n")
 df |>
   select(delta_P_dalton, delta_P_center, delta_EPW,
-         ln_pop, urban_share, educ_share, ln_gdp_pc, manuf_share) |>
+         ln_pop, urban_share, educ_share, ln_gdp_pc,
+         manuf_share_of_tradable, tradable_emp_share) |>
   summary() |>
   print()
 
