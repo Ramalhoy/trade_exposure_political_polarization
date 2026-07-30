@@ -113,19 +113,43 @@ for (k in have) { r <- frag[[k]]$rotemberg_top5
     k, r$ctrls[i], r$year[i], r$isic4[i], fmt(r$alpha[i]))) }
 add("")
 
-add("### AKM / AKM0 (pooled ΔP^D, base controls)", "",
-    "| convention | statistic | SE | p | CI |", "|---|---|---|---|---|")
-for (k in have) { a <- frag[[k]]$akm_pooled
-  for (i in seq_len(nrow(a))) add(sprintf("| `%s` | %s | %s | %s | [%s, %s] |",
-    k, toupper(a$stat[i]), fmt(a$se[i], 5), fmt(a$p[i], 4),
-    fmt(a$ci_l[i], 5), fmt(a$ci_r[i], 5))) }
-add("", "By year:", "", "| convention | year | statistic | SE | p | CI |",
-    "|---|---|---|---|---|---|")
-for (k in have) { a <- frag[[k]]$akm_by_year
-  for (i in seq_len(nrow(a))) add(sprintf("| `%s` | %s | %s | %s | %s | [%s, %s] |",
-    k, a$year[i], toupper(a$stat[i]), fmt(a$se[i], 5), fmt(a$p[i], 4),
-    fmt(a$ci_l[i], 5), fmt(a$ci_r[i], 5))) }
-add("")
+add("### AKM / AKM0 (secondary inference regime)", "",
+    "Read from `output/akm_<denom>.csv` (`07x_akm.R`), which indexes `reg_ss()`'s",
+    "length-5 named output BY NAME. An earlier version of this table reported every",
+    "AKM SE as NA: the extractor took the first non-AKM0 slot, which is",
+    "`Homoscedastic` — NA by design, because only `method = c(\"akm\",\"akm0\")` was",
+    "requested. `Inf` in the SE column and a non-compact set in the CI column are",
+    "NOT failures: `ci.l > ci.r` is how the package encodes an unbounded",
+    "test-inversion set, printed as `(-Inf, ci.r] u [ci.l, Inf)`. With ~2.5",
+    "effective shocks an unbounded AKM0 set is the expected weak-identification",
+    "signature and corroborates the RI null. The `set` column states which case",
+    "each row is, so the bounds are never read as a plain interval.", "")
+akm_csv <- map(have, ~ { f <- file.path("output", sprintf("akm_%s.csv", .x))
+                         if (file.exists(f)) read_csv(f, show_col_types = FALSE) else NULL }) |>
+  set_names(have)
+if (any(!map_lgl(akm_csv, is.null))) {
+  add("| convention | specification | statistic | β̂ | SE | p | confidence set | set |",
+      "|---|---|---|---|---|---|---|---|")
+  for (k in have) { a <- akm_csv[[k]]; if (is.null(a)) next
+    for (i in seq_len(nrow(a))) add(sprintf("| `%s` | %s | %s | %s | %s | %s | `%s` | %s |",
+      k, a$spec[i], a$stat[i], fmt(a$beta[i], 5),
+      if (is.finite(a$se[i])) fmt(a$se[i], 5) else "Inf",
+      fmt(a$p[i], 4), a$ci[i], a$ci_type[i])) }
+  add("")
+  n_unb <- sum(map_int(akm_csv[!map_lgl(akm_csv, is.null)],
+                       ~ sum(grepl("^unbounded", .x$ci_type))))
+  add(sprintf("Unbounded confidence sets: **%d** across both conventions, all AKM0 and all in the by-year specifications — the thinnest first stage in the design.",
+              n_unb), "")
+} else {
+  add("_`output/akm_<denom>.csv` not found — run `07x_akm.R` for each convention._",
+      "", "Fallback, from the manifest fragments (may carry the extraction bug):", "",
+      "| convention | statistic | SE | p | ci_l | ci_r |", "|---|---|---|---|---|---|")
+  for (k in have) { a <- frag[[k]]$akm_pooled
+    for (i in seq_len(nrow(a))) add(sprintf("| `%s` | %s | %s | %s | %s | %s |",
+      k, toupper(a$stat[i]), fmt(a$se[i], 5), fmt(a$p[i], 4),
+      fmt(a$ci_l[i], 5), fmt(a$ci_r[i], 5))) }
+  add("")
+}
 
 add("### Conley spatial SEs (ΔP^D, base controls)", "",
     "| convention | cutoff | β̂ | SE |", "|---|---|---|---|")

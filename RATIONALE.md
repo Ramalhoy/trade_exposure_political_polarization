@@ -250,6 +250,46 @@ directory, so the joint export–import block in `07` was already skipped under 
 old vintage and remains skipped; enabling the import channel is a separate piece
 of work and is out of this packet's scope.
 
+### [T-10] AKM extraction bug, and what the unbounded AKM0 sets mean
+
+Raised after the first manifest: every AKM standard error printed as NA, and the
+by-year AKM0 rows showed `Inf` with one interval whose bounds ran backwards,
+`[0.09545, 0.00753]`. Two separate things, one a bug and one a finding.
+
+**The NAs were mine, not `reg_ss`'s.** `reg_ss()` returns length-5 named vectors —
+`Homoscedastic | EHW | Reg. cluster | AKM | AKM0` — with NA in every slot whose
+method was not requested; the package's own `print.SSResults` drops them with
+`s <- !is.na(x$se)`. `tidy_akm()` took "the first element that is not AKM0",
+which is `Homoscedastic`, i.e. NA, for every AKM row. The AKM0 rows were correct
+throughout, and the values printed correctly in the `07` run logs all along — only
+the manifest table was wrong. Fixed by indexing by name, in `07` and in the new
+canonical `07x_akm.R`.
+
+**The reversed interval is the package's encoding of an unbounded confidence
+set, not a malformed one.** `print.SSResults` formats `ci.l > ci.r` as
+`(-Inf, ci.r] + [ci.l, Inf)`. So the 2014 by-year AKM0 under complete shares is
+the confidence set `(-Inf, 0.00753] ∪ [0.09545, Inf)` — the complement of a
+bounded interval, which is what a test-inversion (Anderson–Rubin style) set looks
+like when the first stage is weak. It should be reported, not repaired.
+
+Across both conventions, **6 of 28** confidence sets are unbounded: all AKM0, all
+in the by-year specifications, where the design leans on a single year's shocks.
+Under `"total"` all three by-year AKM0 sets are the whole real line; under
+`"tradable"` two are the real line and 2014 is the complement set above. Every
+pooled AKM0 set is bounded under both conventions.
+
+This is independent corroboration of the RI null from the analytical regime, and
+it is worth a sentence in the text: with an effective number of shocks near 2.5,
+year-by-year weak-identification-robust inference cannot bound the parameter at
+all. It also disciplines one number the draft leans on — the 2022 by-year AKM
+under complete shares is `+0.0053 (0.0025)`, p = 0.036, but the AKM0 set for the
+same cell is the entire real line, so that apparent significance does not survive
+weak-identification-robust inference.
+
+`07x_akm.R` writes `output/akm_<denom>.csv` with an explicit `ci_type` column, so
+a bounds pair can never again be read as a plain interval, and `07z` prefers
+those CSVs over the fragment tables.
+
 ### [T-8]/[T-9] Provenance
 
 Run logs to `output/07_run_log_<denom>.txt`; manifest fragment per convention to

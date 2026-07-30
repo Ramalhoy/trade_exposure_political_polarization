@@ -861,15 +861,33 @@ if (joint_ok) {
 # =============================================================================
 # One fragment per SHARE_DENOM; 07z_results_manifest.R merges them into
 # output/RESULTS_MANIFEST.md. Nothing reaches the manuscript that is not in here.
+# reg_ss() returns LENGTH-5 named vectors:
+#   Homoscedastic | EHW | Reg. cluster | AKM | AKM0
+# with NA in every slot whose method was not requested (the package's own
+# print.SSResults drops them via `s <- !is.na(x$se)`). Index BY NAME. The earlier
+# version of this helper took "the first element that is not AKM0", i.e.
+# Homoscedastic = NA, and so reported every AKM SE as missing.
+#
+# ci.l > ci.r is NOT a malformed interval: it is how the package encodes an
+# UNBOUNDED AKM0 confidence set, printed as (-Inf, ci.r] + [ci.l, Inf). That is
+# the weak-identification signature of a test-inversion set and is reportable.
+# ci_type records which case each row is, so the pair is never read as a plain
+# interval. Canonical version of this extraction lives in 07x_akm.R.
 tidy_akm <- function(a) tryCatch({
-  g <- function(v) { if (is.null(v)) return(c(NA_real_, NA_real_))
-                     i <- grep("AKM0", names(v), ignore.case = TRUE)
-                     c(as.numeric(v[setdiff(seq_along(v), i)][1]),
-                       if (length(i)) as.numeric(v[i[1]]) else NA_real_) }
-  tibble(stat = c("akm", "akm0"), se = g(a$se), p = g(a$p),
-         ci_l = g(a$ci.l), ci_r = g(a$ci.r))
+  pick <- function(v, nm) if (!is.null(v) && nm %in% names(v))
+    as.numeric(v[[nm]]) else NA_real_
+  map_dfr(c("AKM", "AKM0"), function(m) {
+    l <- pick(a$ci.l, m); r <- pick(a$ci.r, m)
+    tibble(stat = tolower(m), se = pick(a$se, m), p = pick(a$p, m),
+           ci_l = l, ci_r = r,
+           ci_type = if (is.na(l) || is.na(r)) "missing"
+                     else if (is.infinite(l) && is.infinite(r)) "unbounded (whole real line)"
+                     else if (l > r) "unbounded (complement of a bounded interval)"
+                     else if (is.infinite(l) || is.infinite(r)) "half-unbounded"
+                     else "bounded")
+  })
 }, error = function(e) tibble(stat = c("akm", "akm0"), se = NA_real_, p = NA_real_,
-                              ci_l = NA_real_, ci_r = NA_real_))
+                              ci_l = NA_real_, ci_r = NA_real_, ci_type = "missing"))
 
 coef_se <- function(m, k = "delta_EPW")
   c(beta = unname(coef(m)[k]), se = unname(se(m)[k]))
