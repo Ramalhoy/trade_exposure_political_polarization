@@ -298,6 +298,36 @@ threshold.
 
 ### What changes empirically (computed, B = 9,999, fuller controls, N = 1,668)
 
+> ## ⚠️ UNREPRODUCIBLE — DO NOT CITE  *(marked 2026-07-29, Packet T2 [T-1b])*
+>
+> The table and RI p-values below are **quarantined**. The `[T-1]` diagnostic
+> established that:
+>
+> 1. **No code in this project ever constructed `θ_r · ΔEPW`.** A full grep for
+>    `delta_EPW *`, `* tradable_emp_share`, `epw_total`, `theta_r *` returns only
+>    comments, identity assertions and prose. The generating script was never
+>    saved — not in the repo, the git history, `.Rhistory`, `audit/`, or any
+>    session transcript on this machine.
+> 2. **No placebo matrix exists behind the four RI p-values.**
+>    `output/ri_beta_distribution.rds` is the complete-shares run (9,999 × 3,
+>    written 27 Jul 21:47, *after* this document), and it does not contain
+>    `boom_N` — the coefficient the paper's §6 argument turns on — under either
+>    convention. Whether the permutation loop rebuilt the *rescaled* treatment
+>    inside the loop cannot be determined, so the p-values are unverifiable.
+> 3. **`main.tex` §6 quotes the `corrected` row, i.e. the specification WITHOUT
+>    the θ_r control** — the misspecification BHJ's incomplete-shares correction
+>    exists to prevent. With the control the picture is materially different:
+>    boom-Center is `−0.0205 → −0.0177**` (still significant) rather than
+>    `−0.0205 → −0.0074` (ns), and bust-Dalton is `+0.0145 (t ≈ 1.9)` rather than
+>    `+0.0133`. §6's claim that the cluster-robust picture is *unstable* across
+>    normalisations — the claim the paper uses to justify RI as its primary
+>    regime — is therefore an artifact of the omitted control, not a property of
+>    the data.
+>
+> **Kept, not deleted:** it is the only record of that run and is the comparison
+> point for the `SHARE_DENOM = "total"` re-run ([T-2b]). Replaced by
+> `output/RESULTS_MANIFEST.md` once that lands. See `RATIONALE.md` `[T-1b]`.
+
 | Treatment | Outcome | boom | bust |
 |---|---|---|---|
 | current | Center | **−0.0205 (0.0081)\*\*** | **−0.0617 (0.0164)\*\*\*** |

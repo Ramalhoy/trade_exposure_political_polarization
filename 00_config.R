@@ -54,7 +54,26 @@ election_years <- c(2010, 2014, 2018, 2022)
 # throughout the paper), balance tests, AKM/AKM0, Conley and every table are
 # functions of the shares and MUST be recomputed, not carried over. Re-run in
 # order: 03 -> 03a -> 03b -> 03c -> 03d -> 04 -> 06/06b -> 07/07b.
-SHARE_DENOM <- "tradable"          # "tradable" (status quo) | "total" (ADH/Rettl)
+# [T-2b] Flipped to "total" 2026-07-29 (Packet T2). Incomplete shares:
+# s_rj = L_rj,2010 / L_r,2010^TOTAL, so sum_j s_rj = theta_r < 1 and varies
+# across microregions. This is what the identification strategy of the paper's
+# Section 3.3 assumes -- shocks perspective plus incomplete shares, hence the BHJ
+# sum-of-shares control -- and under this setting tradable_emp_share IS that
+# control rather than a proxy from a neighbouring design. Rationale + audit trail
+# in RATIONALE.md, [T-2b].
+SHARE_DENOM <- "total"             # "tradable" (ANPEC vintage) | "total" (ADH/Rettl)
+
+# [T-8] Reproducibility hook: a single run may override the flag from the
+# environment, so the ROBUSTNESS convention can be reproduced without editing
+# this file (SHARE_DENOM_OVERRIDE=tradable Rscript 07_regression_inference.R).
+# This file remains the source of truth for the MAIN specification; the override
+# is echoed loudly below so no log is ambiguous about which shares it used.
+.share_denom_override <- Sys.getenv("SHARE_DENOM_OVERRIDE", unset = "")
+if (nzchar(.share_denom_override)) {
+  cat("[_config] SHARE_DENOM OVERRIDDEN from environment:", SHARE_DENOM, "->",
+      .share_denom_override, "\n")
+  SHARE_DENOM <- .share_denom_override
+}
 stopifnot("SHARE_DENOM must be 'tradable' or 'total'" =
             SHARE_DENOM %in% c("tradable", "total"))
 
