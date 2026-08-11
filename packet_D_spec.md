@@ -72,7 +72,7 @@ IV-A.
 | *j* | ISIC Rev. 4 industry (152, post-composite) |
 | *d* | destination country |
 | *p* | HS6 product |
-| *t* | election year ∈ {2014, 2018, 2022}; interval *t*−4 to *t* |
+| *t* | election year ∈ {2014, 2018, 2022}; interval **2010 to *t*** (cumulative, `[D-32]`) |
 | `L_r,2010`, `L_j,2010` | 2010 formal employment, FTE (contract-months ÷ 12) |
 | `X_rd,2010` | microregion *r*'s 2010 exports to destination *d* |
 | `M_djt^{RoW−BR}` | *d*'s imports of *j* from all origins except Brazil |
@@ -82,9 +82,31 @@ IV-A.
 
 ## D.2 — The arc-percentage operator
 
+**Baseline corrected 2026-08-10 by `[D-32]`.** This section previously wrote the
+operator as `arcΔ(v_t, v_{t−4})`, a **rolling** four-year baseline. The ladder is
+built on a **cumulative 2010** baseline, for comparability with S0 and S1, which
+difference against 2010. The two are not interchangeable:
+
+| cycle | Pearson | Spearman |
+|---|---|---|
+| 2014 | 1.000 | 1.000 (identical by construction) |
+| 2018 | **0.509** | 0.476 |
+| 2022 | **0.343** | 0.369 |
+
+At ρ = 0.34 in 2022 these are different treatments, not variants of one.
+
 ```
-arcΔ(v_t, v_{t−4})  =  (v_t − v_{t−4}) / [ (v_t + v_{t−4}) / 2 ]
+arcΔ(v_t)  =  (v_t − v_2010) / [ (v_t + v_2010) / 2 ]        [PRIMARY]
 ```
+
+Baseline fixed at **2010 for every rung of the ladder**, so that S0, S1, S2 and
+S3 difference against the same origin and the rungs remain one-change-at-a-time.
+
+**The rolling variant is a reported robustness, not an alternative primary.** It
+answers a different question — the shock over the electoral cycle rather than
+cumulative exposure since 2010 — and Phase 2 reports it as such, with the
+correlations above quoted in the table note. It is not a specification choice
+left open.
 
 Bounded in [−2, +2]. Symmetric: doubling +2/3, halving −2/3. Second-order
 approximation to the log difference near zero. Defined when either endpoint is
@@ -115,7 +137,7 @@ control.
 ```
 ω_jd,2010  =  X_jd,2010^{BR} / Σ_d X_jd,2010^{BR}        [Σ_d ω_jd = 1]
 
-Z_jt       =  Σ_d  ω_jd,2010 × arcΔ( M_djt^{RoW−BR} , M_dj,t−4^{RoW−BR} )
+Z_jt       =  Σ_d  ω_jd,2010 × arcΔ( M_djt^{RoW−BR} , M_dj,2010^{RoW−BR} )
 ```
 
 *The growth rate of foreign demand facing Brazilian industry j, weighted by where
@@ -194,7 +216,7 @@ purpose is to test the Comex municipality-attribution problem (D.7.1).
 ```
 ω_pd,2010^{BR}  =  share of Brazil's 2010 exports to d accounted for by product p
 
-g_dt  =  Σ_p  ω_pd,2010^{BR} × arcΔ( M_dpt^{RoW−BR} , M_dp,t−4^{RoW−BR} )
+g_dt  =  Σ_p  ω_pd,2010^{BR} × arcΔ( M_dpt^{RoW−BR} , M_dp,2010^{RoW−BR} )
 ```
 
 *d*'s import growth from the rest of the world, restricted to the basket Brazil

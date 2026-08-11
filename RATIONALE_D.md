@@ -438,13 +438,24 @@ Four operational decisions, each of which will silently corrupt a join if missed
 3. **Deflation.** BACI values are current USD. Deflate with `cpi_us.rds`, as `03b`
    already does. Both endpoints of any arc growth rate must be in the same constant
    currency (`packet_D_spec.md` §D.2).
-4. **Country-code harmonisation is a clean numeric join.** BACI's `country_code`
-   is the numeric ISO 3166-1 code (4 Afghanistan, 76 Brazil), which matches
-   `CO_PAIS_ISON3` in sheet 10 of `data/misc/TABELAS_AUXILIARES.xlsx` directly. No
-   name matching is required. The unmatched-code log is still written, but the risk
-   flagged in `packet_D_spec.md` §D.7 is much smaller than anticipated. CEPII
-   Gravity keys on alphabetic `iso3`; route through `Countries_V202211.csv`
-   `iso3num` or BACI's `country_iso3`.
+4. ~~**Country-code harmonisation is a clean numeric join.** BACI's
+   `country_code` is the numeric ISO 3166-1 code (4 Afghanistan, 76 Brazil),
+   which matches `CO_PAIS_ISON3` in sheet 10 of
+   `data/misc/TABELAS_AUXILIARES.xlsx` directly. No name matching is required.
+   The unmatched-code log is still written, but the risk flagged in
+   `packet_D_spec.md` §D.7 is much smaller than anticipated.~~
+
+   > **SUPERSEDED 2026-08-10 by `[D-20]`. This item is false.** BACI keys on UN
+   > Comtrade **area** codes, not ISO 3166-1: the United States is 842, not 840.
+   > A numeric join drops 15.17% of 2010 export value across 19 areas, Brazil's
+   > second-largest destination among them. Struck through rather than deleted so
+   > that the error, and the fact that it was asserted without inspection, stay
+   > in the record. Join on alphabetic `iso3` plus the explicit 14-entry
+   > aggregation map; see `D_data_contracts.md` §1b as corrected.
+
+   The one part of this item that survives: CEPII Gravity keys on alphabetic
+   `iso3`, routed through `Countries_V202211.csv` `iso3num` or BACI's
+   `country_iso3`.
 
 **Open:** whether `Gravity_V202211.rds` carries `gdpcap_d` for 2010. If it does,
 the World Bank WDI pull is unnecessary and the destination-characteristic set for
@@ -1034,15 +1045,45 @@ This disposes of the three readings that were on the table:
 `D3` proceeds. The attribution threat is real and unmeasured, and is replaced —
 not waived — by a test with power against it (`[D-31]`).
 
-### Gate-design note
+### Gate-design note — three mis-specified gates, one trigger
 
-This is the packet's **second** mis-specified gate. The Stage 0 gate applied an
-industry-side balance test to a design with no industry dimension; this one
-conflates the threat under test with the phenomenon under study. Both were
-written before `[D-0-6]` was sharp enough to make the confound visible.
+Revised 2026-08-10: the count is **three**, not two. `[D-PRE-4]` belongs on the
+list.
 
-Consequence: **re-read every remaining gate against the current diagnosis before
-it fires, not after.** `[D-PRE-4]` (ρ(EPW_S0, EPW_S3) > 0.9) is the live one.
+| gate | what it asked | why it was wrong |
+|---|---|---|
+| Stage 0 workforce balance | do `z_A`/`z_B` pass the test `g_jt` fails? | applied an **industry-side** test to a design with no industry dimension |
+| bridge `ρ < 0.5` | does the employment-imputed share track the Comex share? | conflated the **threat under test** with the **phenomenon under study** |
+| `[D-PRE-4]` `ρ > 0.9` | is S3 just S0 relabelled? | guarded **one tail of a two-tailed problem** |
+
+`[D-PRE-4]` fired a pass at ρ = 0.025, and the pass means something quite
+different from what the gate assumed. It was written to catch "S3 is S0
+relabelled, so Branch A is only a measurement check". What ρ ≈ 0 actually
+licenses is not "S3 is independent and therefore a valid identification check"
+but "**S3 is a different treatment, so two nulls are not corroboration of one
+another**". The gate had no branch for that reading, because it only looked
+upward.
+
+**The shared trigger, and why it is actionable.** All three were written before
+`[D-0-6]` was sharp — before the capital-intensity gradient was identified as the
+thing organising every diagnostic in the packet. That is why they are
+*conceptually* wrong rather than merely unlucky: each was specified against a
+diagnosis that had not yet matured.
+
+**Mechanism: stamp every gate with the diagnosis it was written against.**
+"Re-read each gate against the current diagnosis before it fires" is correct but
+easy to skip, because nothing prompts it. A stamp supplies the prompt: when the
+diagnosis moves — as it did at `[D-0-6]`, and again at `[D-30]` — **every gate
+stamped against the superseded state is flagged for re-read**. That converts a
+discipline which depends on remembering into one with a trigger. Stamps are
+recorded in the pre-registration block below and are not to be back-dated.
+
+**Note that this is a different discipline from `D_data_contracts.md` §0a**, and
+neither substitutes for the other. §0a ("inspect first, then assert") prevents
+`[D-20]`: a *factual* claim about a file, checkable in one line, asserted without
+the check. It would not have prevented any of the three gates above, because a
+gate can be conceptually wrong about a property that is perfectly well measured.
+Two failure modes, two rules; keep both.
 
 ### [D-31] Production-capacity orphan test — a valid measure of the attribution threat
 
@@ -1608,6 +1649,41 @@ dated additions are appended, never substituted.
   until 2026-08-10. The exogeneity premise is therefore untested, not rejected.
   See [D-3a], [D-3b].
 
+  DISPOSITION added 2026-08-10, before Phase 2 was run: NOT EVALUABLE.
+  Appended, not substituted; the prediction above stands unedited.
+
+  Registered on 10 August predicting that S2 and S3 would restore workforce
+  balance in at least 4 of 6 cells. Neither half can be tested:
+
+    S2  is not reportable. 1.88 effective shocks after the entrepot exclusion,
+        with ISIC 0141 carrying alpha = 0.75 / 0.73 / 0.70 across the three
+        cycles ([D-39], [D-48]). A balance test on a design that is not
+        reported answers nothing.
+    S3  has no industry dimension. The workforce balance test regresses a
+        shock on industry workforce composition; a destination-indexed shock
+        has no such composition, so the test is not defined on it, not merely
+        inconvenient to run ([D-33]).
+
+  The prediction is therefore NOT EVALUABLE, and NO SUBSTITUTE IS REGISTERED
+  IN ITS PLACE.
+
+  Both reasons were discovered after registration and neither was foreseeable
+  when it was written. That makes "not evaluable" a legitimate third
+  disposition alongside pass and fail - but it is recorded explicitly and
+  before the Phase 2 results exist, because a pre-registered prediction that
+  quietly disappears because it turned out to be untestable is
+  indistinguishable, at a defence, from one that was dropped because it
+  failed.
+
+  What survives of the underlying question is recorded as evidence rather
+  than as a test: [D-10] shows that exogeneity at fixed level scale does NOT
+  restore workforce balance (z_A and z_B pass 1 of 6), and [D-11] shows it
+  makes shock concentration worse. The prediction's stated MECHANISM - that an
+  exogenous foreign-demand shock is not a function of Brazilian industry
+  factor intensity - is falsified by z_A, which is exogenous and is such a
+  function because it divides by L_j,2010. That falsification is reportable
+  and is not conditional on this prediction being evaluable.
+
 [D-PRE-3]  S2-IV first-stage criterion.
 
   PRIMARY (binding). Randomization inference on the exposure-weighted
@@ -1671,6 +1747,43 @@ dated additions are appended, never substituted.
   Settled by D-0-7: five to six, not five to nine. The manuscript sentence is
   corrected rather than softened.
 
+DIAGNOSIS STAMPS  [added 2026-08-10; see the D-30 gate-design note]
+
+  Every gate carries the state of the packet's diagnosis at the time it was
+  written. When the diagnosis moves, every gate stamped against a superseded
+  state is FLAGGED FOR RE-READ before it fires. Stamps are never back-dated.
+
+  Diagnosis states, in order:
+    (i)   pre-[D-0-6]  - the EPW shock treated as a generic shift-share
+                         shifter; no articulated account of what organises it
+    (ii)  [D-0-6]      - the shock identified as a CAPITAL-INTENSITY GRADIENT
+                         driven by the L_j,2010 denominator; supersedes (i)
+    (iii) [D-30]       - gates recognised as capable of conflating the threat
+                         under test with the phenomenon under study;
+                         supersedes (ii) for gate DESIGN, not for findings
+
+  gate        written against   status
+  ---------   ---------------   ------------------------------------------
+  D-PRE-1     (i)               fired, CONFIRMED. Re-read at (ii): survives -
+                                it asks about Brazilian SUPPLY, which the
+                                gradient does not bear on.
+  D-PRE-2     (i)               NOT EVALUABLE. Mechanism falsified at (ii).
+  D-PRE-3     (i)               CLOSED by non-applicability.
+  D-PRE-4     (i)               fired a PASS at rho = 0.025, but guarded only
+                                the upper tail. Re-read at (iii): the pass
+                                licenses "different treatment, so two nulls
+                                are not corroboration", NOT "valid
+                                identification check". Reading corrected in
+                                [D-30]; threshold itself never bound.
+  D-PRE-6     (iii)             fired, PASSED at 2.66% against 20%. Written
+                                after the diagnosis matured; no re-read owed.
+
+  Stage-0 workforce gate and the bridge gate carried no stamp because none
+  existed; both were written against (i) and both were withdrawn as invalid.
+  They are the reason this block exists.
+
+  ANY GATE ADDED IN PHASE 2 CARRIES A STAMP AT REGISTRATION.
+
 [D-PRE-6]  Production-capacity orphan threshold.  [added 2026-08-10, before the
            test was run; replaces the withdrawn bridge gate of D-30]
 
@@ -1722,7 +1835,10 @@ dated additions are appended, never substituted.
 | `D3` shock dispersion: `sd(g_dt)` vs `sd(g_jt)`, `sd(g_arc)`, before Rotemberg | open — `[A1]` |
 | Re-read `[D-PRE-4]` against the current diagnosis before it fires | open — `[D-30]` gate-design note |
 | ~~bridge gate `ρ < 0.5`~~ | **withdrawn as invalid** — `[D-30]`, replaced by `[D-31]` |
-| correct `D_data_contracts.md` §1b: BACI is not ISO 3166-1 numeric | open — `[D-20]` |
+| ~~correct `D_data_contracts.md` §1b: BACI is not ISO 3166-1 numeric~~ | **closed** 2026-08-10 — `[D-20]` |
+| ~~pin the arc baseline in the spec and contracts~~ | **closed** 2026-08-10 — `[D-32]`, cumulative 2010 |
+| ~~`[D-PRE-3]` RI threshold: 0.01 or 0.05~~ | **closed by non-applicability** — S2 not reportable |
+| Phase 2 contracts: "inspect first, then assert" rule | open — `D_data_contracts.md` §0a |
 | confirm `gdpcap_d` in `Gravity_V202211.rds`; drop the WDI pull if present | open — `[D-4]` |
 | copy `EXP_YYYY_MUN.csv` into canonical `DATA_DIR` | open — `[D-4]` |
 | `cnae_isic_crosswalk 2.rds` rename or delete | open — `[D-0-2]` |

@@ -6,6 +6,27 @@ Companion to `packet_D_spec.md`. Conventions: `set.seed(2026)`, `B = 9999`, all 
 
 ---
 
+## 0a. Rule for writing contracts — added 2026-08-10, binding on Phase 2
+
+**Inspect first, then assert. Every claimed property gets a `stopifnot()`, never
+an "expect".**
+
+`[D-20]` was the third specification in this packet asserted from plausible
+inference rather than inspection, after the two gates withdrawn as mis-specified
+(`RATIONALE_D.md` `[D-30]` gate-design note). The pattern was identical each
+time: a data property that *should* hold, written into a contract as though
+verified, with the verification deferred to a log nobody was required to stop on.
+
+Where a property cannot be checked before the contract is written, **the contract
+says so explicitly** and the first thing the script does is check it.
+
+All three affected items are now corrected, and none propagated into a reported
+number — `[D-20]` was caught by an assertion at construction, and both gates were
+caught before they blocked anything. That is luck plus attentive execution, not
+process. The rule above is the process.
+
+---
+
 ## 0. Objects read from the locked pipeline (read-only)
 
 These are **inputs**, never rebuilt. Load from the v7 saved outputs.
@@ -68,7 +89,7 @@ Metadata shipped alongside: `country_codes_V202601.csv`
 | column | type | constraint |
 |---|---|---|
 | `ano` | integer | ∈ {2010, 2014, 2018, 2022} |
-| `origem`, `destino` | integer | numeric ISO; join key to Comex `CO_PAIS_ISON3` |
+| `origem`, `destino` | integer | UN Comtrade **area** code, **not** ISO 3166-1 — join via alphabetic `iso3`, see §1b |
 | `hs6` | character | 6 digits, **zero-padded**, HS2007 |
 | `valor` | double | `> 0`, **deflated to constant 2010 USD via `cpi_us.rds`** |
 
@@ -93,18 +114,56 @@ already does this; new scripts must too.
 
 Reconcile world totals per year against a published aggregate within **1%**.
 
-## 1b. Country-code harmonisation
+## 1b. Country-code harmonisation — BACI keys on UN Comtrade area codes
 
-Confirmed clean. BACI `country_code` **is** the numeric ISO 3166-1 code
-(4 Afghanistan, 8 Albania, 76 Brazil), which joins directly onto `CO_PAIS_ISON3`
-in sheet 10 of `data/misc/TABELAS_AUXILIARES.xlsx`. No name matching.
+**Corrected 2026-08-10 by `[D-20]`.** The previous text asserted that BACI's
+`country_code` *is* the numeric ISO 3166-1 code and joins directly onto
+`CO_PAIS_ISON3`. That is false, and it fails on the largest destinations:
 
-CEPII Gravity keys on alphabetic `iso3`; route via `Countries_V202211.csv`
-(`iso3`, `iso3num`) or BACI's `country_iso3`.
+| destination | ISO 3166-1 | BACI / Comtrade | 2010 share of Brazil's exports |
+|---|---|---|---|
+| United States | 840 | **842** | **9.63%** |
+| France | 250 | **251** | 1.78% |
+| India | 356 | **699** | 1.74% |
+| Taiwan | 158 | **490** (Other Asia, nes) | 0.87% |
+| Switzerland | 756 | **757** | 0.69% |
+| Norway | 578 | **579** | 0.36% |
 
-Still write `log_d_unmatched_codes.csv` with the share of 2010 export value
-affected — but expect it near-empty, and treat a long log as a bug rather than a
-data feature.
+A numeric join silently drops **15.17% of 2010 export value across 19 areas**,
+including Brazil's second-largest destination. The codes are Comtrade *areas*,
+which aggregate territories into a metropole; they coincide with ISO 3166-1 for
+most countries, which is what makes the error survive casual inspection.
+
+**Required join.**
+
+1. Join on the alphabetic `iso3` that BACI also ships. It is reliable.
+2. Apply the explicit 14-entry aggregation map for territories Comtrade folds
+   into a metropole: `PRI`, `VIR`, `UMI` → USA; `GLP`, `MTQ`, `GUF`, `REU`,
+   `MCO` → France; `LIE` → Switzerland; `IMN`, `GGY` → UK; `FRO` → Denmark;
+   `TWN` → Other Asia, nes.
+3. **Fold Comex into BACI's scheme, never the reverse.** `m_dp_row` is built
+   from BACI, so area 842 already contains Puerto Rico's imports and Comex's
+   `PRI` must join onto it. Reversing the direction double-counts.
+4. Assert every map target is present in BACI's own country list before use.
+
+**Gate — this is an assertion, not an expectation.**
+
+```r
+stopifnot(
+  "[D-20] unmatched destination codes carry value" =
+    sum(unmatched$vl_fob) == 0,
+  "[D-20] map target missing from BACI country list" =
+    all(area_map$target %in% baci_countries$country_iso3)
+)
+```
+
+The superseded text said to write `log_d_unmatched_codes.csv` and "expect it
+near-empty, treating a long log as a bug rather than a data feature." That
+framing was the actual defect: it invited a populated log to be explained rather
+than stopped on. **The log must be empty and the script must assert it.**
+Post-fix it is: 0 codes, 0.000000% of value.
+
+**`[D-4]` item 4 carries the same error and is superseded by this section.**
 
 ## 2. `m_dp_row` — destination × product imports, Brazil excluded
 
@@ -139,7 +198,7 @@ Gate: `stopifnot(all(abs(rowsum(omega_jd, isic4) - 1) < 1e-8))` — sums to 1 wi
 
 ### 3.2 `z_jt` — Branch B shock
 ```
-z_jt  =  Σ_d  omega_jd × arcΔ( m_dj_row[t] , m_dj_row[t−4] )
+z_jt  =  Σ_d  omega_jd × arcΔ( m_dj_row[t] , m_dj_row[2010] )      [PRIMARY]
 z_jt_level  =  z_jt × X_j_2010 / L_j_2010
 ```
 | column | type | constraint |
@@ -161,7 +220,7 @@ The industry set **must** match `shares_rj` exactly. An industry present in shar
 
 ### 3.3 `g_jt_arc` — realised arc shock, for rung S1
 ```
-g_jt_arc  =  arcΔ( X_jt^BR , X_j,t−4^BR )
+g_jt_arc  =  arcΔ( X_jt^BR , X_j,2010^BR )      [PRIMARY; matches G3's g_arc]
 ```
 Same schema, same bounds. Built from the **same Comex series the v7 pipeline uses**, not a fresh pull.
 
@@ -216,8 +275,8 @@ Not used in any reported specification. Its only output is the correlation with 
 ### 4.4 `g_dt` — Branch A shock
 ```
 omega_pd  =  X_pd,2010^BR / Σ_p X_pd,2010^BR
-g_dt      =  Σ_p  omega_pd × arcΔ( m_dp_row[t] , m_dp_row[t−4] )
-g_dt_tot  =  arcΔ( Σ_p m_dp_row[t] , Σ_p m_dp_row[t−4] )     # robustness variant
+g_dt      =  Σ_p  omega_pd × arcΔ( m_dp_row[t] , m_dp_row[2010] )   [PRIMARY]
+g_dt_tot  =  arcΔ( Σ_p m_dp_row[t] , Σ_p m_dp_row[2010] )    # robustness variant
 ```
 | column | type | constraint |
 |---|---|---|
