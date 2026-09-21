@@ -484,3 +484,138 @@ never depended on the gate. Dropping PSL-2018 still moves presidential 2018 `y_b
 little (+0.059 / 0.617). And the break-even sweep still shows the baseline presidential
 `delta_EPW` coefficient is null across the whole of [−1, 1], with the reconstruction validated
 to `max |diff| = 0` against the stored estimation frame.
+
+---
+
+# `[PL-45]`–`[PL-47]` + STAGE 0b — run 2026-09-21 (second amendment)
+
+## Stage 0b — the silent-empty failures are fixed in `01_extraction.R`, and verified
+
+`[PL-28]`/`[PL-29]`/`[PL-30]` retrofitted into BLOCK C: browser-header transport, ASCII
+working directory, and assertions that the pull is non-empty and the cargo filter selected
+rows. `httr` added to the header block. No data semantics changed.
+
+**Verified by rebuilding both panels and comparing, without running BLOCK A (BigQuery) and
+without touching the real outputs** — a harness ran BLOCK C alone with `saveRDS`/`write_xlsx`
+redirected to a scratch directory:
+
+| panel | rows | `all.equal` | max abs vote diff | total votes |
+|---|---|---|---|---|
+| presidential | 28,974 / 28,974 | **TRUE** | **0** | 857,769,263 |
+| governor | 17,813 / 17,813 | **TRUE** | **0** | 572,827,191 |
+
+Bit-for-bit reproduction. The retrofit is a no-op when the network behaves and a hard stop
+when it does not.
+
+## `[PL-45]` — the `[PL-39]` trigger was scoped wrongly, and PL-2022 slipped through
+
+`[PL-39]` fires on *imputed* cells. It misses the symmetric case: a party that changed
+character between the wave and the election while keeping a perfectly contemporaneous score.
+Such a cell reads `"none"` on every provenance column.
+
+**Resolved from the source, not inferred.** Zucco & Power, *The Ideology of Brazilian Parties
+and Presidents*, LAPS 66(1), 2024 — the note reporting BLS 9:
+
+> "just as survey fieldwork was drawing to an end in 2021 … Bolsonaro — after a period in
+> which he had no formal party affiliation — joined the PL in order to launch his 2022
+> reelection bid."
+
+> "We also modified the estimated position of the PL by averaging it with the position of
+> Bolsonaro, as he himself and many of his close associates joined the PL **after BLS 9**."
+
+So the 2021 PL score predates his arrival, and **the source authors themselves correct for
+it**. The BLS series agrees: +0.328 → +0.409 → +0.434 → **+0.493**, a smooth *centrão* path
+with no Bolsonarist break. The cell is too moderate for the party that contested 2022, biasing
+polarization **down** — opposite in sign to PSL-2018, and on a larger vote share.
+
+**PL is 16.60% of the 2022 Chamber vote** — the largest single cell in the packet, above
+PSL-2018's 11.64%.
+
+| arm | `y_bar` | `P_dalton` | `P_er_10` |
+|---|---|---|---|
+| (a) point, PL 2021 = +0.493 | 0.1350 | 0.4414 | 0.0716 |
+| (d) PSL 2021 = +0.803 | 0.1901 | 0.4945 | 0.0858 |
+| **(e) Zucco & Power's own correction = +0.678** | **0.1678** | **0.4706** | 0.0796 |
+| (b) drop | 0.0539 | 0.4502 | 0.0795 |
+
+Arm (e) is not our invention — it is what the source authors do, for this exact reason, and it
+is the defensible headline alternative. Arm (b) leaves 30.21% of 2022 unscored, so by `[PL-46]`
+it is a **bound**, not an alternative.
+
+**The `[PL-27]` verdict survives**: R² for 2022 is 0.116 / 0.099 / 0.108 across (a) / (d) / (e),
+all far below the presidential 0.96. **L5 does not depend on this cell.**
+
+**But a reported pattern does.** Under (a), 2018 → 2022 looks like a retreat: `P_dalton`
+0.4621 → 0.4414 and `y_bar` 0.1977 → 0.1350. Under (e) the retreat in `P_dalton` **disappears**
+(0.4621 → 0.4706, a continued rise) and the `y_bar` retreat roughly halves. Under (d) both
+essentially flatten. So the apparent 2022 de-polarization is substantially an artefact of
+scoring PL from a pre-Bolsonaro wave, and should not be described as a substantive retreat
+without stating which arm it rests on.
+
+## `[PL-46]` — the drop arm is inadmissible far more often than the log implied
+
+Dropping a cell removes its votes from the **denominator** as well as the index, so a large
+cell's drop arm is an index over a different, smaller electorate with one flank deleted.
+Admissibility rule: the panel must still clear `[PL-19]` after the drop.
+
+| level / cell | unscored after drop | admissible |
+|---|---|---|
+| presidential, PSL 2018 | **49.88%** | **NO — bound only** |
+| governor, PSL 2018 | 13.50% | yes |
+| Chamber, PSL 2018 | 20.38% | **NO — bound only** |
+| Chamber, PL 2022 | 30.21% | **NO — bound only** |
+| Chamber, REP 2014 | 10.85% | yes |
+
+**§E of this log over-read the presidential drop arm and is corrected here.** `y_bar` moving
++0.083 → −0.450 is mostly the right flank leaving the denominator, not evidence about how PSL
+should be scored. The arms that hold coverage fixed say the opposite: arm (d) moves `y_bar`
+only +0.083 → +0.059, and the `[PL-39]`(c) sweep leaves the baseline null across all of [−1, 1].
+
+The defensible sentence is: **the 2018 presidential index depends heavily on *whether* PSL is
+scored, and barely on *how*.**
+
+## `[PL-47]` — ΔP^N is a step function of the neutral band, and only the ΔP^N sweep can see it
+
+`P_center` counts votes inside `|ideo| ≤ 0.25`, so sweeping a cell across [−1, 1] carries it
+into and out of the band. Sweep of PSL-2018, presidential, both outcomes, pooled and
+boom/bust. Rebuild validated against `df_estimation_v7.rds`: **`max |dD diff| = 0` and
+`max |dN diff| = 0`** over 1,671 rows.
+
+Movement in the coefficient for a 0.02-wide step:
+
+| step | `pooled_D` | `pooled_N` | `boom_N` | `bust_N` |
+|---|---|---|---|---|
+| **across the edge, 0.24 → 0.26** | 0.00017 | **0.01182** | **0.02246** | **0.01615** |
+| inside the band, 0.05 → 0.15 | 0.00051 | **0.00000** | **0.00000** | **0.00000** |
+| outside the band, 0.50 → 0.60 | 0.00106 | **0.00000** | **0.00000** | **0.00000** |
+
+Every ΔP^N coefficient is **exactly constant within each regime** and moves only at the
+boundary — a pure step function. `P_dalton` is smooth and moves *more* within regimes than
+across the edge, so a sweep reported on `P_dalton` alone would have concluded nothing happens
+at ±0.25. Exactly backwards.
+
+**The ever-starred coefficient:**
+
+| regime | `bust_N` | p | significant at 5% |
+|---|---|---|---|
+| outside the band (\|ideo\| > 0.25) | **−0.0405** | **0.0079** | **YES** |
+| inside the band (\|ideo\| ≤ 0.25) | −0.0243 | 0.1822 | no |
+
+Significant in 32 of 45 sweep points — and the split is exactly the band indicator. So the
+significance of the study's only ever-starred coefficient is a **binary** function of whether
+PSL-2018 falls inside the neutral band, not a smooth function of its magnitude. Both candidate
+values (0.862 candidate, 0.803 party) sit far outside, so **the result stands** — but it rests
+on a threshold crossing, and the paper should say so rather than imply robustness to the score.
+
+This also means the 0.25 band half-width is a researcher degree of freedom with a discrete
+effect on significance. It is currently hard-coded in `02_polarization_indices.R` and `02b`.
+
+## Still open
+
+`[PL-42]` UNIÃO — note that Zucco & Power construct UNIÃO exactly as the amendment proposed:
+"averaging the positions of the DEM and the PSL in BLS 9, weighting each party by its size at
+the time of the merger." The amendment's rule therefore has an authoritative precedent.
+`[PL-43]` V-Party — `nota_vparty.md` confirms v2 covers 1970–2019; the 2022 question must be
+checked on the V-Dem page before anything is built. `P_dip` unexercised. `[PL-12]` not run.
+The IV/AKM, boom/bust and winsorised specs have **not** been swept against PSL-2018 beyond
+what `[PL-47]` covers (pooled + decomposition on both outcomes).

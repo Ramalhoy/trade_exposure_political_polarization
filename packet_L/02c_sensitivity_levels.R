@@ -200,6 +200,48 @@ for (nv in names(LEVELS)) for (a in names(arms)) {
   if (a == "(a) point") saveRDS(idx_of(p), paste0("dalton_panel_", nv, "_sens.rds"))
 }
 res <- bind_rows(res)
+
+# =============================================================================
+# [PL-46] IS THE DROP ARM ADMISSIBLE? — usually not, and it must not be read as
+#         evidence about HOW the cell should be scored.
+# -----------------------------------------------------------------------------
+# Dropping a cell removes its votes from the DENOMINATOR as well as from the
+# index. When the cell is large, the drop arm is not "the same index minus one
+# party" — it is an index over a different, smaller electorate with one flank of
+# the ideology axis deleted. 02b_sens_legislativo.R already demotes the Chamber
+# PSL-2018 drop to a bound on exactly this ground (it pushes 2018 to 20.38%
+# unscored, failing [PL-19]). The same demotion applies here, and harder.
+#
+# Rule: an arm is ADMISSIBLE only if the panel still clears the [PL-19] 15% gate
+# after the drop. Otherwise it is a BOUND, never an alternative specification,
+# and never evidence about the score's value.
+#
+# The arms that hold coverage FIXED — (d) party-score and the [PL-39](c) sweep —
+# are the ones that speak to HOW the cell should be scored.
+# =============================================================================
+drop_admis <- lapply(names(LEVELS), function(nv) {
+  p   <- build_level(LEVELS[[nv]], psl_patch$ideo, psl_patch$ideo.se, "x")
+  tot <- p |> summarise(t = sum(votes, na.rm = TRUE), .by = year)
+  p |> mutate(gone = is.na(ideo) | (party == "PSL" & year == 2018)) |>
+    summarise(v = sum(votes[gone], na.rm = TRUE), .by = year) |>
+    left_join(tot, by = "year") |>
+    mutate(nivel = nv,
+           unscored_pct_after_drop = round(100 * v / t, 2),
+           drop_arm_admissible     = unscored_pct_after_drop <= 15) |>
+    filter(year == 2018) |>
+    select(nivel, year, unscored_pct_after_drop, drop_arm_admissible)
+}) |> bind_rows()
+
+cat("\n--- [PL-46] ADMISSIBILITY OF THE PSL-2018 DROP ARM ---\n")
+print(as.data.frame(drop_admis), row.names = FALSE)
+write_csv_safe(drop_admis, file.path("output", "packet_L", "tab_pl46_drop_admissibility.csv"))
+for (i in seq_len(nrow(drop_admis))) if (!drop_admis$drop_arm_admissible[i])
+  cat(sprintf(">>> [PL-46] %s: dropping PSL-2018 leaves %.2f%% of the vote unscored — FAILS\n",
+              drop_admis$nivel[i], drop_admis$unscored_pct_after_drop[i]),
+      ">>> [PL-19]. This arm is a BOUND, not an alternative. Movement in y_bar under it is\n",
+      ">>> mostly the right flank leaving the denominator, not information about the score.\n",
+      ">>> Read arm (d) and the [PL-39](c) sweep instead.\n")
+
 cat("\n--- [PL-39] INDEX MEANS BY ARM (2018 is the only year that can move) ---\n")
 print(as.data.frame(res |> filter(year == 2018) |> arrange(nivel, arm)), row.names = FALSE)
 write_csv_safe(res, file.path("output", "packet_L", "tab_pl40_arms.csv"))
@@ -262,3 +304,103 @@ cat("Significance (p<0.05) lost at psl_ideo in:",
 cat("\nObserved BLS score range in the 2021 wave: ",
     sprintf("%.3f to %.3f", min(ideologia$ideo[ideologia$year==2021]),
             max(ideologia$ideo[ideologia$year==2021])), "\n")
+
+
+# =============================================================================
+# [PL-47] THE SWEEP MUST COVER ΔP^N, AND THE REASON IS SHARP
+# -----------------------------------------------------------------------------
+# P_center counts votes inside the neutral band |ideo| <= 0.25. Sweeping PSL-2018
+# across [-1, 1] therefore carries the cell INTO and OUT OF that band, so ΔP^N
+# jumps DISCRETELY at +/-0.25 while P_dalton moves smoothly. A sweep reported on
+# P_dalton alone cannot see that — and ΔP^N carries the only ever-starred
+# coefficient in the study (bust on ΔP^N, around -0.043).
+#
+# So: both outcomes, and both the pooled and the boom/bust decomposition.
+# Specifications verbatim from 07_regression_inference.R:
+#   pooled : <oc> ~ delta_EPW + ctrl_base | state^year
+#   decomp : <oc> ~ epw_boom + epw_bust + ctrl_base | state^year
+# with epw_boom = pmax(delta_EPW_raw,0)/sd_epw, epw_bust = pmax(-delta_EPW_raw,0)/sd_epw,
+# outcomes and controls z-scaled, clustered mesoregion_code^year.
+# The grid is densified around +/-0.25 so the band crossing is visible.
+# =============================================================================
+sd_epw <- sd(df0$delta_EPW)
+
+sweep_one <- function(y_psl) {
+  d  <- idx_of(build_level(LEVELS$presidencial, y_psl, psl_patch$ideo.se, "x"))
+  b  <- d |> filter(year == 2010) |>
+        select(microregion_code, D0 = P_dalton, N0 = P_center)
+  dd <- d |> filter(year != 2010) |> left_join(b, by = "microregion_code") |>
+        transmute(microregion_code = as.character(microregion_code), year,
+                  dD = P_dalton - D0, dN = P_center - N0)
+  m <- df0 |>
+    mutate(microregion_code = as.character(microregion_code)) |>
+    left_join(dd, by = c("microregion_code", "year")) |>
+    filter(!is.na(dD), !is.na(dN)) |>
+    mutate(delta_EPW_raw = delta_EPW,
+           delta_P_dalton = dD, delta_P_center = dN) |>
+    mutate(across(c(delta_P_dalton, delta_P_center, delta_EPW,
+                    ln_gdp_pc, ln_pop, tradable_emp_share), ~ as.numeric(scale(.)))) |>
+    mutate(epw_boom = pmax( delta_EPW_raw, 0) / sd_epw,
+           epw_bust = pmax(-delta_EPW_raw, 0) / sd_epw)
+
+  grab <- function(fml, k) {
+    fe <- feols(as.formula(fml), data = m, cluster = ~ mesoregion_code^year)
+    ct <- coeftable(fe)[k, ]
+    c(beta = unname(ct[1]), se = unname(ct[2]), p = unname(ct[4]))
+  }
+  ctrls <- "ln_gdp_pc + ln_pop + tradable_emp_share"
+  tibble(psl_ideo = y_psl,
+         in_band  = abs(y_psl) <= 0.25,
+         pooled_D = grab(paste("delta_P_dalton ~ delta_EPW +", ctrls, "| state^year"), "delta_EPW")["beta"],
+         pooled_N = grab(paste("delta_P_center ~ delta_EPW +", ctrls, "| state^year"), "delta_EPW")["beta"],
+         boom_D   = grab(paste("delta_P_dalton ~ epw_boom + epw_bust +", ctrls, "| state^year"), "epw_boom")["beta"],
+         bust_D   = grab(paste("delta_P_dalton ~ epw_boom + epw_bust +", ctrls, "| state^year"), "epw_bust")["beta"],
+         boom_N   = grab(paste("delta_P_center ~ epw_boom + epw_bust +", ctrls, "| state^year"), "epw_boom")["beta"],
+         bust_N   = grab(paste("delta_P_center ~ epw_boom + epw_bust +", ctrls, "| state^year"), "epw_bust")["beta"],
+         bust_N_p = grab(paste("delta_P_center ~ epw_boom + epw_bust +", ctrls, "| state^year"), "epw_bust")["p"])
+}
+
+# validate the rebuild against the stored frame at the status quo, BOTH outcomes
+chk <- {
+  d <- idx_of(build_level(LEVELS$presidencial, psl_patch$ideo, psl_patch$ideo.se, "x"))
+  b <- d |> filter(year == 2010) |> select(microregion_code, D0 = P_dalton, N0 = P_center)
+  d |> filter(year != 2010) |> left_join(b, by = "microregion_code") |>
+    transmute(microregion_code = as.character(microregion_code), year,
+              dD = P_dalton - D0, dN = P_center - N0) |>
+    inner_join(df0 |> mutate(microregion_code = as.character(microregion_code)) |>
+                 select(microregion_code, year, delta_P_dalton, delta_P_center),
+               by = c("microregion_code", "year"))
+}
+cat("\n--- [PL-47] rebuild validation against df_estimation_v7 ---\n")
+cat(sprintf("  max |dD diff| = %.3g   max |dN diff| = %.3g   (n = %d)\n",
+            max(abs(chk$dD - chk$delta_P_dalton)),
+            max(abs(chk$dN - chk$delta_P_center)), nrow(chk)))
+stopifnot("[PL-47] rebuilt deltas do not reproduce the stored frame" =
+            max(abs(chk$dD - chk$delta_P_dalton)) < 1e-12 &&
+            max(abs(chk$dN - chk$delta_P_center)) < 1e-12)
+
+grid47 <- sort(unique(c(seq(-1, 1, by = 0.05), -0.26, -0.25, -0.24, 0.24, 0.25, 0.26)))
+sw <- lapply(grid47, sweep_one) |> bind_rows()
+write_csv_safe(sw, file.path("output", "packet_L", "tab_pl47_sweep_both_outcomes.csv"))
+
+cat("\n--- [PL-47] SWEEP, PRESIDENTIAL, BOTH OUTCOMES ---\n")
+print(as.data.frame(sw |> mutate(across(where(is.numeric), ~ round(.x, 4)))), row.names = FALSE)
+
+# the band crossing: how much does each path move across +/-0.25?
+# match on tolerance: seq() values are not exactly representable, so `==` on a
+# grid point silently returns integer(0) and the comparison prints nothing.
+at <- function(x) which.min(abs(sw$psl_ideo - x))
+jump <- function(v, lo, hi) abs(sw[[v]][at(hi)] - sw[[v]][at(lo)])
+cat("\n--- [PL-47] MOVEMENT ACROSS THE NEUTRAL-BAND EDGE (0.24 -> 0.26) ---\n")
+for (v in c("pooled_D", "pooled_N", "boom_N", "bust_N"))
+  cat(sprintf("  %-9s %.5f\n", v, jump(v, 0.24, 0.26)))
+cat("  (compare with a same-width step well inside the band, 0.05 -> 0.15:)\n")
+for (v in c("pooled_D", "pooled_N", "boom_N", "bust_N"))
+  cat(sprintf("  %-9s %.5f\n", v, jump(v, 0.05, 0.15)))
+
+cat("\n--- [PL-47] bust on ΔP^N across the sweep (the ever-starred coefficient) ---\n")
+print(as.data.frame(sw |> transmute(psl_ideo, in_band,
+        bust_N = round(bust_N, 4), p = round(bust_N_p, 4),
+        sig05  = bust_N_p < 0.05)), row.names = FALSE)
+cat(sprintf("\nbust_N range over the sweep: %.4f to %.4f | significant at 5%% in %d of %d points\n",
+            min(sw$bust_N), max(sw$bust_N), sum(sw$bust_N_p < 0.05), nrow(sw)))

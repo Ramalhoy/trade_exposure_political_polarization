@@ -144,3 +144,88 @@ cat("\nPresidential benchmark: 0.96 (2022). The verdict survives an arm only if\
 
 cat("\nARM (c) break-even is not computed here: no ΔP regression has ever been run\n",
     "at the Chamber level, so there is no verdict to reverse. See the header.\n")
+
+
+# =============================================================================
+# [PL-45] THE TRIGGER WAS SCOPED WRONGLY — PL-2022 SLIPS THROUGH IT
+# -----------------------------------------------------------------------------
+# [PL-39] fires on IMPUTED cells. It misses the symmetric case: a party that
+# CHANGED CHARACTER between the wave and the election while keeping a perfectly
+# contemporaneous score. Such a cell reads "none" on every provenance column, so
+# nothing flags it.
+#
+# PL-2022 is exactly that case, and it is the largest Chamber delegation.
+#
+# RESOLVED FROM THE SOURCE, not inferred. Zucco & Power, "The Ideology of
+# Brazilian Parties and Presidents", Latin American Politics and Society 66(1),
+# 2024 — the research note that reports BLS 9:
+#
+#   "just as survey fieldwork was drawing to an end in 2021 ... Bolsonaro — after
+#    a period in which he had no formal party affiliation — joined the PL in
+#    order to launch his 2022 reelection bid."
+#
+#   "We also modified the estimated position of the PL by averaging it with the
+#    position of Bolsonaro, as he himself and many of his close associates
+#    joined the PL AFTER BLS 9."
+#
+# So the 2021 PL score PREDATES Bolsonaro's arrival. The BLS series confirms it:
+# +0.328 (2009) -> +0.409 (2013) -> +0.434 (2017) -> +0.493 (2021), a smooth
+# centrão trajectory with no Bolsonarist break. The cell is therefore too
+# MODERATE for the party that actually contested 2022, biasing polarization DOWN
+# — the opposite direction to PSL-2018, and on a larger vote share.
+#
+# ARMS. (a) point and (b) drop as usual, plus two substantive alternatives:
+#   (d) PSL 2021 party score (+0.803) — the amendment's natural comparator, the
+#       Bolsonarist vehicle of the previous cycle.
+#   (e) ZUCCO & POWER'S OWN CORRECTION — PL averaged with Bolsonaro's 2021
+#       position. This is not our invention; it is what the source authors do,
+#       for this exact reason. It is the defensible headline alternative.
+# =============================================================================
+ideologia_raw <- readRDS("bls9_estimates_partiespresidents_long.rds")
+pl_2021   <- ideologia_raw$ideo[ideologia_raw$party.or.pres == "PL"   & ideologia_raw$year == 2021]
+psl_2021  <- ideologia_raw$ideo[ideologia_raw$party.or.pres == "PSL"  & ideologia_raw$year == 2021]
+bols_2021 <- ideologia_raw$ideo[ideologia_raw$party.or.pres == "BOLSONARO" & ideologia_raw$year == 2021]
+zp_corrected <- mean(c(pl_2021, bols_2021))
+
+cat("\n\n================ [PL-45] PL-2022 ================\n")
+cat(sprintf("  PL trajectory 2009->2021 : %s\n",
+    paste(sprintf("%+.3f", ideologia_raw$ideo[ideologia_raw$party.or.pres == "PL" &
+                   ideologia_raw$year %in% c(2009,2013,2017,2021)]), collapse = " -> ")))
+cat(sprintf("  (a) point   PL 2021           = %+.4f\n", pl_2021))
+cat(sprintf("  (d) PSL 2021 party score      = %+.4f\n", psl_2021))
+cat(sprintf("  (e) Zucco & Power correction  = %+.4f  (mean of PL and BOLSONARO 2021)\n", zp_corrected))
+
+pl_share <- painel |> filter(year == 2022) |>
+  summarise(p = round(100 * sum(votes[bls_label == "PL"], na.rm = TRUE) /
+                            sum(votes, na.rm = TRUE), 2)) |> pull(p)
+cat(sprintf("  PL share of the 2022 Chamber vote = %.2f%%  (threshold %d%%)\n",
+            pl_share, SENS_THRESHOLD))
+
+set_pl <- function(v) painel |> mutate(ideo = ifelse(year == 2022 & bls_label == "PL", v, ideo))
+drop_pl <- painel |> mutate(ideo = ifelse(year == 2022 & bls_label == "PL", NA_real_, ideo))
+
+pl_arms <- bind_rows(
+  summarise_idx(build_idx(painel),            "(a) point  PL 2021 +0.493"),
+  summarise_idx(build_idx(drop_pl),           "(b) drop   PL 2022"),
+  summarise_idx(build_idx(set_pl(psl_2021)),  "(d) PSL21  +0.803"),
+  summarise_idx(build_idx(set_pl(zp_corrected)), "(e) Z&P    +0.678")
+) |> filter(year == 2022)
+
+cat("\n--- [PL-45] 2022 CHAMBER INDEX BY ARM ---\n")
+print(as.data.frame(pl_arms), row.names = FALSE)
+write_csv_safe(pl_arms, file.path("output", "packet_L", "tab_pl45_pl2022_arms.csv"))
+
+drop_cov <- drop_pl |> filter(year == 2022) |>
+  summarise(unscored = round(100 * sum(votes[is.na(ideo)], na.rm = TRUE) /
+                                   sum(votes, na.rm = TRUE), 2)) |> pull(unscored)
+cat(sprintf("\n[PL-46] drop arm leaves %.2f%% of the 2022 vote unscored -> %s\n",
+            drop_cov, ifelse(drop_cov <= 15, "ADMISSIBLE", "a BOUND, fails [PL-19]")))
+
+cat("\n--- [PL-45] does the [PL-27] verdict move? ---\n")
+r2_pl <- bind_rows(
+  r2_of(painel,                "(a) point"),
+  r2_of(set_pl(psl_2021),      "(d) PSL21"),
+  r2_of(set_pl(zp_corrected),  "(e) Z&P")
+) |> filter(year == 2022)
+print(as.data.frame(r2_pl), row.names = FALSE)
+cat("Presidential benchmark 0.96. The L5 verdict holds only if all arms stay far below it.\n")

@@ -28,6 +28,7 @@ library(tidyr)
 library(stringr)
 library(readr)
 library(readxl)
+library(httr)          # [PL-28] browser-header transport for the TSE CDN
 
 set_billing_id(GCP_BILLING)
 
@@ -236,10 +237,98 @@ mapeamento <- depara |>
     by = "municipality_code_ibge"
   )
 
+# =============================================================================
+# STAGE 0b RETROFIT — [PL-28] / [PL-29] / [PL-30], diagnosed in packet_L.
+# -----------------------------------------------------------------------------
+# WITHOUT THIS BLOCK, BLOCK C SILENTLY REBUILDS THE PRESIDENTIAL AND GOVERNOR
+# PANELS AS EMPTY FRAMES. Two independent failures, neither of which raises an
+# error. Full diagnosis and evidence: RATIONALE_L.md §1, CODE_CHANGES_TODO.md §B.
+#
+#   [PL-28] The TSE CDN answers header-less requests with HTTP 403 and a
+#           492-byte HTML page. electionsBR:::download_unzip() writes that page
+#           to the .zip path; unzip() then fails with a mere WARNING and
+#           elections_tse() returns a 0x0 tibble. Accept-Encoding is the
+#           discriminating header: with the full browser set the CDN returns 200,
+#           and dropping Accept-Encoding alone returns 403. Fix: pre-seed
+#           tempdir() with a correctly fetched archive. download_unzip() skips
+#           its own download when the file is already there, so electionsBR
+#           still does ALL of the parsing — only the transport is replaced.
+#
+#   [PL-29] DATA_DIR carries non-ASCII characters ("dissertação", "versão",
+#           "vínculos"); macOS stores them on disk in NFD while R's string is
+#           partly NFC, and readr/vroom cannot resolve the mixture. Inside
+#           electionsBR:::juntaDados() every read is wrapped in
+#           tryCatch(..., error = function(e) NULL), so ALL reads return NULL,
+#           rbindlist() yields an empty table, and the function again returns
+#           0x0 WITHOUT ERROR. Fix: run the pull from an ASCII scratch directory.
+#
+#   [PL-30] Both failures are SILENT, so the pull is asserted non-empty, and the
+#           cargo filter is asserted to have selected rows, before anything
+#           downstream can consume the result.
+#
+# This retrofit changes NO data semantics. When the network behaves it is a
+# no-op; when it does not, the run stops instead of writing an empty panel.
+# =============================================================================
+TSE_UA <- paste("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)",
+                "AppleWebKit/537.36 (KHTML, like Gecko)",
+                "Chrome/125.0.0.0 Safari/537.36")
+
+tse_browser_headers <- function() httr::add_headers(
+  `Accept`             = "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+  `Accept-Language`    = "pt-BR,pt;q=0.9,en;q=0.8",
+  `Accept-Encoding`    = "gzip, deflate, br",          # <- the one that matters
+  `sec-ch-ua`          = '"Chromium";v="125", "Not.A/Brand";v="24"',
+  `sec-ch-ua-platform` = '"macOS"',
+  `Sec-Fetch-Dest`     = "document",
+  `Sec-Fetch-Mode`     = "navigate",
+  `Sec-Fetch-Site`     = "same-site",
+  `Referer`            = "https://dadosabertos.tse.jus.br/"
+)
+
+# `slug` is the TSE dataset directory; `cache_name` is the filename electionsBR
+# looks for in tempdir(), which differs by type: vote_mun_zone caches as a bare
+# "<year>.zip", party_mun_zone as "votacao_partido_munzona_<year>.zip".
+tse_seed_archive <- function(y, slug = "votacao_candidato_munzona",
+                             cache_name = paste0(y, ".zip")) {
+  dest <- file.path(tempdir(), cache_name)
+  if (file.exists(dest) && file.size(dest) > 1e6) return(invisible(dest))
+  url  <- sprintf("https://cdn.tse.jus.br/estatistica/sead/odsele/%s/%s_%d.zip",
+                  slug, slug, y)
+  resp <- httr::GET(url, httr::write_disk(dest, overwrite = TRUE),
+                    httr::user_agent(TSE_UA), tse_browser_headers())
+  if (httr::status_code(resp) != 200)
+    stop(sprintf("[PL-28] TSE CDN returned HTTP %d for %s_%d.zip",
+                 httr::status_code(resp), slug, y))
+  members <- utils::unzip(dest, list = TRUE)$Name
+  if (!any(grepl("\\.csv$|\\.txt$", members)))
+    stop(sprintf("[PL-28] %s_%d.zip downloaded but carries no data member", slug, y))
+  cat(sprintf("[PL-28] %s_%d.zip fetched: %.1f MB, %d members\n",
+              slug, y, file.size(dest) / 1e6, length(members)))
+  invisible(dest)
+}
+
+with_ascii_wd <- function(expr) {
+  scratch <- file.path(tempdir(), "tse_wd")
+  dir.create(scratch, showWarnings = FALSE, recursive = TRUE)
+  owd <- getwd(); on.exit(setwd(owd), add = TRUE)
+  setwd(scratch)
+  force(expr)
+}
+
 build_vote_panel <- function(cargo, out_slug) {
 
   panel_mun <- lapply(years, \(y) {
-    elections_tse(year = y, type = "vote_mun_zone", br_archive = TRUE) |>
+    tse_seed_archive(y)                                                # [PL-28]
+    raw <- with_ascii_wd(                                              # [PL-29]
+      elections_tse(year = y, type = "vote_mun_zone", br_archive = TRUE)
+    )
+    # [PL-30] both failures above are SILENT — assert before consuming.
+    if (nrow(raw) == 0L)
+      stop(sprintf("[PL-30] elections_tse returned 0 rows for %d. See [PL-28] (CDN 403) and [PL-29] (non-ASCII wd).", y))
+    if (!any(raw$DS_CARGO == cargo, na.rm = TRUE))
+      stop(sprintf("[PL-30] no rows for cargo '%s' in %d. Labels present: %s",
+                   cargo, y, paste(sort(unique(raw$DS_CARGO)), collapse = ", ")))
+    raw |>
       filter(DS_CARGO == cargo) |>
       distinct(NR_TURNO, CD_MUNICIPIO, NR_ZONA, NM_CANDIDATO, SG_PARTIDO,
                QT_VOTOS_NOMINAIS, .keep_all = TRUE) |>
