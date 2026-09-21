@@ -583,3 +583,88 @@ Low priority, touches several files, purely cosmetic.
   center-emptying 0.437 / 0.335. The bust values replicate the previously
   reported 0.866 and 0.332 to within Monte Carlo error, which independently
   validates Table 3.
+
+---
+
+## ADDENDUM 2026-09-21 — from Packet L. Two items that cross packet boundaries.
+
+Full detail and the numbers behind both: `RATIONALE_L.md`. Scripts: `packet_L/`.
+
+### A. Item 1 (Bolsonaro scoring rule) is not just open — it is mislabelled in the data
+
+The STATUS table above records item 1 as *"not done — out of scope"*. Packet L `[PL-44]`
+found that it is worse than open: at the **canonical** rung the imputation is recorded as
+if it were a real observation.
+
+In `painel_ideologico_{presidencial,governador}_V3.rds`, PSL-2018 carries
+`ideo = 0.8620139`. Verified against `bls9_estimates_partiespresidents_long.rds`:
+
+| check | result |
+|---|---|
+| equals the BOLSONARO 2022 **candidate** estimate | **TRUE** |
+| equals the PSL 2021 **party** score (0.8033588) | FALSE |
+| the 2017 wave scores PSL at all | **FALSE** |
+| labelled `ideo_source` | **`"onda"`** — own wave |
+
+So a candidate score, applied to a party, from a wave four years after the election, is
+flagged as a contemporaneous own-wave party score. Mechanism: `02_polarization_indices.R`
+folds `ideologia_psl` into the ideology table, and packet I's `[I-3]` carry then runs over
+the **already patched** table, so the patch is indistinguishable from a wave observation by
+the time provenance is assigned.
+
+Scale: **46.01%** of the 2018 presidential vote, **2.92%** of the 2018 governor vote. Of the
+96.13% that packet I reports as `"onda"` for presidential 2018, ~46 points are this.
+
+**Consequence for reported numbers:** no coverage verdict changes (the cell is scored either
+way). What changes is what the provenance columns mean — `[I-3]`'s carried shares (3.24 pp,
+presidential 2018) exclude the largest imputed cell in the panel.
+
+**Fix (belongs in packet I's numbering, not Packet L's):** run the carry against the
+*unpatched* `ideologia` and give the cell its own source value, e.g. `"patch_candidato"`, so
+it is visible downstream. Do not modify `02_polarization_indices.R`.
+
+**Sensitivity already measured** (`packet_L/02c_sensitivity_levels.R`,
+`output/packet_L/tab_pl40_*.csv`): dropping the cell moves presidential 2018 `y_bar` from
+**+0.083 to −0.450** and `P_dalton` from **0.641 to 0.350**. Using the PSL *party* score
+instead of the candidate score moves little (+0.059 / 0.617). A break-even sweep of the cell
+over [−1, 1] leaves the **baseline OLS** `delta_EPW` coefficient insignificant throughout
+(p never below 0.21) — reconstruction validated against `df_estimation_v7.rds` at
+`max |diff| = 0`. **Only the baseline OLS was swept**; IV/AKM, boom/bust and winsorised
+specifications have *not* been tested against this cell, and with 46% of the year imputed
+they should be.
+
+### B. Two silent data-loading failures that affect the whole pipeline
+
+Both return an EMPTY result with NO error. Diagnosed in Packet L; not fixed outside it.
+
+**`[PL-28]` — the TSE CDN now rejects `electionsBR`.** `electionsBR:::download_unzip()` sends
+no browser headers; the TSE Akamai edge answers **HTTP 403** with a 492-byte HTML page.
+electionsBR writes that page to the `.zip` path, `unzip()` fails with a mere **warning**, and
+`elections_tse()` returns a 0×0 tibble. `Accept-Encoding` is the discriminating header — with
+the full browser set the CDN returns 200; dropping it alone returns 403.
+
+> **`01_extraction.R` BLOCK C calls `elections_tse()` the same way.** Re-running it today
+> would silently rebuild the presidential and governor vote panels as **empty frames**. It
+> has no emptiness guard. This is the highest-priority item in this addendum.
+
+Working fix, ready to lift from `packet_L/01b_extraction_legislativo.R`: pre-seed `tempdir()`
+with an archive fetched with browser headers. `download_unzip()` skips its own download when
+the file exists, so electionsBR still does all the parsing — only the transport is replaced.
+
+**`[PL-29]` / `[PL-35]` — readr cannot do file I/O under `DATA_DIR`.** The path contains
+non-ASCII characters (`dissertação`, `versão`, `vínculos`); macOS stores them in NFD while R's
+string is partly NFC, and readr/vroom cannot resolve the mixture. Verified on a file that
+demonstrably exists: `file.exists()` TRUE, `base::read.csv()` reads every row, and **every**
+`readr::read_csv()` form fails — relative, `normalizePath()`, `file.path(getwd(),.)`,
+`enc2utf8()`, `enc2native()`. `readr::write_csv()` creates a new file but **fails when one
+already exists**. The same calls work in an ASCII directory.
+
+Inside `electionsBR:::juntaDados()` this is compounded: every read is wrapped in
+`tryCatch(..., error = function(e) NULL)`, so all reads return NULL and the function returns
+0×0 without error.
+
+> **13 scripts call readr readers with relative paths under this `DATA_DIR`**: `03`, `03a`,
+> `03b`, `03d`, `07`, `07z`, `10`, and five in `packet_D`. All are exposed.
+
+Workarounds used in Packet L: run electionsBR pulls from an ASCII scratch directory
+(`with_ascii_wd()`), and route table I/O through base R (`write_csv_safe()`).

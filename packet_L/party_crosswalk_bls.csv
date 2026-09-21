@@ -1,0 +1,75 @@
+"year","tse_party","bls_label","basis","verified"
+2010,"DEM","DEM","identity: TSE label equals BLS label",TRUE
+2010,"PC DO B","PCDOB","orthography: TSE writes the sigla with spaces",TRUE
+2010,"PDT","PDT","identity: TSE label equals BLS label",TRUE
+2010,"PMDB","MDB","renaming 2017: PMDB -> MDB, continuing legal party",TRUE
+2010,"PP","PP","identity: TSE label equals BLS label",TRUE
+2010,"PPS","CID","lineage PCB -> PPS -> Cidadania (2019); BLS CID series continuous from 1990",TRUE
+2010,"PR","PL","lineage PL (1985) -> PR (2006, merger with PRONA) -> PL (2019); BLS carries one continuous PL series from 1990",TRUE
+2010,"PSB","PSB","identity: TSE label equals BLS label",TRUE
+2010,"PSDB","PSDB","identity: TSE label equals BLS label",TRUE
+2010,"PSOL","PSOL","identity: TSE label equals BLS label",TRUE
+2010,"PT","PT","identity: TSE label equals BLS label",TRUE
+2010,"PTB","PTB","identity: TSE label equals BLS label",TRUE
+2010,"PV","PV","identity: TSE label equals BLS label",TRUE
+2014,"DEM","DEM","identity: TSE label equals BLS label",TRUE
+2014,"PC DO B","PCDOB","orthography: TSE writes the sigla with spaces",TRUE
+2014,"PDT","PDT","identity: TSE label equals BLS label",TRUE
+2014,"PMDB","MDB","renaming 2017: PMDB -> MDB, continuing legal party",TRUE
+2014,"PP","PP","identity: TSE label equals BLS label",TRUE
+2014,"PPS","CID","lineage PCB -> PPS -> Cidadania (2019); BLS CID series continuous from 1990",TRUE
+2014,"PR","PL","lineage PL (1985) -> PR (2006, merger with PRONA) -> PL (2019); BLS carries one continuous PL series from 1990",TRUE
+2014,"PRB","REP","renaming 2019: PRB -> Republicanos; BLS REP scored in the 2017 and 2021 waves",TRUE
+2014,"PROS","PROS","identity: TSE label equals BLS label",TRUE
+2014,"PSB","PSB","identity: TSE label equals BLS label",TRUE
+2014,"PSC","PSC","identity: TSE label equals BLS label",TRUE
+2014,"PSD","PSD","identity: TSE label equals BLS label",TRUE
+2014,"PSDB","PSDB","identity: TSE label equals BLS label",TRUE
+2014,"PSOL","PSOL","identity: TSE label equals BLS label",TRUE
+2014,"PT","PT","identity: TSE label equals BLS label",TRUE
+2014,"PTB","PTB","identity: TSE label equals BLS label",TRUE
+2014,"PTN","PODE","renaming 2016: PTN -> Podemos; BLS PODE scored in the 2017 and 2021 waves",TRUE
+2014,"PV","PV","identity: TSE label equals BLS label",TRUE
+2014,"SD","SD","identity: TSE label equals BLS label",TRUE
+2018,"DEM","DEM","identity: TSE label equals BLS label",TRUE
+2018,"MDB","MDB","identity: TSE label equals BLS label",TRUE
+2018,"NOVO","NOVO","identity: TSE label equals BLS label",TRUE
+2018,"PC DO B","PCDOB","orthography: TSE writes the sigla with spaces",TRUE
+2018,"PDT","PDT","identity: TSE label equals BLS label",TRUE
+2018,"PODE","PODE","identity: TSE label equals BLS label",TRUE
+2018,"PP","PP","identity: TSE label equals BLS label",TRUE
+2018,"PPS","CID","lineage PCB -> PPS -> Cidadania (2019); BLS CID series continuous from 1990",TRUE
+2018,"PR","PL","lineage PL (1985) -> PR (2006, merger with PRONA) -> PL (2019); BLS carries one continuous PL series from 1990",TRUE
+2018,"PRB","REP","renaming 2019: PRB -> Republicanos; BLS REP scored in the 2017 and 2021 waves",TRUE
+2018,"PROS","PROS","identity: TSE label equals BLS label",TRUE
+2018,"PSB","PSB","identity: TSE label equals BLS label",TRUE
+2018,"PSC","PSC","identity: TSE label equals BLS label",TRUE
+2018,"PSD","PSD","identity: TSE label equals BLS label",TRUE
+2018,"PSDB","PSDB","identity: TSE label equals BLS label",TRUE
+2018,"PSL","PSL","identity: TSE label equals BLS label",TRUE
+2018,"PSOL","PSOL","identity: TSE label equals BLS label",TRUE
+2018,"PT","PT","identity: TSE label equals BLS label",TRUE
+2018,"PTB","PTB","identity: TSE label equals BLS label",TRUE
+2018,"PV","PV","identity: TSE label equals BLS label",TRUE
+2018,"REDE","REDE","identity: TSE label equals BLS label",TRUE
+2018,"SOLIDARIEDADE","SD","same party; BLS uses the short sigla SD",TRUE
+2022,"CIDADANIA","CID","renaming 2019: PPS -> Cidadania",TRUE
+2022,"MDB","MDB","identity: TSE label equals BLS label",TRUE
+2022,"NOVO","NOVO","identity: TSE label equals BLS label",TRUE
+2022,"PC DO B","PCDOB","orthography: TSE writes the sigla with spaces",TRUE
+2022,"PDT","PDT","identity: TSE label equals BLS label",TRUE
+2022,"PL","PL","identity: TSE label equals BLS label",TRUE
+2022,"PODE","PODE","identity: TSE label equals BLS label",TRUE
+2022,"PP","PP","identity: TSE label equals BLS label",TRUE
+2022,"PROS","PROS","identity: TSE label equals BLS label",TRUE
+2022,"PSB","PSB","identity: TSE label equals BLS label",TRUE
+2022,"PSC","PSC","identity: TSE label equals BLS label",TRUE
+2022,"PSD","PSD","identity: TSE label equals BLS label",TRUE
+2022,"PSDB","PSDB","identity: TSE label equals BLS label",TRUE
+2022,"PSOL","PSOL","identity: TSE label equals BLS label",TRUE
+2022,"PT","PT","identity: TSE label equals BLS label",TRUE
+2022,"PTB","PTB","identity: TSE label equals BLS label",TRUE
+2022,"PV","PV","identity: TSE label equals BLS label",TRUE
+2022,"REDE","REDE","identity: TSE label equals BLS label",TRUE
+2022,"REPUBLICANOS","REP","renaming 2019: PRB -> Republicanos",TRUE
+2022,"SOLIDARIEDADE","SD","same party; BLS uses the short sigla SD",TRUE
