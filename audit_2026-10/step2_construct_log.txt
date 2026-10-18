@@ -1,0 +1,23 @@
+
+== president ==
+2010  scored-vote coverage 0.9972 | R2(Dalton ~ top1 + top1^2) 0.750 | median scored parties/cell 4 | cells 558
+2014  scored-vote coverage 0.9862 | R2(Dalton ~ top1 + top1^2) 0.630 | median scored parties/cell 5 | cells 558
+2018  scored-vote coverage 0.9613 | R2(Dalton ~ top1 + top1^2) 0.329 | median scored parties/cell 8 | cells 558
+2022  scored-vote coverage 0.9937 | R2(Dalton ~ top1 + top1^2) 0.962 | median scored parties/cell 6 | cells 558
+
+== governor ==
+2010  scored-vote coverage 0.9822 | R2(Dalton ~ top1 + top1^2) 0.112 | median scored parties/cell 4 | cells 558
+2014  scored-vote coverage 0.9911 | R2(Dalton ~ top1 + top1^2) 0.044 | median scored parties/cell 4 | cells 558
+2018  scored-vote coverage 0.9760 | R2(Dalton ~ top1 + top1^2) 0.080 | median scored parties/cell 6 | cells 558
+2022  scored-vote coverage 0.9830 | R2(Dalton ~ top1 + top1^2) 0.084 | median scored parties/cell 5 | cells 558
+
+== deputy ==
+2010  scored-vote coverage 0.9024 | R2(Dalton ~ top1 + top1^2) 0.200 | median scored parties/cell 13 | cells 558
+2014  scored-vote coverage 0.9370 | R2(Dalton ~ top1 + top1^2) 0.048 | median scored parties/cell 19 | cells 558
+2018  scored-vote coverage 0.9125 | R2(Dalton ~ top1 + top1^2) 0.014 | median scored parties/cell 22 | cells 558
+2022  scored-vote coverage 0.8639 | R2(Dalton ~ top1 + top1^2) 0.124 | median scored parties/cell 20 | cells 558
+
+Within state-year (what the design uses): R2 of FE-residualised Dalton on FE-residualised top1, top1^2
+president 2010: 0.525 | 2014: 0.591 | 2018: 0.724 | 2022: 0.960
+governor  2010: 0.453 | 2014: 0.347 | 2018: 0.390 | 2022: 0.245
+deputy    2010: 0.182 | 2014: 0.062 | 2018: 0.015 | 2022: 0.123

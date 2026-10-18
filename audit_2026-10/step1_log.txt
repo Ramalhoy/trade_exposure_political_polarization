@@ -1,0 +1,196 @@
+S0 sample: 1671 rows, 557 micros (df_estimation_v7.rds filtered as R00_setup.R) 
+S0 rebuild vs epw_panel_isic_v7$EPW: max|diff| total-shares = 3.553e-15 ; tradable-shares = 3.300e+01 
+S0 rebuild vs df_estimation_v7$delta_EPW (stored col): max|diff| total = 3.553e-15 ; tradable = 3.300e+01 
+S0 sum_j s_rj (total shares) vs tradable_emp_share: max|diff| = 3.331e-16 
+S0 raw treatment: mean 0.1124 sd 0.4938 min -4.726 max 9.107 (PDF Table 3: 0.112, 0.494, -4.726, 9.107) 
+S0 pooled Dalton beta: recomputed 0.000861 | stored E1_estimates.csv 0.000862 
+S3 rebuild vs E0_frame$epw_S3_N2ex: max|diff| = 3.638e-12 
+S3 pooled Dalton beta: recomputed 0.001595 | stored E1_estimates.csv 0.001596 
+S3 treatment: exporting micros 461 of 557; corr(S0,S3) = 0.019 
+
+================ S0 ================
+rows 1671 | shock units 152 | sd(raw treatment) 0.4938 
+Rotemberg: eff. units (unit level, years summed) 3.13 | eff. unit-years 4.41 | by year 2.70 / 2.42 / 2.36 
+Rotemberg: share of |alpha| that is negative 0.007 | top-3 units carry 0.804 of |alpha| 
+BHJ exposure weights: 1/sum s_n^2 unit level 24.8 | unit-year 74.4 | max s_n 0.100 
+AKM estimand weights (s_rn^2 * (g-mu)^2): eff. units 2.86 
+Exposure-weighted mean shock mu_t: 0.1785 / 0.2157 / 0.9533 
+BHJ recentring: R^2 of residualised treatment on residualised mu_t*sum-of-shares = 0.011 
+Serial corr of shocks (exposure-weighted): 14-18 0.81  14-22 0.60  18-22 0.85 
+Top units by pooled Rotemberg weight:
+ unit                          label weight
+ 0610                crude petroleum 0.4988
+ 0710                      iron ores 0.2633
+ 0111 cereals/legumes/oilseeds (soy) 0.0516
+ 0126                           <NA> 0.0419
+ 1040        vegetable & animal oils 0.0383
+ 0129                           <NA> 0.0290
+ 0113                           <NA> 0.0269
+ 1920              refined petroleum 0.0254
+Top-3 2014 :
+ unit                   label weight
+ 0710               iron ores 0.0326
+ 1072                   sugar 0.0043
+ 1040 vegetable & animal oils 0.0035
+Top-3 2018 :
+ unit           label weight
+ 0710       iron ores 0.1607
+ 0610 crude petroleum 0.0573
+ 1072           sugar 0.0115
+Top-3 2022 :
+ unit                          label weight
+ 0610                crude petroleum 0.4393
+ 0710                      iron ores 0.0701
+ 0111 cereals/legumes/oilseeds (soy) 0.0389
+Top AKM estimand weights:
+ unit                          label weight
+ 0610                crude petroleum 0.5076
+ 0710                      iron ores 0.2930
+ 0111 cereals/legumes/oilseeds (soy) 0.0511
+ 1072                          sugar 0.0432
+ 1040        vegetable & animal oils 0.0207
+Top BHJ exposure weights s_n:
+ unit                          label weight
+ 0141                         cattle 0.1000
+ 0111 cereals/legumes/oilseeds (soy) 0.0980
+ 1010                meat processing 0.0600
+ 0121                           <NA> 0.0591
+ 1410                           <NA> 0.0576
+
+================ S0_ext ================
+rows 1671 | shock units 152 | sd(raw treatment) 0.4938 
+Rotemberg: eff. units (unit level, years summed) 3.01 | eff. unit-years 4.23 | by year 2.16 / 2.12 / 2.31 
+Rotemberg: share of |alpha| that is negative 0.008 | top-3 units carry 0.819 of |alpha| 
+BHJ exposure weights: 1/sum s_n^2 unit level 24.8 | unit-year 74.4 | max s_n 0.100 
+AKM estimand weights (s_rn^2 * (g-mu)^2): eff. units 2.86 
+Exposure-weighted mean shock mu_t: 0.1785 / 0.2157 / 0.9533 
+BHJ recentring: R^2 of residualised treatment on residualised mu_t*sum-of-shares = 0.011 
+Serial corr of shocks (exposure-weighted): 14-18 0.81  14-22 0.60  18-22 0.85 
+Top units by pooled Rotemberg weight:
+ unit                          label weight
+ 0610                crude petroleum 0.5031
+ 0710                      iron ores 0.2868
+ 1040        vegetable & animal oils 0.0408
+ 0111 cereals/legumes/oilseeds (soy) 0.0373
+ 0126                           <NA> 0.0339
+ 0129                           <NA> 0.0291
+ 1920              refined petroleum 0.0257
+ 0113                           <NA> 0.0210
+Top-3 2014 :
+ unit           label weight
+ 0710       iron ores 0.0362
+ 1072           sugar 0.0040
+ 0610 crude petroleum 0.0038
+Top-3 2018 :
+ unit           label weight
+ 0710       iron ores 0.1740
+ 0610 crude petroleum 0.0535
+ 1072           sugar 0.0111
+Top-3 2022 :
+ unit                   label weight
+ 0610         crude petroleum 0.4457
+ 0710               iron ores 0.0767
+ 1040 vegetable & animal oils 0.0357
+Top AKM estimand weights:
+ unit                          label weight
+ 0610                crude petroleum 0.5076
+ 0710                      iron ores 0.2930
+ 0111 cereals/legumes/oilseeds (soy) 0.0511
+ 1072                          sugar 0.0432
+ 1040        vegetable & animal oils 0.0207
+Top BHJ exposure weights s_n:
+ unit                          label weight
+ 0141                         cattle 0.1000
+ 0111 cereals/legumes/oilseeds (soy) 0.0980
+ 1010                meat processing 0.0600
+ 0121                           <NA> 0.0591
+ 1410                           <NA> 0.0576
+
+================ S3_N2ex ================
+rows 1671 | shock units 201 | sd(raw treatment) 1766.2062 
+Rotemberg: eff. units (unit level, years summed) 6.16 | eff. unit-years 22.18 | by year 6.90 / 8.97 / 6.68 
+Rotemberg: share of |alpha| that is negative 0.116 | top-3 units carry 0.626 of |alpha| 
+BHJ exposure weights: 1/sum s_n^2 unit level 12.9 | unit-year 38.6 | max s_n 0.231 
+AKM estimand weights (s_rn^2 * (g-mu)^2): eff. units 6.16 
+Exposure-weighted mean shock mu_t: 0.1224 / -0.0862 / -0.0114 
+BHJ recentring: R^2 of residualised treatment on residualised mu_t*sum-of-shares = 0.386 
+Serial corr of shocks (exposure-weighted): 14-18 0.66  14-22 0.57  18-22 0.81 
+Top units by pooled Rotemberg weight:
+ unit label weight
+ d156   CHN 0.3516
+ d862   VEN 0.1841
+ d364   IRN 0.1268
+ d643   RUS 0.0546
+ d699   IND 0.0317
+ d504   MAR 0.0282
+ d392   JPN 0.0279
+ d682   SAU 0.0234
+Top-3 2014 :
+ unit label  weight
+ d156   CHN  0.1528
+ d364   IRN  0.0787
+ d699   IND -0.0206
+Top-3 2018 :
+ unit label weight
+ d862   VEN 0.0954
+ d156   CHN 0.0925
+ d699   IND 0.0513
+Top-3 2022 :
+ unit label weight
+ d156   CHN 0.1063
+ d862   VEN 0.0857
+ d643   RUS 0.0358
+Top AKM estimand weights:
+ unit label weight
+ d156   CHN 0.2489
+ d862   VEN 0.2201
+ d364   IRN 0.1694
+ d643   RUS 0.1308
+ d699   IND 0.0706
+Top BHJ exposure weights s_n:
+ unit label weight
+ d156   CHN 0.2309
+ d842   USA 0.0968
+  d32   ARG 0.0497
+ d392   JPN 0.0425
+ d276   DEU 0.0419
+
+Code-style (ss_rotemberg: within-year residualisation, within-year normalisation)
+S0 base eff by year 2.88 / 2.51 / 2.38 | top alpha 0.576 / 0.600 / 0.642 (0710,0710,0610) 
+S0 ext  eff by year 2.76 / 2.28 / 2.27 | mean 2.43 | top alpha 0.592 / 0.637 / 0.657 (0710,0710,0610) 
+S3 base eff by year 6.44 / 8.52 / 6.76 | top alpha 0.478 / 0.275 / 0.322 (CHN,VEN,CHN) 
+S0: top-10 microregions carry 0.827 of sum(x_perp*x); top-25 0.914; eff. micros 9.0 
+S3: top-10 microregions carry 0.882 of sum(x_perp*x); top-25 0.956; eff. micros 8.9 
+   micro share state
+1  28009 0.235    SE
+2  13006 0.160    AM
+3  33004 0.113    RJ
+4  15019 0.099    PA
+5  31031 0.080    MG
+6  15012 0.055    PA
+7  31032 0.053    MG
+8  29019 0.011    BA
+9  23022 0.010    CE
+10 29023 0.010    BA
+   micro share state
+1  51022 0.188    MT
+2  15011 0.149    PA
+3  15019 0.137    PA
+4  33013 0.134    RJ
+5  31033 0.112    MG
+6  41038 0.059    PR
+7  31031 0.038    MG
+8  32010 0.036    ES
+9  43025 0.014    RS
+10 51004 0.014    MT
+
+S0 shocks g_jt for top industries (2014/2018/2022) and national L_j share:
+0610 g = -4.11 / 19.60 / 53.62 | exposure weight s_n = 0.004 
+0710 g = -14.11 / -31.37 / -20.29 | exposure weight s_n = 0.004 
+0111 g = 1.27 / 2.00 / 3.48 | exposure weight s_n = 0.098 
+0141 g = -0.01 / -0.05 / -0.14 | exposure weight s_n = 0.100 
+1010 g = 0.54 / -0.20 / 1.38 | exposure weight s_n = 0.060 
+median |g_jt| across 152 industries by year: 0.098 / 0.166 / 0.191 
+Bust rows 325: share of sum(EPW-) from 0710 iron ores 0.716, 0610 oil 0.030 
+Boom rows 1346: share of sum(EPW+) from 0610 oil 0.153, 0710 -0.003, 0111 soy 0.353 
+Top-10 leverage overlap S0 vs S3: 15019,31031 
