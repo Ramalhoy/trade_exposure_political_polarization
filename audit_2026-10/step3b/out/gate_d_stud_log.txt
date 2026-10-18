@@ -1,0 +1,10 @@
+  design pre_period        beta     se_akm stud_ri_p    ci95_lo   ci95_hi pass
+1     S0 2002->2010 -0.01733748 0.04542774     0.813 -0.2105015 0.1644985 TRUE
+  design pre_period        beta     se_akm stud_ri_p    ci95_lo   ci95_hi pass
+1     S0 2006->2010 -0.02239637 0.06181479    0.8785 -0.3893886 0.1589513 TRUE
+  design pre_period       beta     se_akm stud_ri_p   ci95_lo    ci95_hi pass
+1     S3 2002->2010 0.04075835 0.04791899    0.4526 -0.180726 0.08939116 TRUE
+  design pre_period       beta    se_akm stud_ri_p     ci95_lo   ci95_hi pass
+1     S3 2006->2010 0.04349475 0.0424809    0.1129 -0.01431775 0.2102916 TRUE
+GATE (d, studentized) S0: PASS
+GATE (d, studentized) S3: PASS

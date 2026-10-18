@@ -1,0 +1,24 @@
+
+== 2010: candidate-file nominal 89,367,502 | detalhe nominal valid 89,367,502 | stored nominal 89,367,502 | stored legenda 9,022,359 | detalhe legenda valid 9,022,359
+   SIT_CAND              DET_SIT    votes
+1:     APTO             DEFERIDO 87912634
+2:     APTO DEFERIDO COM RECURSO  1454868
+3:     <NA>                 <NA>       NA
+4:     <NA>                 <NA>       NA
+5:     <NA>                 <NA>       NA
+6:     <NA>                 <NA>       NA
+7:     <NA>                 <NA>       NA
+8:     <NA>                 <NA>       NA
+party-level nominal: max |stored - candidate file| = 0 over 27 parties
+
+== 2014: candidate-file nominal 89,147,333 | detalhe nominal valid 89,147,333 | stored nominal 89,147,333 | stored legenda 8,208,021 | detalhe legenda valid 8,208,021
+   SIT_CAND                           DET_SIT    votes
+1:     APTO                          DEFERIDO 88661747
+2:     APTO              DEFERIDO COM RECURSO   485586
+3:   INAPTO                        INDEFERIDO        0
+4:   INAPTO                   REN\303\232NCIA        0
+5:     APTO            INDEFERIDO COM RECURSO        0
+6:     APTO               CASSADO COM RECURSO        0
+7:   INAPTO N\303\203O CONHECIMENTO DO PEDIDO        0
+8:     <NA>                              <NA>       NA
+party-level nominal: max |stored - candidate file| = 0 over 32 parties
