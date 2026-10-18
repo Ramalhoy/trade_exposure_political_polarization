@@ -1,0 +1,13 @@
+Canary 2010: rebuilt vs stored deputy Dalton, max|diff| = 1.110e-16 over 558 micros
+2002: 1 TSE municipalities unmatched: MT BOA ESPERANCA DO NORTE
+2002: votes unmatched to a microregion 0.0011% | scored coverage 0.9189 | micros 558 | parties scored: CID,DEM,MDB,PCDOB,PDT,PL,PP,PSB,PSDB,PT,PTB
+2002: unscored labels with >0.5% of votes: PRONA,PSC,PSD,PST,PV
+2006: 0 TSE municipalities unmatched: 
+2006: votes unmatched to a microregion 0.0000% | scored coverage 0.8786 | micros 558 | parties scored: CID,DEM,MDB,PCDOB,PDT,PL,PP,PSB,PSDB,PT,PTB
+2006: unscored labels with >0.5% of votes: PMN,PRONA,PSC,PSOL,PTC,PV
+     year party_file_total detalhe_valid detalhe_QT_TOTAL_VOTOS_VALIDOS_field
+2002 2002         87474543      87474543                             78798880
+2006 2006         93617425      93771604                             84550875
+         rel_diff
+2002  0.000000000
+2006 -0.001644197

@@ -1,0 +1,16 @@
+"item","pipeline","official","tol","source","rel_diff","pass"
+"Comex exports 2010",200434134826,200434134000,0.01,"IBGE Anuario Estatistico 2023, tab. s7t4101 (Fonte: Secex, Comex Stat), US$ 1 000 FOB",4.12105460867451e-09,TRUE
+"Comex exports 2014",220923236838,220923236000,0.01,"IBGE Anuario Estatistico 2023, tab. s7t4101 (Fonte: Secex, Comex Stat), US$ 1 000 FOB",3.79317266485657e-09,TRUE
+"Comex exports 2018",231889523399,231889523000,0.01,"IBGE Anuario Estatistico 2023, tab. s7t4101 (Fonte: Secex, Comex Stat), US$ 1 000 FOB",1.72064695824758e-09,TRUE
+"Comex exports 2022",334136038220,334463079000,0.01,"IBGE Anuario Estatistico 2023, tab. s7t4101 (Fonte: Secex, Comex Stat), US$ 1 000 FOB",-0.000977808315876905,TRUE
+"RAIS 2010 active contracts 31/12",44068355,44068000,0.005,"MTE announcement of RAIS 2010 ('44,068 milhoes'), reproduced by idealsoftwares.com.br/idealnews id=2884 (secondary); official precision 1,000",8.05573205053811e-06,TRUE
+"TSE president 2010 R1, valid in Brazil",101441152,101506004,0.001,"valid 101,590,153 minus abroad 84,149: en.wikipedia 'Results of the 2010 Brazilian general election' (TSE/Election Resources; secondary)",-0.00063889816803353,TRUE
+"TSE president 2018 R1, valid in Brazil",106857368,106857368,0.001,"valid 107,050,749 (TSE) minus 'Diaspora' row 193,381: en.wikipedia '2018 Brazilian general election' (secondary)",0,TRUE
+"TSE deputy 2010 R1, valid",98389861,96580011,0.001,"en.wikipedia 'Results of the 2010 Brazilian general election' (Election Resources; secondary)",0.0187393849023272,FALSE
+"TSE deputy 2014 R1, valid",97355354,97263161,0.001,"en.wikipedia '2014 Brazilian general election' (Election Resources; secondary)",0.000947871722984717,TRUE
+"TSE deputy 2018 R1, valid",98257142,98338993,0.001,"en.wikipedia '2018 Brazilian general election' (Election Resources; secondary)",-0.000832335145022234,TRUE
+"TSE deputy 2002 party file vs detalhe valid (raw TSE)",87474543,87474543,0.001,"TSE votacao_partido_munzona vs detalhe_votacao_munzona (nominal + legenda valid), SHA-256 verified",0,TRUE
+"TSE deputy 2006 party file vs detalhe valid (raw TSE)",93617425,93771604,0.001,"TSE votacao_partido_munzona vs detalhe_votacao_munzona (nominal + legenda valid), SHA-256 verified",-0.00164419710683417,FALSE
+"TSE president 2014 / 2022 (votes abroad not obtained)",NA,NA,0.001,"NOT DONE: no official figure reachable from this workspace",NA,NA
+"TSE deputy 2022",NA,NA,0.001,"NOT DONE: no official figure reachable from this workspace",NA,NA
+"TSE governor 2010-2022",NA,NA,0.001,"NOT DONE: no official figure reachable from this workspace",NA,NA

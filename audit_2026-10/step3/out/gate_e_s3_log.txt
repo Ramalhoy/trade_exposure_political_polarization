@@ -1,0 +1,9 @@
+shares: cells CR 18609 | pipeline 18609 | in both 18609 | max rel diff (both) 0.000e+00 | value only-CR 0.0000% | only-pipeline 0.0000%
+shocks: 603 dest-years | max|diff| 3.109e-15 | corr 1.00000000
+     d  ano       g_cr        g_p
+1: 862 2018 -1.5292941 -1.5292941
+2: 398 2022 -1.0864066 -1.0864066
+3: 862 2022 -1.5101347 -1.5101347
+4:  12 2022  0.7642821  0.7642821
+5: 608 2022  0.8710974  0.8710974
+treatment: 1671 rows | max|diff| 4.366e-11 | max rel 2.472e-14 | corr 1.0000000000

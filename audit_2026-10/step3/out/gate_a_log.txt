@@ -1,0 +1,32 @@
+                                                    item     pipeline
+1                                     Comex exports 2010 200434134826
+2                                     Comex exports 2014 220923236838
+3                                     Comex exports 2018 231889523399
+4                                     Comex exports 2022 334136038220
+5                       RAIS 2010 active contracts 31/12     44068355
+6                 TSE president 2010 R1, valid in Brazil    101441152
+7                 TSE president 2018 R1, valid in Brazil    106857368
+8                              TSE deputy 2010 R1, valid     98389861
+9                              TSE deputy 2014 R1, valid     97355354
+10                             TSE deputy 2018 R1, valid     98257142
+11 TSE deputy 2002 party file vs detalhe valid (raw TSE)     87474543
+12 TSE deputy 2006 party file vs detalhe valid (raw TSE)     93617425
+13 TSE president 2014 / 2022 (votes abroad not obtained)           NA
+14                                       TSE deputy 2022           NA
+15                                TSE governor 2010-2022           NA
+       official         rel_diff  pass
+1  200434134000  4.121054609e-09  TRUE
+2  220923236000  3.793172665e-09  TRUE
+3  231889523000  1.720646958e-09  TRUE
+4  334463079000 -9.778083159e-04  TRUE
+5      44068000  8.055732051e-06  TRUE
+6     101506004 -6.388981680e-04  TRUE
+7     106857368  0.000000000e+00  TRUE
+8      96580011  1.873938490e-02 FALSE
+9      97263161  9.478717230e-04  TRUE
+10     98338993 -8.323351450e-04  TRUE
+11     87474543  0.000000000e+00  TRUE
+12     93771604 -1.644197107e-03 FALSE
+13           NA               NA    NA
+14           NA               NA    NA
+15           NA               NA    NA

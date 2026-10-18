@@ -1,0 +1,21 @@
+# Environment for the step-3 audit scripts (generated 2026-10-18T13:54:26Z)
+R version 4.3.3 (2024-02-29) -- "Angel Food Cake"
+fixest         0.14.2
+ShiftShareSE   1.1.0.9000
+targets        1.4.1
+renv           1.0.3
+bartik.weight  0.1.0
+dreamerr       1.5.0
+stringmagic    1.3.0
+secretbase     1.3.1.9000
+data.table     1.14.10
+readxl         1.4.3
+haven          2.5.4
+# GitHub source commits (installed from source; CRAN unreachable from this workspace):
+fixest 789f888416e97673d154c840eec2d99101fc07b1 https://github.com/lrberge/fixest
+dreamerr ee0086ecfeafd932a2d8600511e67862e9c02c08 https://github.com/lrberge/dreamerr
+stringmagic 2084b3cf7d8bd068acadf11a3da6852f65adb478 https://github.com/lrberge/stringmagic
+ShiftShareSE e3a2d81677e52496ba95f37c00bb4fcb501b962a https://github.com/kolesarm/ShiftShareSE
+targets b61d207e55bd1785fefd1099fb683d86d6500a79 https://github.com/ropensci/targets
+bartik.weight 40255a661c91a8af00badc857d3873ca2bcfdd3f https://github.com/jjchern/bartik.weight
+secretbase 4521aa3bdce1d3df332e3b74ebdf0608274f9635 https://github.com/shikokuchuo/secretbase

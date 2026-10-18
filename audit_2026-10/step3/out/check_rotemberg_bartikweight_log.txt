@@ -1,0 +1,1 @@
+max|alpha_bw - alpha_mine| = 3.678e-16 | top alpha bw 0.6423 (0610)

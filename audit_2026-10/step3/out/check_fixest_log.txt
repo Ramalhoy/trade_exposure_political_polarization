@@ -1,0 +1,2 @@
+NOTE: 1 fixed-effect singleton was removed (1 observation).
+fixest beta (S0, 2002->2010) = -0.01733748  [gate_d_falsification.csv: -0.01733748]

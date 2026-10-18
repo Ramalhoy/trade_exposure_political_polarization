@@ -1,0 +1,6 @@
+units: clean-room 152 | pipeline 152 | only CR:  | only pipeline:  
+L_j: max rel diff 1.332e-15
+g 2014: max|diff| 5.063e-14 | units with |diff|>1e-8: 0 
+g 2018: max|diff| 2.842e-14 | units with |diff|>1e-8: 0 
+g 2022: max|diff| 2.842e-14 | units with |diff|>1e-8: 0 
+z: 1671 rows matched | max|diff| 3.553e-15 | corr 1.00000000

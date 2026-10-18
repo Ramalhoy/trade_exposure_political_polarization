@@ -1,0 +1,4 @@
+S0: ||x_perp||^2 observed 985.6 | permutation median 1764.7 | share of draws below observed 0.286
+S0: leverage HHI over microregions observed 0.045 (eff. micros 22.3) | permutation median 0.026 (eff. 38.0) | share of draws more concentrated 0.112
+S3: ||x_perp||^2 observed 1414.7 | permutation median 3314.8 | share of draws below observed 0.121
+S3: leverage HHI over microregions observed 0.121 (eff. micros 8.2) | permutation median 0.162 (eff. 6.2) | share of draws more concentrated 0.745

@@ -1,0 +1,10 @@
+  design pre_period   n        beta   ri_p    ci95_lo    ci95_hi pass
+1     S0 2002->2010 557 -0.01733748 0.6148 -0.1243375 0.06866252 TRUE
+  design pre_period   n        beta   ri_p    ci95_lo    ci95_hi pass
+1     S0 2006->2010 557 -0.02239637 0.6431 -0.2983964 0.09110363 TRUE
+  design pre_period   n       beta   ri_p     ci95_lo    ci95_hi pass
+1     S3 2002->2010 557 0.04075835 0.0901 -0.01274165 0.07875835 TRUE
+  design pre_period   n       beta   ri_p     ci95_lo   ci95_hi pass
+1     S3 2006->2010 557 0.04349475 0.0854 -0.00950525 0.1224948 TRUE
+GATE (d) S0: PASS
+GATE (d) S3: PASS
