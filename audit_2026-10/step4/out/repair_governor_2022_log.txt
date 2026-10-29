@@ -1,0 +1,17 @@
+canary 2010 max|diff|: Dalton 1.1e-16, y_bar 5.6e-17, P_center 1.1e-16
+    SG_UF SG_PARTIDO                NM_URNA         DESTINACAO QT_NOM
+ 1:    AM       AGIR             NAIR BLAIR Anulado sub judice   1895
+ 2:    BA        PCO         MARCELO MILLET            Anulado    826
+ 3:    GO        PCO        VINÍCIUS PAIXÃO            Anulado    258
+ 4:    MS        PCO         MAGNO DE SOUZA            Anulado   2892
+ 5:    PB        PCO        ADRIANO TRAJANO            Anulado    280
+ 6:    PI        PCO          LOURDES  MELO            Anulado   1924
+ 7:    PI        PSC             GESSY LIMA            Anulado  13209
+ 8:    PR        PMN SOLANGE FERREIRA BUENO            Anulado  10337
+ 9:    RR         PL        ARTHUR HENRIQUE Anulado sub judice 160004
+10:    SC        PCO         LEANDRO BORGES            Anulado    829
+11:    TO        PCO          CARMEN HANNUD            Anulado    384
+12:    MG        PCO      LOURDES FRANCISCO            Anulado   2012
+panel rows dropped: 264 | votes dropped: 194850 | annulled in TSE: 194850 
+after repair: max |state rel diff| 0.00000% | national rel diff +0.00000% | states over 0.1%: 0
+2022 cells changed: Dalton 19, y_bar 19 (max |change| y_bar 0.0440)
