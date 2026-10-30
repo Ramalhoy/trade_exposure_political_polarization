@@ -1,0 +1,23 @@
+Stored scores, B = 999:
+   design        beta     p eq class
+S0     S0  0.03363505 0.616  0   INC
+S3     S3 -0.02595022 0.315  1    EQ
+prereg done
+centred done
+Error in fread("audit/out/step4_primary.csv") : 
+  File 'audit/out/step4_primary.csv' does not exist or is non-readable. getwd()=='/home/claude/w'
+Execution halted
+Stored scores, B = 999:
+   design        beta     p eq class
+S0     S0  0.03363505 0.616  0   INC
+S3     S3 -0.02595022 0.315  1    EQ
+   version design    beta_med    beta_p05    beta_p95 share_EQ share_POSNEG
+1:  prereg     S0  0.03014247  0.02493817  0.03522216    0.006            0
+2:  prereg     S3 -0.02209779 -0.02635337 -0.01832980    1.000            0
+3: centred     S0  0.03001305  0.02481658  0.03502842    0.006            0
+4: centred     S3 -0.02195934 -0.02637428 -0.01814406    1.000            0
+   share_INC headline_class share_changed rule_row4
+1:     0.994            INC         0.006     FALSE
+2:     0.000             EQ         0.000     FALSE
+3:     0.994            INC         0.006     FALSE
+4:     0.000             EQ         0.000     FALSE

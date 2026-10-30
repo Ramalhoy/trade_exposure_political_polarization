@@ -1,0 +1,87 @@
+S0 primary recentred base full none done
+S0 primary recentred base full 0.85 done
+S0 primary recentred base exporting none done
+S0 primary recentred base exporting 0.85 done
+S0 primary recentred extended full none done
+S0 primary recentred extended full 0.85 done
+S0 primary recentred extended exporting none done
+S0 primary recentred extended exporting 0.85 done
+S0 primary uncentred base full none done
+S0 primary uncentred base full 0.85 done
+S0 primary uncentred base exporting none done
+S0 primary uncentred base exporting 0.85 done
+S0 primary uncentred extended full none done
+S0 primary uncentred extended full 0.85 done
+S0 primary uncentred extended exporting none done
+S0 primary uncentred extended exporting 0.85 done
+S0 none recentred base full none done
+S0 none recentred base full 0.85 done
+S0 none recentred base exporting none done
+S0 none recentred base exporting 0.85 done
+S0 none recentred extended full none done
+S0 none recentred extended full 0.85 done
+S0 none recentred extended exporting none done
+S0 none recentred extended exporting 0.85 done
+S0 none uncentred base full none done
+S0 none uncentred base full 0.85 done
+S0 none uncentred base exporting none done
+S0 none uncentred base exporting 0.85 done
+S0 none uncentred extended full none done
+S0 none uncentred extended full 0.85 done
+S0 none uncentred extended exporting none done
+S0 none uncentred extended exporting 0.85 done
+S3 primary recentred base full none done
+S3 primary recentred base full 0.85 done
+S3 primary recentred base exporting none done
+S3 primary recentred base exporting 0.85 done
+S3 primary recentred extended full none done
+S3 primary recentred extended full 0.85 done
+S3 primary recentred extended exporting none done
+S3 primary recentred extended exporting 0.85 done
+S3 primary uncentred base full none done
+S3 primary uncentred base full 0.85 done
+S3 primary uncentred base exporting none done
+S3 primary uncentred base exporting 0.85 done
+S3 primary uncentred extended full none done
+S3 primary uncentred extended full 0.85 done
+S3 primary uncentred extended exporting none done
+S3 primary uncentred extended exporting 0.85 done
+S3 none recentred base full none done
+S3 none recentred base full 0.85 done
+S3 none recentred base exporting none done
+S3 none recentred base exporting 0.85 done
+S3 none recentred extended full none done
+S3 none recentred extended full 0.85 done
+S3 none recentred extended exporting none done
+S3 none recentred extended exporting 0.85 done
+S3 none uncentred base full none done
+S3 none uncentred base full 0.85 done
+S3 none uncentred base exporting none done
+S3 none uncentred base exporting 0.85 done
+S3 none uncentred extended full none done
+S3 none uncentred extended full 0.85 done
+S3 none uncentred extended exporting none done
+S3 none uncentred extended exporting 0.85 done
+   design controls  centring  strata sample coverage  index office    n
+1:     S0     base recentred primary   full     none Dalton deputy 1671
+2:     S3     base recentred primary   full     none Dalton deputy 1671
+          beta     p headline
+1:  0.03363505 0.616     TRUE
+2: -0.02595022 0.315     TRUE
+   design    office points     beta_min     beta_med   beta_max share_p05
+1:     S0    deputy    128 -0.113019000 -0.002915717 0.08807772     0.000
+2:     S0  governor     64 -0.026249857 -0.001876522 0.01145907     0.000
+3:     S0 president     64 -0.047905244 -0.005202589 0.01508095     0.000
+4:     S3    deputy    128 -0.035797827 -0.006535345 0.07381803     0.000
+5:     S3  governor     64 -0.002162368  0.007898235 0.02222169     0.125
+6:     S3 president     64 -0.001933282  0.008479867 0.01756667     0.000
+   share_p10
+1:  0.031250
+2:  0.015625
+3:  0.000000
+4:  0.000000
+5:  0.265625
+6:  0.000000
+   design points share_p05
+1:     S0    256   0.00000
+2:     S3    256   0.03125

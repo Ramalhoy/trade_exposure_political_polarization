@@ -1,0 +1,11 @@
+NOTE: 3 fixed-effect singletons were removed (3 observations).
+NOTE: 3 fixed-effect singletons were removed (3 observations).
+NOTE: 3 fixed-effect singletons were removed (3 observations).
+              design units merged n_used beta_cleanroom  beta_audit
+1:                S0   149      3   1668     0.03363505  0.03363505
+2:                S3   201      0   1668    -0.02891754 -0.02595022
+3: S3_diag_theta_all   201      0   1668    -0.02595022 -0.02595022
+        rel_diff  pass
+1: -2.220446e-15  TRUE
+2:  1.143464e-01 FALSE
+3: -8.881784e-16  TRUE
