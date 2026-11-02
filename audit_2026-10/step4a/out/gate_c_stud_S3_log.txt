@@ -1,0 +1,19 @@
+  design beta_true    R reject5    mean_bias    sd_beta    mean_se p_eq_Rettl
+1     S3         0 1000   0.018 0.0005198414 0.03020489 0.04418263      0.001
+  p_eq_DGH p_eq_CS
+1    0.042   0.706
+  elapsed 39.55875 mins 
+  design beta_true    R reject5   mean_bias    sd_beta    mean_se p_eq_Rettl
+1     S3     0.038 1000   0.091 0.001884262 0.02896145 0.04415756         NA
+  p_eq_DGH p_eq_CS
+1       NA      NA
+  elapsed 7.990272 mins 
+  design beta_true    R reject5     mean_bias   sd_beta    mean_se p_eq_Rettl
+1     S3     0.076 1000   0.257 -0.0001884234 0.0301673 0.04450342         NA
+  p_eq_DGH p_eq_CS
+1       NA      NA
+  elapsed 8.117519 mins 
+GATE (c, studentized) S3: size 0.018 in [0.03,0.07]? FALSE | |bias at 0.038| 0.0019 < 0.0038? TRUE
+  benchmark Rettl (0.038): P(EQ|0) = 0.001 -> NOT attainable (declared before headline)
+  benchmark DGH (0.059): P(EQ|0) = 0.042 -> NOT attainable (declared before headline)
+  benchmark CS (0.162): P(EQ|0) = 0.706 -> attainable

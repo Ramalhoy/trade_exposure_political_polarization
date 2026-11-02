@@ -1,0 +1,23 @@
+         design    n n_units       beta     se_akm         t p_stud
+interval     S0 1671     149 0.03363505 0.04331732 0.7764805 0.6307
+         p_coef_failed_gate_c    ci90_lo   ci90_hi    ci95_lo   ci95_hi
+interval               0.3299 -0.1003493 0.2391038 -0.1573806 0.2801194
+         grid_interval90 grid90_lo grid90_hi grid_interval95 grid95_lo
+interval            TRUE -0.100365  0.237635            TRUE -0.156365
+         grid95_hi delta_star eq_Rettl eq_DGH eq_CS p_at_m162 p_at_p162
+interval  0.279635  0.2391038    FALSE  FALSE FALSE    0.0474    0.2448
+S0 elapsed 27.00456 mins 
+         design    n n_units        beta     se_akm          t p_stud
+interval     S3 1671     201 -0.02891754 0.03577379 -0.8083442 0.2962
+         p_coef_failed_gate_c     ci90_lo    ci90_hi     ci95_lo    ci95_hi
+interval               0.0493 -0.07462066 0.04491059 -0.08790191 0.09373871
+         grid_interval90 grid90_lo grid90_hi grid_interval95 grid95_lo
+interval            TRUE -0.072918  0.043082            TRUE -0.086918
+         grid95_hi delta_star eq_Rettl eq_DGH eq_CS p_at_m162 p_at_p162
+interval  0.093082 0.07462066    FALSE  FALSE  TRUE    0.0014    0.0191
+S3 elapsed 35.83306 mins 
+
+Holm-adjusted studentized p: S0 0.6307 S3 0.5924 
+Classes: S0=INC S3=EQ 
+S0: beta 0.0336 | 90% [-0.1003, 0.2391] | 95% [-0.1574, 0.2801] | Delta* 0.2391 | excludes: none
+S3: beta -0.0289 | 90% [-0.0746, 0.0449] | 95% [-0.0879, 0.0937] | Delta* 0.0746 | excludes: CS

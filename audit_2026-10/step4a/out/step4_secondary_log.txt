@@ -1,0 +1,75 @@
+  design                          test        beta     se_akm      p validated
+1     S0 Deputy \316\224ER(\316\261=1) -0.02471748 0.03792053 0.7328      TRUE
+  design                       test       beta     se_akm     p validated
+1     S0 President \316\224\310\263 0.01200343 0.02164177 0.796      TRUE
+  design                                 test        beta     se_akm      p
+1     S0 Governor \316\224\310\263 (repaired) -0.00738173 0.01355666 0.7559
+  validated
+1      TRUE
+  design                    test       beta     se_akm      p validated
+1     S0 Deputy \316\224\310\263 -0.0153075 0.02500713 0.6158      TRUE
+S0 bust: b_bust -0.0124, b_boom 0.0273, t_cl -0.290, RI p 0.8564 [NOT VALIDATED]
+  design    outcome       beta     se_akm    akm0_lo   akm0_hi    p_akm0
+1     S0 dep_dalton 0.03363505 0.04331732 -0.1975258 0.1025839 0.5158771
+  design  outcome        beta     se_akm    akm0_lo    akm0_hi    p_akm0
+1     S0 dep_er10 -0.02471748 0.03792053 -0.2214879 0.03735614 0.4627736
+  design   outcome       beta     se_akm     akm0_lo   akm0_hi    p_akm0
+1     S0 pres_ybar 0.01200343 0.02164177 -0.02295436 0.1258079 0.5367019
+  design  outcome        beta     se_akm    akm0_lo    akm0_hi    p_akm0
+1     S0 gov_ybar -0.00738173 0.01355666 -0.0376522 0.04418907 0.6105344
+  design  outcome       beta     se_akm    akm0_lo    akm0_hi    p_akm0
+1     S0 dep_ybar -0.0153075 0.02500713 -0.1009657 0.04670461 0.5374462
+  design                          test        beta     se_akm      p validated
+1     S3 Deputy \316\224ER(\316\261=1) 0.006711609 0.04014285 0.8323      TRUE
+  design                       test          beta     se_akm      p validated
+1     S3 President \316\224\310\263 -0.0006132901 0.01811981 0.9697      TRUE
+  design                                 test        beta     se_akm      p
+1     S3 Governor \316\224\310\263 (repaired) 0.009958975 0.01049066 0.5116
+  validated
+1      TRUE
+  design                    test        beta     se_akm      p validated
+1     S3 Deputy \316\224\310\263 -0.00555148 0.03644424 0.8082      TRUE
+S3 bust: b_bust 0.0217, b_boom -0.0273, t_cl 0.737, RI p 0.5018 [NOT VALIDATED]
+  design    outcome        beta     se_akm akm0_lo akm0_hi    p_akm0
+1     S3 dep_dalton -0.02891754 0.03577379    -Inf     Inf 0.4451683
+  design  outcome        beta     se_akm akm0_lo akm0_hi    p_akm0
+1     S3 dep_er10 0.006711609 0.04014285    -Inf     Inf 0.8687027
+  design   outcome          beta     se_akm akm0_lo akm0_hi    p_akm0
+1     S3 pres_ybar -0.0006132901 0.01811981    -Inf     Inf 0.9731044
+  design  outcome        beta     se_akm akm0_lo akm0_hi    p_akm0
+1     S3 gov_ybar 0.009958975 0.01049066    -Inf     Inf 0.4357327
+  design  outcome        beta     se_akm akm0_lo akm0_hi    p_akm0
+1     S3 dep_ybar -0.00555148 0.03644424    -Inf     Inf 0.8828137
+   design                                          test          beta
+1      S0                 Deputy \316\224ER(\316\261=1) -0.0247174776
+2      S0                    President \316\224\310\263  0.0120034349
+3      S0          Governor \316\224\310\263 (repaired) -0.0073817301
+4      S0                       Deputy \316\224\310\263 -0.0153074992
+5      S0 Bust coefficient, deputy \316\224Dalton (H1b) -0.0124349020
+6      S3                 Deputy \316\224ER(\316\261=1)  0.0067116094
+7      S3                    President \316\224\310\263 -0.0006132901
+8      S3          Governor \316\224\310\263 (repaired)  0.0099589746
+9      S3                       Deputy \316\224\310\263 -0.0055514796
+10     S3 Bust coefficient, deputy \316\224Dalton (H1b)  0.0217191219
+       se_akm      p validated      q_BH survives_BH
+1  0.03792053 0.7328      TRUE 0.9515556       FALSE
+2  0.02164177 0.7960      TRUE 0.9515556       FALSE
+3  0.01355666 0.7559      TRUE 0.9515556       FALSE
+4  0.02500713 0.6158      TRUE 0.9515556       FALSE
+5          NA 0.8564     FALSE 0.9515556       FALSE
+6  0.04014285 0.8323      TRUE 0.9515556       FALSE
+7  0.01811981 0.9697      TRUE 0.9697000       FALSE
+8  0.01049066 0.5116      TRUE 0.9515556       FALSE
+9  0.03644424 0.8082      TRUE 0.9515556       FALSE
+10         NA 0.5018     FALSE 0.9515556       FALSE
+   design    outcome          beta     se_akm     akm0_lo    akm0_hi    p_akm0
+1      S0 dep_dalton  0.0336350525 0.04331732 -0.19752579 0.10258386 0.5158771
+2      S0   dep_er10 -0.0247174776 0.03792053 -0.22148785 0.03735614 0.4627736
+3      S0  pres_ybar  0.0120034349 0.02164177 -0.02295436 0.12580790 0.5367019
+4      S0   gov_ybar -0.0073817301 0.01355666 -0.03765220 0.04418907 0.6105344
+5      S0   dep_ybar -0.0153074992 0.02500713 -0.10096571 0.04670461 0.5374462
+6      S3 dep_dalton -0.0289175364 0.03577379        -Inf        Inf 0.4451683
+7      S3   dep_er10  0.0067116094 0.04014285        -Inf        Inf 0.8687027
+8      S3  pres_ybar -0.0006132901 0.01811981        -Inf        Inf 0.9731044
+9      S3   gov_ybar  0.0099589746 0.01049066        -Inf        Inf 0.4357327
+10     S3   dep_ybar -0.0055514796 0.03644424        -Inf        Inf 0.8828137

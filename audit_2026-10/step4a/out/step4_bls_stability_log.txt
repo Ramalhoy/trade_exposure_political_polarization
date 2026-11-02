@@ -1,0 +1,16 @@
+Stored scores, B = 999:
+   design        beta     p eq class
+S0     S0  0.03363505 0.616  0   INC
+S3     S3 -0.02891754 0.296  1    EQ
+prereg done
+centred done
+   version design    beta_med    beta_p05    beta_p95 share_EQ share_POSNEG
+1:  prereg     S0  0.03014247  0.02493817  0.03522216    0.006            0
+2:  prereg     S3 -0.02447868 -0.02885517 -0.02056625    1.000            0
+3: centred     S0  0.03001305  0.02481658  0.03502842    0.006            0
+4: centred     S3 -0.02437497 -0.02872097 -0.02037791    1.000            0
+   share_INC headline_class share_changed rule_row4
+1:     0.994            INC         0.006     FALSE
+2:     0.000             EQ         0.000     FALSE
+3:     0.994            INC         0.006     FALSE
+4:     0.000             EQ         0.000     FALSE
