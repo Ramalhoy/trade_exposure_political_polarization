@@ -1,0 +1,10 @@
+Step 5 inputs (paths as used by the scripts, run from the container workspace root):
+  D/                       = stored raw-extraction objects (same files as step 1–4; see input_manifest.sha256)
+  tse10/detalhe_YYYY.csv.gz = TSE detalhe_votacao_munzona (step 3b)
+  tse_pres/pres_cand_YYYY.csv.gz = raw/pres_cand_YYYY.csv.gz here: votacao_candidato_munzona_YYYY_BR.csv
+                             unzipped from data/dados eleitorais/tse_2010_2022/ (SHA-256 in raw/SHA256SUMS.txt)
+  step5/ncm2011_cnae.xlsx   = data/NCM2011XCNAE20XPRODLIST2010XCGCE.xlsx
+  step5/cnae20_isic4.xls    = data/dados consolidados/versão com vínculos totais/CNAE20_ISIC4.xls
+  step5/lit/*.txt           = pdftotext -layout of the cited PDFs in the author's folder
+  diss.tex                  = yago_ramalho_dissertação.tex as sent on 02/11/2026; PDF pages = printed numbers of the 01/10 PDF
+Run order: s5_votes.R, s5_data.R, s5_misc.R, s5_table4_repro.R, then s5_build.py and s5_md.py (in step5/).

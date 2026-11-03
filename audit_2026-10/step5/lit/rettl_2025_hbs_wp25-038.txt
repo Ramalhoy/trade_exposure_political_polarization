@@ -1,0 +1,2999 @@
+Working Paper 25-038
+
+
+
+Turning Away from the State:
+Trade Shocks and Informal
+Insurance in Brazil
+Paula Rettl
+ Turning Away from the State:
+ Trade Shocks and Informal
+ Insurance in Brazil
+  Paula Rettl
+  Harvard Business School
+
+
+
+
+ Working Paper 25-038
+
+
+
+
+Copyright © 2025 by Paula Rettl.
+Working papers are in draft form. This working paper is distributed for purposes of comment and discussion only. It may
+not be reproduced without permission of the copyright holder. Copies of working papers are available from the author.
+Funding for this research was provided in part by Harvard Business School.
+                Turning Away from the State:
+        Trade Shocks and Informal Insurance in Brazil ∗
+                                          Paula Rettl
+                                    Harvard Business School
+                                       prettl@hbs.edu
+
+
+
+                                                Abstract
+       How does economic globalization affect vote choices? Conventional wisdom holds that
+       voters who lose from economic integration support parties that propose expanding the
+       welfare state. However, in the Global South, where the state is frequently weak or
+       under-resourced, people often turn to non-state organizations (such as churches) for
+       protection against economic decline. I argue that, in these contexts, negative glob-
+       alization shocks increase local communities’ dependence on non-state organizations,
+       thereby making the leaders within such organizations more effective political brokers.
+       To test this argument, I propose a shift-share instrument that measures the exposure
+       of Brazilian local labor markets to exogenous changes in exports. By matching this
+       instrument with electoral and survey data, I provide evidence that declining exports in-
+       creased the power of evangelical leaders to persuade their congregations to vote against
+       parties that favor welfare-state expansion. My findings help explain and describe the
+       contingencies underlying the political consequences of globalization.
+
+
+
+
+   ∗
+    I thank Michael O. Allen, Massimo Anelli, Natalia Bueno, Daniela Campello, Simone Cremaschi, Cather-
+ine De Vries, Anderson Frey, Manoel Gehrke, Francesco Granella, Giuliana Pardelli, David Rueda, Kenneth
+Scheve, Piero Stanig, Alice Xu, and the participants of the DRCLAS (Harvard University), Alberto Alesina
+Political Economy (Harvard University), and Center for Public Policy (University of Houston) seminar series.
+Usual disclaimers apply. I am also grateful for the excellent research assistance of Sofia A. Amaral, Joaquim
+Cardim, and Vinicius Pinon.”
+1     Introduction
+
+Although globalization promises new opportunities for economic growth, exposure to in-
+ternational markets can create contentious domestic inequalities. Ruggie (1982) famously
+hypothesized that the development of a stronger state-funded safety net can mitigate such
+inequalities. By socializing the gains and losses of globalization, the state would have the
+power to make globalization politically feasible. Underlying this argument is the idea that
+communities affected by negative globalization shocks would become more supportive of
+redistribution and welfare programs. Some studies in developed countries have supported
+Ruggie’s expectations (e.g., Scheve and Slaughter, 2004; Walter, 2010; Scheve and Serlin,
+2022), whereas others have shown that globalization shocks can also generate demands for
+other types of political platforms, such as authoritarianism, nationalism, and far-right pop-
+ulism (Ballard-Rosa et al., 2021; Colantone and Stanig, 2018a,b; Ahlquist, Copelovitch and
+Walter, 2020; Autor et al., 2020; Baccini and Weymouth, 2021; Ballard-Rosa, Jensen and
+Scheve, 2022). Why do voters struggling with economic dislocation turn away from pro-
+redistribution parties? Scholars have speculated that economic crises, market liberalization
+and related pressures for fiscal consolidation in advanced industrialized democracies con-
+tributed to erode the credibility of promises to strengthen redistributive and welfare pro-
+grams, which are typical among left-wing parties (Colantone and Stanig, 2019; Scheve and
+Serlin, 2022; Cremaschi et al., 2024).
+    Although in advanced industrialized democracies low levels of credibility of redistribution
+pledges may be a new phenomenon, in many developing countries this has been the norm
+(Rudra, 2002; Holland, 2018). In spite of that, the literature on how support for different
+political platforms changes as a result of globalization shocks thus far has focused largely
+on developed countries (for recent reviews, see Rodrik, 2021; Walter, 2021),1 with little
+   1
+     A strand of literature examines the effects of trade and financial integration on the fate of incumbents
+in developing countries (Campello and Zucco Jr, 2016; Tertytchnaya et al., 2018; Campello and Zucco, 2020;
+Novaes and Schiumerini, 2021; De Vries et al., 2024) and yet another strand of literature analyzes how
+redistributive policies respond to globalization in developing countries (e.g., Kaufman and Segura-Ubiergo,
+2001; Avelino, Brown and Hunter, 2005; Rudra, 2002; Xu, 2020)
+
+
+                                                     1
+attention paid to how globalization shapes preferences where there is heavy reliance on non-
+state organizations for compensation and insurance against economic downturn. For this
+reason, I turn my attention to the Global South, where reliance on non-state service providers
+(NSPs), such as religious organizations,2 is widespread (Gough et al., 2004; Cammett and
+MacLean, 2014). Previous work has demonstrated that NSPs leverage the services and
+goods they provide to influence elections and redistributive politics (Cammett and MacLean,
+2014; Thachil, 2014). I argue that global economic busts can increase voters’ dependence
+on NSPs, thereby increasing their ability to shape electoral results by acting as political
+brokers. Ultimately, voters’ reliance on NSPs helps explain why globalization does not
+always translate into higher support for state-led insurance and redistribution.
+       I evaluate this argument in the context of Brazil, the fourth largest democracy and twelfth
+largest economy in the world. In the 2010s, lower growth in OECD countries caused a sharp
+decline in Brazilian exports (Cooney and Marquez, 2016). Specifically, Brazilian exports
+declined from a peak of USD$170 billion in 2011 to USD$120 billion in 2015, a drop of 29%.3
+This is also the period when the main center-left party, the Workers’ Party (Partido dos
+Trabalhadores, PT) lost public support after holding the presidency for 13 years (from 2003
+to 2016). Despite the fact that the PT implemented social policies that strengthened the
+safety net available to poor voters (Arretche, 2019),4 anti-PT sentiment surged in the 2010s,
+when economic growth slowed (Samuels and Zucco, 2018). This process culminated with
+the impeachment of President Dilma Rousseff (PT) in 2016 and the election of a far-right
+populist president in 2018: Jair Bolsonaro. His political platform combined public spending
+cuts and the promotion of conservative values (Hunter and Power, 2019; Nicolau, 2020).
+Although this phenomenon has multiple causes, I posit that part of the explanation lies in
+the role of NSPs and their leaders. Specifically, I focus on evangelical churches as NSPs and
+   2
+     Besides religious organizations, other examples of NSPs are non-governmental organizations and families
+(Di Tella and MacCulloch, 2002; Cammett, 2014; Bueno, 2018).
+   3
+     These figures are computed in constant 2010 USD.
+   4
+     The expansion of state-led social insurance in Brazil described here was part of a broader trend in Latin
+America countries governed by left-wing parties during the 1990s and 2000s (Carnes and Mares, 2014, 2015;
+Kapiszewski, Levitsky and Yashar, 2021).
+
+
+                                                      2
+the resulting political power of evangelical pastors.
+    Evangelical churches emerged as an important source of material support for poor voters
+in Brazil and other Latin American countries in the last three decades (Spyer, 2020; Boas,
+2023). I hypothesize that the decline in exports caused members of evangelical churches to
+become more dependent on services and goods provided by their churches. Because pastors
+have discretion over the distribution of goods and services, congregants became more engaged
+with their religious communities in order to signal commitment, thereby increasing their
+exposure to political messages by evangelical leaders, who became increasingly anti-PT in
+the 2010s.
+    To examine this argument, I rely on multiple data sources. First, a descriptive analysis
+of an original survey provides evidence that evangelical churches in Brazil function as NSPs.
+Next, in my main analysis, I combine electoral, labor market, trade, and census data to
+analyze how the decline in exports affected voting behavior in two consecutive presidential
+elections in Brazil (2014 and 2018) in commuting zones (CZs)5 with different levels of evan-
+gelical population concentration. To this end, I follow recent research in political science
+and economics (e.g., Campello and Urdinez, 2020; Baccini and Weymouth, 2021; Scheve and
+Serlin, 2022), by exploiting plausibly exogenous variation in trade patterns in a shift-share
+design (Bartik, 1987; Autor, Dorn and Hanson, 2013). Specifically, I construct a measure
+of the exposure of CZs to the dramatic drop in Brazilian exports between 2011 and 2018
+based on the labor market specialization of CZs in the pre-shock period (i.e., the export
+shock). Aware of recent developments in shift-share designs (Adão, Kolesár and Morales,
+2019; Goldsmith-Pinkham, Sorkin and Swift, 2020; Borusyak, Hull and Jaravel, 2018), I
+conduct a series of tests and robustness checks to examine threats to inference.
+    I show that heterogeneity exists in the responses to the decline in exports across Brazilian
+CZs. Consistent with the expectations of the economic voting literature (e.g., Healy and
+   5
+     Brazilian microregions are defined by the Brazilian Institute of Geography and Statistics according to
+the integration of local economies, which has been interpreted as the equivalent of local labor markets or
+commuting zones (Dix-Carneiro, 2014; Costa, Garred and Pessoa, 2016). My unit of analysis is microregions,
+which I refer to as CZs for simplicity.
+
+
+                                                    3
+Malhotra, 2013; Campello and Zucco, 2016, 2020), the PT lost support in regions that were
+negatively affected by the decline in exports. But in the 2018 election, when evangelical
+pastors were united in their opposition to the PT, this effect was concentrated in CZs with
+a high density of evangelicals. In a series of robustness checks, I show that other CZs’
+characteristics correlated with the presence of the evangelical population do not explain
+these results and examine the sensitivity of the results to omitted variable bias. Turning to
+the parties’ political platforms, I provide evidence that exposure to the decline in exports
+benefited parties that lean to the right, defend traditional moral values, and oppose state-led
+redistribution more in regions with a high concentration of evangelicals.
+   Analyzing geocoded survey data from 2017 matched with the export shock, I provide
+evidence that right-wing parties benefited from the decline in exports as a result of evangelical
+pastors’ political persuasion and not because of a change in attitudes toward economic and
+second-dimension issues among the evangelical electorate. In fact, among evangelicals, a
+decrease in exports increased both engagement with religious communities and negative
+attitudes toward the PT. I find no evidence that the export shock affected support for
+redistribution or attitudes toward second-dimension issues (e.g., LGBTQIA+ rights) among
+evangelicals. These findings are consistent with my hypothesis that negative globalization
+shocks increase evangelicals’ engagement with their religious communities as a way to insure
+against economic losses, which in turn increases the persuasive power of pastors.
+   My contribution is threefold. First, I add to the literature on public opinion responses
+to globalization shocks (e.g., Margalit, 2011; Walter, 2017a; Margalit, 2019b; Colantone and
+Stanig, 2018a,b; Scheve and Serlin, 2022). Scholars have highlighted how long periods of
+austerity in Europe eroded the credibility of left-wing parties’ pledges to strengthen state-
+led safety nets (Colantone and Stanig, 2019; Cremaschi et al., 2022). I expand this research
+by showing how the translation of globalization grievances into political behavior can depend
+on the presence of NSPs and their connections with different parties. Second, I contribute to
+the literature on redistribution preferences and support for pro-redistribution parties in Latin
+
+
+                                               4
+America and beyond (e.g., Iversen and Soskice, 2001; Levitsky, 2003; Mares, 2005; Scheve
+and Stasavage, 2006; Huber and Stanig, 2011; Beramendi and Rehm, 2016; Holland, 2018;
+Tuñón, 2019; Cavaillé, 2023) by highlighting the importance of NSPs in shaping attitudes and
+electoral outcomes in times of economic crises. Third, I inform the debate on the material and
+non-material (e.g., cultural and psychological) roots of political behavior (e.g., Shayo, 2009;
+Margalit, 2019b; Suryanarayan, 2019; Ahlquist, Copelovitch and Walter, 2020; Cremaschi,
+Bariletto and De Vries, 2023; Hopkins, Margalit and Solodoch, 2024) by providing additional
+evidence that the importance of religious narratives and practices in shaping voting behavior
+is not divorced from individual material needs (Cammett and Issar, 2010; Thachil, 2014;
+Cammett and MacLean, 2014).
+    The rest of this paper proceeds as follows. First, I review theories on how globalization
+affects demand for state-led insurance and compensation. Next, I discuss how to incorporate
+NSPs, including religious organizations, into these theories. Then, I describe the Brazilian
+political and economic context in the 2010s. I continue by outlining the data and empirical
+strategy, which I follow by describing the main results and evaluating the mechanisms. In
+conclusion, I discuss the implications of this study for the literature on globalization, demand
+for redistribution, and the material roots of political behavior.
+
+
+
+2     Globalization and Demand for Social Spending
+
+Trade integration can be risky because it exposes countries to the ups and downs of interna-
+tional business cycles that are beyond their control. These risks are not evenly distributed
+within any given country, as some regions may depend more on trade than others. This
+means that potential economic losses from global downturns may be concentrated in some
+parts of a country more than others (Rodrik, 1998). For example, in recent decades, the
+job and income losses in developed countries caused by import competition from developing
+countries (especially China) has been concentrated in regions specialized in light manufac-
+
+
+
+                                               5
+turing, such as the Rust Belt in the US (Autor, Dorn and Hanson, 2016; Pierce and Schott,
+2016; Malgouyres, 2017). In developing countries, fluctuations in the prices of agricultural
+and mineral commodities historically have led to economic instability (e.g., Mendoza, 1995;
+Drechsel and Tenreyro, 2018).
+   Because integrating into the global economy comes with heightened economic risks for
+some communities, globalization can lead to social unrest and political instability. In fact,
+negative globalization shocks have been linked to dissatisfaction with mainstream political
+elites and, in extreme cases, regime change (Campello and Zucco, 2016, 2020; Colantone
+and Stanig, 2018b,a; Margalit, 2019a; Novaes and Schiumerini, 2021; Rickard, 2022). In
+addition, as individual dissatisfaction with economic losses intensifies through interactions
+within local social networks (Colombo and Dinas, 2023), grievances resulting from localized
+economic shocks, such as trade shocks, may have a relatively greater potential to generate
+political instability than economic changes that are more geographically diffused. As such,
+some scholars have argued that economic globalization can be made politically feasible if
+coupled with publicly funded compensation or insurance mechanisms. They have argued
+that higher levels of public spending on welfare programs and stable public jobs can help
+smooth out the effects of fluctuations in international markets on individual consumption
+(Cameron, 1978; Katzenstein, 1987; Ruggie, 1982; Rodrik, 1998).
+   Evidence for the “compensation hypothesis” is mixed, however. Whereas some studies
+have found that economic globalization is associated with higher public spending (e.g., Ro-
+drik, 1998; Avelino, Brown and Hunter, 2005; Xu, 2020; Petrova and Sznajder Lee, 2023),
+others have found support for a competing hypothesis: the “efficiency hypothesis.” These
+scholars expect competition in global markets to induce a race to the bottom in govern-
+ment spending (Garrett, 1995; Kaufman and Segura-Ubiergo, 2001; Rudra, 2008; Busemeyer,
+2009). What explains such divergent findings? Scholars have pointed out that contextual
+and institutional characteristics shape governments’ ability and incentives to compensate the
+losers of globalization. For example, rulers in “hard” authoritarian countries are insulated
+
+
+                                             6
+from public pressure and, as a result, are less likely to compensate the losers of globalization
+than rulers in democratic and intermediate regimes (Rudra, 2002).
+   Underlying the “compensation hypothesis” is the idea that individuals who are more
+exposed to the risks and losses of globalization will demand more social protection from
+governments. However, empirical evidence for such a microfoundation of the “compensation
+hypothesis” is also mixed. In certain contexts, economic globalization is linked to greater
+popular support for welfare spending (Hays, Ehrlich and Peinhardt, 2005; Rehm, 2009; Wal-
+ter, 2010, 2017b; Rehm, 2016; Scheve and Serlin, 2022), whereas in other cases, it increased
+support for protectionist, nationalistic, and authoritarian political platforms (e.g., Ballard-
+Rosa et al., 2021; Colantone and Stanig, 2018b; Baccini and Weymouth, 2021). For example,
+Colantone and Stanig (2019) argued that prolonged periods of austerity in Western European
+countries led voters to distrust the promises of left-wing parties to increase public spending,
+pushing voters to support other types of state-led solutions. Some examples of such solu-
+tions in the European context are higher tariffs and immigration restrictions (Colantone and
+Stanig, 2018c; Cremaschi et al., 2024).
+   Importantly, most of the evidence on the microfoundations of the compensation hypoth-
+esis comes from advanced industrialized democracies and, as a result, assumes that welfare
+spending is redistributive (Rudra and Tobin, 2017). However, in many countries of the
+Global South, social spending is regressive and does not protect those most in need (Rudra,
+2008). Moreover, in Latin America and other regions of the Global South, the state is typ-
+ically plagued by low administrative capacity and lacks credibility in voters’ eyes (Holland,
+2018; Brinks, Levitsky and Murillo, 2019). In these contexts, people are used to resorting
+to non-state institutions to cope with economic losses and risks (Cammett and MacLean,
+2014; Post, Bronsoler and Salman, 2017). In the next section, I discuss the opportunities
+for insurance and compensation beyond the state voters usually have in developing countries
+and what their political consequences might be.
+
+
+
+
+                                               7
+3     Compensation and Insurance Beyond the State
+
+Social benefits in developing countries tend to be less generous than in developed countries.
+In addition, welfare services are often absent in remote areas, and social benefits in many
+countries are designed to support the middle class rather than the poor (Rudra, 2008).
+For example, in Latin America, social spending is concentrated on contributory benefits for
+formal sector workers, subsidies tend to be flat or regressive, and informal access barriers
+make it difficult for the most vulnerable to attain state benefits (Holland, 2018). In addition,
+in many developing countries, states lack the capacity to implement social policies (Mares,
+2005). A consequence of the state’s failure to provide adequate insurance and compensation
+against adverse life events is the emergence of hybrid systems of service provision, in which a
+formal welfare regime run by the state coexists with an informal insurance system consisting
+of non-state service providers (NSPs) (Gough et al., 2004; Cammett, 2014; Post, Bronsoler
+and Salman, 2017). Examples of such NSPs include within-family transfers, services, and
+goods provided by gangs, civic organizations, and churches (Iannaccone, 1998; Di Tella and
+MacCulloch, 2002; Cammett and MacLean, 2014; Doyle, 2015; Holland and Palmer-Rubin,
+2015; Bueno, 2018; Tertytchnaya et al., 2018; Auriol et al., 2020; De Vries et al., 2024).
+    Like any other type of insurance provider, informal insurance providers face the chal-
+lenges of adverse selection and moral hazard. To mitigate these challenges, NSPs can create
+tight communities and discretionary benefit provision systems. By establishing strict entry
+requirements, tight communities avoid letting in too many high-risk members (which reduces
+adverse selection issues) (Iversen and Rehm, 2022). Furthermore, by monitoring members
+through repeated interactions and enforcing reciprocity norms through the discretionary al-
+location of benefits, informal insurance providers reduce the moral hazard problem. For
+example, Di Tella and MacCulloch (2002) argued that families are better positioned to mon-
+itor the extent to which unemployed family members are putting forth effort into finding a
+job than the state.
+    When the distribution of benefits is at the discretion of a few individuals, it creates
+
+                                               8
+hierarchical relationships that can be exploited for political influence (Gough et al., 2004).
+For example, Thachil (2014) showed how grassroots organizations in India gain the trust
+and gratitude of poor voters by offering rudimentary health and education services. During
+election periods, leaders of these grassroots organizations leverage these ties with poor con-
+stituencies to gain votes for elite parties that oppose programmatic redistribution. Similarly,
+Holland and Palmer-Rubin (2015) showed how in Colombia and Mexico organizational lead-
+ers with strong ties to local communities exchanged particularistic and club goods for votes
+for allied political candidates.
+    In this study, I argue that non-state service provision plays a crucial role in helping
+individuals cope with the negative consequences of economic globalization. During global
+economic crises, many countries in the Global South struggle to finance social security policies
+amidst lower revenues from commodity exports and the retrenchment of international credit
+(Wibbels, 2006; Campello, 2014). In this context, the discretionary distribution of benefits
+by informal insurance providers becomes even more important to communities struggling
+with economic hardship. As a result, the social standing and influence of these providers
+increases. My analysis focuses on the case of religious organizations as informal insurance
+providers.
+
+
+
+4     Economic Globalization and the Persuasive Power of
+
+      Religious Brokers
+
+Among the formal and informal institutions that provide support for people suffering eco-
+nomic hardship, religious organizations have historically played an important role. For ex-
+ample, Ager and Ciccone (2018) showed that in US counties with greater agricultural risk
+in the 19th century, a larger share of the population belonged to religious organizations.
+Using data from a US household survey covering years from 1986 to 2000, Dehejia, DeLeire
+and Luttmer (2007) provided evidence that the effect of income losses on consumption was
+
+
+                                               9
+smaller in households that engaged with religious organizations. Studying Islamic organiza-
+tions in Indonesia, Chen (2010) showed that religious institutions smoothed consumption but
+only when other forms of credit were not easily accessible to them. The authors argued that
+these findings support the idea that religious organizations work as an informal insurance
+mechanism.6
+       Compared to other types of NSPs (such as non-governmental organizations), religious
+organizations have the advantage of providing both material and spiritual services (Scheve
+and Stasavage, 2006). Such spiritual services provide psychological support that can help
+people cope with income loss and other adverse life events. A study with adolescents in the
+US supports this idea: religiosity provides a buffer for students at risk of depression that other
+forms of support networks, such as friends and school activities, fail to provide (Fruehwirth,
+Iyer and Zhang, 2019). Similarly, an experiment in Tunisia showed that individuals found it
+comforting to believe that they would receive compensation in the afterlife for the injustices
+of this life (Grewal et al., 2019).
+       Religious leaders can use the material and psychological support that religious organiza-
+tions provide to people who are coping with adverse life events as leverage to exert political
+influence. Although this practice might resemble clientelism,7 it differs from it inasmuch
+as it does not involve a direct quid pro quo in which benefits are exchanged for political
+support (Thachil, 2014; Freedman, 2020). Instead, the constant provision of material and
+psychological support that religious organizations provide (in- and outside electoral cycles)
+creates a bond between leaders and the religious organization’s members. To be sure, this
+bond is, at least to a certain extent, transactional. For example, in a series of experiments
+in Ghana, Auriol et al. (2020) found that the amount of money members of a Pentecostal
+church gave to their own church decreased when they enrolled in commercial insurance. This
+   6
+     However, not all religious organizations work as NSPs. For example McClendon and Beatty Riedl (2021)
+found that Pentecostal churches in Kenya tended to focus on individual solutions for economic hardship rather
+than material handouts.
+   7
+     I adopt the widely used definition of clientelism by Stokes (2011), according to whom clientelism refers
+to the direct exchange of material benefits for political support.
+
+
+
+                                                     10
+finding suggests that investment in religious organizations is, at least in part, a function of
+the need for insurance. However, the political influence that religious leaders exert over
+members is a result of the bond they form through the constant provision of services rather
+than the direct exchange between benefits and votes (such as in the case of vote buying and
+other clientelistic practices) (Thachil, 2014).8
+       Although most religious organizations provide some type of material or psychological
+support, they differ considerably in whether and how they discriminate among potential
+beneficiaries, as well as the generosity of the support they provide. Some religious organi-
+zations (such as the Catholic Church) provide benefits to a broad population, regardless of
+their beliefs or engagement with the church. Other religious organizations, such as many
+Evangelical churches, are more restrictive, providing services almost exclusively to members
+who must pass high entry barriers, such as consistent compliance with strict behavioral
+norms and high investment in religious communities through, for example, frequent church
+attendance and monetary contributions. As this type of religious organization requires more
+investment from a limited and engaged group of members, they are better able to monitor
+their members and provide generous assistance (Iannaccone, 1998).
+       In this study, I focus on religious organizations that tend to restrict the provision of ser-
+vices to engaged members. I argue that the economic dislocation that globalization causes
+increases the need for the benefits that religious organizations provide. Because these or-
+ganizations hand out benefits based not only on need but also on congregants’ investment
+in religious communities, I expect that economic globalization will increase congregants’ in-
+vestment in religious communities, thereby strengthening the bond between members and
+leaders of religious communities. As a result, religious leaders’ ability to influence elections
+also increases. In Figure 1, I provide a graphic representation of this theory applied to re-
+strictive NSPs, that is, NSPs that have high entry barriers and consider members’ levels of
+   8
+     Some organizations with religious foundations have direct, stable and sometimes institutionalized ties
+with political parties and organizations. These organizations, referred as “sectarian organizations”, employ
+clientelistic practices by requiring members to attend political meetings, volunteer for a political campaigns,
+or contribute to a party or candidate through other means (Cammett, 2014).
+
+
+                                                      11
+Figure 1: The Effect of Globalization in the Presence of Restrictive Non-State Service
+Providers
+
+
+
+
+engagement when distributing resources.
+
+
+
+5     The Case of Brazil
+
+Brazil is an ideal case for studying how the effect of globalization shocks on political be-
+havior is mediated by NSPs for two main reasons. First, the complexity and size of the
+Brazilian economy results in significant subnational variation of exposure to trade shocks
+(Dix-Carneiro, 2014; Costa, Garred and Pessoa, 2016). Second, it is a country where non-
+state organizations — such as churches, gangs, and social movements—historically have
+played an important role in compensating for the state’s failure to provide for the most
+disadvantaged segments of the population (Lessing and Willis, 2019; Spyer, 2020). These
+two factors allow me to leverage within-country variation of exposure to trade shocks and
+reliance on religious insurance to test my argument. In this study, I focus on the period
+between 2010 and 2018, when Brazil plunged into an economic crisis in part due to changes
+in global markets (Cooney and Marquez, 2016).
+
+
+5.1    Brazilian Exports and Politics in the 2010s
+
+After a period of sustained growth, Brazilian exports began to decline sharply in 2012 as a
+result of low growth in advanced economies and consequently reduced demand for primary
+goods (Cooney and Marquez, 2016). Figure 2 shows how Brazilian exports to the rest of the
+world (black line) and GDP per capita (red line) were on a steady upward trend between 1997
+(the first year for which data on exports are available) and 2011, followed by a sharp decline
+
+
+                                             12
+          Figure 2: Evolution of Exports and GDP per capita in Brazil (1995-2018)
+
+
+
+
+Note: The black line shows variations in total yearly exports in constant billion USD. The red line shows
+changes in GDP per capita in constant thousand USD. Export data comes from Comex Stat. Export values
+are in constant billion USD. GDP per capita data comes from World Bank’s World Development Indicators.
+
+
+in both indicators. Figure B.1a in the Appendix, also shows how important a relatively small
+number of commodities are to the total value of Brazilian exports. In fact, cereals (mainly
+soy beans), crude oil, iron ore, meat, and sugar represented about 45% of the total value of
+Brazilian exports in 2010 (the base year in my analysis).
+   As a result of the global economic recession, the value of imports from the rest of the world
+to Brazil decreased. Indeed, reduced economic activity in Brazil drove down the demand
+for imports of intermediate materials, such as basic chemicals and parts of motor vehicles,
+which are used in Brazilian manufacturing (see B.1b in the Appendix). Because the decline
+in imports was due to the general decline in economic activity, rather than changes in import
+competition, my analysis focuses exclusively on exports.
+   Political turmoil characterized the period that succeeded the decline in exports in Brazil.
+Dilma Rousseff (PT) was the president for most of the period considered in this study. She
+
+
+                                                   13
+was elected in 2010, as the successor of Lula (PT), a center-left president who ruled the
+country for eight years. In 2014, Rousseff was reelected by a small margin, just a year after
+massive demonstrations against her government took place country-wide. She was impeached
+in a controversial process in 2016. After her impeachment, the then Vice President Michel
+Temer (MDB) took office. Jair Bolsonaro (PSL)9 —a far-right politician, who was unknown
+by most of the population before the electoral campaign—was later elected in 2018 (for a
+overview of political events in the period, see Figure 2).
+      The PT is the organizing force in the Brazilian party system (Samuels and Zucco, 2018),
+and its importance in presidential elections is paramount. The PT has either won or finished
+second in all presidential elections since the first post-dictatorship direct presidential election
+in 1989. In addition, the PT won four consecutive presidential elections (2002, 2006, 2010,
+and 2014). Thus, even though the PT was not the incumbent party in 2018, positive and
+negative sentiments toward this party were crucial in defining the election (Nicolau, 2020;
+Hunter and Power, 2019).
+      In addition, the PT is considered to be one of the few programmatic parties in the country.
+Its campaigns and policies historically were marked by a concern for inequality and an effort
+to promote inclusion, redistribution, and the expansion of the welfare state (Samuels and
+Zucco Jr, 2014; Samuels and Zucco, 2018). Examples of inclusive policies the PT government
+promoted include a conditional cash transfer program (Bolsa Famı́lia) and improved access
+to higher education (Arretche, 2019; Lindert, Linder and Hobbs, 2007; de Brauw et al., 2015).
+Despite the PT’s focus on redistribution, a substantial number of voters voted against this
+party when economic conditions quickly deteriorated. In the following, I argue that this
+was driven, in part, by anti-PT mobilization led by evangelical church leaders who provided
+goods and services to their congregations.
+  9
+      Jair Bolsonaro exited the PSL (Partido Social Liberal ) in 2019.
+
+
+
+
+                                                      14
+5.2       Evangelical Churches as Non-State Service Providers
+
+While the PT held the presidency in Brazil, social policies became more inclusive. Poli-
+cies such as conditional cash transfers and investments in basic infrastructure—including
+electricity and drinkable water—benefited poor populations, especially in remote rural areas
+(Arretche, 2019). However, significant gaps remained in Brazil’s welfare programs. For ex-
+ample, one of PT’s most praised policies is a conditional cash transfer, named Bolsa Famı́lia.
+Despite subsequent program expansions, by 2010, only about 27% of the eligible population
+received the benefit.10
+       The historically limited ability of the state to support people facing economic scarcity
+and the incomplete expansion of social policies create the conditions for informal insurance
+systems to develop and persist (Gough et al., 2004). In recent decades, evangelical churches
+have become an increasingly important source of support for people facing adverse life events
+in low- and middle-income countries (LMICs) (e.g., McCauley, 2013; Spyer, 2020). Based on
+extensive ethnographic research, Spyer (2020) described how evangelical churches in Brazil
+succeeded in supporting and improving the lives of poor individuals who often have few other
+alternatives. Evangelical churches are present in the most disadvantaged neighborhoods and
+remote parts of the country. Perhaps this finding helps explain the negative correlation
+between Bolsa Famı́lia and the concentration of the evangelical population at the municipal
+level (see Figure A.1 in the Appendix).
+       The results of my own original survey with a sample of 1,977 respondents that approxi-
+mate the Brazilian population in terms of age, gender, geographic region, and religion confirm
+that evangelical churches are an important source of insurance for their members.11 In fact,
+30.9% of evangelical respondents report that a church helped them cope with economic diffi-
+culties. Catholics, on the contrary, are much less likely to be supported by the church when
+faced with economic hardship. In fact, only 8.3% of the Catholics in the sample report that
+  10
+     This percentage is based on the total number of Bolsa Famı́lia beneficiaries and the income distribution
+of the population in 2010 as measured by the census (IBGE, 2011; Campello and Neri, 2014)
+  11
+     See Appendix C for details about this survey, including a discussion about research ethics.
+
+
+                                                     15
+Figure 3: Percentage of Respondents that Received Help from a Church by Religious Affili-
+ation
+
+
+
+
+                     Religious Affiliation
+                                             Evangelical
+
+
+                                                  Other
+
+
+                                                Catholic
+
+
+                                                            0             10            20            30
+                                                           Percentage of respondents who received any help (%)
+
+
+Note: The figure shows the mean and 95% confidence intervals of the percentage of people by religious
+affiliation that received help from a church when facing economic hardship.
+
+
+a church or religious organization helped them cope with economic hardship (see Figure 3).
+This difference persists when accounting for differences in income and socioeconomic class
+between evangelicals and Catholics (see Figure C.2 in the Appendix). Among the types of
+support the evangelical church provides, the most common are food donations, help find-
+ing a job, and financial support (that is, cash donations and loans) (see Table C.2 in the
+Appendix).
+   Not only is reliance on the church to cope with economic hardship more widespread among
+evangelicals than among Catholics, but access to services provided by evangelical churches
+is more restrictive than to services provided by the Catholic church. In fact, 91.5% of those
+who report having received help from an evangelical church are themselves evangelicals,
+while only 65.3% of those who report having received help from the Catholic church are
+themselves Catholics (see Table C.1 in the Appendix). In addition, evangelicals are much
+more likely to receive help from the specific church they attend than from other evangelical
+churches. Figure 4 illustrates the flow of material help from evangelical churches of various
+denominations to receivers of different religious affiliations. For example, of the respondents
+who report receiving help from the Assembly of God (the largest evangelical church in Brazil),
+80% are members of this church.
+   These patterns reflect the fact that evangelical churches tend to impose stricter require-
+
+
+                                                                               16
+Figure 4: Distribution of Help Provided by Evangelical Churches by Church Denomination
+and Receivers’ Religious Affiliation
+
+
+
+
+Note: The figure illustrates the flows of material support from evangelical churches of different denomina-
+tions to the receivers’ religious affiliation. More information about this survey can be found in Appendix C.
+
+
+ments for benefit access than the Catholic church. For example, most evangelical churches
+require that their members comply with at least some of the following rules: give 10% of their
+income to the church, attend church services regularly, follow a strict dress code, and refrain
+from drinking (Spyer, 2020). These strict membership norms facilitate the monitoring of
+church members and help churches overcome the adverse selection and moral hazard issues
+described in Section 3. Importantly, evangelical pastors have discretion over the distribu-
+tion of church resources, which enables them to enforce membership norms.12 As a result,
+evangelical churches can provide more generous services and goods to their members than
+the Catholic church (Iannaccone, 1998). Therefore, belonging to an evangelical church is
+an indicator of reliance on a parochial and informal type of insurance. In contrast, the low
+barriers to entry of the Catholic church and its inclusive approach to service provision make
+being Catholic a worse predictor of reliance on Catholic church services. In the next section,
+I discuss the relationship between evangelical bishops and political candidates in Brazil.
+  12
+    In Appendix C, I present suggestive evidence from my original survey that pastors have discretion over
+the distribution of church resources.
+
+
+                                                     17
+5.3    The Involvement of Evangelical Pastors in Electoral Politics
+
+In Brazil, evangelical churches began engaging in politics during the 1986 general elections.
+At the time, they were concerned about the Catholic Church’s influence in the redemocra-
+tization process, particularly in drafting the new constitution. In short, evangelical leaders
+sought to prevent the state from granting the Catholic Church privileged status (Spyer, 2020).
+After the promulgation of the 1988 constitution, evangelical leaders remained engaged in pol-
+itics. For example, Smith (2017) showed how exposure to political information in evangelical
+churches is common, particularly in low-income and low-education neighborhoods.
+   Despite the fast-growing number of evangelicals in Brazil (which increased from 9% to
+32% of the population between 1990 and 2020), their influence on presidential elections
+remained limited until 2018. The high number of evangelical denominations and the lack of
+coordination between the evangelical leaders of different churches and denominations ensured
+that the “evangelical vote” remained divided (Smith, 2018). In a survey of 21 evangelical
+pastors’ social media profiles and relevant news reports, I find that in the 2014 presidential
+election, the evangelical leadership was divided. Although 12 pastors supported candidates
+in parties other than the PT, 2 endorsed Rousseff (PT), and 7 declared neutrality. I also
+show that even pastors within the same denomination took different positions. For example,
+within the Assembly of God, two pastors backed different opposition candidates in the first
+round, and a third declared neutrality. I also identify a pastor of a church with origins
+in the Assembly of God (the Assembly of God Madureira) supporting Rousseff. Another
+prominent example is the Universal Church of the Kingdom of God (UCKG). I find that
+Edir Macedo, the most prominent pastor in this church and one of its founders, supported
+Rousseff in 2014. Yet, another important pastor, Renato Cardoso (who is also Macedo’s
+son-in-law), declared neutrality (for more information about this survey and a complete list
+of the pastors examined, see the Appendix D).
+   In 2018, greater coordination existed within the evangelical leadership, which overwhelm-
+ingly supported the far-right candidate Jair Bolsonaro. In fact, of the 21 evangelical pastors
+
+
+                                             18
+I surveyed, 19 supported Bolsonaro in 2018, one alluded to conservative morals and the de-
+fense of the family (which one could map into Bolsonaro’s campaign and political platform),
+and one declared neutrality. Prominent pastors who supported Rousseff in 2014, such as
+Abner Ferreira (Assembly of God Madureira) and Edir Macedo (UCKG), turned to Jair
+Bolsonaro.
+    How did a united evangelical leadership persuade congregants to vote against the PT?
+As other studies have suggested, political socialization in the church provided information
+on political candidates and political issues (Smith, 2017, 2018; Boas and Smith, 2019). Fur-
+thermore, and as I posit in Section 5.2, congregants have had a positive bond with the source
+of such information (i.e., evangelical pastors) as a result of the generous services provided by
+evangelical churches. I argue that the decline in Brazilian exports between 2010 and 2018
+increased the ability of the evangelical leadership to influence elections. As economic hard-
+ship increased the need for informal insurance, evangelical congregants became more engaged
+with their church and religious communities to increase their likelihood of getting more of
+the goods and services evangelical leaders distributed at their discretion. As congregants
+became more engaged with their religious communities, they also became more exposed and
+receptive to the political messages that were transmitted during church services and within
+religious networks (for a graphical representation of this argument, see Figure 1).
+
+
+
+6     Data
+
+My empirical analysis relies on data at the commuting zone (CZ) and individual levels. First,
+I describe the construction of my main explanatory variable: the export shock. This is a
+variable at the CZ-level, and it is used in both CZ- and individual-level analyses. I then
+proceed by explaining the dependent variables that I use in my CZ-level analysis. Then, I
+describe other covariates at the CZ-level. Lastly, I describe the individual-level data and
+how I match it with the CZ-level data.
+
+
+
+                                              19
+6.1     Export shocks
+
+I estimate the effect of exposure to the drop in Brazilian exports at the CZ level on voting
+behavior and attitudes. My empirical strategy relies on a shift-share instrument, in the
+spirit of the one Bartik (1987) proposed. Recently, many authors have applied a similar
+approach in both political science and economics to measure local exposure to changes in
+trade patterns (e.g., Campello and Urdinez, 2020; Baccini and Weymouth, 2021; Scheve
+and Serlin, 2022). CZs are defined by the Brazilian Institute of Geography and Statistics
+according to their specificity in terms of production specialization and natural resources.13
+Therefore, CZs are the ideal unit of analysis for this research. This is also the level of
+analysis used in previous work that applies shift-share instruments in the Brazilian context
+(Dix-Carneiro, 2014; Costa, Garred and Pessoa, 2016; Campello and Urdinez, 2020). I use
+2010 as my base year because it is the first election before the decline in exports that began
+in 2012 (see Figure 2). Specifically, I compute:
+
+                                           n
+                                           X Lrjt=2010 ∆EXPjt
+                                 ∆EP Wrt =             ·                                                 (1)
+                                           j
+                                             L rt=2010   Ljt=2010
+
+                                                                                        Lrjt=2010
+where r indexes CZs in election-year t (2014 or 2018) and industry j.                   Lrt=2010
+                                                                                                    measures
+the labor market specialization of CZs in the base year. Lrjt=2010 is the number of formal
+employees in CZ r and industry j in the base year. Lrt is the total number of formal employees
+                              ∆EXP
+in CZ r in the base year. Ljt=2010jt measures the per capita change in exports by industry j at
+time t from Brazil to the rest of the world. More precisely, ∆EXPjt is the change in exports
+of industry j between 2010 and time t measured in constant tens of thousands of USD Free
+on Board (USD FOB). I normalize this value by the total number of jobs in industry j in
+the base year in the whole country (Ljt=2010 ).
+    The intuition behind this measure is that a CZ’s level of exposure to a decline in exports
+  13
+     While the Brazilian Institute of Geography and Statistics refers to these areas as “microregions,” I use
+the term “commuting zone” for simplicity. For an official definition of “microregion”, see IBGE (2010) (in
+Portuguese).
+
+
+
+                                                     20
+Figure 5: Geographic Distribution of Exposure to Changes in Exports from Brazil to the
+Rest of the World per Worker
+
+
+
+
+Note: This figure displays the geographic distribution of ∆EP Wrt in 2014 (on the left) and 2018 (on the
+right) net of state fixed-effects. Blue colors indicate a shock above the state average, whereas red colors
+indicate a shock below the state average.
+
+
+is a function of the employment structure in that CZ prior to the shock. For example, a CZ
+in which a large share of the population is employed in a sector that experienced a steep
+decline in exports receives a more negative export shock score than a CZ with a low share of
+employment in that sector (all else being equal).14 Figure 5 shows the geographic distribution
+of export shocks net of state-year fixed effects in 2014 (left panel) and 2018 (right panel).
+       Data on exports at the product level come from the Brazilian Ministry of Economy.
+Data on the number of jobs in each industry and CZ come from RAIS (Relação Anual de
+Informações Sociais), which is an administrative data set collected by the Brazilian Ministry
+of Economy. It contains information on the universe of formal jobs in Brazil, including
+municipality and detailed industry classification. A key challenge in building this database
+is matching the classification of jobs with the classification of exports because they follow
+different classification systems (CNAE 2.0 and NCM 2012, respectively). To accomplish this
+  14
+    Figure B.1a in the Appendix shows the changes in export values by broad sector (e.g., cereals, crude oil,
+iron ore).
+
+
+                                                     21
+match, I rely on existing conversion tables provided by the Brazilian Statistical Office and
+convert both systems into International Standard Industrial Classification (ISIC) Revision
+4. My final database contains 174 industries. In Appendix G, I explain the process in detail.
+
+
+6.2    Electoral Data and Party Scores
+
+The CZ-level analysis is based on two types of dependent variables. The first is the change
+in vote shares for the PT in presidential elections. This is calculated as the change in valid
+votes for the PT in CZ r between the base year 2010 and the election year t, where t is
+2014 or 2018. The second type is ideological scores at the CZ level (as in Colantone and
+Stanig, 2018b; Power and Rodrigues-Silveira, 2019). These scores are meant to represent
+the aggregate ideological position (or “center of gravity”) of a given CZ. The CZ center of
+gravity is defined as the sum of the ideological positions of the parties, weighted by their
+vote share in the first round of each presidential election in a given CZ. Brazil has a highly
+fragmented and volatile party system (Zucco and Power, 2020). In fact, in 2014 and 2018,
+11 and 13 candidates ran for presidential office, respectively. A way to measure changes in
+electoral behavior when many parties are involved is to consider party characteristics (e.g.,
+Martin and Vanberg 2020). More precisely, in volatile or fragmented party systems, we may
+assume that a voter did not change her voting behavior if, in subsequent elections, she votes
+for different parties that highlight the same policy issues and stand for similar issue positions
+and general ideology.
+   To construct the CZ-level ideology scores, I gather data on party-positioning on general
+political ideology (i.e., the position on the Left-Right scale) and policy issues related to
+the welfare state and religion, namely, state-led redistribution (Redistribut.), expanding the
+welfare state (Welfare), relationship between politics and religious principles (Relig.-State)
+and support for traditional moral values (Trad. Moral.). These data come from three sources
+that apply different methodologies to compute party scores on policy issues. The first source
+I use is the Brazilian Legislative Surveys (BLS), which includes data at the year-legislator
+
+
+                                               22
+level on a series of policy issues, as well as self-placement on the Left-Right scale (Zucco and
+Power, 2019). Based on BLS, Power and Rodrigues-Silveira (2019) calculated the positions
+of the parties on the Left-Right scale. Second, I also obtain party position data from the
+2020 Chapel Hill Expert Survey (CHES): Latin America. This dataset, which is based on a
+survey of 160 experts in Latin American politics, scores the positions of 11 Brazilian parties
+on a series of policy issues. The drawback of this dataset is that it contains only one wave.
+Hence, when using this data set to measure party scores, party positions are necessarily fixed
+over time. Third, I use the Comparative Manifesto Project (CMP), which computes party
+positions on political ideology and a series of policy issues based on text analysis of party
+manifestos.15 A key limitation of the CMP is that it includes only the three most voted
+candidates in a given election, or four in the case of the 2018 election.
+       To measure policy preferences at the CZ level, I compute CZ’s center of gravity on
+political ideology and the aforementioned selected policy issues by weighting party scores
+by party vote shares. Data on electoral results come from the Brazilian official electoral
+authority. Formally,
+
+                                                 n
+                                                 X V otept
+                       Center of Gravityrt =                     × P artyScorept                   (2)
+                                                   p
+                                                       V otert
+
+
+where r indexes CZs, t election-years and p parties. VV ote pt
+                                                        otert
+                                                               denotes the vote share of party
+p in CZ r in year t. I then subtract Center of Gravityrt at election year 2014 or 2018
+by its value in the base year (i.e., 2010) to obtain the change in the center of gravity
+(∆ Center of Gravityrt ).
+  15
+    For scores computed using the CMP, the party position on a policy issue is computed based on the
+number of negative and positive references to such issue, as in Colantone and Stanig (2018b) and Martin
+and Vanberg (2020).
+
+
+
+
+                                                  23
+6.3    Insurance and Compensation
+
+Based on the discussion I develop in Section 5.2, I measure the reliance on church services
+using census data collected in 2010, the base year. For each CZ, I compute the share of
+adults who belong to any evangelical denomination. Although evangelical churches in Brazil
+are generally classified as belonging to “historical Protestantism” or “(Neo-)Pentecostalism”,
+this distinction is not clear in practice. For example, Spyer (2020, p. 54) argued that many
+evangelical churches that have their origins in historical Protestantism adopted a hybrid
+model that incorporated many of the values and practices of (Neo-)Pentecostal churches.
+Furthermore, Araújo (2022) showed that attitudes toward PT were very similar between his-
+torical evangelicals and Pentecostals. In addition, both historical (for example, the Baptist
+and Presbyterian) and (Neo-)Pentecostal (for example, the Assembly of God and the Uni-
+versal Church of the Kingdom of God) churches provide material support to congregants (see
+Figure 4) and have prominent pastors who voiced similar political positions in 2018 (see Ta-
+ble D.2 in the Appendix). For these reasons, I collapse the historical and (Neo-)Pentecostal
+denominations in the analyses that follow.
+   I also consider the share of Catholics at the CZ-level. As discussed in Section 5.2,
+Catholics are much less likely to rely on material support from churches and religious organi-
+zations than evangelicals (see Figure 3). However, their religious beliefs are likely to provide
+psychological support when coping with adverse life events (Scheve and Stasavage, 2006;
+Fruehwirth, Iyer and Zhang, 2019). Therefore, comparing how evangelical and Catholic
+communities respond to the export shock can help provide evidence on whether general
+religiosity or specific characteristics of evangelical communities (i.e., service provision by
+evangelical churches and political mobilization by evangelical leaders) drive the results.
+
+
+6.4    Other CZ-Level Data
+
+I also include a series of covariates at the commuting zone level. First, I include measures
+of GDP per capita and log population at the base year. Data are sourced from Ipeadata,
+
+                                              24
+a database maintained by the Brazilian Institute of Applied Economic Research. Second, I
+include the share of the population that works in an export-oriented sector. This variable
+is computed by matching RAIS and export data that the Brazilian Ministry of Economy
+makes available. For more information on the data cleaning and matching procedure, see
+Section 6.1 and Appendix G.
+
+
+6.5      Individual-Level Data
+
+Although CZ-level electoral returns capture within-country variation in aggregate voting be-
+havior, many different factors underlie individual voting decisions. To better examine the
+channels through which export shocks caused a shift away from the PT and other parties
+that defend welfare-state expansion, I gather individual-level survey data from the Latin
+American Public Opinion Project (LAPOP). These data include information on the respon-
+dents’ municipality of residence. I then used this information to match the survey data with
+the export shock at the CZ level. To approximate the date of the 2018 election, I use the
+2017 LAPOP survey wave.
+      To assess the value that respondents attach to the psychological benefits provided by
+religion, I rely on a survey item in which respondents indicate how important religion is to
+their lives (import. of religion). I then used latent factor analysis to construct two additional
+indices: religious engagement and trad. morality. Unlike a respondent’s internal religiosity,
+religious engagement is meant to capture the extent to which respondents carry out visible
+behaviors that indicate engagement in their religious communities. I estimate this latent
+factor using two survey items: how often a respondent goes to religious meetings and how
+often they go to religious services.16 I measure attitudes toward traditional moral values by
+estimating a latent factor based on items covering women’s role in society and LGBTQIA+
+rights (i.e., whether homosexuals should be allowed to be public officials, whether they should
+be allowed to marry, and if men are better politicians than women).17 I also select items
+ 16
+      Cronbach’s Alpha = .66
+ 17
+      Cronbach’s Alpha = .60
+
+
+                                               25
+that measure attitudes toward the PT, specifically, the extent to which respondents like PT
+supporters (like PT supp.) and think the impeachment of Rousseff (PT) in 2016 was unfair
+(Rouseff ’s impeach. was unfair ). To measure support for redistribution (Redistr.), I select
+an item that measures agreement with the statement “the state should implement public
+policies to reduce inequality of opportunity.”
+    Furthermore, I construct a dummy variable that I use in the individual-level models
+to estimate the effect of the export shock among evangelicals. This variable (Evangelical )
+equals one if the respondent is evangelical and zero otherwise. Lastly, I control for basic so-
+cioeconomic characteristics, namely, gender, age, race, and education level. I select variables
+that are unlikely to be affected by the export shock, because including variables that can be
+affected by treatment is a source of bias (Rosenbaum, 1984). Similar basic socioeconomic
+characteristics have been used in previous research that has analyzed survey data matched
+to trade shocks (e.g., Colantone and Stanig, 2018b).
+
+
+
+7     Research Design
+
+7.1    Model Specification
+
+My empirical strategy relies on examining the effect of changes in exports per worker at the
+CZ level on electoral behavior and public opinion. First, for electoral behavior, I estimate
+stacked first differences models at the CZ level. I estimate regressions of the following form:
+
+
+∆Ysrt = αst + β∆EP Wsrt + γ∆EP Wsrt · Evangsrt=2010 + ζEvangsrt=2010 + Xsrt=2010 η ′ + εsrt ,
+                                                                                               (3)
+where r indexes CZs in state s, election year t, and εsrt is the error term. ∆Ysrt is any of the
+dependent variables described in Section 6.2 (i.e., either first differences in PT’s vote shares or
+CZ’s centers of gravity). The term αst denotes state-year fixed effects, which capture factors
+common to all CZs within a state in a given election, such as the governor’s ideological
+
+
+                                                26
+leaning and the general political climate in the state. Evangsrt=2010 is a dummy variable
+that equals one if CZ r is above the median in terms of the share of the population that
+belongs to any evangelical denomination in 2010. Xsrt=2010 is a vector of controls measured
+pre-treatment, that is, in 2010. It includes the share of formal jobs in CZ r that are in
+export industries, log population, and log GDP per capita. The coefficients of interest are
+β–which estimates the effect of the export shock in CZs with low levels of evangelicals–and,
+γ, which estimates the difference of the effect of the export shock in CZs with high levels of
+evangelicals (compared to CZs with low levels of evangelicals). The dependent variables and
+∆EP Wsrt are standardized to facilitate interpretation of the results.
+   Second, to estimate the effect of the drop in exports on individual-level attitudes, I
+estimate regressions of the following general form:
+
+
+Attitudeisr = αs +β∆EP Wsr(i) +γ∆EP Wsr ·Evangeli +ζEvangeli +Xsrt=2010 η ′ +Zit κ′ +εisrt ,
+                                                                                           (4)
+where i indexes individuals in state s and CZ r. Attitudeisr is any of the dependent vari-
+ables described in Section 6.2, namely, engagement with religion, importance of religion,
+attitudes toward the PT, support for redistribution, and opinion on traditional moral val-
+ues. ∆EP Wsr(i) is the export shock at the CZ-level attributed to individual i based on her
+municipality of residence. Evangeli is a dummy variable that equals one if respondent i
+self-describes as evangelical. αs is a vector of state-fixed effects, and Xsrt=2010 is the vec-
+tor of CZ-level pretreatment controls. Finally, Zit is a vector of individual-level controls
+that includes: gender, age, ethnicity, and years of education. The coefficients of interest
+are β, which estimates the effect of the export shock among non-evangelicals, and γ which
+estimates the difference of the effect of the export shock among evangelicals (compared to
+non-evangelicals).
+
+
+
+
+                                              27
+7.2    Identification and Robustness Checks
+
+A potential issue with this empirical strategy is that local pre-shock labor market special-
+ization (i.e., the shares of jobs in CZ r that are in sector j in the base year, 2010) might be
+correlated with pre-existing trends in electoral outcomes (Goldsmith-Pinkham, Sorkin and
+Swift, 2020). For example, regions with a high concentration of soybean production may
+exhibit an upward trend in favor of a specific type of candidate before the drop in exports. I
+address this concern in a number of ways. First, I control for trends in CZs with similar labor
+market specialization in 2010. That is, I control for the share of workers in the main export
+industries interacted with election-year dummies. I define the main export industries as the
+top four Brazilian exports in 2010. These industries correspond to 42% of the total Brazilian
+exports in that year (see Figure B.1a in Appendix). Table I.1 in Appendix shows that the
+results presented in the next section are substantively unchanged once I add these controls.
+Second, I control for the share of employment in broader export industry categories, using
+ISIC Rev. 4 two-digit divisions, whereas the export shock is calculated based on employment
+shares in ISIC Rev. 4 four-digit classifications. Table I.2 in Appendix shows that adding
+these controls does not substantively change the results. Third, I follow the recommendations
+of Goldsmith-Pinkham, Sorkin and Swift (2018) and identify the employment shares that
+are most predictive of the export shock (∆EP Wrt ) by computing their Rotemberg weights. I
+then construct an alternative export shock by excluding the industries in the 99th percentile
+of the Rotemberg weights distribution (see Figure I.1). Lastly, I test the robustness of the
+results displayed in Table 1 to replacing the export shock by this alternative measure. The
+results, displayed in Table I.3, are substantively unchanged.
+   Another series of potential concerns relates to the interaction effect between the export
+shock and the evangelical variable. First, Hainmueller, Mummolo and Xu (2018) pointed
+out that if interaction effects were non-linear, the results might be model dependent. To
+assess whether the marginal effect of the export shock on vote shares for the PT was a
+linear function of the concentration of evangelicals at the regional level, I follow the diagnos-
+
+
+                                               28
+tic recommendations by these authors. Specifically, I estimated models similar to the one
+in Equation 3 using their proposed binning estimator. Figure K.1 in the Appendix plots
+both the linear marginal effects with the continuous evangelical variable and the binning
+estimator. The fact that the Low, Medium, and High binned estimates closely align with
+the linear marginal effect line suggests that the assumption holds for this moderator. More-
+over, the density plot at the bottom of Figure K.1 demonstrates a high degree of common
+support. Second, the evangelical variable might be capturing other CZ-level characteristics
+that moderate the effect of export shocks on voting behavior. I address this concern in two
+ways. First, in Table L.1, I add to the specification in Equation 3 interactions of the export
+shock with other variables that might moderate the export shock effect and be correlated
+with the evangelical variable. Specifically, I add interactions of the export shock with the
+following variables at the CZ-level prior to treatment: share of the population below the
+poverty line, share of the population living in rural areas, average level of education, share
+of white population as well as pretreatment ideological centers of gravity in two dimensions:
+position on the left-right scale and traditional morality.18 The results are robust to adding
+these additional controls. Second, in Appendix L I assess the sensitivity of the interaction
+effect to potential omitted variable bias following the recommendations of Cinelli and Hazlett
+(2020). Moreoever, in the next section, I discuss why the results presented in Table 2 and
+Figure 6 alleviate the concern that the interaction effect is driven by omitted variable bias.
+      Another series of concerns are related to the estimation of standard errors. First, the
+presence of spatial autocorrelation might lead to an underestimation of standard errors. I
+account for this potential issue by estimating standard errors that are robust to autocorrela-
+tion following Conley (1999). Adão, Kolesár and Morales (2019) called attention to another
+potential problem with residuals in shift-share designs. Specifically, units with similar labor
+market specialization in the pre-shock period (i.e., with similar shares) may have correlated
+residuals, causing an over-rejection of the null hypothesis. This issue is not solved by cluster-
+ 18
+      The centers of gravity are computed using results from the first round of the 2010 election.
+
+
+
+                                                      29
+ing standard errors at higher levels of geographic aggregation. To test for this issue, Adão,
+Kolesár and Morales (2019) recommend conducting a placebo exercise in which the shift
+part of the shift-share instrument (here, the per capita change in exports by industry) is
+replaced by a normally distributed random variable. The exercise is repeated thousands of
+times and the rejection rate is computed at the 95% confidence level. An indication of the
+over-rejection problem occurs when the test produces a rejection rate considerably higher
+than 5%. I perform this exercise as they suggest. After running the regression in equation 3
+with my “random shift” replacing my shift-share instrument 10,000 times, I end up with a
+rejection rate of 5.5% for the coefficient of interest (i.e., the interaction of the export shock
+with the evangelical dummy). The rejection rate for the export shock coefficient itself is
+similar and the Figures is available upon request. Figure J.1 in the Appendix shows the
+distribution of the estimated coefficients in this placebo test. The figure shows that the
+estimates are normally distributed with the mean equal to zero. These results suggest that
+the correlation between residuals of units with similar labor market specialization in the
+pre-shock period is unlikely in this case.
+
+
+
+8     Results
+
+8.1    Voters’ Responses to the Export Shock
+
+First, I examine the effects of export decline on voting for the PT in the 2010s. Table 1
+reports the results of the models with changes in the share of votes for the PT between 2010
+and the two subsequent presidential elections (2014 and 2018) as the dependent variable. All
+variables are standardized to have mean 0 and standard deviation 1 to make interpretation
+easier. My theoretical expectation is that the interaction of the export shock with the
+variable measuring the concentration of evangelicals is positive, suggesting that a decrease
+in exports reduces the votes cast for the PT more in CZs with a higher concentration of
+evangelicals than in CZs with a low concentration of evangelicals. Column (1) shows that a
+
+
+                                               30
+Table 1: Effects of Export Decline on Votes for the PT by Concentration of Evangelicals
+and Catholics (2010-2018)
+
+                                                            DV: ∆PT Vote Shares
+                                         (1)            (2)        (3)          (4)           (5)
+ ∆EPWt                                0.0378∗∗      0.0211      0.0445∗∗∗   0.0618∗∗∗     0.0438∗∗∗
+                                      (0.0154)     (0.0135)     (0.0132)    (0.0237)      (0.0131)
+ Evangelicals (dummy)                               -0.0552                   -0.0874
+                                                   (0.0693)                  (0.0589)
+ Catholics (dummy)                                  -0.0790                   -0.0987
+                                                   (0.0572)                  (0.0647)
+ Evangelicals (cont.)                                           -0.141∗∗                  -0.159∗∗∗
+                                                                (0.0625)                  (0.0579)
+ Catholics (cont.)                                              -0.145∗∗                   -0.161∗∗
+                                                                (0.0583)                  (0.0632)
+ Evangelicals (dummy) ×                            0.0594∗∗
+     ∆EPWt                                         (0.0253)
+ Evangelicals (cont.) ×                                         0.0214∗
+     ∆EPWt                                                      (0.0118)
+ Catholics (dummy) ×                                                          -0.0326
+     ∆EPWt                                                                   (0.0262)
+ Catholics (cont.) ×                                                                      -0.0198∗
+     ∆EPWt                                                                                (0.0120)
+
+ Observations                           1114        1114          1114        1114          1114
+ Adjusted R2                            0.820       0.821         0.822       0.820         0.822
+ Evangelicals (dummy) × year                          ✓
+ Evangelicals (cont.) × year                                       ✓
+ Catholics (dummy) × year                                                       ✓
+ Catholics (cont.) × year                                                                     ✓
+ State × year FE                          ✓             ✓          ✓            ✓             ✓
+ CZ controls                              ✓             ✓          ✓            ✓             ✓
+ Note: Stacked first difference estimates at the commuting zone (CZ) level. Models (2) and (3) include
+ interaction between the export shock and the share of Evangelicals at the CZ level as a dummy
+ variable (i.e., below the median equal zero and above the median equals one) and as a continuous
+ variable, respectively. Columns (4) and (5) do the same but with the concentration of Catholics.
+ All models include state by year fixed effects and the following CZ-level controls: share of workers
+ in export sectors, log GDP per capita and log population in base year. All continuous variables are
+ standardized. Standard errors clustered at the meso-region by year level in parenthesis. Table H.1 in
+ the Appendix reproduces this table showing the estimates for the full set of controls. ∗ p < 0.10, ∗∗
+ p < 0.05, ∗∗∗ p < 0.01.
+
+
+
+                                                   31
+one-standard deviation decrease in the export shock reduces the vote share for the PT by
+approximately 0.04 standard deviations. In addition, columns (2) and (3) provide evidence
+that this effect is stronger in CZs with higher levels of the evangelical population. Column (2)
+shows that, in substantive terms, a decrease in the export shock by one standard deviation
+(equivalent to USD 7,778 per worker) decreases the PT’s vote share by 0.8 percentage points,
+but only in CZs with evangelical populations that are above the median.19 Although the
+estimated effects are small, this is common in studies examining the effect of trade shocks
+on voting behavior (Margalit, 2019a).20 Columns (4) and (5) display the results of the
+interaction between the export shock and the catholic variables (in binary and continuous
+forms, respectively). Because being Catholic is not a good predictor of reliance on church
+services (see Section 5.2), the null result shown in columns (4) and (5) suggests that general
+religiosity alone is not sufficient to change how people react to trade shocks.
+       Next, I estimate the models in columns (1), (2), and (4) in Table 1 by election year.
+While evangelical leaders took a clear and cohesive position against the PT and in favor of
+the far-right candidate, Jair Bolsonaro, in 2018, in 2014 they were divided in their political
+positions (see Section 5.3 and Appendix D). Table 2 reports the results. Columns (1) and
+(4) show that a decrease in exports causes a decline in the vote share for the PT in both
+elections. However, whereas in 2014 no difference exists between CZs with larger evangelical
+communities (column 2), in 2018 this effect is driven entirely by CZs with high shares of
+evangelicals (column 5). I speculate that the imprecisely estimated coefficient in 2014 is a
+consequence of the lack of coordination among evangelical elites. As I discuss in Section 5.3,
+in 2014, evangelical pastors were divided among supporting opposition candidates, backing
+the PT (the then incumbent), and declaring neutrality. In contrast, in 2018, there was much
+  19
+      This calculation is based on marginal effects estimated based on the regression in Column (2) of Table
+1. The marginal effect of the export shock in CZs below the median in share of evangelical population is
+0.0210 (std. err: 0.177). In CZs with the share of evangelical population above the median, the marginal
+effect of the export shock is 0.0804*** (std. err: 0.0226).
+   20
+      For example, Dippel et al. (2022) used a similar instrument to study the effect of an increase in imports
+from low-wage countries to Germany. They found that a one standard deviation increase in Chinese imports
+increased the vote share of nationalist parties by 0.12 percentage points.
+
+
+
+                                                      32
+Table 2: Effects of Export Shock on Votes for the PT by Concentration of Evangelicals and
+Catholics by Election
+
+                                                            DV: ∆PT Vote Shares
+                                           2014 Election                         2018 Election
+                                    (1)          (2)           (3)        (4)          (5)         (6)
+ ∆EPWt                           0.0544∗       0.0367        0.0947∗∗ 0.0308∗         0.0126  0.0470
+                                 (0.0301)     (0.0346)       (0.0464) (0.0176)      (0.0143) (0.0292)
+ Evangelicals (dummy)                          -0.0258                               -0.0390
+                                              (0.0640)                              (0.0550)
+ Catholics (dummy)                                            -0.0239                         -0.0298
+                                                             (0.0598)                        (0.0554)
+ Evangelicals (dummy) ×                        0.0605                               0.0607∗∗
+     ∆EPWt                                    (0.0599)                              (0.0286)
+ Catholics (dummy)                                            -0.0584                         -0.0234
+     ∆EPWt                                                   (0.0579)                        (0.0299)
+ Observations                       557          557           557        557         557          557
+ Adjusted R2                       0.665        0.665         0.665      0.758       0.759        0.758
+ State FE                            ✓            ✓             ✓          ✓           ✓            ✓
+ CZ controls                         ✓            ✓             ✓          ✓           ✓            ✓
+ Note: Stacked first difference estimates at the commuting zone (CZ) level. Models (1–3) report the
+ results for the 2014 election. Models (4-6) to the 2018 election. Models (2) and (5) include interaction
+ between the export shock and the concentration of Evangelicals at the CZ level as a dummy variable,
+ while models (3) and (6) interact the export shock with a dummy variable indicating the concentration
+ of Catholics at the CZ-level. All models include state fixed effects and the following CZ-level controls:
+ share of workers in export sectors, log GDP per capita and log population in base year. All variables
+ are standardized. Standard errors clustered at the meso-region level in parenthesis. Table H.2 in the
+ Appendix reproduces this table showing the estimates for the full set of controls.
+
+
+
+
+                                                       33
+more coordination among evangelical pastors, with the vast majority of them supporting
+the far-right candidate, Jair Bolsonaro. This difference between the precision of the 2014
+and 2018 estimates of the interaction between the export shock and the evangelical dummy
+provides some reassurance that other characteristics at the CZ level that are correlated with
+the presence of evangelicals are not driving these results. In Table L.1 in the Appendix, I
+provide additional evidence that other observable characteristics measured prior to treatment
+at the CZ level (i.e., poverty, rural population, educational levels, white population and
+centers of gravity on the left-right scale and traditional morality) are not driving these results.
+Moreover, in Appendix L (subsection “Sensitivity Analysis”), I examine the sensitivity of the
+results to omitted variable bias. Lastly, Table M.1 in the Appendix shows that the results
+presented here are not driven by changes in turnout.
+   Next, I examine whether the change in vote shares for the PT caused by the decline
+in exports also translated into support for parties with political platforms are more in line
+with the interests and values of evangelical churches. To do this, I ran the same models as
+in columns (2) and (5) of Table 2 but with my alternative CZ-level outcome; specifically, I
+substitute the first difference in vote share for the PT with the first difference in ideological
+centers of gravity of the CZs. The first difference in centers of gravity is meant to capture
+changes in the preferences of parties with different political platforms. The centers of gravity
+are computed as the weighted average of the party scores, where the weights are vote shares.
+Details about how centers of gravity are computed can be found in Section 6.2. I consider
+three dimensions of party positions: general ideology (i.e., position on the left-right scale),
+redistribution, and welfare state, the influence of religious values and practices in politics.
+The estimated coefficients for the interaction of export shock and the evangelical dummy are
+reported in Figure 6. The estimates in Figure 6 suggest that in CZs with high levels of an
+evangelical population, the decline in exports caused an increase in support for parties with
+different political platforms only in the 2018 election (blue lines), but not in 2014 (red lines).
+Specifically, the decline in exports caused CZs with high shares of evangelicals to turn more
+
+
+                                                34
+                    Figure 6: Estimates of Export Shock Interacted with Evangelical Dummy (DVs: Centers of Gravity)
+
+                                 Left−Right         Left−Right        Redistribut.         Welfare          Relig.−State       Trad. Moral.
+                                   (BLS)              (CMP)            (CHES)              (CMP)              (CHES)              (CMP)
+
+
+
+                        0.05
+
+
+
+                        0.00
+
+
+
+                       −0.05
+35
+
+
+
+
+                       −0.10
+
+
+
+                                2014    2018       2014    2018       2014    2018       2014    2018       2014   2018       2014    2018
+
+
+     Note: The figure plots the estimated coefficients and 95% confidence intervals of the interaction between the export shock and the evangelical dummy
+     for models as in columns (2) and (5) of Table 2 but with different DVs. The DVs are the first difference of the centers of gravity of CZs for different
+     party scores, that is, position on the left-right scale (Left-Right), as well as support for redistribution (Redistribut.), expansion of the welfare state
+     (Welfare), religious principles in politics (Relig.-State), and traditional moral values (Trad. Moral.). CZs’ centers of gravity are a weighted average of
+     party scores, where the weights are vote shares. For more information on how centers of gravity are computed, see 6.2. The acronyms in parentheses
+     indicate the data source for the party scores used to compute the centers of gravity, namely the Brazilian Legislative Survey (BLS), the Comparative
+     Manifesto Project (CMP), and the Chapel Hill Expert Survey (CHES). Tables H.3 and H.4 in the Appendix show the estimates for the full set of
+     controls for the election-years 2014 and 2018, respectively.
+toward right-wing parties, parties more opposed to redistribution and welfare expansion, and
+parties that are more in favor of adopting religious practices and values in politics. Table
+L.3 in the Appendix shows that these estimates are fairly robust to omitted variable bias.
+
+
+8.2    Evaluating the Mechanisms
+
+In the previous section, I showed that the decrease in exports had a negative effect on the
+electoral returns of the Workers’ Party (PT). I also provided evidence that in 2018, but not
+in 2014, this effect was driven by CZs where evangelicals represent a higher share of the
+population. Furthermore, in 2018, the shift away from PT in CZs with a high concentration
+of evangelicals is accompanied by increased support for parties that lean to the right, oppose
+redistribution, and defend religious values and practices. I conjecture that the shift in
+party preferences is explained by a two-step process. First, in CZs that are more exposed
+to the decline in exports, evangelicals engage with their religious communities more. As
+I argue in Section 5.2, this difference is explained by evangelical churches acting as non-
+state service providers (NSPs). More specifically, I advance the idea that when evangelical
+congregants face economic insecurity, they tend to invest more in their ties with their religious
+communities in order to increase access to the goods and services distributed at the discretion
+of evangelical leaders. Second, evangelical leaders acting as brokers for parties and candidates
+that share their political views—notably Jair Bolsonaro in 2018—are more successful in
+mobilizing voters in places where the dependency of congregants on church services and
+goods is stronger (i.e., places that are negatively affected by globalization). To better explore
+this individual-level mechanism, I now turn to my analysis of survey data.
+   I rely on the LAPOP’s Americas Barometer 2017 Brazilian wave. This wave was se-
+lected for two reasons. First, it was selected to approximate the date of the 2018 Brazilian
+presidential election. Second, it was selected due to data availability, namely, the presence
+of survey items that measure individual engagement with religious communities (religious
+engagement) and attitudes toward the PT, that is, the extent to which respondents like PT
+
+
+                                               36
+supporters and agree that Rousseff ’s (PT) impeachment was unfair. I also select items that
+are related to alternative mechanisms. First, the possibility exists that the economic decline
+caused by the export shock led voters to seek psychological comfort in religion. To evaluate
+this mechanism, I estimate the effect of export shock on the degree to which respondents
+think religion is important in their lives (religion important). Second, the export shock might
+directly affect attitudes toward redistribution and traditional moral values, which might affect
+voting behavior independently of political mobilization by evangelical leaders. For example,
+scholars have argued that trade shocks lead to higher support for redistribution (Walter,
+2010; Scheve and Serlin, 2022) and authoritarian values (Ballard-Rosa et al., 2021; Ballard-
+Rosa, Jensen and Scheve, 2022). If a similar phenomenon were taking place in the context of
+Brazil in the 2010s, voters would have turned away from the PT for programmatic reasons
+and not as a result of the evangelical leadership’s political persuasion.
+       Table 3 reports the results of the individual-level analysis. The variables are standard-
+ized to make interpretation easier. Column (1) shows that the decline in exports increases
+engagement with religious communities (i.e., frequency of attendance at religious meetings
+and services) only among evangelicals. Columns (3) and (4) show that a decline in exports
+decreases pro-PT sentiment among evangelicals. Columns (5) and (6) show that the decline
+in exports did not change evangelicals’ attitudes toward redistribution,21 nor their conser-
+vatism in relation to traditional moral values. Finally, column (2) shows that the decline in
+exports is not associated with an increase in the importance of religion among evangelicals
+nor among individuals identifying with other religious denominations. Overall, the results
+suggest that evangelicals became more engaged with their religious communities as a result
+of the decline in exports. However, such a higher investment in their religious communities
+did not translate into more conservative values. Although evangelicals have more traditional
+moral values on average (see column (6) of Table 3), the decline in exports did not ap-
+pear to strengthen their conservatism. Instead, the positive effect of the decline in exports
+  21
+    The marginal effect of the export shock among Evangelicals is 0.042 with standard error 0.035 (the
+p-value equals 0.23).
+
+
+                                                 37
+             Table 3: Individual-Level Estimates: Interaction with Evangelical Dummy
+
+                                                                      Rousseff’s
+                         Religious Import. of            Like PT      impeach.                      Trad.
+     DV:                Engagement Religion               supp.        unfair         Redistr.     Morality
+                             (1)             (2)            (3)            (4)           (5)          (6)
+     ∆EPW2018              -0.0001         0.0082        -0.0388∗        -0.0034     0.0517∗∗∗      0.0366∗
+                          (0.0250)        (0.0341)       (0.0228)       (0.0212)     (0.0164)      (0.0218)
+     Evangelical          0.7640∗∗∗       0.4070∗∗∗     -0.1310∗∗∗     -0.1190∗∗      0.0619       0.5790∗∗∗
+                          (0.0623)        (0.0477)       (0.0481)      (0.0594)      (0.0510)      (0.0609)
+     Evangelical ×        -0.0826∗∗        -0.0202       0.1080∗∗       0.0844∗       -0.0095       -0.0087
+       ∆EPW2018           (0.0346)        (0.0330)       (0.0437)       (0.0454)     (0.0422)      (0.0278)
+     Obs.                   1455            1476           1447           1466          1471         1442
+38
+
+
+
+
+     Adjusted R2            0.173          0.0819         0.0290         0.0344        0.0272        0.206
+     State FE                 ✓              ✓              ✓              ✓             ✓             ✓
+     Ind. controls            ✓              ✓              ✓              ✓             ✓             ✓
+     CZ controls              ✓              ✓              ✓              ✓             ✓             ✓
+     N of CZs                82              82             82             82            82           82
+     Note: ∗ p < 0.10, ∗∗ p < 0.05, ∗∗∗ p < 0.01. Standard errors clustered at the CZ-level. The table reports
+     the results of regressions of the form given in Equation 4. The dependent variables are individual-level
+     survey measures of: religious engagement (how often respondents attend church services and religious
+     meetings) (1); how important religion is to the respondent’s life (2); attitudes towards the Worker’s
+     Party (PT), specifically the extent to which the respondent likes PT supporters (3) and agrees that
+     Rousseff’s impeachment was unfair (4); attitudes towards redistribution (5), specifically the extent to
+     which respondents think that the State should act to reduce inequality of opportunity and; traditional
+     morality (6). All continuous variables are standardized to have mean 0 and SD 1. The Evangelical
+     dummy is equal to 1 when respondent self-reports as evangelical. CZ-level controls are: share of workers
+     in the export sector, log GDP per capita and log population. Individual-level controls are: age, gender,
+     race and educational level. Table H.5 in the Appendix show the estimates of the full set of controls
+on religious engagement (column 1) is accompanied by more negative attitudes toward PT
+(columns 3 and 4). These results suggest that changes in preferences and values as a direct
+result of the decline in exports is not the mechanism behind the increase in anti-PT senti-
+ment. Instead, the results are consistent with religious elites persuading congregants who
+became more dependent on church services to hold more negative attitudes toward the PT
+(that is, an “organizational broker” effect).
+
+
+
+9     Conclusion
+
+The integration of national economies increases economic volatility and creates winners and
+losers (Rodrik, 1998; Autor, Dorn and Hanson, 2013; Dix-Carneiro, 2014). Canonical theories
+have hypothesized that states would respond to the risks and localized losses of globalization
+by insuring and compensating the affected population through higher public spending (e.g.,
+Cameron, 1978; Ruggie, 1982). I contend that compensation for losses caused by globaliza-
+tion is not necessarily provided by the state. When voters rely heavily on non-state service
+providers (NSPs) to cope with adverse life events, the negative effects of globalization make
+affected communities more susceptible to the political persuasion of “organizational brokers.”
+    I leverage the sharp decline in exports from Brazil to test this argument. I show that
+exposure to the negative effects of globalization reduced support for left-wing parties defend-
+ing redistribution and welfare expansion. I also show that this effect is stronger in CZs with
+a high share of evangelicals, who, compared to other religious denominations, tend to rely
+more on their churches for material support. By analyzing survey data, I provide evidence
+of the underlying mechanism. Specifically, evangelicals in CZs more exposed to the decrease
+in exports attend church services and religious meetings more often. Furthermore, evangel-
+icals more exposed to the decrease in exports also report more negative attitudes toward
+the Workers’ Party (PT), but do not oppose redistribution more or hold more conservative
+moral values. Overall, the evidence is consistent with the argument that global economic
+
+
+
+                                                39
+busts can increase the dependency of poor communities on NSPs and increase the power of
+organizational brokers to shape electoral results. These results are most likely to generalize
+to other Global South countries, where reliance on NSPs is widespread (Gough et al., 2004;
+Cammett and MacLean, 2014).
+   As a major commodity exporter exposed to the ups and downs of the international
+economy, Brazil provides an excellent case to study the political responses to globalization
+in low- and middle- income countries (LMICs). Despite unprecedented investments in social
+programs in the 2000s, the presence of NSPs remained widespread as in most LMICs. The
+Brazilian experience highlights the challenges of building a stable and robust welfare state
+while, at the same time, increasing expectations about the state beyond the context of
+advanced industrial democracies.
+   Much work remains to be done on the contingencies underlying the political consequences
+of globalization. Future work should explore when and how these findings extend to other
+contexts. A fruitful way forward is to analyze how global economic busts enable and constrain
+the activities of other types of NSPs. In Latin America, special attention should be paid
+to organized crime. Another promising way forward is to examine whether NSPs make
+economic liberalization politically palatable in the Global South by providing support to the
+poor without increasing taxes on the rich.
+
+
+
+
+                                             40
+References
+Adão, Rodrigo, Michal Kolesár and Eduardo Morales. 2019. “Shift-share designs: Theory
+ and inference.” The Quarterly Journal of Economics 134(4):1949–2010.
+
+Ager, Philipp and Antonio Ciccone. 2018. “Agricultural Risk and the Spread of Religious
+  Communities.” Journal of the European Economic Association 16(4):1021–1068.
+
+Ahlquist, John, Mark Copelovitch and Stefanie Walter. 2020. “The political consequences of
+ external economic shocks: evidence from Poland.” American Journal of Political Science
+ 64(4):904–920.
+
+Araújo, Victor. 2022. “Pentecostalismo e antipetismo nas eleições presidenciais brasileiras.”
+  Latin American Research Review p. 1–19.
+
+Arretche, Marta. 2019. Paths of Inequality in Brazil. Springer International Publishing.
+
+Auriol, Emmanuelle, Julie Lassébie, Amma Panin, Eva Raiber and Paul Seabright. 2020.
+ “God Insures those Who Pay? Formal Insurance and Religious Offerings in Ghana*.” The
+ Quarterly Journal of Economics 135(4):1799–1848.
+
+Autor, David, David Dorn, Gordon Hanson and Kaveh Majlesi. 2020. “Importing Political
+ Polarization? The Electoral Consequences of Rising Trade Exposure.” American Economic
+ Review 110(10):3139–3183.
+
+Autor, David H, David Dorn and Gordon H Hanson. 2013. “The China syndrome: Local
+ labor market effects of import competition in the United States.” American economic
+ review 103(6):2121–68.
+
+Autor, David H., David Dorn and Gordon H. Hanson. 2016. “The China Shock: Learning
+ from Labor-Market Adjustment to Large Changes in Trade.” Annual Review of Economics
+ 8(1):205–240.
+
+Avelino, George, David S Brown and Wendy Hunter. 2005. “The effects of capital mobil-
+  ity, trade openness, and democracy on social spending in Latin America, 1980–1999.”
+  American Journal of Political Science 49(3):625–641.
+
+Baccini, Leonardo and Stephen Weymouth. 2021. “Gone For Good: Deindustrialization,
+  White Voter Backlash, and US Presidential Voting.” American Political Science Review
+  p. 73.
+
+Ballard-Rosa, Cameron, Amalie Jensen and Kenneth Scheve. 2022. “Economic decline, social
+  identity, and authoritarian values in the United States.” International Studies Quarterly
+  66(1).
+
+Ballard-Rosa, Cameron, Stephanie Rickard, Mashail Malik and Kenneth Scheve. 2021. “The
+  Economic Origins of Authoritarian Values: Evidence from Local Trade Shocks in the
+  United Kingdom.” Comparative Political Studies 54(13):2321–2353.
+
+
+                                              41
+Bartik, Timothy J. 1987. “The Estimation of Demand Parameters in Hedonic Price Models.”
+  Journal of Political Economy 95(1):81–88. Publisher: The University of Chicago Press.
+
+Beramendi, Pablo and Philipp Rehm. 2016. “Who gives, who gains? Progressivity and
+  preferences.” Comparative Political Studies 49(4):529–563.
+
+Boas, Taylor C. 2023. Evangelicals and electoral politics in Latin America: a kingdom of this
+  world. Cambridge University Press.
+
+Boas, Taylor C and Amy Erica Smith. 2019. “Looks like me, thinks like me: descrip-
+  tive representation and opinion congruence in Brazil.” Latin American Research Review
+  54(2):310–328.
+
+Borusyak, Kirill, Peter Hull and Xavier Jaravel. 2018. Quasi-experimental shift-share re-
+  search designs. Technical report National Bureau of Economic Research.
+
+Brinks, Daniel M, Steven Levitsky and Maria Victoria Murillo. 2019. Understanding institu-
+  tional weakness: power and design in Latin American Institutions. Cambridge University
+  Press.
+
+Bueno, Natália S. 2018. “Bypassing the enemy: distributive politics, credit claiming, and
+  nonstate organizations in Brazil.” Comparative Political Studies 51(3):304–340.
+
+Busemeyer, Marius R. 2009. “From myth to reality: Globalisation and public spending in
+  OECD countries revisited.” European Journal of Political Research 48(4):455–482.
+
+Cameron, David R. 1978. “The expansion of the public economy: A comparative analysis.”
+  American political science review 72(4):1243–1261.
+
+Cammett, Melani. 2014. Sectarian politics and social welfare: Non-state provision in
+  Lebanon. In The politics of non-state social welfare. Cornell University Press, Ithaca,
+  NY pp. 137–156.
+
+Cammett, Melani and Lauren M MacLean. 2014. The politics of non-state social welfare.
+  Cornell University Press.
+
+Cammett, Melani and Sukriti Issar. 2010. “Bricks and mortar clientelism: sectarianism and
+  the logics of welfare allocation in Lebanon.” World Politics 62(3):381–421.
+
+Campello, Daniela. 2014. “The politics of financial booms and crises: Evidence from Latin
+  America.” Comparative Political Studies 47(2):260–286.
+
+Campello, Daniela and Cesar Zucco. 2016. “Presidential Success and the World Economy.”
+  The Journal of Politics 78(2):589–602.
+
+Campello, Daniela and Cesar Zucco. 2020. The Volatility Curse: Exogenous Shocks and
+  Representation in Resource-Rich Democracies. Cambridge: Cambridge University Press.
+
+Campello, Daniela and Cesar Zucco Jr. 2016. “Presidential success and the world economy.”
+  The Journal of Politics 78(2):589–602.
+
+                                             42
+Campello, Daniela and Francisco Urdinez. 2020. “Voter and Legislator Responses to Local-
+  ized Trade Shocks from China in Brazil.” Comparative Political Studies p. 32.
+
+Campello, Tereza and Marcelo C. Neri. 2014. “Bolsa Famı́lia: uma década de inclusão e
+  cidadania.”.
+
+Carnes, Matthew E and Isabela Mares. 2014. “Coalitional realignment and the adoption of
+  non-contributory social insurance programmes in Latin America.” Socio-Economic Review
+  12(4):695–722.
+
+Carnes, Matthew and Isabela Mares. 2015. “Explaining the “return of the state” in middle-
+  income countries: employment vulnerability, income, and preferences for social protection
+  in Latin America.” Politics & Society 43(4):525–550.
+
+Cavaillé, Charlotte. 2023. Fair enough?: support for redistribution in the age of inequality.
+  Cambridge University Press.
+
+Chen, Daniel L. 2010. “Club Goods and Group Identity: Evidence from Islamic Resurgence
+ during the Indonesian Financial Crisis.” Journal of Political Economy 118(2):300–354.
+ URL: https://www.journals.uchicago.edu/doi/10.1086/652462
+
+Cinelli, Carlos and Chad Hazlett. 2020. “Making Sense of Sensitivity: Extending Omitted
+  Variable Bias.” Journal of the Royal Statistical Society: Series B (Statistical Methodology)
+  82(1):39–67.
+
+Colantone, Italo and Piero Stanig. 2018a. “Global Competition and Brexit.” American
+  Political Science Review 112(2):201–218.
+
+Colantone, Italo and Piero Stanig. 2018b. “The Trade Origins of Economic Nationalism: Im-
+  port Competition and Voting Behavior in Western Europe.” American Journal of Political
+  Science 62(4):936–953.
+
+Colantone, Italo and Piero Stanig. 2018c. “The trade origins of economic nationalism: Im-
+  port competition and voting behavior in Western Europe.” American Journal of Political
+  Science 62(4):936–953.
+
+Colantone, Italo and Piero Stanig. 2019. “The surge of economic nationalism in Western
+  Europe.” Journal of Economic Perspectives 33(4):128–51.
+
+Colombo, Francesco and Elias Dinas. 2023. “Networks of Grievances: Social Capital and
+  Mainstream Party Decline.” Comparative Political Studies 56(3):363–394.
+
+Conley, Timothy G. 1999. “GMM estimation with cross sectional dependence.” Journal of
+  econometrics 92(1):1–45.
+
+Cooney, Paul and Gilberto Marquez. 2016. The Impact of the Global Economic Crisis on
+  Brazil from 2008 to the Present. In Latin America after the Financial Crisis: Economic
+  Ramifications from Heterodox Perspectives. Springer pp. 59–86.
+
+
+                                             43
+Costa, Francisco, Jason Garred and Joao Paulo Pessoa. 2016. “Winners and losers from a
+  commodities-for-manufactures trade boom.” Journal of International Economics 102:50–
+  69.
+
+Cremaschi, Simone, Nicola Bariletto and Catherine E De Vries. 2023. “Without Roots.”
+  OSF Working Paper .
+
+Cremaschi, Simone, Paula Rettl, Marco Cappelluti and Catherine E De Vries. 2022. “Ge-
+  ographies of Discontent: How Public Service Deprivation Increased Far-Right Support in
+  Italy.”.
+
+Cremaschi, Simone, Paula Rettl, Marco Cappelluti and Catherine E De Vries. 2024. “Ge-
+  ographies of discontent: Public service deprivation and the rise of the far right in Italy.”
+  American Journal of Political Science .
+
+de Brauw, Alan, Daniel O. Gilligan, John Hoddinott and Shalini Roy. 2015. “The Impact of
+  Bolsa Famı́lia on Schooling.” World Development 70:303–316.
+
+De Vries, Catherine, David Doyle, Hector Solaz and Katerina Tertytchnaya. 2024. Money
+  Flows: The Political Consequences of Migrant Remittances. Oxford University Press.
+
+Dehejia, Rajeev, Thomas DeLeire and Erzo FP Luttmer. 2007. “Insuring consumption and
+  happiness through religious organizations.” Journal of public Economics 91(1-2):259–279.
+
+Di Tella, Rafael and Robert MacCulloch. 2002. “Informal family insurance and the design
+  of the welfare state.” The Economic Journal 112(481):481–503.
+
+Dippel, Christian, Robert Gold, Stephan Heblich and Rodrigo Pinto. 2022. “The effect of
+  trade on workers and voters.” The Economic Journal 132(641):199–217.
+
+Dix-Carneiro, Rafael. 2014. “Trade liberalization and labor market dynamics.” Econometrica
+  82(3):825–885.
+
+Doyle, David. 2015. “Remittances and Social Spending.” American Political Science Review
+  109(4):785–802.
+
+Drechsel, Thomas and Silvana Tenreyro. 2018. “Commodity booms and busts in emerging
+  economies.” Journal of International Economics 112:200–218.
+
+Freedman, Michael. 2020. “Vote with your rabbi: The electoral effects of religious institutions
+  in Israel.” Electoral studies 68:102241.
+
+Fruehwirth, Jane Cooley, Sriya Iyer and Anwen Zhang. 2019. “Religion and depression in
+  adolescence.” Journal of Political Economy 127(3):1178–1209.
+
+Garrett, Geoffrey. 1995. “Capital mobility, trade, and the domestic politics of economic
+ policy.” International organization 49(4):657–687.
+
+Goldsmith-Pinkham, Paul, Isaac Sorkin and Henry Swift. 2018. Bartik instruments: What,
+ when, why, and how. Technical report National Bureau of Economic Research.
+
+                                              44
+Goldsmith-Pinkham, Paul, Isaac Sorkin and Henry Swift. 2020. “Bartik Instruments: What,
+ When, Why, and How.” American Economic Review 110(8):2586–2624.
+Gough, Ian, Geof Wood, Armando Barrientos, Philippa Bevan, Graham Room, Peter Davis
+ et al. 2004. Insecurity and welfare regimes in Asia, Africa and Latin America: Social
+ policy in development contexts. Cambridge University Press.
+Grewal, Sharan, Amaney A Jamal, Tarek Masoud and Elizabeth R Nugent. 2019. “Poverty
+  and divine rewards: The electoral advantage of Islamist political parties.” American Jour-
+  nal of Political Science 63(4):859–874.
+Hainmueller, Jens, Jonathan Mummolo and Yiqing Xu. 2018. “How Much Should We Trust
+  Estimates from Multiplicative Interaction Models? Simple Tools to Improve Empirical
+  Pracitce.” Political Analysis 27(2):163–192.
+Hays, Jude C, Sean D Ehrlich and Clint Peinhardt. 2005. “Government spending and public
+  support for trade in the OECD: An empirical test of the embedded liberalism thesis.”
+  International Organization 59(2):473–494.
+Healy, Andrew and Neil Malhotra. 2013. “Retrospective Voting Reconsidered.” Annual
+  Review of Political Science 16(1):285–306.
+Holland, Alisha C. 2018. “Diminished expectations: Redistributive preferences in truncated
+  welfare states.” World Politics 70(4):555–594.
+Holland, Alisha C and Brian Palmer-Rubin. 2015. “Beyond the machine: Clientelist brokers
+  and interest organizations in Latin America.” Comparative Political Studies 48(9):1186–
+  1223.
+Hopkins, Daniel J, Yotam Margalit and Omer Solodoch. 2024. “Personal Economic Shocks
+  and Public Opposition to Unauthorized Immigration.” British Journal of Political Science
+  54(3):928–936.
+Huber, John D and Piero Stanig. 2011. “Church-state separation and redistribution.” Journal
+ of Public Economics 95(7-8):828–836.
+Hunter, Wendy and Timothy J. Power. 2019. “Bolsonaro and Brazil’s Illiberal Backlash.”
+ Journal of Democracy 30(1):68–82.
+Iannaccone, Laurence R. 1998. “Introduction to the Economics of Religion.” Journal of
+  Economic Literature 36(3):1465–1495.
+IBGE. 2010. “Gloss’ario.” https://censo2010.ibge.gov.br/apps/atlas/pdf/209_213_
+  Glossario_ATLASDEMO%202010.pdf. Accessed: 2024-09-19.
+IBGE. 2011.       “Indicadores Sociais Municipais 2010: incidência de pobreza é
+  maior nos municı́pios de porte médio.” https://agenciadenoticias.ibge.
+  gov.br/agencia-sala-de-imprensa/2013-agencia-de-noticias/releases/
+  14124-asi-indicadores-sociais-municipais-2010-incidencia-de-pobreza-e-maior-nos-munic
+  Accessed: 2025-02-02.
+
+                                            45
+Iversen, Torben and David Soskice. 2001. “An Asset Theory of Social Policy Preferences.”
+  American Political Science Review 95(4):875–893.
+
+Iversen, Torben and Philipp Rehm. 2022. Big data and the welfare state: How the information
+  revolution threatens social solidarity. Cambridge University Press.
+
+Kapiszewski, Diana, Steven Levitsky and Deborah J Yashar. 2021. “Inequality, democracy,
+ and the inclusionary turn in Latin America.” The inclusionary turn in Latin American
+ democracies pp. 1–56.
+
+Katzenstein, Peter J. 1987. Corporatism and change: Austria, Switzerland, and the politics
+ of industry. Cornell University Press.
+
+Kaufman, Robert R. and Alex Segura-Ubiergo. 2001. “Globalization, Domestic Politics,
+ and Social Spending in Latin America: A Time-Series Cross-Section Analysis, 1973–97.”
+ World Politics 53(4):553–587.
+
+Lessing, Benjamin and Graham Denyer Willis. 2019. “Legitimacy in Criminal Gover-
+  nance: Managing a Drug Empire from Behind Bars.” American Political Science Review
+  113(2):584–606.
+
+Levitsky, Steven. 2003. Transforming labor-based parties in Latin America: Argentine Per-
+  onism in comparative perspective. Cambridge University Press.
+
+Lindert, Kathy, Anja Linder and Jason Hobbs. 2007. “The Nuts and Bolts of Brazil’s Bolsa
+  Famı́lia Program: Implementing Conditional Cash Transfers in a Decentralized Context.”
+  World Bank social protection discussion paper 0709 p. 145.
+
+Malgouyres, Clément. 2017. “The impact of Chinese import competition on the local struc-
+ ture of employment and wages: Evidence from France.” Journal of Regional Science
+ 57(3):411–441.
+
+Mares, Isabela. 2005. “Social protection around the world: External insecurity, state capac-
+ ity, and domestic political cleavages.” Comparative political studies 38(6):623–651.
+
+Margalit, Yotam. 2011. “Costly Jobs: Trade-related Layoffs, Government Compensation,
+ and Voting in U.S. Elections.” The American Political Science Review 105(1):166–188.
+ URL: http://www.jstor.org/stable/41480833
+
+Margalit, Yotam. 2019a. “Economic insecurity and the causes of populism, reconsidered.”
+ Journal of Economic Perspectives 33(4):152–70.
+
+Margalit, Yotam. 2019b. “Political Responses to Economic Shocks.” Annual Review of Po-
+ litical Science 22:277–95.
+
+Martin, Lanny W. and Georg Vanberg. 2020. “What You See Is Not Always What You
+ Get: Bargaining before an Audience under Multiparty Government.” American Political
+ Science Review 114(4):1138–1154.
+
+
+                                            46
+McCauley, John F. 2013. “Africa’s new big man rule? Pentecostalism and patronage in
+ Ghana.” African Affairs 112(446):1–21.
+
+McClendon, Gwyneth and Rachel Beatty Riedl. 2021. “Using sermons to study religions’
+ influence on political behavior.” Comparative Political Studies 54(5):779–822.
+
+Mendoza, Enrique G. 1995. “The terms of trade, the real exchange rate, and economic
+ fluctuations.” International Economic Review pp. 101–137.
+
+Nicolau, Jairo. 2020. O Brasil dobrou à direita: uma radiografia das eleićões de Bolsonaro
+  em 2018. Zahar.
+  URL: https://www.companhiadasletras.com.br/detalhe.php?codigo=4103045
+
+Novaes, Lucas M and Luis Schiumerini. 2021. “Commodity Shocks and Incumbency Effects.”
+  British Journal of Political Science pp. 1–20.
+
+Petrova, Bilyana and Aleksandra Sznajder Lee. 2023. “Globalization, political institu-
+  tions, and redistribution in Central and Eastern Europe.” Comparative Political Studies
+  56(3):395–428.
+
+Pierce, Justin R and Peter K Schott. 2016. “The surprisingly swift decline of US manufac-
+  turing employment.” American Economic Review 106(7):1632–1662.
+
+Post, Alison E, Vivian Bronsoler and Lana Salman. 2017. “Hybrid regimes for local public
+  goods provision: a framework for analysis.” Perspectives on Politics 15(4):952–966.
+
+Power, Timothy J. and Rodrigo Rodrigues-Silveira. 2019. “Mapping Ideological Preferences
+  in Brazilian Elections, 1994-2018: A Municipal-Level Study.” Brazilian Political Science
+  Review 13(1).
+
+Rehm, Philipp. 2009. “Risks and Redistribution.” Comparative Political Studies p. 27.
+
+Rehm, Philipp. 2016. Risk Inequality and Welfare States: Social Policy Preferences, Devel-
+  opment, and Dynamics. Cambridge: Cambridge University Press.
+
+Rickard, Stephanie J. 2022. “Incumbents beware: the impact of offshoring on elections.”
+  British Journal of Political Science 52(2):758–780.
+
+Rodrik, Dani. 1998. “Has globalization gone too far?” Challenge 41(2):81–94.
+
+Rodrik, Dani. 2021. “Why does globalization fuel populism? Economics, culture, and the
+  rise of right-wing populism.” Annual Review of Economics 13:133–170.
+
+Rosenbaum, Paul R. 1984. “The consequences of adjustment for a concomitant variable that
+  has been affected by the treatment.” Journal of the Royal Statistical Society: Series A
+  (General) 147(5):656–666.
+
+Rudra, Nita. 2002. “Globalization and the Decline of the Welfare State in Less-Developed
+ Countries.” International Organization 56(2):411–445.
+
+
+                                             47
+Rudra, Nita. 2008. “Globalization and the Race to the Bottom in Developing Countries.”
+ Cambridge Books .
+
+Rudra, Nita and Jennifer Tobin. 2017. “When does globalization help the poor?” Annual
+ Review of Political Science 20(1):287–307.
+
+Ruggie, John Gerard. 1982. “International regimes, transactions, and change: embedded
+ liberalism in the postwar economic order.” International organization 36(2):379–415.
+
+Samuels, David and Cesar Zucco Jr. 2014. “Lulismo, petismo, and the future of Brazilian
+  politics.” Journal of Politics in Latin America 6(3):129–158.
+
+Samuels, David J and Cesar Zucco. 2018. Partisans, antipartisans, and nonpartisans: Voting
+  behavior in Brazil. Cambridge University Press.
+
+Scheve, Kenneth and David Stasavage. 2006. “Religion and preferences for social insurance.”
+  Quarterly Journal of Political Science 1(3):255–286.
+
+Scheve, Kenneth and Matthew Slaughter. 2004. “Economic Insecurity and the Globalization
+  of Production.” American Journal of Political Science 48(4):662–674.
+
+Scheve, Kenneth and Theo Serlin. 2022. “The German Trade Shock and the Rise of the Neo-
+  Welfare State in Early Twentieth-Century Britain.” American Political Science Review
+  pp. 1–18.
+
+Shayo, Moses. 2009. “A Model of Social Identity with an Application to Political Economy:
+  Nation, Class, and Redistribution.” American Political Science Review 103(2):147–174.
+
+Smith, Amy Erica. 2017. “Democratic talk in church: religion and political socialization in
+  the context of urban inequality.” World Development 99:441–451.
+
+Smith, Amy Erica. 2018. “Mobilizing the People of God: How Religion is Changing Brazilian
+  Democracy.”.
+
+Spyer, Juliano. 2020. O povo de Deus: Quem são os evangélicos e por que eles importam.
+  Geração Editorial.
+
+Stokes, Susan C. 2011. Political Clientelism. In The Oxford Handbook of Political Science.
+  Oxford University Press.
+
+Suryanarayan, Pavithra. 2019. “When Do the Poor Vote for the Right Wing and Why:
+  Status Hierarchy and Vote Choice in the Indian States.” Comparative Political Studies
+  52(2):209–245.
+
+Tertytchnaya, Katerina, Catherine E De Vries, Hector Solaz and David Doyle. 2018. “When
+  the money stops: Fluctuations in financial remittances and incumbent approval in Cen-
+  tral Eastern Europe, the Caucasus and Central Asia.” American Political Science Review
+  112(4):758–774.
+
+
+
+                                            48
+Thachil, Tariq. 2014. Elite parties, poor voters: How social services win votes in India.
+ Cambridge University Press.
+
+Tuñón, Guadalupe. 2019. When the Church Votes Left: The Electoral Consequences of
+  Progressive Religion PhD thesis UC Berkeley.
+
+Walter, Stefanie. 2010. “Globalization and the welfare state: Testing the microfoundations
+ of the compensation hypothesis.” International Studies Quarterly 54(2):403–426.
+
+Walter, Stefanie. 2017a. “Globalization and the Demand-Side of Politics: How Globalization
+ Shapes Labor Market Risk Perceptions and Policy Preferences.” Political Science Research
+ and Methods 5(1):55–80.
+
+Walter, Stefanie. 2017b. “Globalization and the demand-side of politics: How globalization
+ shapes labor market risk perceptions and policy preferences.” Political Science Research
+ and Methods 5(1):55–80.
+
+Walter, Stefanie. 2021. “The backlash against globalization.” Annual Review of Political
+ Science 24(1):421–442.
+
+Wibbels, Erik. 2006. “Dependency revisited: International markets, business cycles, and
+ social spending in the developing world.” International Organization 60(2):433–468.
+
+Xu, Alice. 2020. “Trade Liberalization and the Decentralized Welfare State: The Geography
+ of Subnational Political Ties in Brazil.” Available at SSRN 3707329 .
+
+Zucco, Cesar and Timothy J Power. 2020. “Fragmentation Without Cleavages? Endogenous
+  Fractionalization in the Brazilian Party System.” Comparative Politics .
+
+Zucco, César and Timothy Power. 2019. “Brazilian Legislative Surveys (Waves 1-8, 1990-
+  2017).” Harvard Dataverse 2.
+
+
+
+
+                                           49
+Part
+                Online Appendix for
+  “Turning Away from the State: Trade Shocks and
+           Informal Insurance in Brazil”
+
+
+
+Table of Contents
+  A Beneficiaries of Conditional Cash Transfers and Share of Evangel-
+    icals: Correlation                                                  1
+
+  B Descriptive Statistics: Trade Data                                  1
+
+  C Original Survey on Services Provided by the Church                  1
+
+  D Survey on Political Position of Bishops                             6
+
+  E Descriptive Statistics of Regional-Level Variables                  9
+
+  F Descriptive Statistics: Individual-Level Data (LAPOP)               9
+
+  G Notes on Data Source and Cleaning Procedures                        10
+
+  H Regressions in the Main Text with Full Set of Controls              12
+
+  I    Robustness Checks                                                17
+
+  J Standard Errors                                                     21
+
+  K Linearity of the Interaction                                        23
+
+  L Robustness of the Interaction Effect                                24
+
+  M Effects on Turnout                                                  28
+A                              Beneficiaries of Conditional Cash Transfers and Share
+                               of Evangelicals: Correlation
+
+                                                                       Figure A.1: Correlation of
+
+
+
+
+Note: Calculations based on the 2010 Census.
+
+
+
+
+B                              Descriptive Statistics: Trade Data
+
+                              250
+                                                                                                                                                  Re...ned p
+                                                                                                                                                                etro
+                                                                                                                                                                 leum
+
+
+
+
+                              200                                                                                      30                           Cru
+                                                                                                                                                          de p
+                                                                              Cereals
+                                                                                                                                                                etro
+
+
+
+
+                                                                                                                                             BM
+                                                                                                                                                                 leu
+
+
+
+
+                                                                                                                                              asi
+                                                                                                                                                otco chemica
+     USD (constant billion)
+
+
+
+
+                                                                                              USD (constant billion)
+
+
+
+
+                                                                                                                                                    rv          ls
+                                                                                                                                                                    m
+
+
+
+
+                                                                             Crude oil                                                                 eh
+                                                                                                                                                          icl
+                              150                                                                                                                             e
+                                                                                                                                                                s
+
+
+
+
+                                                                              Iron ore
+                                                                                Meat                                   20                     rts
+                                                                                                                                           P a of m
+                                                                               Sugar                                                                o   tor
+                                                                                                                                                              veh
+                                                                                                                                                                 icl
+                                                                                                                                                                       es
+                              100
+
+
+
+                                                                                                                       10
+                                                                                  Other
+                               50
+
+
+
+
+                               0                                                                                        0
+
+                                    2010   2012        2014     2016       2018                                             2010   2012                       2014          2016   2018
+
+
+
+                                                  (a) Exports                                                                             (b) Imports
+
+
+
+
+C                              Original Survey on Services Provided by the Church
+I collected original data on Brazilians’ perceptions on how different institutions support
+citizens in times of economic hardship by running a survey between July 17th and August
+6th of 2024. The sample was designed to be as close as possible to a representative sample of
+
+
+                                                                                          1
+the adult Brazilian population in terms of age, gender, religion, geographic region and social
+class.
+
+Sampling and Questionnaire
+The survey data was collected online between July 17th and August 6th , 2024 with a sample
+of the Brazilian adult population. The survey was designed to collect descriptive informa-
+tion about how churches and other informal institutions support Brazilians going through
+economic hardship. For this reason, the survey was designed to be representative of the
+Brazilian population in terms of age, gender, religion and geographic region. I also tried to
+get as close as possible from the distribution of the Brazilian population in terms of social
+class. However, reaching low class respondents is difficult. Overall, the sample has more
+young people, females and people of middle class (rather than lower classes) than the Brazil-
+ian population. Ahead of data collection, the survey design was approved by the relevant
+institutional IRB. Respondents were invited by Netquest, a survey company that operates
+in Brazil and other Latin American countries. Data were collected through Qualtrics. 1977
+respondents answered questions about whether and how churches supported them when they
+faced economic hardship. We exclude respondents who have not completed the survey, who
+failed the attention check and whose anonymous id (provided by the survey company) was
+duplicated. The items we use in section 5.2 are the following:
+
+  1. What is your religion? (a) Catholic; (b) Evangelical; (c) Other (which?) [TEXT BOX]
+
+  2. (if (b) in item 1): What is the Evangelical church you usually go to? [dropdown list
+     with option to write another option not mentioned in text box].
+
+  3. Have you ever received help from a church or religious organization due to job loss or
+     lack of money? (a) yes; (b) no.
+
+  4. (if (a) in item 3): which type of help did you receive from a church or religious organi-
+     zation? (a) food donation; (b) money donation; (c) loan; (d) shelter; (e) help to find
+     a job; (f) other (which) [TEXT BOX].
+
+  5. Which type of religious organization or church helped you when you faced economic
+     hardship? (select all that apply). (a) Catholic church; (b) Evangelical church (Protes-
+     tant, Pentecostal, Neopentecostal); (c) Other (which?) [TEXT BOX].
+
+  6. (if (b) in item 5): Which Evangelical churches helped you to cope with economic
+     hardship? (select all that apply). [dropdown list with option to write another option
+     not mentioned in text box].
+
+
+
+
+                                              2
+                     Table C.1: Respondent Demographic Characteristics
+
+      Gender: Number           %           Age:    Mean     Std. Dev.    Min.    Max.
+      Female       1011        51.14               43.07    16.47        18      94
+      Male         963         48.71
+      Other        3           0.15
+
+      Region:       Number      %          Income:*                           Number      %
+      Midwest   169             51.14      Up to 2 minimal wages      1097                55.49
+      North     183             9.26       3 to 5 minimal wages       641                 32.42
+      Northeast 467             41.43      6 to 10 minimal wages      174                 8.80
+      South     306             15.48      More than 10 minimal wages 65                  3.29
+      Southeast 852             43.10
+
+*Note: As of August 2024, the monthly minimal wage for a full-time job in Brazil is R$1412 (USD 253).
+
+
+
+
+                                                  3
+Additional Results
+Figure C.1: Percentage of Respondents Receiving Help from the Catholic Church by Reli-
+gious Affiliation
+
+
+
+
+Note: the figure shows the estimated percentage of people receiving help from the Catholic church that
+are from different religious affiliations.
+
+
+Figure C.2: Percentage of Respondents Receiving Help from the Church by Religious Affili-
+ation: Controlling for Sociodemographic Characteristics
+                                                   .4
+
+
+
+
+                                                   .3
+                               Linear prediction
+
+
+
+
+                                                   .2
+
+
+
+
+                                                   .1
+
+
+
+
+                                                   0
+                                                   Catholic             Evangelical   Other
+
+
+
+
+Note: The figure shows the average marginal effects alongside 95% confidence intervals of religious
+affiliation (Catholic, Evangelical or Other) on have received helped from a church or religious organization
+to cope with economic hardship. The regression includes the following covariates: household income, age
+and age-squared and gender.
+
+
+ Table C.2: Most Prevalent Types of Material Support Provided by Evangelical Churches
+
+                                                              Type of Help   N  %
+                                                              Food Donation 148 83%
+                                                              Job Search     39 22%
+                                                              Financial Help 35 19%
+Note: the table shows the percentage of respondents that report receiving help from evangelical churches
+by type of help. Only the most prevalent types of help are shown.
+
+
+                                                                        4
+The discretionary power of evangelical pastors
+Respondents were asked to describe a situation in each they faced economic hardship. The
+specific item woding is as follows:
+   “We are interested in understanding how people cope with economic difficulties. By
+explaining this in detail, you will help us better understand how Brazilians deal with the
+many economic challenges they face in life and how we can improve the support network
+available in these situations.
+   Think of a time when you found yourself without money due to a job loss or insufficient
+income. Could you describe what types of economic challenges you were facing and how
+you dealt with them? Did any religious organization or church help you? If so, how? It is
+important for us that you explain which churches or religious organizations helped you and
+what kind of assistance was provided (money, food, help finding a job, etc.)”
+   Below, I add a few quotes that demonstrate how evangelical pastors have discretionary
+power over the distribution of church resources (translation from Portuguese into English by
+the author).
+
+   • “During the Covid-19 crisis, I worked on the streets, did not have a formal job, and
+     ended up getting sick. I found myself without money to buy medicine or even food to
+     sustain myself. It was a pastor from the Universal Church [of the Kingdom of God]
+     who mobilized the entire church to help everyone going through difficult times, and,
+     thanks to God, I was supported by this help. In addition to helping me with food, it
+     was the pastor of the church who took me to the hospital in his car. Today, I work
+     and am very grateful to God and the Universal Church [of the Kingdom of God] for
+     the excellent work they have done for the community.”
+
+   • “My father lost his job last year and asked for help in his church network to help him
+     find a job. The pastor of the Universal Church [of the Kingdom of God] promptly
+     helped him by speaking with a colleague who got him a job at a company.”
+
+   • “When my father became unemployed and had health problems, there were people
+     from the Assembly of God who helped him pay for an expensive medical test. I went
+     through a serious problem with very strong headaches and I didn’t know what it was.
+     I needed to cover the cost of the exams, so the pastor of the Assembly of God that I
+     attend helped me with the money for the contrast MRI and other tests I needed to find
+     out what I had at the time. Currently, my family receives a monthly food donation
+     from the Assembly of God church. In addition to that, other newly converted members
+     who talk about their difficult situations are also helped.”
+
+
+
+
+                                             5
+D       Survey on Political Position of Bishops
+In order to identify the most prominent evangelical bishops in Brazil, I first selected the
+churches that combined represented more than 90% of the evangelical population, as mea-
+sured by the 2010 census. For each church we identified, we searched for the most influential
+bishop, that is, those with the highest number of followers on social media platforms (i.e.,
+Instagram, Twitter, and Youtube) in December 2023. I also cross-validated and comple-
+mented this list with rankings from religious websites and news articles. Specifically, we
+used articles from the newspapers O Globo and Metrópoles as well as from the religious
+blogs Dicas Gospel, Sempre Famı́lia among others. In total, 21 bishops were selected (see
+Table D.2).
+    To determine the bishop’s political positions in the 2014 and 2018 elections, I rely on
+qualitative coding of social media platforms and news articles. Three RAs coded the content
+of YouTube videos posted in the three months preceding each election. Of the 21 bishops,
+we identified 13 who had posted videos in the analyzed time period. These 13 bishops
+collectively posted 1010 videos in the months preceding the 2014 and the 2018 elections.
+We then scrapped the automatically generated subtitles from youtube videos. Based on the
+scrapped data, we selected the videos mentioning at least one of the terms listed in Table D.1.
+These terms were selected based on their relevance in the political debates at the time of the
+elections. Besides party and candidate names, we also include terms such as “communism.”
+Out of the 1010 videos, 180 contained one of those terms. Upon qualitative investigation,
+only in 49 videos by 7 bishops contained the terms that corresponded to the meaning we
+intended. A common false positive error was the mention of candidates’ first name (for
+example, “Dilma”) to refer to a congregant rather than the candidate (note that in Brazil it
+is common to refer to a candidate by his or her first name). It was then analyzed whether
+the words were used in support or against candidates and parties based on the qualitative
+coding of two research assistants.
+    To complement this method for the remaining eight bishops, three RAs searched for men-
+tions of these bishops’ names linked to selected political terms (i.e., “Elections”, “Support”,
+“Politics” and the candidate names listed in Table D.1) in online newspaper articles and
+blogs. We limit the period of the mention to the three months before the 2014 and 2018
+elections. Multiple newspaper articles referring to the political position of these eight bishops
+were found. In addition, some social media posts on Facebook, Instagram and Twitter were
+found through this google search and were relevant in determining some bishops’ positions.
+Through this method, we identified 9 other bishops who have made their political views
+public during elections. There was one bishop who was explicitly neutral. Bishops for which
+
+         Table D.1: List of Words Used in Survey on Political Position of Bishops
+
+ Type                Words (Portuguese)
+ Candidate Name Dilma (Rousseff), Aécio (Neves), (Fernando) Haddad, (Jair) Bolsonaro
+ Party Name     PT, PL, PSDB
+ Other Terms    Michele (Bolsonaro), Petista, Comunismo
+
+
+
+                                               6
+we find no evidence of political position are considered neutral. All materials used to code
+the bishops’ political position have been downloaded and are available upon request. The
+results of this survey of the political position of Evangelical bishops can be found on Table
+D.2.
+
+
+
+
+                                             7
+               Table D.2: Classification of Evangelical Bishops’ Political Positions in 2014 and 2018 Presidential Elections
+
+         ID     Church Name                                        Bishop Name                2014                      2018
+         220    Evang. Presbyterian Church                 Hernandes         Dias             Against D. Rousseff       Alluded to conserva-
+                                                           Lopes                                                        tive morals
+         220    Evang. Presbyterian Church                 César Augusto                     M. Silva/A. Neves         J. Bolsonaro
+         230    Evang. Methodist Church                    Paulo Rangel                       No evidence               J. Bolsonaro
+         240    Evang. Baptist Church                      Jorge Linhares                     A. Neves                  J. Bolsonaro
+         240    Evang. Baptist Church                      Marcio Valadão                    Neutral                   J. Bolsonaro
+         260    Seventh-day Adventist Evang. Church        Odailson Fonseca                   No evidence               Neutral
+         310    Evang. Church Assembly of God              José      Wellington              A. Neves                  J. Bolsonaro
+                                                           Costa Jr.
+         310    Evang. Church Assembly of God              José Wellington Bez-              E. Campos                 H. Meirelles/J. Bol-
+                                                           erra da Costa                                                sonaro
+         310    Evang. Church Assembly of God              Marco Feliciano                    A. Neves                  J. Bolsonaro
+         310    Evang. Church Assembly of God              Samuel Câmara                     No evidence               J. Bolsonaro
+8
+
+
+
+
+         311    Evang.       Church Assembly of God Abner Ferreira                            D. Rousseff               J. Bolsonaro
+                Madureira
+         319    Other Evang. Pentecostal Churches with Silas Malafaia                         M. Silva/A. Neves         J. Bolsonaro
+                origin in the Assembly of God
+         340    Foursquare Gospel Church                   Mario de Oliveira                  E. Pereira/A. Neves       J. Bolsonaro
+         350    Uni. Church of the King. of God (UCKG) Edir Macedo                            D. Rousseff               J. Bolsonaro
+         350    Uni. Church of the King. of God            Renato Cardoso                     No evidence               J. Bolsonaro
+         359    Other neopentecostal churches with origins Agenor Duque                       M. Silva                  J. Bolsonaro
+                in the UCKG
+         380    Evang. Pentecostal Church God is Love      David Miranda Neto                 No evidence               No evidence
+         450    Other Evang. Pentecostal Churches          Josué Gonçalves                  A. Neves                  J. Bolsonaro
+         450    Other Evang. Pentecostal Churches          Josué Brandão                    Against D. Rousseff       J. Bolsonaro
+         451    International Church of the Grace of God R. R. Soares                         Neutral                   J. Bolsonaro
+         455    Worldwide Church of the Power of God       Valdemiro Santiago                 A. Neves                  J. Bolsonaro
+
+    Note: ID refers to the census codes of Evangelical denominations made available by the Brazilian Institute for Geography and Statistics.
+E   Descriptive Statistics of Regional-Level Variables
+
+
+          Table E.1: Summary Statistics of Regional-level Variables
+
+                                     Mean       SD       Min     Max
+         Export Shock                0.083 0.766 −11.956 7.547
+         % Evangelical               0.188 0.080   0.043 0.434
+         % BF                        0.093 0.060   0.003 0.229
+         % Emp. in exp               0.072 0.079   0.000 0.433
+         ln Population (2010)       17.246 0.972  13.068 21.665
+         ln GDP per capita (2010     9.251 0.662   7.924 11.706
+         ∆PT Vote Share             −0.088 0.108 −0.525 0.153
+         Ideology (PRS)              0.177 0.177 −0.181 0.714
+         Ideology (CMP)              7.497 10.215 −5.005 42.932
+         Trad. Morality (Pos.)       0.092 0.299 −0.298 0.998
+         Trad. Morality (Sal.)       0.110 0.194 −0.282 0.645
+         Welfare (Pos.)             −0.427 0.585 −1.837 0.589
+         Welfare (Sal.)             −0.099 0.206 −0.611 0.556
+
+
+
+
+F   Descriptive Statistics: Individual-Level Data (LAPOP)
+
+          Table F.1: Summary Statistics of Individual-level Variables
+
+                                     Mean       SD       Min     Max
+         Cash Transfers              0.000 0.834 −1.437 1.535
+         Supp. Pol. establishment    0.000 0.838 −1.184 3.297
+         Like PT supporters          3.899 2.912   1.000 10.000
+         Religious Engagement        0.000 1.000 −1.570 1.423
+         Religion Important          0.000 1.000 −3.741 0.435
+         Traditional Morality        0.000 0.794 −1.140 1.523
+         Gender                      0.498 0.500   0.000 1.000
+         Age                        39.101 15.907 16.000 89.000
+         Income Index                0.000 0.857 −1.533 1.153
+         Education (Years)           8.491 3.885   0.000 17.000
+
+
+
+
+                                      9
+G      Notes on Data Source and Cleaning Procedures
+Sectoral Crosswalk (NCM and CNAE 2.0)
+Description of the procedure: Sectors in the export data are classified according to
+the “Nomenclatura Comum do Mercosul 2012” (NCM 2012). RAIS classifies sectors accord-
+ing to the “Classificaćão Nacional de Atividades Econômicas (CNAE). In RAIS 2010 and
+subsequent databases, CNAE 2.0 classes and subclasses are included.
+    I convert NCM and CNAE 2.0 into ISIC Rev. 4 because ISIC Rev. 4 is more general and
+easily combined with both of classification systems. In order to do that, I use the conversion
+tables provided by the Brazilian Statistical Office.
+    The major problem that I found in constructing the crosswalk between NCM 2012 and
+ISIC Rev 4 is that 95 NCM classes that are included in the export database in the period
+that I analyze (2010-2018) are classified in the NCM2012-ISIC Rev. 4 conversion table as
+“8999-Not classified”. Moreover, exports in deflated USD FOB (USD Free On Board, which
+I deflated for baseline year, i.e. 2010) decreased more in the analyzed period than for the
+other NCM 9251 sectors included in the export database.
+    I partially solve this problem by converting NCM 2012 classified as “8999-Not classified”
+into CNAE 2.0 and then converting CNAE 2.0 into ISIC Rev. 4 based on the conversion
+tables provided by the Brazilian Statistical Office. By doing that, I reduced the number of
+unclassified sectors from 95 to 38. I manually linked the remaining 38 sectors to ISIC Rev.
+4.
+    At a first glance, it might seem more straightforward to convert NCM 2012 into CNAE
+2.0 and then directly merge to RAIS’ database. However, many sectors that are present in
+the export database are not preset in the NCM 2012 - CNAE 2.0 conversion table provided
+by the Brazilian Statistical Office. Namely, out of the 9346 sectors in the export database,
+1200 are not included in this conversion table. Therefore, using ISIC Rev. 4. is preferable
+because it prevents greater loss of information. Since constructing this crosswalk requires
+multiple steps, I manually checked a random sample of the resulting conversion table.
+
+Data sources:
+
+    • CNAE 2.0. classification table comes from the Brazilian Statistical Office (https://
+      concla.ibge.gov.br/classificacoes/correspondencias/atividades-economicas.
+      html).
+
+    • ISIC 4.0 classification table is sourced from the United Nations statistics website
+      (https://unstats.un.org/unsd/classifications/Econ). I also use a detailed de-
+      scription of ISIC 4.0 classes (https://unstats.un.org/unsd/publication/seriesm/
+      seriesm_4rev4e.pdf)) to check the crosswalks that I construct as explained above.
+
+Computing number of jobs using RAIS
+RAIS is a database at the contract level, i.e., each row contains information about a contract.
+Among other details, the database contains information about in which months of a given
+year a contract was active. I divide the number of months for which a contact is active in
+
+                                              10
+a given year by 12. I then sum this value by sector and CZ to get the number of jobs by
+sector and CZ Lsrt .
+
+
+
+
+                                          11
+H     Regressions in the Main Text with Full Set of Con-
+      trols
+
+Table H.1: Effects of Export Decline on Votes for the PT by Concentration of Evangelicals
+and Catholics (2010-2018)
+
+                                                                    DV: ∆PT Vote Shares
+                                                (1)          (2)          (3)           (4)              (5)
+            ∆EPWt                           0.0378∗∗        0.0211     0.0445∗∗∗    0.0618∗∗∗        0.0438∗∗∗
+                                            (0.0154)      (0.0135)     (0.0132)     (0.0237)         (0.0131)
+            Employment in                    0.600∗∗       0.572∗∗      0.601∗∗       0.558∗          0.591∗∗
+                Commodity Ind.               (0.303)       (0.290)      (0.291)      (0.293)          (0.291)
+            GDP per capita                  -0.332∗∗∗     -0.337∗∗∗    -0.338∗∗∗    -0.336∗∗∗        -0.338∗∗∗
+                                            (0.0374)      (0.0395)     (0.0418)     (0.0392)         (0.0413)
+            Population                       -0.0272       -0.0280     -0.0319∗      -0.0286         -0.0319∗
+                                            (0.0188)      (0.0190)     (0.0189)     (0.0191)         (0.0189)
+            Evangelicals (dummy)                           -0.0552                   -0.0874
+                                                          (0.0693)                  (0.0589)
+            Evangelicals (dummy) ×                         -0.0611
+                Year2018                                  (0.0779)
+            Evangelicals (cont.)                                       -0.141∗∗                       -0.159∗∗∗
+                                                                       (0.0625)                       (0.0579)
+            Evangelicals (cont.) ×                                      -0.0404
+                Year2018                                               (0.0490)
+            Catholics (dummy)                              -0.0790                    -0.0987
+                                                          (0.0572)                   (0.0647)
+            Catholics (dummy) ×                                                       0.0357
+                Year2018                                                             (0.0755)
+            Catholics (cont.)                                          -0.145∗∗                       -0.161∗∗
+                                                                       (0.0583)                       (0.0632)
+            Catholics (cont.) ×                                                                        0.0346
+                Year2018                                                                              (0.0469)
+            Evangelicals (dummy) ×                        0.0594∗∗
+                ∆EPWt                                     (0.0253)
+            Evangelicals (cont.) ×                                     0.0214∗
+                ∆EPWt                                                  (0.0118)
+            Catholics (dummy) ×                                                       -0.0326
+                ∆EPWt                                                                (0.0262)
+            Catholics (cont.)                                                                         -0.0198∗
+                ∆EPWt ×                                                                               (0.0120)
+            Constant                         3.496∗∗∗     3.640∗∗∗     3.638∗∗∗      3.649∗∗∗         3.632∗∗∗
+                                             (0.432)      (0.473)      (0.489)       (0.472)           (0.486)
+            Observations                      1114          1114         1114          1114             1114
+            Adjusted R2                       0.820         0.821        0.822         0.820            0.822
+            State × year FE                     ✓             ✓            ✓             ✓                ✓
+            Note: the table reproduces the results in Table 1 but displaying estimates for the full set of controls.
+            ∗
+              p < 0.10, ∗∗ p < 0.05, ∗∗∗ p < 0.01.
+
+
+
+
+                                                              12
+Table H.2: Effects of Export Shock on Votes for the PT by Concentration of Evangelicals
+and Catholics by Election
+
+                                                           DV: ∆PT Vote Shares
+                                             2014 Election                          2018 Election
+                                     (1)          (2)          (3)          (4)          (5)          (6)
+ ∆EPWt                            0.0544∗        0.0367     0.0947∗∗     0.0308∗       0.0126        0.0470
+                                 (0.0301)      (0.0346)     (0.0464)    (0.0176)      (0.0143)     (0.0292)
+ Employment in                    -0.0304       -0.0251      -0.0248    1.220∗∗∗      1.225∗∗∗     1.219∗∗∗
+     Commodity Ind.               (0.399)       (0.402)      (0.390)     (0.433)       (0.415)      (0.425)
+ GDP per capita                  -0.269∗∗∗     -0.266∗∗∗    -0.273∗∗∗   -0.394∗∗∗     -0.390∗∗∗    -0.400∗∗∗
+                                 (0.0368)      (0.0391)     (0.0416)    (0.0644)      (0.0647)     (0.0654)
+ Population                       -0.0293       -0.0257      -0.0304     -0.0248       -0.0212      -0.0278
+                                 (0.0193)      (0.0189)     (0.0192)    (0.0317)      (0.0322)     (0.0327)
+ Evangelicals (dummy)                           -0.0258                                -0.0390
+                                               (0.0640)                               (0.0550)
+ Catholics (dummy)                                            -0.0239                                -0.0298
+                                                             (0.0598)                               (0.0554)
+ Evangelicals (dummy) ×                         0.0605                                0.0607∗∗
+     ∆EPWt                                     (0.0599)                               (0.0286)
+ Catholics (dummy)                                            -0.0584                                -0.0234
+     ∆EPWt                                                   (0.0579)                               (0.0299)
+ Constant                         3.581∗∗∗     3.501∗∗∗      3.650∗∗∗    3.402∗∗∗     3.316∗∗∗      3.521∗∗∗
+                                  (0.411)      (0.433)        (0.501)    (0.773)      (0.785)        (0.807)
+ Observations                       557          557           557         557           557          557
+ Adjusted R2                       0.665        0.665         0.665       0.758         0.759        0.758
+ State FE                            ✓            ✓             ✓           ✓             ✓            ✓
+ Note: this table reproduces results in Table 2 but displaying the estimates for the full set of controls.
+ ∗
+   p < 0.10, ∗∗ p < 0.05, ∗∗∗ p < 0.01.
+
+
+
+
+                                                     13
+     Table H.3: Estimates of Export Shock Interacted with Evangelical Dummy (DVs: Centers of Gravity), Election Year: 2014
+
+                                      Left-Right   Left-Right (CMP)     Redistribut.     Welfare    Relig-State   Trad. Moral.
+                                        (BLS)           (CMP)            (CHES)          (CMP)       (CHES)          (CMP)
+        ∆EPWt                           −0.020           −0.003             0.003        0.007         −0.004        −0.002
+                                        (0.013)          (0.005)           (0.021)      (0.006)        (0.006)       (0.007)
+        Evangelicals (dummy)            −0.034          0.063***          0.258***      −0.002        0.042***       −0.019
+                                        (0.026)          (0.012)           (0.049)      (0.010)        (0.009)       (0.013)
+        Employment in                   −0.096           −0.031            −0.249        0.086         −0.064        −0.133
+            Commodity Ind.              (0.152)          (0.059)           (0.300)      (0.062)        (0.046)       (0.085)
+        Population                      −0.014          0.048***          0.185***     −0.024***      0.034***        0.004
+                                        (0.009)          (0.007)           (0.028)      (0.006)        (0.005)       (0.005)
+        GDP per capita                 0.067***         0.094***          0.235***     −0.064***      0.064***       −0.005
+                                        (0.019)          (0.012)           (0.053)      (0.009)        (0.010)       (0.013)
+        ∆EPWt ×                          0.022           −0.010            −0.028        0.005         −0.006        −0.017
+           Evangelicals (dummy)         (0.022)          (0.009)           (0.042)      (0.010)        (0.009)       (0.012)
+14
+
+
+
+
+        Num.Obs.                          558              558               558           558          558            558
+        R2 Adj.                          0.687            0.797             0.659         0.730        0.719          0.727
+        State FE                           ✓                ✓                 ✓             ✓            ✓              ✓
+        Notes: this table reproduces results in Figure 6 and displays the estimates for the full set of controls. Only the
+        results for the 2014 election-year are displayed.* p < 0.1, ** p < 0.05, *** p < 0.01
+     Table H.4: Estimates of Export Shock Interacted with Evangelical Dummy (DVs: Centers of Gravity), Election Year: 2018
+
+                                     Left-Right   Left-Right (CMP)    Redistribut.    Welfare    Relig-State   Trad. Moral.
+                                       (BLS)           (CMP)           (CHES)         (CMP)       (CHES)          (CMP)
+        ∆EPWt                         −0.008           −0.009             0.000        0.006       −0.005         −0.002
+                                      (0.010)          (0.013)           (0.013)      (0.006)      (0.009)        (0.008)
+        Evangelicals (dummy)         0.262***         0.371***            0.089      −0.165***    0.293***       0.238***
+                                      (0.056)          (0.069)           (0.057)      (0.035)      (0.048)        (0.041)
+        Employment in                 −0.246            0.044             0.073        0.113        0.004         −0.049
+            Commodity Ind.            (0.358)          (0.427)           (0.370)      (0.211)      (0.305)        (0.263)
+        Population                   0.097***         0.138***          0.129***     −0.073***    0.107***       0.079***
+15
+
+
+
+
+                                      (0.029)          (0.035)           (0.021)      (0.018)      (0.026)        (0.021)
+        GDP per capita               0.435***         0.483***           −0.068      −0.278***    0.351***       0.310***
+                                      (0.061)          (0.070)           (0.070)      (0.037)      (0.048)        (0.041)
+        ∆EPWt ×                      −0.058***        −0.063**          0.047**       0.030**     −0.053***     −0.053***
+           Evangelicals (dummy)       (0.021)          (0.025)           (0.022)      (0.012)      (0.019)        (0.016)
+        Num.Obs.                         558             558               558          558          558           558
+        R2 Adj.                         0.867           0.863             0.763        0.874        0.848         0.853
+        State FE                          ✓               ✓                 ✓            ✓            ✓             ✓
+        Notes: this Table reproduces results in Figure 6 and displays the estimates for the full set of controls. Only
+        the results for the 2018 election-year are displayed.* p < 0.1, ** p < 0.05, *** p < 0.01
+        Table H.5: Individual-Level Estimates: Interaction with Evangelical Dummy
+
+                                                                           Rousseff’s
+                              Religious Import. of            Like PT      impeach.                        Trad.
+DV:                          Engagement Religion               supp.        unfair          Redistr.      Morality
+                                  (1)              (2)           (3)            (4)            (5)           (6)
+∆EPW2018                      -0.0000733        0.00815       -0.0388∗       -0.00339      0.0517∗∗∗        0.0366∗
+                                (0.0250)       (0.0341)       (0.0228)       (0.0212)       (0.0164)       (0.0218)
+Evangelical                     0.764∗∗∗       0.407∗∗∗      -0.131∗∗∗       -0.119∗∗        0.0619        0.579∗∗∗
+                                (0.0623)       (0.0477)       (0.0481)       (0.0594)       (0.0510)       (0.0609)
+GenderF emale                   0.273∗∗∗       0.179∗∗∗        0.0907         0.122∗∗        -0.0556       -0.337∗∗∗
+                                (0.0473)       (0.0479)       (0.0584)       (0.0476)       (0.0450)       (0.0461)
+Age                           0.00860∗∗∗      0.00717∗∗∗      -0.00133       0.00131         0.00181      0.00996∗∗∗
+                               (0.00184)      (0.00177)      (0.00196)      (0.00189)      (0.00199)      (0.00149)
+Education                       0.0134∗∗       -0.00496       -0.00813        -0.0121      0.0377∗∗∗      -0.0458∗∗∗
+                               (0.00661)      (0.00763)      (0.00829)      (0.00819)      (0.00793)      (0.00814)
+Population                     -0.0486∗∗       -0.103∗∗∗      -0.00323      0.0651∗∗∗        -0.0111       -0.00745
+                                (0.0237)       (0.0280)       (0.0219)       (0.0222)       (0.0213)       (0.0228)
+GDP per capita                    -0.113        0.0277        -0.165∗∗       -0.119∗∗       -0.0937∗       -0.134∗∗∗
+                                (0.0692)       (0.0442)       (0.0633)       (0.0593)       (0.0484)       (0.0442)
+Employment in                     -0.540         -0.392         0.530         1.164∗∗         -0.821         -0.158
+     Commodity Ind.              (0.514)        (0.532)        (0.513)        (0.468)        (0.498)        (0.537)
+Indigenous                        -0.177         0.190∗        0.0952          -0.118          0.117        -0.0548
+                                 (0.144)        (0.109)        (0.146)        (0.144)        (0.164)        (0.128)
+Black                           -0.170∗∗        0.0304         0.134∗         0.187∗∗       0.230∗∗∗       -0.248∗∗∗
+                                (0.0694)       (0.0896)       (0.0791)       (0.0830)       (0.0804)       (0.0781)
+Mixed race                       -0.0248        -0.0464        0.119∗∗        0.140∗∗         0.128∗        -0.114∗
+                                (0.0595)       (0.0723)       (0.0558)       (0.0591)       (0.0726)       (0.0606)
+Asian                            -0.0417         -0.110        0.221∗          0.121         -0.0808        -0.0810
+                                (0.0943)        (0.130)        (0.123)        (0.109)        (0.125)        (0.119)
+Other                            0.353∗∗         0.142         0.0697          0.220         -0.296∗         0.263
+                                 (0.171)        (0.114)        (0.255)        (0.257)        (0.171)        (0.217)
+Evangelical ×                  -0.0826∗∗        -0.0202        0.108∗∗        0.0844∗       -0.00945       -0.00866
+  ∆EPW2018                      (0.0346)       (0.0330)       (0.0437)       (0.0454)       (0.0422)       (0.0278)
+Constant                           0.695          0.506        1.550∗∗        0.0502           0.658        1.829∗∗∗
+                                 (0.640)        (0.488)        (0.648)        (0.575)        (0.477)        (0.554)
+Observations                     1455             1476          1447           1466           1471          1442
+Adjusted R2                      0.173           0.0819        0.0290         0.0344         0.0272         0.206
+State FE                           ✓               ✓             ✓              ✓              ✓              ✓
+N of CZs                          82               82            82             82             82             82
+Note: the table reproduces the results in Table 3 but displaying estimates of the full set of controls.
+∗
+  p < 0.10, ∗∗ p < 0.05, ∗∗∗ p < 0.01.
+
+
+
+                                                    16
+I      Robustness Checks
+Controlling for Top Export Industries
+
+Table I.1: Effects of Export Decline on Votes for the PT (2010–2018), Controlling for Top
+Export Industries
+
+                                                            DV: ∆ PT Vote Shares
+                                             (1)           (2)         (3)         (4)           (5)
+    ∆EPWt                                  0.0120       0.0230       0.0201      0.0154        -0.0133
+                                          (0.0221)     (0.0152)     (0.0134)    (0.0124)      (0.0483)
+
+    Evangelicals (dummy)                   -0.0550      -0.0550      -0.0511     -0.0566       -0.0508
+                                          (0.0696)     (0.0693)     (0.0685)    (0.0697)      (0.0706)
+
+    Catholics (dummy)                      -0.0757      -0.0787      -0.0791     -0.0793       -0.0732
+                                          (0.0578)     (0.0572)     (0.0567)    (0.0573)      (0.0581)
+
+    Evangelicals (dummy) × t              0.0560∗∗
+    ×                                     0.0614∗∗     0.0590∗∗     0.0597∗∗    0.0624∗∗      0.0713∗∗∗
+        ∆EPWt                             (0.0257)     (0.0253)     (0.0249)    (0.0254)      (0.0273)
+    Observations                            1114        1114          1114        1114          1114
+    Adjusted R2                             0.821      0.820          0.821       0.821         0.820
+    Initial % of jobs × year              Iron ore    Crude oil       Meat       Cereals         All
+    Evangelicals (dummy) × year               ✓          ✓              ✓           ✓             ✓
+    State × year FE                           ✓          ✓              ✓           ✓             ✓
+    CZ controls                               ✓          ✓              ✓           ✓             ✓
+    Note: Table shows results in Column (2) of Table 1 but adding controls for for shares of workers
+    employed in the industries that represent the top four Brazilian exports as measured by the percentage
+    of total exports in constant USD Free on Board (FOB) (see Figure B.1a). Columns (1) to (4) control
+    for share of jobs in 2010 interacted with election-year in one of the following industries: iron ore,
+    crude oil, meat and cereals, respectively. Column (5) control for the shares of jobs interacted with
+    election-year in all these four industries. ∗ p < 0.10, ∗∗ p < 0.05, ∗∗∗ p < 0.01.
+
+
+
+
+                                                      17
+Controlling for Broad Industries
+
+        Table I.2: Robustness: Controlling for Broad Shares (ISIC 2-Digits)
+
+                                               DV: ∆ PT Vote Shares
+                              Pooled Election 2014                   Election 2018
+                                (1)        (2)                             (3)
+        ∆EPWt                 0.0104     0.0266                         0.00342
+                             (0.0144)  (0.0340)                        (0.0182)
+        EvangelicalsBinary × 0.0605∗∗    0.0681                        0.0542∗∗
+            ∆EPWt            (0.0241)  (0.0596)                        (0.0273)
+        EvangelicalsBinary    0.0360    -0.0249                          0.0359
+                             (0.0640)  (0.0688)                        (0.0747)
+                                   ∗∗∗
+        Constant             2.986      3.166∗∗∗                        2.810∗∗∗
+                              (0.499)   (0.562)                         (0.850)
+        Observations           1114        557                             557
+          2
+        R                      0.847      0.713                           0.804
+        CZ controls              ✓          ✓                               ✓
+        State FE × Year          ✓          ✓                               ✓
+        ISIC-2 Shares            ✓          ✓                               ✓
+        Note: stacked first differences estimates at the commuting zone (CZ) level.
+        All specifications control for shares of employment in ISIC 2-digits (industry
+        groups) export industries. The shares used to compute the export shock are
+        ISIC 4-digits (industry classes). For example, “extraction of crude petroleum
+        and natural gas” is ISIC group 06, while “extraction of natural gas” is ISIC
+        class 0620 is “extraction of natural gas”. ∗ p < 0.10, ∗∗ p < 0.05, ∗∗∗ p < 0.01.
+
+
+
+
+                                                18
+Rotemberg Weights
+Goldsmith-Pinkham, Sorkin and Swift (2018) put forward that the identifying variation of
+shift-share instruments with many initial regional shares might actually rely disproportion-
+ally on very few industries. In order to identify the relative importance of each initial regional
+share to the identifying variation of the instrument, the authors recommend that applied
+researchers compute Rotemberg weights. Higher Rotemberg weights indicate that initial re-
+gional shares are responsible for more of the identidying variation. Following these authors’
+recommendations, I compute the Rotemberg weights for the export shock. Figure I.1 shows
+the distribution of Rotemberg Weights. The distribution is right-skewed, with mean and
+median equal to zero. Based on this distribution, I compute the export shock excluding the
+industries in the top 1% of the distribution (represented by the dashed line in the Figure). I
+then run similar models as Table 1 but replacing the export shock with this new shift-share
+instrument. The results presented in Table I.3 show that the results presented in Table 1
+are not dependent on a few industries with high Rotemberg Weights.
+
+                         Figure I.1: Rotemberg Weights: Distribution
+
+                                        300
+
+
+
+
+                                        200
+                            Frequency
+
+
+
+
+                                        100
+
+
+
+
+                                          0
+
+                                              0.0   0.2                  0.4   0.6
+                                                          Rotemberg Weights
+
+
+
+
+Note: the histogram shows the distribution of Rotemberg weights. The dashed line marks the 99
+percentile of the distribution.
+
+
+
+
+                                                             19
+     Table I.3: Robustness: Excluding Industries with High Rotemberg Weights
+
+                                                 DV: ∆ PT Vote Shares
+
+                            (1)          (2)             (3)        (4)             (5)
+∆EPWt,Rotemberg          0.0341∗∗      0.0165         0.0390∗∗∗   0.0541∗∗      0.0388∗∗∗
+                         (0.0132)     (0.0100)        (0.0115)    (0.0213)      (0.0114)
+EvangelicalsBinary ×                 0.0569∗∗∗
+  ∆EPWt,Rotemberg                    (0.0219)
+EvangelicalsBinary                     -0.0550                     -0.0868
+                                      (0.0696)                    (0.0590)
+CatholicsBinary                        -0.0756                     -0.0955
+                                      (0.0574)                    (0.0651)
+EvangelicalsCont. ×                                    0.0162∗
+  ∆EPWt,Rotemberg                                     (0.00969)
+EvangelicalsCont.                                     -0.144∗∗                  -0.163∗∗∗
+                                                      (0.0628)                  (0.0584)
+CatholicsCont.                                        -0.144∗∗                   -0.161∗∗
+                                                      (0.0584)                  (0.0637)
+CatholicsBinary ×                                                  -0.0279
+  ∆EPWt,Rotemberg                                                 (0.0223)
+CatholicsBinary ×                                                                -0.0154
+  ∆EPWt,Rotemberg                                                               (0.00973)
+Constant                 3.462∗∗∗     3.607∗∗∗        3.587∗∗∗    3.611∗∗∗       3.589∗∗∗
+                         (0.432)      (0.474)         (0.492)     (0.474)        (0.489)
+Observations               1114        1114            1114        1114            1114
+R2                         0.829       0.830           0.831       0.829           0.831
+State × Year FE              ✓           ✓               ✓           ✓               ✓
+CZ-level controls            ✓           ✓               ✓           ✓               ✓
+Note: This table reproduces the models displayed in Table 2 but replacing the export shock
+(∆EPWt ) by another version of the variable where the industries j with the Rotemberg Weights
+in the top 1% of the distribution are excluded from the Equation 1. ∗ p < 0.10, ∗∗ p < 0.05, ∗∗∗
+p < 0.01.
+
+
+
+
+                                                 20
+J     Standard Errors
+
+                        Table J.1: Accounting for Spatial Autocorrelation
+
+                                                   DV: ∆ PT Vote Shares
+                                        Pooled (2014-2018)          2018 Election
+                                           (1)          (2)         (3)         (4)
+                 ∆EPWt                   0.0209       0.0209      0.0136      0.0136
+                                        (0.0178)     (0.0148)    (0.0161)    (0.0139)
+
+                 EvangelicalsBinary     0.0596∗      0.0596∗     0.0604∗∗     0.0604∗
+                   ∆EPWt                (0.0313)     (0.0331)    (0.0296)    (0.0309)
+
+                 EvangelicalsBinary      -0.0857      -0.0857     -0.100      -0.100
+                                        (0.0716)     (0.0805)    (0.0883)    (0.0897)
+
+                 CatholicsBinary         -0.0790      -0.0790     -0.0908     -0.0908
+                                        (0.0701)     (0.0829)    (0.0852)    (0.0919)
+                 Observations             1116         1116         558         558
+                 R2                       0.131        0.131       0.155       0.155
+                 State × year FE            ✓            ✓
+                 State FE                                           ✓           ✓
+                 Conley1999              100km           200km    100km       200km
+                 Standard errors in parentheses
+                 ∗
+                   p < 0.10, ∗∗ p < 0.05, ∗∗∗ p < 0.01
+
+Note: this table reproduces the models displayed in columns (2) and (3) of Table 1 and (5) and (6) of Table
+2 with standard errors that account for spatial autocorrelation as recommended by (Conley, 1999).
+
+
+
+
+                                                     21
+Figure J.1: Estimates Distribution for Interaction between Random Shifts Placebo by Evan-
+gelicals
+
+
+
+
+                                       10
+                             Density
+
+
+
+
+                                        5
+
+
+
+
+                                        0
+                                            −0.10   −0.05      0.00       0.05   0.10
+                                                            Coefficient
+
+
+Note: The figure plots the distribution of estimates for 10k iterations of the coefficient of the interaction
+between the shift-share placebo (in which real shares are interacted with a normally distributed random shift
+variable) and the Evangelical dummy. The rest of the specification is as in equation 3. This is a test proposed
+by Adão, Kolesár and Morales (2019) to evaluate the concern that in shift-share designs residuals of units
+with similar shares have correlated residuals. They point out that if the share of statistically significant
+coefficients with a 95% confidence level is expressively superior to 5%, this suggests overrejection of the null
+hypotheis, representing a threat to inference. In my test, 5.5% of the coefficients are statistically significant
+at the 95% confidence level, suggesting that there is no overrejection problem.
+
+
+
+
+                                                            22
+K       Linearity of the Interaction
+
+
+
+
+                         Figure K.1: Evaluating the linearity assumption
+
+                                                                                        .03
+                             Marginal Effect of Export Shock on Vote Share for the PT
+
+
+
+
+                                                                                                    L       M                  H
+                                                                                        .02
+
+
+
+
+                                                                                        .01
+
+
+
+
+                                                                                          0
+
+
+
+
+                                                                                        -.01
+
+
+                                                                                               0   .1            .2                   .3   .4
+                                                                                                        Moderator: Evangelicals (%)
+
+
+
+
+Note: These figures plot the both the marginal effect of the Export Shock on vote share for the PT, con-
+ditional on the level of Evangelicals. The vertical lines plot the binning estimator proposed by Hainmueller,
+Mummolo and Xu (2018) to evaluate the linearity assumption.
+
+
+
+
+                                                                                                             23
+L    Robustness of the Interaction Effect
+Placebos
+
+                         Table L.1: Controlling for Placebo Interactions
+
+                                                           DV: ∆ PT Vote Shares
+                                     (1)         (2)          (3)          (4)          (5)             (6)
+∆EPWt                             0.0201      0.0255∗       0.0161      0.0326∗∗      0.0176         0.0170
+                                 (0.0150)     (0.0153)     (0.0154)     (0.0150)     (0.0129)       (0.0188)
+
+EvangelicalsBinary ×             0.0712∗∗     0.0650∗∗     0.0574∗∗ 0.0894∗∗∗        0.0480∗        0.0643∗∗
+    ∆EPWt                        (0.0279)     (0.0277)     (0.0256) (0.0297)         (0.0273)       (0.0275)
+
+PovertyBinary ×                  -0.00665
+     ∆EPWt                       (0.0246)
+
+Rural pop.Binary ×                             -0.0168
+     ∆EPWt                                    (0.0240)
+
+EducationBinary ×                                           0.0319
+    ∆EPWt                                                  (0.0515)
+
+Left-rightBinary ×                                                      -0.0637∗∗
+      ∆EPWt                                                             (0.0299)
+
+Trad. MoralityBinary ×                                                                0.0241
+     ∆EPWt                                                                           (0.0411)
+
+White pop.Binary ×                                                                                   0.00657
+    ∆EPWt                                                                                            (0.0223)
+Observations                       1114         1114         1114         1114         1114            1114
+Adjusted R2                        0.825        0.821        0.821        0.821        0.822           0.827
+EvangelicalsBinary × Year            ✓            ✓            ✓            ✓            ✓               ✓
+PlaceboBinary × Year                 ✓            ✓            ✓            ✓            ✓               ✓
+CZ controls                          ✓            ✓            ✓            ✓            ✓               ✓
+Note: Table shows results in Column (2) of Table 1 but adding controls for placebo interaction, that is the
+interaction of the export shock (∆EPWt ) with difference CZ-level characteristics at baseline year (i.e., 2010).
+Characteristics that are potential confounders of the interaction between the export shock and the evangelical
+dummy were selected: poverty levels (column 1), rural population (column 2), education level (column 3),
+centers of gravity on the left-right scale (column 4) and traditional morality (column 5) as well as share of
+population that is white (column 6). These variables are dummies in which 1 indicates a microregion that is
+above the median in the distribution of a given microregion characteristic. ∗ p < 0.10, ∗∗ p < 0.05, ∗∗∗ p < 0.01.
+
+
+
+
+                                                    24
+Sensitivity Analysis
+In this section, I assess the sensitivity of the interaction between Evangelical Population
+Share and ∆EPW to omitted variable bias (OVB). To do that, I replicate the regressions
+reported in the main text except I analyze the effect of ∆EPW across above- or below-median
+levels of Evangelical populations subgroups, rather than interact my Evangelical Pop. Share
+indicator with ∆EPW (as done in the main analyses). I then follow the recommendations
+of Cinelli and Hazlett (2020) to calculate the sensitivity of ∆EPW variable to OVB within
+each subgroup analysis.
+    Table L.2 reports the “robustness values” of ∆EPW to OVB in each subgroup analysis for
+the change in PT vote share outcome variable. These values refer to the residual variation
+on both the treatment and outcome that a hypothetical omitted variable would have to
+explain in order to cause either the estimated coefficient on ∆EPW to fall to 0 (RVq=1 )
+or the 95% confidence interval to cross 0 (RVq=1,α=.05 ). I find that a hypothetical omitted
+variable would have to account for 17.2% or 8.3% of the residual variation on the treatment
+and outcome in order to reduce the coefficient or lower bound of the 95% confidence interval
+to 0, respectively.
+    In order to make the robustness value more concrete, Figure L.1 plots changes in the
+estimated coefficient if an unobserved variable were added to the model with a partial R2
+benchmarked to that of two covariates that I do observe: share of local employment in
+an export sector and the log of GDP. These figures show that a hypothetical, unobserved
+confounder would have to account for 15 times the residual variation of the Export Sector
+Employment Share or 7 times the natural log of GDP.
+    I report similar estimates for the above-median Evangelical subsamples for my “Centers
+of Gravity” outcomes in Table L.3. The results are similar, requiring a confounding vari-
+able that explains a considerably large share of the residual variation in the treatment and
+outcome.
+
+
+
+
+                                            25
+                                                                         Table L.2: Subsample Analysis, ∆PT Vote Share
+
+                                                                            Evangelical Pop. Share:                                                              Above          Below
+                                                                                                                                                                 Median         Median
+                                                                                                                                                                   (1)                (2)
+                                                                            ∆EPW                                                                                 0.085***        0.001
+                                                                                                                                                                  (0.025)       (0.015)
+
+                                                                            RY2 ∼D|X                                                                              3.4%             0%
+                                                                            RVq=1                                                                                 17.2%           0.2%
+                                                                            RVq=1,α=.05                                                                           8.3%             0%
+                                                                            Obs.                                                                                   279             279
+                                                                            Controls                                                                                ✓               ✓
+                                                                            State FE                                                                                ✓               ✓
+                                                                            Adj. R2                                                                               0.644           0.806
+                                                                            Note: * p < 0.1, ** p < 0.05, *** p < 0.01. Re-
+                                                                            ports coefficients from OLS regressions. Standard
+                                                                            errors clustered at the meso-region by year level in
+                                                                            parenthesis. All variables are standardized.
+
+
+
+
+                                                                                     Figure L.1: Sensitivity plots, with
+                                               0.4
+Partial R2 of confounder(s) with the outcome
+
+
+
+
+                                                                                                                  Partial R2 of confounder(s) with the outcome
+
+
+                                                                                                                                                                   0.8
+
+
+
+
+                                                                                                                                                                           6x ln GDP
+                                                                                                                                                                            (0.027)
+                                               0.3
+
+
+
+
+                                                                                                                                                                   0.6
+
+
+
+
+                                                                                                                                                                           4x ln GDP
+                                                                                                                                                                            (0.047)
+                                               0.2
+
+
+
+
+                                                                                                                                                                   0.4
+
+
+
+
+                                                                                      15x Exp. Share                                                                      2x ln GDP
+                                                                                         (−0.004)                                                                          (0.066)
+                                               0.1
+
+
+
+
+                                                                          10x Exp. Share
+                                                                                                                                                                   0.2
+
+
+
+
+                                                                              (0.029)
+                                                               5x Exp. Share
+                                                                  (0.059)
+                                                      Unadjusted                                                                                                         Unadjusted
+                                                       (0.085)                                                                                                            (0.085)
+                                               0.0
+
+
+
+
+                                                                                                                                                                   0.0
+
+
+
+
+                                                      0.0         0.1         0.2          0.3         0.4                                                               0.0           0.1      0.2        0.3         0.4
+
+                                                        Partial R2 of confounder(s) with the treatment                                                                     Partial R2 of confounder(s) with the treatment
+
+                                                     (a) Export Employment Share                                                                                                        (b) GDP
+
+
+
+
+                                                                                                             26
+                          Table L.3: Subsample Analysis, Centers of Gravity Outcome
+
+                    Left-Right      Left-Right      Redist.     Welfare        Relig.        Trad. M       Anti-estab.
+     DV:             (CHES)          (CMP)         (CHES)       (CMP)         (CHES)         (CMP)          (CHES)
+     ∆EPW           −0.096*** −0.098***            0.043***     0.037*** −0.078*** −0.079***               −0.070***
+                     (0.024)   (0.026)              (0.012)      (0.010)  (0.020)   (0.019)                 (0.020)
+
+     RY2 ∼D|X          4.30%           3.80%        2.50%        3.70%         4.20%           5.00%          3.40%
+     RVq=1            19.14%          17.94%        14.70%       17.73%        18.81%         20.40%         17.18%
+27
+
+
+
+
+     RVq=1,α=.05       8.43%           7.06%        3.38%        6.82%         8.05%           9.86%          6.19%
+     Obs.               279             279           279          279           279            279             279
+     Controls            ✓               ✓             ✓            ✓             ✓              ✓               ✓
+     State FE            ✓               ✓             ✓            ✓             ✓              ✓               ✓
+     Adj. R2           0.758           0.748         0.736        0.772         0.710          0.700           0.699
+     Note: * p < 0.1, ** p < 0.05, *** p < 0.01. Reports coefficients from OLS regressions. Standard errors clustered at
+     the meso-region level in parenthesis. Samples are restricted to regions with above-median shares of the population
+     identifying as Evangelical. All variables are standardized.
+M   Effects on Turnout
+
+                                 Table M.1: Effects on Turnout
+
+                                                           DV: ∆ Turnout
+                                      (1)         (2)         (3)         (4)             (5)
+    ∆EPWt                           -0.0104 -0.00670        -0.0123 -0.0399             -0.0162
+                                   (0.0181) (0.0169)       (0.0204) (0.0413)           (0.0187)
+    ∆EPWt ×                                     -0.0123
+       EvangelicalsBinary                      (0.0454)
+    EvangelicalsBinary                          0.0680                  0.0195
+                                               (0.0882)                (0.0729)
+    CatholicsBinary                             0.185∗∗                 0.160∗∗
+                                               (0.0748)                (0.0797)
+    ∆EPWt ×                                                 -0.0114
+       EvangelicalsCont.                                   (0.0201)
+    EvangelicalsCont.                                      0.340∗∗∗                     0.303∗∗∗
+                                                           (0.0812)                    (0.0767)
+    CatholicsCont.                                         0.383∗∗∗                     0.348∗∗∗
+                                                           (0.0807)                    (0.0783)
+    ∆EPWt ×                                                             0.0422
+       CatholicsBinary                                                 (0.0442)
+    ∆EPWt ×                                                                             0.0265
+       CatholicsCont.                                                                  (0.0193)
+
+    Observations                     1114        1114        1114       1114             1114
+    R2                               0.736       0.739       0.745      0.739            0.745
+    EvangelicalsBinary × Year                      ✓
+    EvangelicalsCont. × Year                                  ✓
+    CatholicsBinary × Year                                                ✓
+    CatholicsCont. × Year                                                                 ✓
+    State × Year FE                    ✓          ✓           ✓           ✓               ✓
+    CZ controls                        ✓          ✓           ✓           ✓               ✓
+    Note: * p < 0.1, ** p < 0.05, *** p < 0.01. Reports coefficients from OLS regressions. Standard
+    errors clustered at the meso-region by year level in parenthesis. All variables are standardized.
+
+
+
+
+                                                   28
+

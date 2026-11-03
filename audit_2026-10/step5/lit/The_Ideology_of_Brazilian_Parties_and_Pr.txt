@@ -1,0 +1,983 @@
+   The Ideology of Brazilian Parties and Presidents: A Research
+              Note on Coalitional Presidentialism Under Stress∗
+                            Cesar Zucco                           Timothy J. Power
+                     Getulio Vargas Foundation                   University of Oxford
+
+                                             June 19, 2023
+                                            Word Count: 3,576
+
+
+
+                                                   Abstract
+
+          This research note contributes updated and extended point estimates of the ideological
+       positions of Brazilian political parties and novel estimates of the positions of all presidents
+       since redemocratization in 1985. Presidents and parties are jointly responsible for the oper-
+       ability of Brazil’s version of coalitional presidentialism. Locating these key political actors
+       in a unidimensional left-right space over time reveals rising challenges to the institutional
+       setup, particularly since 2013. Ideological polarization among parties has sharply increased,
+       presidents have become more distant from Congress, and the political center has become
+       increasingly vacated. Coalitional presidentialism is being subjected to unprecedented ideo-
+       logical stress as President Luiz Inácio Lula da Silva begins his third term in office.
+
+
+
+
+   ∗
+    The field component of the research was revised and approved by FGV’s IRB (027/2021). The authors thank
+Ana Regina Amaral, students at CEFOR (Graduate School of the Brazilian Chamber of Deputies), and many
+Congressional staffers for invaluable support in fielding the 9th wave of the Brazilian Legislative Surveys during
+the Covid-19 pandemic. Joaquim Meira, Virginia Rocha, Vivi Linares, and Milton Mendonça provided excellent
+research assistance. Victor Araújo and participants at the BLS Workshop held at the University of Oxford in
+May 2022 commented on previous versions of the analysis. Supplemental information, data, replication materials,
+the full set of estimates and a available in https://doi.org/10.7910/DVN/6KVTUV.
+
+
+
+
+                     Electronic copy available at: https://ssrn.com/abstract=4470209
+    Increasing political polarization, the emptying of the political center, and subsequent de-
+cisional paralysis figure prominently in leading accounts of the democratic breakdowns of the
+1960s and 1970s in Brazil and elsewhere in the Southern Cone (Santos 1986, Stepan 1978,
+Soares 1986). Fear that this type of crisis would strike again after the Third Wave of democ-
+ratization (Souza 1989, O’Donnell 1992) set the stage for a burgeoning literature on politi-
+cal institutions and executive-legislative relations that has been particularly prolific in Brazil
+(Souza 2004, Cheibub 2008, Santos & Vilarouca 2004).
+    Coalitional presidentialism (Abranches 1988) came to be seen as the antidote to this risk
+(Power 2010). In this political-institutional arrangement, the executive exchanges not only pol-
+icy concessions, but control over ministries and state companies, as well as pork, for legislative
+support. In order to function, such an arrangement requires political parties and individual legis-
+lators who are either willing to forgo or downplay ideological differences or whose preferences are
+not too distant from the president’s (Raile, Pereira & Power 2011, Amorim Neto 2002, Bersch,
+Lopez & Taylor 2022). In short, malleable politicians and/or a robust center are essential.
+    Yet while the requisites of coalitional presidentialism appear to be stable, the ideological map
+of Brazilian politics is not. How does this changing ideational context speak to the sustainability
+of coalitional presidentialism? In this research note, we present estimates of the ideological
+positions of the main Brazilian parties since 1990, newly expanded to cover the most recent
+legislatures, and with a forward look to the return of the Workers’ Party (PT) to government
+in 2023 and beyond. We also present, for the first time, estimates of the ideological placements
+of Brazilian presidents since redemocratization.
+    Taken together, these new point estimates show that Brazil’s coalition presidentialism is
+under stress, and conditions for its functioning have deteriorated considerably over the past 10
+years. While this will come as no surprise to observers of the country’s politics, our estimates
+provide some historical perspective on the evolution of Brazilian democracy since 1985. These
+estimates can also serve as empirical subsidy for other researchers testing hypotheses about
+the party system and executive-legislative relations in a context where durable coalitions are
+paramount.
+
+
+1    Data and Methods
+Our data come from the nine waves of Brazilian Legislative Surveys (BLS), which has been
+carried out in each of Brazil’s post-authoritarian legislatures. The BLS has sampled senators
+and federal deputies beginning with the 48th legislature, elected in 1986 and interviewed in 1990,
+through the 56th , elected in 2018 and interviewed in 2021.
+    In order to estimate the position of each party we combine respondents’ answers to questions
+asking them to place themselves and each of the main parties in Congress at the time of the
+survey. The question wording and answer scale has been kept exactly the same in all waves.
+    The data generated by these questions consist of 17,974 ratings of 24 parties spread over
+                                                 1
+
+
+
+
+                   Electronic copy available at: https://ssrn.com/abstract=4470209
+127 party/years, made by 1,031 different federal legislators, and also covers those individuals’
+ideological self-placements.1 We combine these data following the same procedure discussed in
+previous work employing these same BLS questions (Zucco & Power 2021), and which builds
+on Aldrich & McKelvey (1977). We assume that the parties’ true positions are observed by
+our survey respondents, with random error. We also assume that each respondent possesses
+idiosyncratic “stretch” and “scaling” factors that imply respondent-specific uses of the answer
+scale. We treat these these factors are fixed for each individual, even if they participate in BLS
+more than once.2
+        Formally, let Pijt ∈ [1, 10] be the placement of party j (j = 1, . . . , J) by legislator i (i =
+1, . . . , I), in year t (t = 1, . . . , T ). Next, define Piit ∈ [1, 10] as the self-placement of each
+legislator i in each year t. The spatial model we use is simply:
+
+                                            Pijt =αi + βi πjt + ϵi                                           (1)
+                                             Pii =αi + βi πit + ν                                            (2)
+
+where πj is the “true” position of each party in each year, πit is the true position of each
+respondent in each year, αi and βi are legislator-specific “shift” and “stretch” rescaling factors,
+ϵt and ν are well behaved disturbance terms.
+        We estimate all parameters of the model simultaneously in a Bayesian framework.3 The
+distribution of the estimates of the positions of all parties over the whole period are roughly
+centered at zero and distributed between approximately −1 and 1. Negative values correspond
+to the ideological left and positive values to the right.
+
+
+2        The Ideological Positions of Parties
+Figure 1 reports a visual summary the ideological position of the main Brazilian parties in the
+period since the country’s return to democracy. Locations in a common left-right space for each
+party are arrayed chronologically from top to bottom, with a maximum of nine observations
+for longstanding parties. As of 2023, these 14 leading parties represent less than half of the
+parties holding seats in the Chamber of Deputies, although this group of parties has accounted
+for much more than that over the entire period under analysis. While microparties are excluded
+from the questionnaires by design, we do have estimates for a number of parties that are not
+shown in the figure to keep it visually digestible. All estimates are reported in Appendix C and
+available from the data repository for this research note.
+    1
+     At least 12 extant parties were rated in every BLS wave. A glossary of party acronyms is available in
+Appendix A.
+   2
+     There are 245 individuals who have participated in more than one wave of the survey.
+   3
+     We employ priors for πjt that are centered on the standardized average value of the raw placements with
+precision set at the inverse of the variance of the raw distribution. Uninformative priors are used for the other
+parameters in the model. We estimate the model using rjags (Plummer 2022), with at least 10,000 simulations
+in 3 chains. See Appendix B for diagnostics of the estimation.
+
+                                                       2
+
+
+
+
+                       Electronic copy available at: https://ssrn.com/abstract=4470209
+           Figure 1: Ideological positions of the leading Brazilian parties (1990-2021)
+
+Notes: Figure shows estimates for the main Brazilian parties for all years that are available. For each party,
+estimates are ordered chronologically from top to bottom. Arrows summarize variations over time. Estimates
+employ only data are from the BLS project. See text for details.
+
+
+
+
+                                                      3
+
+
+
+
+                    Electronic copy available at: https://ssrn.com/abstract=4470209
+    For most of the 30 years under analysis there were some very conspicuous ideological move-
+ments towards the right by parties such as CID (Cidadania, formerly PPS), and also by the
+much larger PSDB and MDB. Other than that, the story is mainly one of a slight centrist
+drift both by left-wing parties but also by most minor right-leaning parties, contributing to a
+long phase of gradual depolarization that lasted until roughly 2013. Since then – in Brazil’s
+tumultuous recent period of impeachment, populism, and polarization – we have witnessed sub-
+stantial changes. Left-wing parties have slowed and sometimes reversed their migration toward
+the center, and there have been remarkable recent changes on the right of the spectrum.
+    Over the past turbulent decade, the DEM, successor to the regime-founding Party of the
+Liberal Front (PFL) – which had served as the reliable “anchor” of the right during the first
+eight waves of the BLS – drifted toward the center. The DEM was quickly replaced by the PSL
+(Jair Bolsonaro’s party in the 2018 elections) on the extreme right of the spectrum. After Bol-
+sonaro moved the ideological goalposts, the DEM acquired a new reputation as a mainstream,
+“establishment” conservative party. At the new rightmost pole, Bolsonaro’s PSL was accompa-
+nied by NOVO, a tiny newer entrant (not shown), while the PL, PTB, and Republicanos began
+to row back toward the conservative horizon. Meanwhile, the PSDB and MDB (which at the
+time of BLS 9 fieldwork were engaged in awkward efforts to distance themselves from Bolsonaro)
+drifted back toward the center. Complicating the already considerable realignment of rightist
+forces, just as survey fieldwork was drawing to an end in 2021, the PSL and DEM merged into
+a newly formed União Brasil (UNIÃO). At the same time, Bolsonaro – after a period in which
+he had no formal party affiliation – joined the PL in order to launch his 2022 reelection bid.
+
+
+3    The Ideological Positions of Presidents
+In this note, for the first time, we also report the estimated ideological positions for Brazil’s
+eight presidents throughout the post-1985 democratic regime. These estimates are produced
+from questions in the survey that asked respondents to place presidents on the same left-right
+scale as they placed themselves and the parties. Our data on the rating of presidents amount
+to 1,929 placements by participants in the last three BLS waves. These data are pooled with
+the placements of parties and processed as if they were ratings of different parties. That is,
+presidents are treated as additional πijt parameters in the model and estimated simultaneously
+with all other parameters.
+    There are some limitations to our data on the placements of presidents. The first wave in
+which the questionnaire included the rating of presidents was BLS 7, fielded in 2013. In that
+year, we asked respondents to rate not only the incumbent president (Dilma Rousseff), who
+was in the middle of her first term, but also all of the previous presidents during their terms.4
+In BLS 8, carried out in 2017, respondents were again asked to rate all presidents during their
+   4
+     The actual wording of the question was “E onde o Sr.(a) colocaria os seguintes Presidentes da República,
+durante o exercı́cio de seus mandatos?”
+
+                                                      4
+
+
+
+
+                    Electronic copy available at: https://ssrn.com/abstract=4470209
+term, but the list was expanded to include president Michel Temer, who had replaced Dilma
+after she was impeached and suspended from office in May 2016.5 Finally, in BLS 9, respondents
+rated only Jair Bolsonaro.
+       The structure of these questions introduces some heterogeneity into our measurement. First
+of all, some chief executives were rated while they were in office or only shortly thereafter, while
+others were evaluated years after leaving the Palácio do Planalto. Ratings of presidents in the
+first situation can be reasonably be treated as accurate. Retrospective ratings, however, are
+probably influenced by post-presidential careers, which vary considerably. All five presidents
+who were rated retrospectively were assessed twice, once in 2013 and once in 2017. However,
+Itamar Franco was rated nearly twenty years after leaving office and two years after his death
+in 2011. José Sarney and Fernando Collor were also rated more than two decades after leaving
+the presidential palace and while holding Senate seats; Fernando Henrique Cardoso was rated
+just over a decade after the end of his second term; and Luiz Inácio Lula da Silva was rated
+three years after leaving the presidency.6 Neither Lula nor Cardoso held electoral office at the
+time, but both were active in politics and Lula, in particular, clearly harbored future electoral
+ambitions (which came to fruition in 2022).
+       Hence, we have contextually informed ratings for Bolsonaro (BLS 9), Temer (BLS 8), Dilma
+in her first term (BLS 7), and Dilma less than a year after being forced from office (BLS 8). These
+are our main contemporaneous estimates and should be non-controversial. We also present our
+estimates for the other presidents, which are retrospective and should be treated with a grain
+of salt. For these five presidents, we report the first available rating (from BLS 7) as it was
+computed closer to their time in office.
+       Figure 2 shows estimates for all presidents, as well as the positions of each president’s party at
+the time of their mandate (or for two technically unaffiliated presidents, the parties most closely
+associated with them).7 This figure suggests that even our non-contemporaneous estimates of
+the positions of presidents are quite plausible. Sarney is the only president substantially more to
+the right of his own party. This seems reasonable because Sarney had been a core supporter of
+the authoritarian regime, led the defection that created the PFL, and only joined the PMDB to
+become Tancredo Neves running mate in the 1985 indirect election. Even after being nominally a
+member of the PMDB, he represented a political group that was considerably more conservative
+than the rest of the party (see Appendix C for all estimates).
+       All other discrepancies are much more modest. Collor was rated as slightly more moderate
+than his own party (the defunct PRN), but still very far to the right. Itamar, originally Collor’s
+vice-president, was rated as slightly more right-wing than his longtime party (PMDB) and
+   5
+     Dilma was suspended from office on 12 May 2016 and replaced by her vice president, Temer, who served as
+acting president for 111 days. Temer was formally sworn in as president on 31 August, about seven months prior
+to the launch of BLS 8.
+   6
+     No self-rating occurred. Over the 31 years of the project, BLS surveys have been answered by three future
+presidents and one former president, although all prior to BLS 7 when presidential positions were introduced.
+   7
+     For Itamar, we used the PMDB, where he built most of his career; for Bolsonaro, we used the PSL, his
+electoral vehicle in 2018.
+                                                      5
+
+
+
+
+                      Electronic copy available at: https://ssrn.com/abstract=4470209
+              Figure 2: Ideological positions of Brazilian presidents and their parties
+
+Notes: Figure shows estimates of the positions of presidents and the party more closely associated with them.
+Sarney, Itamar, and Temer are shown relative to the PMDB/MDB, FHC to the PSDB, Lula and Dilma to the
+PT, Collor to the PRN, and Bolsonaro to the PSL. ∗ indicates that presidents left office prior to the end of their
+term, and were replaced by the other president rated in the same year.
+
+
+
+
+                                                        6
+
+
+
+
+                     Electronic copy available at: https://ssrn.com/abstract=4470209
+placed in a very similar position to that of his successor, Cardoso. This also makes sense given
+that Itamar is best remembered for having appointed Cardoso as Minister for the Economy in
+1993 and having sponsored the latter’s successful presidential bid a year later. In Dilma’s second
+term she was rated as somewhat more centrist than the PT, but both her and her party moved
+to the left in the legislature that was marked by her impeachment. All other presidents were
+placed very close to where we estimated their own party to be during their respective mandates
+and Bolsonaro is revealed, unsurprisingly, as the most extreme president the country has had
+so far in the current democratic period.
+        Position estimates from the Political Representation, Executives, and Political Parties Sur-
+vey (PREPPS) projects provide a reasonable benchmark for the validity of our estimates
+(Wiesehomeier, Singer & Ruth-Lovell 2021). PREPPS is an expert survey that measures posi-
+tions of both parties and presidents in 18 Latin American countries. It has a wider geographical
+coverage than BLS but a single data collection, carried out between BLS 8 and BLS 9. For the
+subset of 17 Brazilian parties and two presidents rated by PREPPS, our estimates and the av-
+erage overall left-right placement by experts correlate almost perfectly (r = 0.97). We provide
+additional details of this comparison in Appendix D.
+
+
+4        Coalitional Presidentialism Under Stress
+The Brazilian political system is a well-known case of coalitional presidentialism, though clearly
+not the only such case (Chaisty, Cheeseman & Power 2018). While scholars disagree on the
+normative desirability of such a system (Power 2010), there is considerable agreement that it
+requires malleable politicians and/or a robust center in order to function.
+        We computed three simple indicators from the data presented in this note which, together,
+suggest that this system might be under severe and increasing stress. The first is simply the
+share of legislators belonging to clearly centrist parties, defined here as parties whose position
+estimates lie between −0.25 and 0.25.8 The second indicator is the weighted average distance
+between all pairs of parties, a measure of polarization in Congress; higher values indicate greater
+polarization.9 The third indicator is the weighted average distance between parties and the
+president, which is computed analogously to the previous one.
+        We report all three indicators in Figure 3, for the nine legislatures for which we have survey
+data. We also report projected values of the three indicators for the current legislature (57th ,
+2023–2026), for which we do not yet have BLS survey data. Hence, in this exercise we used
+the electoral results from October 2022 as the basis for the composition of Congress, and the
+estimates of the positions of the parties from the BLS 9, which corresponds to the 56th legislature
+(2019-2022). We made two modifications to these estimates: we created an estimate for the
+    8
+    We examine alternative definitions of centrist parties in Appendix E.
+    9
+    This measure is also referred to in the literature as Mean Average Absolute Distance (MAAD) (Gross &
+Sigelman 1984, Zucco & Power 2021), and involves computing the average absolute distance between each party
+and all others, weighted by their size, and averaging across all parties, weighted again by their size.
+
+                                                    7
+
+
+
+
+                      Electronic copy available at: https://ssrn.com/abstract=4470209
+newcomer party UNIÃO by averaging the positions of the DEM and the PSL in BLS 9, weighting
+each party by its size at the time of the merger. We also modified the estimated position of the
+PL by averaging it with the position of Bolsonaro, as he himself and several of his close affiliates
+joined the PL after BLS 9. Finally, we used Lula’s retrospective evaluation from BLS 8, the
+more recent estimate for Lula, as his ideal point, which was based on the perception of Lula at
+the time of his second term.
+
+
+
+
+                                                                                                                                                  0.4
+                                                0.8
+
+
+
+
+                                                                                                                                          LULA
+      Mean Weighted Distances (line and dots)
+
+
+
+
+                                                                                                                              BOLSONARO
+
+
+
+
+                                                                                                                                                        Centrist Share of Congress (bars)
+                                                                                                                                                  0.3
+                                                                                                                     DILMA
+                                                0.7
+
+
+
+
+                                                               COLLOR
+                                                0.6
+
+
+
+
+                                                                                                                                                  0.2
+                                                       SARNEY
+                                                                                          LULA
+                                                                 ITAMAR                                      DILMA
+                                                0.5
+
+
+
+
+                                                                                                                                                  0.1
+                                                                           FHC
+                                                                                                     LULA
+
+                                                                                                                       TEMER
+                                                                                   FHC
+                                                0.4
+
+
+
+
+                                                                                                                                                  0.0
+                                                       Legis     Legis    Legis   Legis   Legis      Legis   Legis    Legis    Legis      Legis
+                                                        48        49       50      51      52         53      54       55       56         57
+
+                                                      Distance between parties                          Distance between president and parties
+
+
+                                                       Figure 3: Polarization in the Brazilian Congress (1990–2023)
+
+Notes: Figure shows the share of legislators that belong to centrist parties, measured on the right vertical axis,
+and the average weighted distances between parties and average weighted distance between the president and
+parties, both measured on the left vertical axis. Estimates for the first nine quadrennial legislatures (beginning
+with the 48th which ran from 1987-1990) were computed by the authors from BLS 1–9. Estimates for the 57th
+legislature (2023-2026) rely on extrapolation of previous data. See text for details.
+
+
+    Figure 3 shows that the lead-in to Dilma’s impeachment, in 2016, marks the onset of a
+period of severe institutional stress. The three elected presidents in this period have been, by
+far, the ones most ideologically distant from Congress. Temer, who replaced Dilma, was the
+only president in the period to have substantial support in Congress, despite being extremely
+and consistently unpopular with the public. In lockstep with the increasing distances between
+presidents and the median legislator, we also see a steep rise in polarization and an “emptying
+of the political center.”
+
+
+                                                                                                 8
+
+
+
+
+                                                        Electronic copy available at: https://ssrn.com/abstract=4470209
+5    Conclusion
+In this research note, we extended the coverage of estimates of the ideological positions of the
+main Brazilian parties up through the 56th legislature and presented, for the first time, estimates
+of the positions of all Brazilian presidents since redemocratization. Based on these estimates
+and on projections for the subsequent (current) 57th legislature, we also computed indicators
+of polarization, ideological centrality of presidents, and the relative size of “centrist” parties in
+Congress from democratization through the present.
+    Together, these indicators show that Brazil’s coalition presidentialism is under severe strain,
+and conditions for its functioning have deteriorated considerably over the past 10 years. The
+outlook is challenging, both for the government and for democracy. On the one hand, it is
+possible that Lula III (2023–2026) will emerge as more centrist than the value that we imputed
+based on his reputation when he last served president more than a dozen years ago. It is also
+possible that nominally right-of-center parties may prove to be malleable enough to overcome the
+ideological gulf that separates the two sides. On the other, however, ideological grandstanding by
+right-wing politicians, if anything, is on the rise (Quadros & Madeira 2018) and pressures from
+electoral politics seem to limit the electability of centrist executives (Samuels & Zucco 2018).
+    At present, we know very little about what engineers would call the “ultimate tensile
+strength” of coalitional presidentialism in Brazil, other than the historical fact that the sys-
+tem snapped once before when subjected to maximum ideological stress in the early 1960s.
+Yet there is little doubt that rising ideological polarization has made coalitional politics a less
+“user-friendly” strategy for presidents than at any previous moment since redemocratization in
+1985.
+
+
+
+References
+Abranches, Sergio. 1988. “Presidencialismo de Coalizão.” Dados 31(1):5–34.
+Aldrich, John H. & Richard D. McKelvey. 1977. “A Method of Scaling with Applications to the 1968
+     and 1972 Presidential Elections.” American Political Science Review 71(1):111–130.
+Amorim Neto, Octavio. 2002. Presidential Cabinets, Electoral Cycles, and Coalition Disipline in Brazil.
+   In Legislative Politics in Latin America, ed. Scott Moregenstern & Benito Nacif. Cambridge: Camb-
+   drige University Press chapter 3, pp. 48–78.
+Bersch, Katherine, Felix Lopez & Matthew M. Taylor. 2022. “Patronage and Presidential Coalition
+     Formation.” Political Research Quarterly 0(0):10659129221100830.
+     URL: https://doi.org/10.1177/10659129221100830
+Chaisty, Paul, N. Cheeseman & Timothy J. Power. 2018. Coalitional Presidentialism in Comparative
+    Perspective: Minority Presidents in Multiparty Systems. Oxford Studies in Democratization Oxford
+    University Press.
+Cheibub, José Antonio. 2008. Political reforms in Brazil: Diagnosis, recent proposals and a suggestion.
+    In Brazil Under Lula: An Assessment of the Worker-President’s First Administration, ed. Warner
+    Baer & Joseph Love. New York: Palgrave Macmillan pp. 9–26.
+
+                                                   9
+
+
+
+
+                   Electronic copy available at: https://ssrn.com/abstract=4470209
+Gross, Donald A. & Lee Sigelman. 1984. “Comparing Party Systems: A Multidimensional Approach.”
+    Comparative Politics 16:463.
+O’Donnell, Guillermo. 1992. Transitions, Continuities, and Paradoxes. In Issues in Democratic Consoli-
+    dation: The New South American Democracies in Comparative Perspective, ed. Scott Mainwaring,
+    Guillermo O’Donnell & J.S̃amuel Valenzuela. South Bend, IN: University of Notre Dame Press
+    pp. 17–56.
+Plummer, Martyn. 2022. rjags: Bayesian Graphical Models using MCMC. R package version 4-13.
+    URL: https://CRAN.R-project.org/package=rjags
+Power, Timothy J. 2010. “Optimism, Pessimism, and Coalitional Presidentialism: Debating the Institu-
+    tional Design of Brazilian Democracy.” Bulletin of Latin American Research 29(1):18–33.
+    URL: http://www.jstor.org/stable/27805077
+Quadros, Marcos Paulo dos Reis & Rafael Machado Madeira. 2018. “Fim da direita envergonhada?
+    Atuação da bancada evangélica e da bancada da bala e os caminhos da representação do conser-
+    vadorismo no Brasil.” Opinião Pública 24(3):486–522.
+    URL: https://periodicos.sbu.unicamp.br/ojs/index.php/op/article/view/8654292
+Raile, Eric D., Carlos Pereira & Timothy J. Power. 2011. “The Executive Toolbox: Building Legislative
+     Support in a Multiparty Presidential Regime.” Political Research Quarterly 64(2):323–334.
+Samuels, David J. & Cesar Zucco. 2018. Partisans, Anti-Partisans and Non-Partisans: Voting Behavior
+    in Brazil. New York: Cambridge University Press.
+Santos, Fabiano & Márcio Grijó Vilarouca. 2004. “A Paranóia da Paralisia Governamental contra a
+    Paralisia da Paranóia da Oposição.” Insight-Inteligencia (27):108–117.
+Santos, Wanderley Guilherme Dos. 1986. Sessenta e quatro: anatomia da crise. São Paulo: Vértice.
+Soares, Glaucio Ary Dillon. 1986. “The rise of the Brazilian military regime.” Studies in Comparative
+    International Development 21(2):34–62.
+    URL: https://doi.org/10.1007/BF02717375
+Souza, Amaury de. 2004. Political Reform in Brazil: Promises and Pitfalls. Policy Papers on the Americas
+    vol. XV, Study 3 Center for Strategic and International Studies.
+Souza, Maria do Carmo Campello de. 1989. The Brazilian New Republic: Under the Sword of Damocles.
+    In Democratizing Brazil, ed. Alfred Stepan. Oxford: Oxford University Press pp. 351–394.
+Stepan, Alfred. 1978. Political Leadership and Regime Breakdown: Brazil. In The Breakdown of Demo-
+    cratic Regimes: Latin America, ed. Juan Linz & Alfred Stepan. Baltimore: Johns Hopkins University
+    Press pp. 110–137.
+Wiesehomeier, Nina, Matthew Singer & Saskia Ruth-Lovell. 2021. Political Representation, Executives,
+    and Political Parties Survey: Data from Expert Surveys in 18 Latin American Countries, 2018-2019.
+    PREPPS Latam V2. Technical report IE University.
+    URL: https://doi.org/10.7910/DVN/JLOYIJ
+Zucco, Cesar & Timothy J. Power. 2021. “Fragmentation Without Cleavages? Endogenous Fractional-
+    ization in the Brazilian Party System.” Comparative Politics 53(3):477–500.
+
+
+
+
+                                                  10
+
+
+
+
+                   Electronic copy available at: https://ssrn.com/abstract=4470209
+The Ideology of Brazilian Parties and Presidents: A Research Note on
+              Coalitional Presidentialism Under Stress1
+
+
+                          Cesar Zucco & Timonthy J. Power
+
+
+                              — Supplemental Information —
+
+
+
+                      Table of Contents for Supplemental Information
+
+
+                          A    Brazilian parties and their acronyms      2
+                          B    Diagnostics of the estimation             4
+                          C    Complete sets of estimates                6
+                          D    Comparison with PREPPS data               9
+                          E    The emptying of the center               10
+
+
+
+
+1
+    Available in https://doi.org/10.7910/DVN/6KVTUV.
+                                                 1
+
+
+
+
+                   Electronic copy available at: https://ssrn.com/abstract=4470209
+Appendix A           Brazilian parties and their acronyms
+
+This list is alphabetized by acronym, mirroring Table C1 below which shows the ideological
+estimates for each party/year. To help resolve ambiguities resulting from similar names, name
+changes, and mergers, wherever possible we have included the official party registration number
+from the Tribunal Superior Eleitoral (TSE).
+
+   • ARENA/PDS: the official party of the 1964-1985 military dictatorship, founded as the Na-
+     tional Renovating Alliance (ARENA) in 1966 and renamed the Democratic Social Party
+     (PDS) in 1979. The PDS split during the democratic transition in 1984-1985, with mod-
+     erates forming the Party of the Liberal Front (PFL) and hardliners continuing under the
+     PDS name, which they retained until 1993. (This party is not in the dataset in Table C1
+     but is mentioned here for genealogical reasons.)
+
+   • CID: Cidadania (Citizenship), TSE number 23, renamed 2019, previously known as Pop-
+     ular Socialist Party (PPS). Founded in 1992, the PPS was a rebranding of the historic
+     Brazilian Communist Party (PCB) dating from 1922.
+
+   • DEM: Democratas (Democrats), TSE number 25, founded by PDS dissidents in 1985 as
+     Party of the Liberal Front (PFL), changing its name to DEM in 2007. Dissolved in 2022
+     (merged with PSL to form the União Brasil).
+
+   • MDB: Movimento Democrático Brasileiro (Brazilian Democratic Movement), TSE number
+     15, founded in 1966 as the only legal opposition party under military rule. Known as Party
+     of the Brazilian Democratic Movement (PMDB) between 1981 and 2017.
+
+   • NOVO: Partido Novo (New Party), TSE number 30, founded 2011.
+
+   • PC do B: Partido Comunista do Brasil (Communist Party of Brazil), TSE number 65,
+     refounded in 1985. Dates itself from 1962 as a breakaway from the historic Brazilian
+     Communist Party (PCB) during the Sino-Soviet split.
+
+   • PDC: Partido Democrata Cristão (Christian Democratic Party), TSE number 17, founded
+     in 1985, claiming to be a refounding of the party of the same name that existed from 1945
+     to 1965. Merged with the PDS in 1993, creating the forerunner of the current Progressistas
+     (PP). The party number 17 was recycled by the TSE and given to the PSL in 1994.
+
+   • PDT: Partido Democrático Trabalhista (Democratic Labor Party), TSE number 12, founded
+     1979.
+
+   • PL: Partido Liberal (Liberal Party), TSE number 22, founded 1985 as PL, incorporating
+     the Party for the Reconstruction of National Order (PRONA) in 2006 to form the Party
+     of the Republic (PR). Reverted to original name in 2019.
+
+   • PODE: Podemos (We Can), TSE number 19, founded in 1995 as the Partido Trabalhista
+     Nacional (PTN) and changing its name to Podemos in 2016.
+
+   • PP: Progressistas (Progressives), TSE number 11, founded in 1995 as Brazilian Progressive
+     Party. Has undergone various name changes and mergers, but is the direct descendant of
+     ARENA/PDS.
+
+
+                                                2
+
+
+
+
+                  Electronic copy available at: https://ssrn.com/abstract=4470209
+• PP (old): Partido Popular (Popular Party), TSE number 39, founded in 1993 by the
+  merger of two smaller parties, the PST and the PTR. (This PP is not to be confused with
+  a party of the same name that existed briefly from 1980 to 1982.) The 1993 PP lasted less
+  than two years before being absorbed by what is now called Progressistas (see above).
+
+• PRN: Partido da Reconstrução Nacional (Party of National Reconstruction), TSE number
+  36, founded in 1985 as the Partido da Juventude (Youth Party). Used successfully by
+  Fernando Collor for his 1989 presidential run.
+
+• PROS: Partido Republicano da Ordem Social (Republican Party of Social Order), TSE
+  number 90, founded in 2010. Absorbed by Solidariedade (SD) in October 2022 and for-
+  mally dissolved in February 2023.
+
+• PSB: Partido Socialista Brasileiro (Brazilian Socialist Party), TSE number 40, founded
+  1985.
+
+• PSC: Partido Social Cristão (Social Christian Party), TSE number 20, founded 1985.
+
+• PSD: Partido Social Democrático (Social Democratic Party), TSE number 55, founded
+  2011. Not to be confused with Partido Democrático Social (PDS), the official party of the
+  military regime.
+
+• PSDB: Partido da Social Democracia Brasileira (Party of Brazilian Social Democracy),
+  TSE number 45, founded 1988.
+
+• PSL: Partido Social Liberal (Social Liberal Party), TSE number 17, founded 1994. Party
+  used by Jair Bolsonaro to win the presidency in 2018. Dissolved in 2022 (merged with
+  DEM to form the União Brasil).
+
+• PSOL: Partido Socialismo e Liberdade (Socialism and Freedom Party), TSE number 50,
+  founded 2004. Split from the Workers’ Party (PT) in protest against the moderation of
+  the PT during Lula’s first government.
+
+• PSTU: Partido Socialista dos Trabalhadores Unificado (Unified Socialist Workers’ Party),
+  TSE number 16, founded 1994. Successor to Convergência Socialista, the Brazilian affiliate
+  of the Fourth International, which had previously functioned as a faction of the Workers’
+  Party (PT) until 1992.
+
+• PT: Partido dos Trabalhadores (Workers’ Party), TSE number 13, founded 1980.
+
+• PTB: Partido Trabalhista Brasileiro (Brazilian Labor Party), TSE number 14, founded
+  1981.
+
+• PV: Partido Verde (Green Party), TSE number 43, founded 1986.
+
+• REDE: Rede Sustentabilidade (Sustainability Network), TSE number 18, founded 2013.
+
+• REP: Republicanos (Republicans), TSE number 10, founded 2005. Known as Brazilian
+  Republican Party until 2019.
+
+• SD: Solidariedade (Solidarity), TSE number 77, founded 2012.
+
+
+
+                                            3
+
+
+
+
+              Electronic copy available at: https://ssrn.com/abstract=4470209
+   • UNIÃO: União Brasil (Union Brazil), TSE number 44, founded 2022 by the merger of
+     DEM and PSL (see above). This party was formed at the end of the field research for
+     BLS 9, so it was not rated by respondents and does not appear in Table C1. However,
+     in the computations for Figure 3 we estimated its position for 2023 as 0.66, which is an
+     average between the positions of the DEM (0.43) and the PSL (0.8), weighted by each
+     party’s size at the time of the merger.
+
+
+Appendix B           Diagnostics of the estimation
+
+We estimated the model using rjags using three parallel chains with 10,000 simulations each.
+Figure B1 compares estimates across chains. The top row presents the party position estimates
+(pp) as well as individual legislator estimates (mstr). The bottom row reports estimates for
+the individual stretch and scale parameters (a and b). The R2 is extremely high for each set of
+estimates between each pair of chains, indicating stability in the estimation.
+
+
+
+
+                      Figure B1: Consistency of estimates across chains
+
+   Figure B2 shows estimates for the first 36 party/presidents estimates (identified simply
+as pp[1]–pp[36], but which correspond to items that were rated by respondents) as the chain
+progressed. Variation in the estimates is much smaller at the end of the estimation, indicating
+convergence. While we do not report these figures for all parameters and for all chains (i.e.
+there is one pp for each party/president/wave), they follow exactly the same pattern shown
+here.
+   In Figure B3 we compare estimates from after BLS 6 with the estimates for the same
+party/waves (left) and individual/waves (right) computed after BLS 9. Recall that we do not
+                                              4
+
+
+
+
+                  Electronic copy available at: https://ssrn.com/abstract=4470209
+      Figure B2: Variation in (selected) party position estimates as the chain progresses
+
+
+
+simply attach the newer estimates to the older ones, but we redo the whole procedure and
+re-estimate all parameters using the all the data available. The figure shows that estimates of
+party positions are all but identical. We also see slightly more variation at the individual level
+(which we do not analyze in this note), but estimates are still very similar, with an R2 close to
+0.87.
+
+
+
+
+                                                5
+
+
+
+
+                  Electronic copy available at: https://ssrn.com/abstract=4470209
+                 (a) Parties                                     (b) Legislators
+
+                        Figure B3: Comparing BLS 9 with earlier waves
+
+
+
+Appendix C            Complete sets of estimates
+
+The relatively large number of parties in Brazil make reporting them graphically a challenge,
+so Figure 1 does not include results for all parties for which we have estimates. In order to
+complement the reporting, we present the full set of party-position estimates in Table C1 and
+those of presidents in Table C2. These estimate will be made permanently publicly available in
+electronic format upon publication of this note.
+    As discussed in the main body of the paper, three presidents (who served in four presidencies)
+were rated contemporaneously, by legislators that were serving in a legislature that overlapped
+with the president being rated. The other five presidents were rated retrospectively in 2013. Lula
+had finished his second term a little over two years before being rated, so his in an intermediate
+case. The distance between when the ratings were made and the end of the previous presidencies
+is considerably greater.
+
+
+
+
+                                                6
+
+
+
+
+                  Electronic copy available at: https://ssrn.com/abstract=4470209
+           Table C1: Complete estimates of party positions (1990–2021)
+
+Party               1990     1993     1997     2001     2005     2009     2013     2017     2021
+CID        Est.   -0.830   -0.597   -0.609   -0.399   -0.407   -0.191   -0.217   -0.129   -0.014
+           SE      0.038    0.036    0.038    0.036    0.040    0.036    0.037    0.035    0.037
+DEM        Est.    0.716    0.671    0.789    0.717    0.666    0.635    0.793    0.739    0.431
+           SE      0.037    0.038    0.042    0.040    0.046    0.041    0.043    0.040    0.038
+MDB        Est.   -0.069   -0.022    0.063    0.151    0.116    0.054    0.179    0.385    0.137
+           SE      0.030    0.034    0.035    0.035    0.040    0.036    0.037    0.037    0.037
+NOVO       Est.                                                                            0.711
+           SE                                                                              0.041
+PCDOB      Est.   -0.995   -0.946   -0.966   -0.898   -0.743   -0.732   -0.744   -0.737   -0.822
+           SE      0.040    0.040    0.042    0.041    0.043    0.040    0.040    0.039    0.101
+PDC        Est.    0.622
+           SE      0.036
+PDT        Est.   -0.542   -0.447   -0.541   -0.490   -0.353   -0.374   -0.336   -0.405   -0.356
+           SE      0.033    0.035    0.036    0.036    0.041    0.037    0.038    0.036    0.038
+PL         Est.    0.574    0.643    0.627    0.422    0.416    0.328    0.409    0.434    0.493
+           SE      0.035    0.037    0.040    0.038    0.042    0.037    0.038    0.037    0.039
+PODE       Est.                                                                   0.269    0.386
+           SE                                                                     0.067    0.039
+PP         Est.   0.881    0.734    0.853    0.789    0.674    0.528    0.610     0.577    0.510
+           SE     0.039    0.040    0.043    0.041    0.045    0.039    0.040     0.038    0.040
+PP (old)   Est.            0.339
+           SE              0.035
+PRN        Est.   0.631    0.869
+           SE     0.035    0.042
+PROS       Est.                                                                   0.020    0.032
+           SE                                                                     0.065    0.097
+PSB        Est.   -0.757   -0.746   -0.662   -0.631   -0.537   -0.490   -0.428   -0.171   -0.427
+           SE      0.036    0.037    0.038    0.037    0.041    0.038    0.037    0.035    0.038
+PSC        Est.                                                                   0.541    0.596
+           SE                                                                     0.038    0.071
+PSD        Est.                                                         0.373     0.399    0.296
+           SE                                                           0.039     0.037    0.037
+PSDB       Est.   -0.309   -0.225   0.162    0.179    0.141    0.087    0.219     0.477    0.157
+           SE      0.031    0.033   0.035    0.036    0.040    0.036    0.036     0.037    0.037
+PSL        Est.                                                                            0.803
+           SE                                                                              0.043
+PSOL       Est.                                                -0.958   -0.968   -0.898   -0.874
+           SE                                                   0.043    0.044    0.041    0.045
+PSTU       Est.            -0.826
+           SE               0.043
+PT         Est.   -0.931   -0.830   -0.881   -0.793   -0.525   -0.534   -0.532   -0.668   -0.691
+           SE      0.039    0.039    0.040    0.039    0.040    0.038    0.039    0.039    0.042
+PTB        Est.    0.487    0.482    0.572    0.459    0.375    0.276    0.323    0.198    0.455
+           SE      0.034    0.036    0.038    0.038    0.040    0.037    0.037    0.035    0.039
+PV         Est.                                                -0.267   -0.230   -0.069
+           SE                                                   0.037    0.037    0.034
+REDE       Est.                                                                  -0.555
+           SE                                                                     0.037
+REP        Est.                                                                   0.425   0.550
+           SE                                                                     0.037   0.040
+SD         Est.                                                                   0.153   0.190
+           SE                                                                     0.068   0.064
+
+
+
+
+                                               7
+
+
+
+
+             Electronic copy available at: https://ssrn.com/abstract=4470209
+                Table C2: Complete estimates of presidents positions (1990–2021)
+
+                                            President           Year rated     In office   Estimate      SE
+
+                 Contemp. Retrospective
+                                            SARNEY                2013        1986–1990       0.50      0.04
+                                            COLLOR                2013        1990–1992       0.62      0.04
+                                            ITAMAR                2013        1992–1995       0.13      0.04
+                                            FHC (I and II)        2013        1995–2003       0.18      0.04
+                                            LULA (I and II)       2013        2003–2011      -0.41      0.04
+                                            DILMA I               2013        2011–2015      -0.41      0.04
+                                            DILMA II              2017        2015–2016      -0.50      0.04
+                                            TEMER                 2017        2016–2019       0.55      0.04
+                                            BOLSONARO             2021        2019–2023       0.87      0.04
+
+
+
+Appendix D                                   Comparison with PREPPS data
+
+In the main body of the note we mention a comparison between the BLS data and estimates of
+the positions of presidents and parties with those made available through the Political Represen-
+tation, Executives, and Political Parties Survey (PREPPS) Wiesehomeier, Singer & Ruth-Lovell
+(2021). PREPPS is an expert survey that focuses on the positions of parties and presidents as
+well as the linkage strategies of parties throughout Latin America.
+    PREPPS data was collected in four waves: 2006/07, 2011, 2015 and 2018/2019. In all
+waves, we consider only the 20 point left-right score on of each party on the “the general left-
+right dimension”.
+    The 2006/2007 wave positioned 14 Brazilian parties and president Lula and was conducted
+around the transition between the legislatures covered by BLS5 and BLS6. The 2011 wave
+positioned 14 parties as well as president Dilma. The 2015 wave positioned 18 parties as well
+as president Dilma was fielded in the same legislature as BLS8. Finally, the 2018/19 wave
+positioned 17 parties as well as presidents Temer and Bolsonaro on and was fielded in the
+transition between legislatures covered by waves 8 and 9 of the BLS.
+    For the PREPPS waves that straddled two different legislatures, we first averaged the BLS
+scores for all items in the two relevant BLS waves. The merged dataset of four PREPPS and
+five BLS waves yielded estimates for 62 party/waves and 5 president/waves.2 Table D1 lists the
+PREPPS and BLS waves used in this analysis.
+
+                          PREPPS Year                     BLS Year     BLS Wave          President
+                          2006/07                           2005       BLS/,5 & 6       Lula I and II
+                          2011                              2013         BLS 7            Dilma I
+                          2015                              2017         BLS 8            Dilma II
+                          2018/19                           2021       BLS 8 & 9      Temer & Bolsonaro
+
+
+                                                  Table D1: PREPPS–BLS Correspondence
+  2
+    PREPPS contains 4 party/waves not rated by BLS (PROS, PSC, REP and SD, all in 2011), and BLS has 8
+party/waves not rated by PREPPS (PSC in 2006, PODE and REDE in 2015, CID, PCDOB, PROS, PSC, and
+SD in 2018/19). President Lula was rated retrospectively by BLS 8, but we used this score in the comparison
+with the Lula estimate for the PREPPS 2006/07 data.
+
+
+                                                                        8
+
+
+
+
+                                          Electronic copy available at: https://ssrn.com/abstract=4470209
+    Figure D1 compares all items that were rated in both survey projects. We averaged BLS 8
+and BLS 9 estimates for parties rated in both, but this decision does not change our conclusions.
+As reported in the main text, the two sets of estimates coincide dramatically (r = 0.97).
+The figure also shows that both place Bolsonaro as the right-most item rated, and put Temer
+very close to the extreme right as well and place other presidents very close to the direct
+correspondence line. The positions of the PT and the PSDB, arguably the main parties on the
+left and center-right in the period, are all almost perfectly coincident too.
+                                            Right →
+
+
+
+
+                                                                                                                            BOLSONARO
+
+
+
+
+                                                                                                            TEMER
+                                              15
+          PREPPS Overall Left−Right Score
+
+
+
+
+                                                                                                           MDB'15
+                                              10
+
+
+
+
+                                                                  REDE'18
+
+
+                                                                               LULA
+
+
+
+
+                                                                               DILMA I
+                                                                    DILMA II
+                                              5
+
+
+
+
+                                                                                                                    Party
+                                                                                                                      PT
+                                             ← Left
+
+
+
+
+                                                                                                                      PSDB
+                                                                                                                    President
+
+                                                       ← Left
+                                                      −1.0            −0.5                   0.0            0.5      Right →
+
+                                                                                  BLS Position Estimates
+
+                                                           Figure D1: Comparing BLS and PREPPS estimates
+
+
+    The greatest discrepancy between the two sets of estimates correspond to one rating of
+REDE and another of the MDB (formerly PMDB). REDE, a small party that was intended as
+an electoral vehicle for Marina Silva’s presidential bid and which never really established itself
+and essentially disintegrated between the 56th and 57th legislature is the biggest outlier, but an
+insignificant one for most practical applications. The MDB is a more relevant case. Politicians,
+it seems, rated the party in 2015 more to the right than experts. This might be a function
+of the timing of the fielding of both surveys. President Dilma was impeached in 2016, in a
+process that was masterminded by furture president Temer and conducted by the speaker of
+the house Eduardo Cunha, both of whom were leaders of the MDB. The BLS was fielded after
+the impeachment proceedings while PREPPS was fielded before, in a period in which the MDB
+was still an ally of the PT.
+                                                 9
+
+
+
+
+                                                       Electronic copy available at: https://ssrn.com/abstract=4470209
+Appendix E                                       The Emptying of the Center
+
+In Section 4 we reported on the “emptying of the center”. Our definition of a centrist party,
+namely those whose rescaled ideological position was estimated to fall between −0.25 and 0.25, is
+obviously arbitrary. Hence, we show in Figure E1 we shows how four other alternative definitions
+of centrist parties (dashed gray lines) compare to the one we presented in the main body of the
+text (solid black line). The punchline is that the substantive message we presented in the main
+body of the text is not particularly sensitive to this arbitrary definition. In all definitions, the
+center has been shrinking for at least the last five legislatures, and onder the more encompassing
+definitions, the emptying of the center is even more pronounced than what we reported.
+                                       0.8
+
+
+
+
+                                                     [−.20,.20]
+                                                     [−.25,.25]
+                                                     [−.30,.30]
+                                                     [−.35,.35]
+                                                     [−.40,.40]
+                                       0.6
+          Centrist Share of Congress
+
+                                       0.4
+                                       0.2
+                                       0.0
+
+
+
+
+                                             Legis    Legis       Legis   Legis   Legis        Legis   Legis   Legis   Legis   Legis
+                                              48       49          50      51      52           53      54      55      56      57
+
+
+
+
+                                             Figure E1: Emptying of the Center with Different Definitions
+
+
+
+
+                                                                                          10
+
+
+
+
+                                              Electronic copy available at: https://ssrn.com/abstract=4470209
+

@@ -1,0 +1,57 @@
+item,value,source
+2010 raw file has no _VALIDOS column; candidate statuses,APTO,pres_cand
+"2010 president r1 national valid votes (cand file, incl. abroad)",101590153,pres_cand_2010 QT_VOTOS_NOMINAIS
+2010 president r1 valid votes (detalhe QT_TOTAL_VOTOS_VALIDOS),101590153,detalhe_2010
+2010 ZZ (abroad) valid votes,84303,pres_cand_2010 SG_UF=='ZZ'
+2010 ZZ share of national (pct),0.083,""
+"2010 VT (in-transit, ST_VOTO_EM_TRANSITO=='S') valid votes",64698,pres_cand_2010
+2010 detalhe rows SG_UF=='VT',64698,detalhe_2010
+2010 parties with no score in BLS wave 2009 (raw),"PSDC 89,350 (0.09%); PSTU 84,609 (0.08%); PRTB 57,960 (0.06%); PCB 39,136 (0.04%); PCO 12,206 (0.01%)","pres_cand_2010 + BLS long, wave 2009"
+"2010 unscored share of national valid (pct, raw)",0.28,""
+2010 stored panel: scored share of microregion-assigned votes (pct),99.72,painel_ideologico_presidencial.rds
+2010 stored panel: microregions,558,painel_ideologico_presidencial.rds
+2010 stored panel total votes vs raw national minus ZZ minus VT,0,panel minus raw
+2010 stored panel: party scores used,PSDB=0.087 PSOL=-0.958 PT=-0.534 PV=-0.267,painel_ideologico_presidencial.rds
+2014 raw file has no _VALIDOS column; candidate statuses,APTO,pres_cand
+"2014 president r1 national valid votes (cand file, incl. abroad)",104023802,pres_cand_2014 QT_VOTOS_NOMINAIS
+2014 president r1 valid votes (detalhe QT_TOTAL_VOTOS_VALIDOS),104023802,detalhe_2014
+2014 ZZ (abroad) valid votes,132739,pres_cand_2014 SG_UF=='ZZ'
+2014 ZZ share of national (pct),0.128,""
+"2014 VT (in-transit, ST_VOTO_EM_TRANSITO=='S') valid votes",73706,pres_cand_2014
+2014 detalhe rows SG_UF=='VT',0,detalhe_2014
+2014 parties with no score in BLS wave 2013 (raw),"PSC 780,513 (0.75%); PRTB 446,878 (0.43%); PSTU  91,209 (0.09%); PSDC  61,250 (0.06%); PCB  47,845 (0.05%); PCO  12,324 (0.01%)","pres_cand_2014 + BLS long, wave 2013"
+"2014 unscored share of national valid (pct, raw)",1.38,""
+2014 stored panel: scored share of microregion-assigned votes (pct),98.62,painel_ideologico_presidencial.rds
+2014 stored panel: microregions,558,painel_ideologico_presidencial.rds
+2014 stored panel total votes vs raw national minus ZZ minus VT,73706,panel minus raw
+2014 stored panel: party scores used,PSB=-0.428 PSDB=0.219 PSOL=-0.968 PT=-0.532 PV=-0.230,painel_ideologico_presidencial.rds
+"2018 president r1 national valid votes (cand file, incl. abroad)",107050749,pres_cand_2018 QT_VOTOS_NOMINAIS_VALIDOS
+2018 president r1 valid votes (detalhe QT_TOTAL_VOTOS_VALIDOS),107050749,detalhe_2018
+2018 ZZ (abroad) valid votes,193381,pres_cand_2018 SG_UF=='ZZ'
+2018 ZZ share of national (pct),0.181,""
+"2018 VT (in-transit, ST_VOTO_EM_TRANSITO=='S') valid votes",0,pres_cand_2018
+2018 detalhe rows SG_UF=='VT',0,detalhe_2018
+2018 parties with no score in BLS wave 2017 (raw),"PSL 49,277,010 (46.03%); NOVO  2,679,745 (2.50%); PATRI  1,348,323 (1.26%); PSTU     55,762 (0.05%); DC     41,710 (0.04%); PPL     30,176 (0.03%)","pres_cand_2018 + BLS long, wave 2017"
+"2018 unscored share of national valid (pct, raw)",49.91,""
+2018 stored panel: scored share of microregion-assigned votes (pct),96.13,painel_ideologico_presidencial.rds
+2018 stored panel: microregions,558,painel_ideologico_presidencial.rds
+2018 stored panel total votes vs raw national minus ZZ minus VT,0,panel minus raw
+2018 stored panel: party scores used,MDB=0.385 PDT=-0.405 PODE=0.269 PSDB=0.477 PSL=0.862 PSOL=-0.898 PT=-0.668 REDE=-0.555,painel_ideologico_presidencial.rds
+"2022 president r1 national valid votes (cand file, incl. abroad)",118229719,pres_cand_2022 QT_VOTOS_NOMINAIS_VALIDOS
+2022 president r1 valid votes (detalhe QT_TOTAL_VOTOS_VALIDOS),118229719,detalhe_2022
+2022 ZZ (abroad) valid votes,294525,pres_cand_2022 SG_UF=='ZZ'
+2022 ZZ share of national (pct),0.249,""
+"2022 VT (in-transit, ST_VOTO_EM_TRANSITO=='S') valid votes",0,pres_cand_2022
+2022 detalhe rows SG_UF=='VT',0,detalhe_2022
+2022 parties with no score in BLS wave 2021 (raw),"UNIÃO 600,955 (0.51%); UP  53,519 (0.05%); PCB  45,620 (0.04%); PSTU  25,625 (0.02%); DC  16,604 (0.01%)","pres_cand_2022 + BLS long, wave 2021"
+"2022 unscored share of national valid (pct, raw)",0.63,""
+2022 stored panel: scored share of microregion-assigned votes (pct),99.37,painel_ideologico_presidencial.rds
+2022 stored panel: microregions,558,painel_ideologico_presidencial.rds
+2022 stored panel total votes vs raw national minus ZZ minus VT,0,panel minus raw
+2022 stored panel: party scores used,MDB=0.137 NOVO=0.711 PDT=-0.356 PL=0.493 PT=-0.691 PTB=0.455,painel_ideologico_presidencial.rds
+Waves in the BLS file,"1990,1993,1997,2001,2005,2009,2013,2017,2021",bls9_estimates_partiespresidents_long.rds
+BLS 2017 (wave 8) contains PSL?,FALSE,same
+BLS 2017 (wave 8) contains BOLSONARO?,FALSE,same
+Waves containing BOLSONARO,2021,same
+P_center 2018: min / max across microregions,1 / 1,dalton_panel_presidencial.rds
+P_center == 1 in 2018: microregions,558,same

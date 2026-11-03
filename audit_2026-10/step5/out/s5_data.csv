@@ -1,0 +1,29 @@
+item,value,source
+IBGE microregions (municipios_ibge.rds),558,municipios_ibge.rds
+Estimation rows / microregions,1671 557,df_estimation_v7.rds
+Microregion absent from estimation sample,13002 Japurá AM,municipios_ibge vs df_estimation_v7
+Absent micro: tradable_emp_share,0,tradable_emp_share_2010_v7.rds
+Absent micro: rows in exposure shares / in EPW panel,0 0,exposure_shares_isic_v7 / epw_panel_isic_v7
+"Absent micro: RAIS 2010 contracts total, and by CNAE",866 35140 22; 47121 8; 47440 2; 47555 1; 53105 4; 84116 829,rais_2010_micro.rds
+Microregions named 'Medio Amazonas' in IBGE file,0,municipios_ibge.rds
+States with a single microregion (FE singletons),DF,df_estimation_v7.rds
+Industry units in share matrix (composite groups),152,exposure_shares_isic_v7.rds
+Units by ISIC section A/B/C,11/11/130,exposure_shares_isic_v7.rds
+ISIC classes in composite map / composite groups,178 153,composite_map_v7.rds
+Composite group in map without shares,0721,composite_map_v7 vs shares
+"ISIC classes inside the 152 retained groups (A/B/C, total)",31/13/133 177,composite_map_v7.rds
+Distinct 4-digit ISIC codes in CONCLA table (A/B/C/other),420 38/14/137/231,CNAE20_ISIC4.xls col 4
+ncm_isic_match: NCM-6 260111 mapping,0710 1,ncm_isic_match_v7.rds
+ncm_isic_match: chapter 98/99 rows,0,ncm_isic_match_v7.rds
+NCM-8 codes exported 2010-2022 (4 yrs): total / absent from CONCLA NCM2011xCNAE / value share absent (pct),9628 1245 15.65,exports_national_ncm + NCM2011XCNAE20XPRODLIST2010XCGCE.xlsx
+NCM-8 codes exported 2010-2022 (13 yrs): total / absent from CONCLA NCM2011xCNAE / value share absent (pct),10191 1346 15.4,exports_national_ncm + NCM2011XCNAE20XPRODLIST2010XCGCE.xlsx
+"Real exports, USD bn 2010 prices (US CPI), 2010..2022",200.4 245.9 227.9 217.7 203.5 171.8 163.1 191.3 201.4 188.6 176.2 226 249,exports_national_ncm + cpi_us
+Real exports: max year / trough year after 2011,2022 2016,same
+"Unmatched value after crosswalk, pct of non-98/99 exports, min-max over years",0.6-0.79,exports_national_ncm vs ncm_isic_match_v7
+"Shock-table exports x 1e4 / real total exports, 2010/14/18/22",0.974 0.972 0.983 0.993,sectoral_shocks_isic_v7 vs exports_national_ncm/cpi
+Share of rows with dDalton>0 / dCentre>0 (president),0.963 0.844,df_estimation_v7.rds
+sd/mean of dEPW,4.39,df_estimation_v7.rds
+Range ln_pop / ln_gdp_pc,8.57 3.3,df_estimation_v7.rds
+Mean manuf_share_of_tradable / P75 ln_pop (5 dp),0.64248 / 12.60545,df_estimation_v7.rds
+BLS mean score by wave 1990..2021,-0.04 -0.064 -0.054 -0.045 -0.016 -0.126 0.002 0.074 0.163,bls9_estimates_partiespresidents_long.rds
+BLS entries with score > 0.6 by wave 1990..2021,4 4 3 2 2 1 3 1 3,same

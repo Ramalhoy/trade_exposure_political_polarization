@@ -1,0 +1,1914 @@
+                                       ISSN 2042-2695
+
+
+
+
+      CEP Discussion Paper No 1269
+                May 2014
+
+Winners and Losers from a Commodities-for-
+        Manufactures Trade Boom
+
+             Francisco Costa
+              Jason Garred
+            João Paulo Pessoa
+Abstract
+A recent boom in commodities-for-manufactures trade between China and other developing countries
+has led to much concern about the losers from rising import competition in manufacturing, but little
+attention on the winners from growing Chinese demand for commodities. Using census data for
+Brazil, we find that local labour markets more affected by Chinese import competition experienced
+slower growth in manufacturing wages and in-migration rates between 2000 and 2010, and greater
+rises in local wage inequality. However, in locations benefiting from rising Chinese demand, we
+observe higher wage growth, lower takeup of cash transfers and positive effects on job quality.
+
+
+
+Key words: China, trade, commodities-for manufactures, wages, employment, informality
+JEL: F14, F16, O17, Q17
+
+
+
+This paper was produced as part of the Centre’s Globalisation Programme. The Centre for Economic
+Performance is financed by the Economic and Social Research Council.
+
+
+
+We thank, without implicating, Sam Marden, Naércio Menezes Filho, Guy Michaels, Mushfiq
+Mobarak, Marc Muendler, Emanuel Ornelas, Steve Pischke, Daniel Sturm, Thomas Sampson, our
+colleagues at LSE, and seminar participants at LSE, FGV/EPGE, INSPER, PUC-Rio, the Brazilian
+Econometric Society Meeting, and the IAB/RCEA/ZEW Workshop on Spatial Dimensions of the
+Labour Market. We would like to thank Valdemar Neto for excellent research assistance. Some earlier
+versions of this paper have been circulated under the title "Winners and Losers in the Labour Market:
+Heterogeneous Effects of Brazil-China Trade".
+        Francisco Costa is an Assistant Professor of Economics at FGV/EPGE, Brazil. Jason Garred
+is a PhD student at London School of Economics and a member of the Centre for Economic
+Performance Globalisation Programme. João Paulo Pessoa is a PhD student at London School of
+Economics and a member of the Centre for Economic Performance Globalisation Programme.
+
+
+
+Published by
+Centre for Economic Performance
+London School of Economics and Political Science
+Houghton Street
+London WC2A 2AE
+
+
+
+All rights reserved. No part of this publication may be reproduced, stored in a retrieval system or
+transmitted in any form or by any means without the prior permission in writing of the publisher nor
+be issued to the public or circulated in any form other than that in which it is published.
+
+
+Requests for permission to reproduce any article or part of the Working Paper should be sent to the
+editor at the above address.
+
+
+ F. Costa, J. Garred and J.P. Pessoa, submitted 2014.
+1     Introduction
+China’s recent emergence as a major force in the world economy is one of the largest
+economic events of recent times. The combination of China’s exceptionally high rates
+of economic growth, its increasingly deep engagement with the rest of the world via
+international trade, and the sheer size of its stock of labour, land and capital has generated
+a set of economic shocks whose influence stretches worldwide. Much of the attention on the
+effects of China on the economies of other countries has focused on the import competition
+shock associated with the massive growth of the Chinese manufacturing sector. However,
+China is also an increasingly large consumer of goods produced abroad: if China has been
+the source of a large supply shock, it must also have been the source of a large demand
+shock. We will consider the heterogeneous effects of these supply-side and demand-side
+‘China shocks’ on developing-country labour markets, by examining the case of Brazil.
+    For developing countries, the ‘China demand shock’ has taken a distinctive form: in-
+creasingly, outside of the manufacturing supply chains of East and Southeast Asia, the
+goods being sent to China by non-high-income countries are products of the agricultural
+and extractive sectors. Panel A of Figure 1 shows that while there has been a gradual
+rise in the share of agricultural and extractive sectors in the exports of non-high-income
+countries (excluding those in East and Southeast Asia) to destinations other than China,
+the importance of these industries in their exports to China has changed much more dra-
+matically, rising from less than 20% in 1995 to nearly 70% in 2010. Meanwhile, developing
+countries’ imports from China have become increasingly concentrated in manufactures:
+Panel B of Figure 1 shows that the share of products of the agricultural and extractive sec-
+tors in the imports of non-high-income countries from China, already small (6%) in 1995,
+had dwindled to 1% by 2010. This shift towards a commodities-for-manufactures trade
+relationship with China has coincided with a sharp increase in China’s overall importance
+in developing countries’ foreign trade (Panel A of Figure 2).
+    Just as the import side of this boom in trade with China has often been met with
+suspicion by policymakers and commentators concerned about effects on local industry
+(see e.g. Economist 2012), China’s rising demand for unglamorous agricultural and mining
+products has similarly not always been treated with enthusiasm. Before a visit to China in
+2011, Brazil’s president pledged that she would be “working to promote Brazilian products
+other than basic commodities,” amid concern that “overreliance on exports of basic items
+such as iron ore and soy” might result in ‘de-industrialization’ (LA Times 2011). Similarly,
+a former trade minister of Brazil has spoken of the “need to iron out distortions in the trade
+relationship, in which Brazil sells commodities and China manufactures” (Bloomberg
+2011).
+    In our study of Brazil, we examine the changing labour market outcomes of regions
+
+
+                                              1
+                                                                       Share of agricultural and extractive sectors
+                                                                         in trade of non-high-income countries
+                                                                                Exports                                                                                               Imports
+
+
+
+                                                           .8
+
+
+
+
+                                                                                                                                                                   .8
+          Share of agricultural/extractive sectors in exports
+
+
+
+
+                                                                                                                  Share of agricultural/extractive sectors in imports
+                                               .6
+
+
+
+
+                                                                                                                                                       .6
+                                  .4
+
+
+
+
+                                                                                                                                          .4
+                     .2
+
+
+
+
+                                                                                                                             .2
+          0
+
+
+
+
+                                                                                                                  0
+                                                                1995     2000             2005         2010                                                             1995   2000             2005            2010
+                                                                                 Year                                                                                                  Year
+
+                                                                        Exports to China                                                                                       Imports from China
+                                                                        Exports to all other destinations                                                                      Imports from all other origins
+
+                                                                          Panel A                                                                                              Panel B
+
+Figure 1: Evolution of the Share of Agricultural and Extractive Sectors in the Exports
+and Imports of Non-High-Income Countries
+Notes. These graphs present the evolution of the share of products of the agricultural and extractive
+sectors (agriculture, forestry, fisheries/aquaculture and mining) in the exports and imports of non-high-
+income countries (excluding those in East and Southeast Asia) from 1995 to 2010. Sources: CEPII BACI
+for trade data; definition of high-income countries from the World Bank.
+
+
+producing manufactures affected by rising Chinese import supply and localities special-
+izing in commodities demanded by China. We find that while labour markets in ‘loser’
+regions indeed appear to have suffered from Chinese import competition via slower growth
+in manufacturing wages and rising wage inequality, it is also the case that ‘winner’ regions
+have gained from Chinese export demand, through faster wage growth, lower takeup of
+social assistance and shifts in the local economy towards ‘good jobs’.
+    Brazil provides an excellent context for a study of China’s impact on developing coun-
+tries’ labour markets for several reasons. First, the importance of China in both the
+imports and exports of Brazil has risen steeply in recent years, as seen in Panel B of
+Figure 2. In 2000, Brazil received approximately 2.3% of its imports by value from China
+and sent 2.0% of its exports to China; by 2010, these shares were 14.5% and 15.1% respec-
+tively. Second, the pattern of Brazil-China trade has followed the broad trends outlined
+above for the wider set of non-high-income countries: Brazilian exports to China are
+increasingly products of the agricultural and extractive sectors, while Brazilian imports
+from China have remained concentrated in manufacturing (see Figure 3). Third, Brazil
+is particularly large and has a diverse geography, generating a set of local labour markets
+that are highly varied in their comparative advantages, and thus allowing for identifica-
+tion of the heterogeneous effects of trade with China without relying on cross-country
+
+                                                                                                              2
+                               Share of China in total imports and exports
+                               Non-high-income countries                                           Brazil
+
+
+
+                  .15
+
+
+
+
+                                                                               .15
+                  .1
+
+
+
+
+                                                                               .1
+          Share
+
+
+
+
+                                                                       Share
+                  .05
+
+
+
+
+                                                                               .05
+                  0
+
+
+
+
+                                                                               0
+                        1995       2000          2005       2010                     1995   2000            2005    2010
+                                          Year                                                     Year
+
+                                       Imports from China                                      Imports from China
+                                       Exports to China                                        Exports to China
+
+                                    Panel A                                                 Panel B
+
+Figure 2: Evolution of the Share of China in the Imports and Exports of Non-High-Income
+Countries and Brazil
+Notes. Panel A presents the evolution of the share of China in the imports and exports of non-high-
+income countries (excluding those in East and Southeast Asia) from 1995 to 2010. Panel B presents the
+time series of the share of China in the imports and exports of Brazil from 1995 to 2010. Sources: CEPII
+BACI for trade data; definition of high-income countries from the World Bank.
+
+
+regressions. Fourth, the Brazilian population census captures a variable of particular rel-
+evance in developing countries: informality. This is important both because the informal
+sector is large – in Brazil, approximately half of the employed population in 2000 were
+either informal salaried workers or self-employed – and because the (de-)formalization of
+labour markets is a potentially important but understudied effect of trade shocks affecting
+developing countries.
+    In order to identify the effects of demand and supply shocks originating from China
+on local labour markets in Brazil, we use the shift-share methodology of Bartik (1991),
+which has previously been applied to the study of trade shocks by Topalova (2007),
+Autor et al. (2013) and others. This method compares locations with different initial
+comparative advantages, tracing the fortunes of regions whose basket of industries has
+been faced with steeper increases in Chinese supply or demand, as compared to locations
+whose industries have been relatively unaffected by China’s emergence. Because some
+agricultural, extractive and manufacturing industries have been affected more than others
+by China, we are able to compare regions with identical initial employment shares in
+each of these three broad categories. For example, our identification strategy relies on
+comparisons of regions with the same share of employment in agriculture in 2000 but
+
+
+                                                                   3
+                                                                       Share of agricultural and extractive sectors
+                                                                                    in trade of Brazil
+                                                                                Exports                                                                                               Imports
+
+
+          Share of agricultural/extractive sectors in exports
+
+
+
+
+                                                                                                                  Share of agricultural/extractive sectors in imports
+                                                         .8
+
+
+
+
+                                                                                                                                                                 .8
+                                              .6
+
+
+
+
+                                                                                                                                                      .6
+                                  .4
+
+
+
+
+                                                                                                                                          .4
+                     .2
+
+
+
+
+                                                                                                                             .2
+          0
+
+
+
+
+                                                                                                                  0
+                                                                1995     2000             2005         2010                                                             1995   2000             2005            2010
+                                                                                 Year                                                                                                  Year
+
+                                                                        Exports to China                                                                                       Imports from China
+                                                                        Exports to all other destinations                                                                      Imports from all other origins
+
+                                                                          Panel A                                                                                              Panel B
+
+Figure 3: Evolution of the Share of Agricultural and Extractive Sectors in the Exports
+and Imports of Brazil
+Notes. These graphs present the evolution of the share of products of the agricultural and extractive
+sectors (agriculture, forestry, fisheries/aquaculture and mining) in the exports and imports of Brazil from
+1995 to 2010. Sources: CEPII BACI for trade data; definition of high-income countries from the World
+Bank.
+
+
+different patterns of specialization across crops. Our measures of Chinese supply and
+demand shocks are based on changes in actual trade flows between China and Brazil,
+but we instrument for these variables to ensure that our results capture neither Brazil-
+specific shocks nor changes in world prices that are not directly due to China. We also
+run robustness checks that account for the possibility that our results are driven by other
+region-specific trends.
+    We consider the changes between 2000 and 2010 in several key characteristics of local
+labour markets that can be observed using Brazilian census data: wages, employment
+rates, in-migration rates, informality and occupational skill level, along with participation
+in one of the largest cash transfer programs in the world, Bolsa Família. We find that
+locations subject to larger increases in Chinese import competition experienced slower
+growth in manufacturing wages and in-migration rates during this period, as well as a
+greater rise in local wage inequality. Our estimates suggest that for a local labour market
+at the 80th percentile of the ‘China supply shock’, wage growth in manufacturing sectors
+was lower by 2.4 percentage points over the ten years between 2000 and 2010, while wage
+inequality rose by an additional 0.8% relative to average 2000 levels. On the other hand,
+the supply shock does not appear to have been associated with a fall in employment rates.
+Instead, there is some evidence of a rise in the employment rates of affected locations,
+
+
+                                                                                                              4
+though this appears to have involved a shift in the local structure of employment towards
+unskilled jobs in nontraded sectors and a decline in the share of the workforce in skilled
+manufacturing jobs.
+    Meanwhile, in locations more exposed to rising demand from China, average hourly
+wages increased more quickly during the period of study: a local labour market at the 80th
+percentile of the shock to Chinese demand experienced wage growth in the agricultural
+and extractive sectors that was four percentage points higher over the course of the decade.
+This wage effect appears to have spilled over to workers in other local industries, and to
+have occurred without an associated increase in wage inequality. Bolsa Família takeup
+rates were also lower in 2010 in regions benefiting more from Chinese demand. Moreover,
+while there is little evidence of an effect of demand from China on local employment
+rates, we do observe positive effects on job quality: an increase in the share of formal
+employment at the expense of informal jobs, and a rise in the proportion of the local
+workforce in skilled agricultural or extractive sector occupations.
+    This paper contributes to a growing literature on the worldwide effects of the rise of
+China. This includes papers that have studied the impact of Chinese import competition
+on economic variables such as manufacturing employment (Pierce and Schott 2012, Autor
+et al. 2013), worker earnings (Pessoa 2014), skill upgrading (Hsieh and Woo 2005, Mion
+and Zhu 2013), firm and product selection (Iacovone et al. 2013) and innovation (Bloom
+et al. 2011). There are a much smaller number of papers which, like this paper, also
+take account of demand-side effects. Dauth et al. (2012) take a reduced-form approach,
+examining the impact of rising imports from and exports to China and Eastern Europe on
+local labour market variables in Germany. Dauth et al. study a developed-country context
+in which agricultural and extractive sectors are relatively unimportant, and so focus on
+the effects of these trade shocks on the manufacturing and services sectors. General
+equilibrium analyses of China’s effect on the world economy (such as Hsieh and Ossa 2011
+and di Giovanni et al. forthcoming) also take account of both the supply and demand
+effects of China on other countries, but these studies summarize the impact of China
+on aggregate welfare rather than distinguishing between the potentially heterogeneous
+impacts of rising Chinese import competition and export demand.
+    Our work also relates to the wider literature studying the impact of trade shocks on
+labour markets. Several other papers investigate the effect of trade on workers in Brazil
+(e.g. Gonzaga et al. 2006, Menezes-Filho and Muendler 2011, Helpman et al. 2012,
+Kovak 2013, Dix-Carneiro forthcoming), with particular attention given to Brazil’s early
+1990s trade liberalization. Most research on trade and labour markets, including much
+of the literature on Brazil, is limited to studying workers in formal employment. Our
+work also fits into the smaller literature on trade and informality, including Goldberg and
+Pavcnik (2003), Nataraj (2011), McCaig and Pavcnik (2012) and Paz (2014). Finally, our
+
+
+                                             5
+paper contributes to the literature on the local labour market effects of shocks involving
+nonmanufacturing sectors; one particularly relevant study is Aragón and Rud (2013), who
+examine the local economic impact of a Peruvian gold mine.
+    The paper is organized as follows: we first describe our data sources and present our
+identification strategy in Section 2. We then discuss the results of our empirical analysis
+in Section 3, and draw conclusions in Section 4. Additional figures and tables are included
+in an attached appendix.
+
+
+2       Data and Empirical Strategy
+This section describes the data used in the study and outlines our empirical strategy,
+discussing our baseline OLS specification, instrumental variables and robustness checks.
+
+
+2.1     Data Sources
+We use individual-level labour market and socioeconomic data from the long form Brazil-
+ian Demographic Census (Censo Demográfico) for 2000 and 2010, sourced from the Brazil-
+ian Institute of Geography and Statistics (IBGE); some specifications also use individual-
+level data from the 1991 census. The data contains a number of labour market variables,
+including employment status, monthly income from employment and hours worked per
+week, along with information on migration and other demographic variables; we will dis-
+cuss the variables we use in our analysis in greater depth below. We restrict our sample
+to the subpopulation most likely to participate in the labour market, defining the work-
+force as every individual between 18 and 60 years old. We then aggregate the data to
+the geographical unit ‘microregion’, a level of aggregation that has been constructed by
+IBGE by grouping Brazilian municipalities according to information on integration of lo-
+cal economies. Our sample includes all of the 558 Brazilian microregions, each of which
+contains an average of 10 municipalities.
+    We draw information on informality from a question in the census asking employed
+individuals about their job type: government worker; employee registered at the Brazilian
+Ministry of Labour and Employment (com carteira assinada); employee not registered at
+the Ministry of Labour and Employment (sem carteira assinada); self-employed; or in
+unpaid work. We include the final three categories in our definition of the informal
+sector.1 We also use information on individuals’ occupations from the 2000 and 2010
+    1
+     Although a self-employed worker could be registered with the federal government, these cases con-
+stitute a small fraction of all self-employed individuals. Publicly available administrative data from the
+Relaçao Anual de Informaçoes Sociais (RAIS) database – the official records of the Ministry of Labour
+and Employment – show that only 0.9% and 0.8% of the workforce were registered as self-employed
+in 2000 and 2010, respectively. We observe total rates of self-employment of 18.3% and 15.7% of the
+workforce in these two years’ censes.
+
+
+                                                    6
+censes, defining ‘skilled occupations’ and ‘unskilled occupations’ using the definition of
+occupational skill level from the 2008 International Standard Classification of Occupations
+(ISCO-08). In particular, we define a skilled occupation as one associated with skill level
+3 or 4 in the ISCO-08 classification; this covers managers, professionals, technicians and
+associate professionals. While the occupational classification in the 2010 Brazilian census
+is almost identical to ISCO-08, we need to use publicly available concordances between
+the Brazilian occupational classification CBO-02 and ISCO-88, and between ISCO-88 and
+ISCO-08, to classify the occupations observed in the 2000 census into skilled and unskilled
+occupations.
+    Our data on international trade in goods is from the BACI database developed by Cen-
+tre d’Etudes Prospectives et d’Informations Internationales (CEPII), which reconciles the
+data separately reported by importers and exporters in the United Nations Statistical
+Division’s COMTRADE database. CEPII BACI contains the total annual value of bilat-
+eral trade at the 6-digit level of the Harmonized System classification for more than 200
+countries from 1995 to 2010; we use data for 2000 and 2010 in the analysis below. The
+CEPII data is denominated in thousands of current US dollars; we convert 2000 values to
+2010 US dollars using the US GDP deflator from the US Bureau of Economic Analysis.
+    Our empirical strategy requires us to classify employed individuals in the 2000 census
+data and products in the 2000 and 2010 trade data into sectors. In the 2000 Brazilian
+census, individuals are asked to state their sector of activity according to the 5-digit CNAE
+Domicílio classification.2 We thus construct a concordance assigning products in the trade
+data to CNAE Domicílio sectors, which requires us to combine some of the traded goods
+sectors in CNAE Domicílio when these cannot be separately identified in the trade data.
+We are left with a total of 82 traded goods sectors, including 32 agricultural and extractive
+sectors (22 agricultural sectors, 8 mining sectors, forestry and fishing/aquaculture) and
+50 manufacturing sectors; see Table A1 for a full list.3
+
+
+2.2     Baseline Specification
+To estimate the heterogeneous impacts of supply and demand shocks at the microregion
+level, we first create sector-level measures of each shock and then define exposure to
+a shock according to local comparative advantage across sectors, as measured by the
+sectoral composition of employment in each microregion in 2000. This is the ‘shift-share’
+methodology of Bartik (1991), as applied to trade shocks by Topalova (2007) and to the
+effect of China on US labour markets by Autor et al. (2013). Given the existence of
+   2
+     This is defined as the main sector of activity of the firm or other institution of an employed person
+or the nature of the activity of a self-employed person.
+   3
+     Several products from the Harmonized System classification, mostly waste or scrap (e.g. scrap metal,
+used clothing) could not be concorded to the CNAE Domicílio classification; these products make up less
+than 1% of Brazilian trade by value.
+
+
+                                                    7
+migration across microregions, which we will show is correlated with the trade shocks
+we study, our regression results should be interpreted as identifying effects of China on
+local labour markets as geographical units varying in their initial comparative advantages,
+rather than effects on the set of workers present in those labour markets in the year 2000.
+    Our baseline specification is as follows:
+
+                                                                0
+                            ∆ym = βI IS m + βX XDm + Wm γ + m .                                   (1)
+
+Here, ∆ym is the change in a given labour market outcome between 2000 and 2010 in
+microregion m, ISm and XDm are microregion-level measures of the import supply and
+export demand shocks due to China between 2000 and 2010, and Wm is a set of controls.
+    To construct ISm and XDm , we first define an import (export) shock in sector k as
+the difference in the value of Brazilian imports (exports) from China in sector k between
+2000 and 2010, ∆Ik = Ik,2010 − Ik,2000 and ∆Xk = Xk,2010 − Xk,2000 , denominated in
+thousands of 2010 US dollars. We then allocate each shock across microregions according
+to the fraction of Brazil’s workers in sector k sited in a given microregion m in 2000;
+      L                L
+i.e. Lkm,2000
+        k,2000
+               ∆Ik and Lkm,2000
+                         k,2000
+                                ∆Xk , where Lkm,2000 is the number of workers in sector k
+and microregion m in year 2000, and Lk,2000 = m Lkm,2000 .4 Since microregions differ in
+                                                 P
+
+size, which affects each sector’s relevance for the local labour market, we normalize the
+trade shock by the number of employed workers in each microregion in 2000 (excluding
+                                                                         L         ∆Ik
+workers employed outside the private sector), giving us the expressions Lkm,2000
+                                                                           k,2000 Lm,2000
+                                                                                          and
+Lkm,2000 ∆Xk 5
+                 .
+               Finally, we define the total local exposure per worker to each trade shock
+ Lk,2000 Lm,2000
+as the sum of these expressions across sectors, so that our microregion-level measures of
+the import supply and export demand shocks are, respectively:
+
+                                                    ∆Ik
+                                             X Lkm,2000
+                                    ISm =
+                                         k Lk,2000 Lm,2000
+                                         X Lkm,2000 ∆Xk
+                                   XDm =                   .
+                                         k Lk,2000 Lm,2000
+
+   As measured by ISm and XDm , the average Brazilian microregion received an import
+competition shock from China of US$225 per worker and an export demand shock of
+US$594 per worker.6 The dispersion of the export demand shock is also larger (with a
+standard deviation of 1.31 for XDm as compared to 0.27 for ISm ), though both distribu-
+   4
+     The underlying assumption here is that the trade shock is distributed uniformly across workers in
+each sector.
+   5
+     The means across microregions of the distributions of these sector-microregion-level variables are
+shown in columns 3 and 5 of Table A1.
+   6
+     These two figures differ in magnitude even though trade between China and Brazil was approximately
+in balance in both 2000 and 2010; this is because both measures include a municipality-level per-worker
+normalization.
+
+
+
+                                                  8
+tions are highly skewed to the right, as shown in Figure A1. The microregion at the 20th
+percentile of ISm received an import supply shock of US$73 per worker, while the supply
+shock to the microregion at the 80th percentile of ISm was US$313 per worker. The
+corresponding figures for XDm are US$38 and US$647, respectively. Figure 4 shows that
+the two shocks affected different sets of microregions, as the unconditional distributions
+of the two measures are nearly orthogonal, with a correlation of 0.07.
+                     15
+                     10
+                XD
+                     5
+                     0
+
+
+
+
+                           0                       1              2                     3
+                                                           IS
+                           N = 558 microregions.
+
+
+
+
+                          Figure 4: Import Supply vs Export Demand Measures
+Notes. This graph presents a scatter plot of the export demand shock measure XDm against the import
+supply shock measure ISm at the microregion level. The line plots the results of a linear regression of
+XDm on ISm . Both variables are denominated in thousands of 2010 US dollars per worker. Sources:
+2000 Brazilian Census, and CEPII BACI.
+
+
+    Table 1 charts the characteristics of microregions in the top 20% of ISm and XDm in
+2000, while the geographical distribution of microregions in the top 20% of each of the
+two measures are plotted in Figure 5. Table 1 shows that the microregions most exposed
+to Chinese imports tended to have a lower proportion of workers engaged in agriculture
+and a higher proportion working in manufacturing in 2000 as compared to the average
+region, as well as a much smaller share of rural residents. On average, these regions also
+had a larger working-age population, a higher share of the workforce in private sector
+employment and a greater proportion of workers in skilled occupations than the mean
+microregion. The average wage in these regions in 2000 was also relatively high.7
+
+
+   7
+     Unsurprisingly, the three microregions with the highest ISm are all major industrial centers: Manaus,
+São José dos Campos and Santa Rita do Sapucaí. The last of these regions is sometimes referred to as
+the ‘Electronic Valley’ due to the size of its electronics industry.
+
+
+                                                       9
+               Table 1: Brazilian Microregion-Level Summary Statistics 2000
+                                                                  2000
+                                     All microregions   Top quintile of ISm    Top quintile of XDm
+                                            (1)                 (2)                     (3)
+    Workforce (thousands)                170.952             417.095                 138.593
+    Private sector workers                 .589                .624                    .608
+       Agriculture                         .167                .078                    .161
+       Extractive                          .002                .002                    .004
+       Manufacturing                       .068                .123                    .069
+       Nontraded                           .352                .421                    .375
+    Formal jobs                            .177                .299                    .205
+    Informal jobs                          .412                .326                    .403
+    Skilled occupations                    .094                .124                    .099
+    Unskilled occupations                  .496                .501                    .509
+    Rural residents                        .313                .137                    .271
+    Inmigrated in the last 5 years         .083                .084                    .088
+    Average hourly wage (R$)               2.21                3.14                    2.46
+       Skilled occupations                 5.07                6.72                    5.55
+       Unskilled occupations               1.70                2.28                    1.92
+    Wage inequality (Gini)                 .542                .528                    .556
+Notes. This table displays descriptive statistics of the Brazilian labour market in 2000, averaged at the
+microregion level. Column (1) includes all microregions, column (2) includes only microregions among
+the top 20% of ISm , and column (3) includes only microregions in the top 20% of XDm . All figures are
+shares of the total workforce, except as indicated. The workforce is defined here as the total number of
+citizens between 18 and 60 years old. Average hourly wage is in current Real. Sources: 2000 Brazilian
+Census, and CEPII BACI.
+
+
+    Table 1 also suggests that the microregions most affected by Chinese export demand
+were somewhat less populous than the mean microregion and much smaller in population
+than high-ISm microregions in 2000. At the same time, microregions with large values
+of XDm had an average share of the workforce employed in the private sector, share of
+workers in formal jobs and average hourly wage somewhat higher than that of the mean
+microregion, though again smaller than the top quintile of ISm . They were relatively more
+rural than the high-ISm regions as of 2000, and slightly less rural on average than the
+mean microregion. Unsurprisingly, the average share of workers in the extractive sector
+was particularly high in these microregions, though the overall size of the extractive sector
+relative to total local employment was very small even in these locations. In terms of most
+other labour market variables, regions in the top 20% of XDm were similar on average
+to the mean Brazilian microregion in 2000, and in general they were more similar to the
+average microregion than were the locations in the top quintile of ISm .8
+
+
+   8
+     The three microregions with the largest values of XDm include a major center for the offshore oil
+industry (Macaé), an important outpost of the iron ore mining complex (Itabira) and a small microregion
+specialized in soybean production (Não-me-Toque, Rio Grande del Sul).
+
+
+                                                   10
+11
+
+
+
+
+                                     Panel A - Import Supply                                     Panel B - Export Demand
+
+                       Figure 5: Geographical Distributions of Top Quintile of Import Supply and Export Demand Measures
+     Notes. These maps display the spatial distributions of microregions in the top quintile of the import supply shock measure ISm and microregions in the top
+     quintile of the export demand shock measure XDm . The maps also depict the borders between Brazilian regions. Sources: 2000 Brazilian Census, and CEPII
+     BACI.
+    Our baseline specifications also include a set of microregion-level controls Wm ; key
+among these are the share of each microregion’s workforce employed in agricultural sectors,
+extractive sectors and manufacturing sectors in 2000.9 This means that our results depend
+on comparisons between microregions with the same initial economic structure (in terms
+of the distribution of local employment across these three broadly defined categories) but
+specialized in different particular agricultural, extractive and manufacturing sectors.
+    This strategy is feasible because the distribution of Brazil-China trade growth is
+skewed across sectors on both the import and export sides. Approximately 40% of the total
+                                                                       P
+growth in Brazil’s imports from China between 2000 and 2010 (i.e. k ∆Ik ) is accounted
+for by electronics (19%), machinery (13%) and electrical equipment (8%). Meanwhile,
+just three sectors, all of which are agricultural or extractive sectors, were responsible for
+82% of the growth in Brazil’s exports to China between these two years: mining of non-
+precious metals (45%), soybeans (23%) and oil and gas (14%).10 This breakdown actually
+understates the level of concentration of Brazil’s exports to China, since its exports in
+the ‘mining of nonprecious metals’ sector are almost exclusively made up of exports of
+iron ore. This high degree of concentration in a few commodities is a typical pattern of
+exports to China among developing countries for whom trade with China is important.11
+    The controls in our baseline regressions also include the workforce size, the share of the
+workforce employed in nontraded sectors, the share employed in informal jobs, and the
+proportion of rural residents, all measured at the microregion level for the year 2000, along
+with a cubic polynomial of 2000 microregion-level income per capita. In all regressions,
+in order to allow for spatial correlation of errors across microregions, we cluster standard
+errors at the level of the mesoregion. Like the microregion, this geographical unit has
+been defined by IBGE according to measures of local market integration; there are 138
+mesoregions in Brazil. Also, in order to prevent our regression results from being driven
+by outliers or very small microregions, we assign values of ISm and XDm below the 1st
+   9
+     Forestry and fisheries/aquaculture are defined here as agricultural sectors.
+  10
+     To calculate these measures, we take the difference between the 2010 and 2000 values of Brazil’s
+imports from China (or exports to China) in each sector and divide by the aggregate difference between
+2010 and 2000 Brazilian imports from China (or exports to China). The resulting figures for each of
+the 82 traded goods sectors may be found in columns 1 and 2 of Table A1. The value of imports from
+China actually decreased in several sectors, but their total decline constitutes a tiny proportion of the
+total difference in imports, so that the total of all positive values only slightly exceeds 1; the same is true
+of exports to China. As noted above, some Harmonized System codes (mostly waste and scrap) are not
+concorded to any sector; trade in these products is included in the denominator but not listed in Table
+A1.
+  11
+     According to the CEPII BACI data, in all 27 non-high-income countries outside East and Southeast
+Asia for whom exports to China constituted a minimum of 10% of total exports by value in 2010, at
+least 80% of exports to China were concentrated in three or fewer of the sectors defined in this paper (82
+sectors plus a residual ‘waste and scrap’ category). In 16 of these 27 countries (including Brazil), at least
+80% of exports to China were in agricultural and/or extractive sectors; in a further five, at least 80% of
+exports were concentrated in up to two agricultural or extractive sectors and either the ‘basic metals’
+manufacturing sector or scrap metal.
+
+
+
+                                                      12
+and above the 99th percentiles to the values of the 1st and 99th percentiles, and weight
+all regressions by the share of the national workforce in each microregion. We include all
+558 Brazilian microregions in all regressions.
+
+
+2.3     Instrumental Variables and Robustness Checks
+Our goal is to identify the causal effect of the two ‘China shocks’ on local labour market
+dynamics in Brazil. However, regression equation (1) does not capture causality in the
+presence of any additional shocks that are both relevant for our dependent variables
+and correlated with our exposure measures ISm and XDm . In particular, given the
+sector-level variation that underlies our identification strategy, one potential issue would
+be the existence of Brazil-specific supply or demand shocks in sectors in which Brazil
+also experienced a relatively large change in trade with China. For example, changes
+in Brazil-China trade patterns might be capturing sector-specific productivity growth or
+Engel effects in Brazil rather than changes in China.
+    Several other studies of the cross-country transmission of shocks have addressed this
+concern by using an instrumental variables strategy that exploits information on trade
+between the shocks’ country of origin (in this case, China) and countries other than
+the ‘destination’ country of interest (Brazil).12 For instance, one might instrument our
+municipality-level import supply and export demand variables with measures calculated
+in the same way as ISm and XDm , but using the change between 2000 and 2010 in
+imports from China (or exports to China) for a set of countries that does not include
+Brazil. A key assumption underlying this approach is that the changes in the pattern of
+trade between China and these other countries are unrelated to Brazil-specific shocks.
+    The main issue with this strategy is that it does not account for changes in world prices
+or quantities traded that are not due to China: if the world price of a given product rises
+due to other factors, or all countries trade more intensively in the products of some sector
+due to a worldwide technology or demand shock, this will be reflected in the trade flows of
+all countries. This is a particular issue for our study given its focus on commodities, whose
+world prices were on an upward trajectory over the course of the decade we study. If, for
+instance, the share of oil by value increased in the import baskets of all countries between
+2000 and 2010 due to rises in its world price, both our baseline regression specification
+and the IV strategy described above would assign this effect to China. However, while
+China likely played a pivotal role in changes in world prices in many sectors during this
+period, we do not want to ascribe world price or quantity changes to China when these
+actually resulted from other factors.
+    We thus adapt the IV approach described above by considering changes in China’s
+  12
+    This is a standard approach in the ‘China shock’ literature; see e.g. Bloom et al. 2011, Autor et al.
+2013 and Iacovone et al. 2013.
+
+
+                                                   13
+sector-level imports and exports relative to those of other countries. To do this, we first
+define I˜ikt and X̃ikt to be the total imports (exports) of country i in sector k in year
+t from all countries other than Brazil. We then run the following auxiliary regressions,
+using data on I˜ikt and X̃ikt in 2000 and 2010 for all countries available in the CEPII trade
+data except Brazil:
+
+                                      ∆I˜ik
+                                              = αk + ψChina,k + νik
+                                    I˜ik,2000
+                                    ∆X̃ik
+                                             = γk + δChina,k + µik
+                                   X̃ik,2000
+
+The left-hand side of the two regressions above is the growth rate of the imports (exports)
+of a country in a given sector, net of its imports from (exports to) Brazil. The sector
+fixed effect αk (or γk ) then captures the mean growth rate, across countries, of net-of-
+Brazil imports (or exports) in that sector. The regressions are weighted by 2000 import
+(export) volumes, so that the values of these fixed effects are not driven by large positive
+or negative growth rates in countries with small shares of world trade. This means that
+the China-specific dummies ψChina,k and δChina,k represent the deviation in the growth
+rates of China’s imports and exports in sector k excluding trade with Brazil, as compared
+to this weighted cross-country average.
+    We then relate the resulting estimates ψ̂China,k and δ̂China,k to the municipality-level
+shock measure defined in Section 2.2. We first multiply these estimates by the values
+of Brazil-China imports and exports in 2000, redefining the sector-level ‘China shocks’
+as ∆Iˆk ≡ Ik,2000 ψ̂China,k and ∆X̂k ≡ Xk,2000 δ̂China,k . Our instrumental variables are then
+constructed at the municipality level using these new shock measures in the same way as
+for ISm and XDm :13
+
+                                               X Lkm,2000    ∆Iˆk
+                                    ivISm =
+                                                k   Lk,2000 Lm,2000
+                                               X Lkm,2000    ∆X̂k
+                                  ivXDm =                           .
+                                                k   Lk,2000 Lm,2000
+
+    If Chinese trade with the rest of the world (excluding Brazil) had evolved in the same
+way as that of the (weighted) average country in each sector, all of these shocks would be
+equal to zero. In practice, however, this is not the case: the two vectors ∆Iˆk and ∆X̂k ,
+like the ‘raw’ measures ∆Ik and ∆Xk , vary widely across sectors. Indeed, the raw shocks
+and these IV shock measures are highly correlated, with correlation coefficients of 0.93
+for the sector-level import supply shocks ∆Ik and ∆Iˆk and 0.86 for the export demand
+  13
+    The averages across microregions of the sector-microregion-level variables analogous to those in Sec-
+tion 2.2, but constructed using ∆Iˆk and ∆X̂k , may be found in columns 4 and 6 of Table A1.
+
+
+                                                    14
+shocks ∆Xk and ∆X̂k . Scatter plots of ISm against ivISm and XDm against ivXDm are
+shown in Figure 6.
+
+                           Import Supply                                Export Demand
+
+
+
+
+                                                               15
+               3
+               2
+
+
+
+
+                                                               10
+               1
+
+
+
+
+                                                          XD
+          IS
+               0
+
+
+
+
+                                                               5
+               -1
+               -2
+
+
+
+
+                                                               0
+
+
+
+
+                    -.5         0          .5    1                  0   2     4     6      8
+                                    ivIS                                     ivXD
+
+        N = 558 microregions.
+
+
+
+                    Figure 6: Raw Measures vs Instrumental Variables Measures
+Notes. This graph presents scatter plots of microregion-level import supply and export demand shocks
+(ISm and XDm ) against the instrumental variables ivISm and ivXDm . The lines depict the results
+of simple regressions of ISm on ivISm (coefficient 1.286, s.e. 0.021 and t-statistic 60.09) and XDm on
+ivXDm (coefficient 2.076, s.e. 0.053 and t-statistic 39.16). Sources: 2000 Brazilian Census, and CEPII
+BACI.
+
+     Even if these instrumental variables were to fully capture the sectoral mix of Chinese
+supply and demand shocks, it is naturally still possible that these shocks were correlated
+to supply and demand shocks in Brazil during this period. The variable ivXDm might
+be particularly vulnerable to this problem, since it is driven mainly by export growth in
+two nonmanufacturing sectors (soybeans and iron ore).14 It could bias our results, for
+example, if Brazil discovered major new sources of iron ore just as China began importing
+it in much larger quantities. Reassuringly, however, there is evidence that the rise in
+Brazil-China exports in these two sectors was mainly due to a Chinese demand shock.
+First, the share of Brazil in world trade by value in the two sectors changed relatively
+little between 2000 and 2010: Brazil accounted for 23% of world exports of soybeans in
+2000 and 27% in 2010, and for 13% of world exports of nonprecious metal ores in 2000
+  14
+    While the oil and gas sector was responsible for 14% of the growth in exports from Brazil to China
+between 2000 and 2010 (as noted in Section 2.2),
+                                             P its importance is greatly diminished in the IV shock
+measure, since ∆X̂oil accounts for only 2% of k ∆X̂k . The point in the upper left of the scatter plot of
+XDm against ivXDm (see Figure 6) is the offshore oil center (Macaé) mentioned in Footnote 8.
+
+
+                                                     15
+and 17% in 2010. Meanwhile, China’s share of world imports in these two sectors rose
+much more steeply during this period: from 21% to 56% for soybeans, and from 10% to
+45% for nonprecious metal ores. Exports to China accounted for 98% of the growth in the
+total quantity of soybeans exported from Brazil, and 87% of the growth in the quantity
+of Brazil’s exports of nonprecious metal ores, between the two years.15
+    It is also possible that the outcomes we observe were driven by other circumstances
+specific to individual Brazilian regions. Indeed, the maps in Figure 5 suggest that the
+incidence of Chinese trade shocks is spatially correlated within Brazil. We thus run a
+robustness check in which we add fixed effects for Brazil’s five regions to our IV specifi-
+cation, so as to check whether the results are robust to accounting for contemporaneous
+region-specific trends in the dependent variable ∆ym . That is, in this specification we
+investigate the within-region effects of the two ‘China shocks’.
+    Finally, we also conduct an additional robustness check to address the concern that
+any results we observe simply represent the continuation of local labour market trends
+that began in years before our period of study. For example, Brazil underwent a major
+trade liberalization episode in the late 1980s and early 1990s that is known to have had a
+significant impact on affected local labour markets (see e.g. Menezes-Filho and Muendler
+2011, Kovak 2013); adjustments resulting from this shock might still have been occur-
+ring between 2000 and 2010. Thus, in order to account for pre-sample-period trends,
+we use data from the 1991 Brazilian census to add a lagged dependent variable to the
+right-hand side of specifications for which this data is available; that is, we control for
+microregion-level changes between 1991 and 2000 in the outcome of interest. Because of
+likely correlation between the lagged dependent variable and the residual m , we instru-
+ment for this variable using 1991 levels, as suggested by Anderson and Hsiao (1981).16
+
+
+3      Results
+In this section, we provide empirical evidence of the heterogeneous effects of the import
+supply shock and export demand shock from China on local labour markets across Brazil.
+We begin by considering the effects of these shocks on average hourly wages, wage inequal-
+ity within local labour markets and takeup of the cash transfer program Bolsa Família.
+  15
+     Notably, Bustos et al. (2013) present evidence of non-Brazil-specific technological change in the
+soybean sector via the development in the US of a genetically modified soybean variety in 1996, and
+suggest that the adoption in Brazil of this technology in the early 2000s led to increases in agricultural
+productivity per worker, decreases in the labour intensity of agricultural production, rising manufacturing
+employment shares and declining manufacturing wages in affected locations. Bustos et al. also discuss
+a Brazil-specific technological change in the maize sector (milho safrinha) which they find is associated
+with rises in labour intensity, declines in manufacturing employment shares and increases in wages.
+  16
+     Note that the consistency of our estimates then depends on the assumption that 1991 levels are
+uncorrelated with m .
+
+
+
+                                                    16
+We then look at the impact of the ‘China shocks’ on migration, employment rates and the
+pattern of employment across sectors. Finally, we examine the evolution of ‘good jobs’
+and ‘bad jobs’ in local labour markets affected by the shocks, considering the proportion of
+the local workforce in formal and informal jobs, and in skilled and unskilled occupations.
+The coefficients and standard errors in all tables are normalized by multiplying by 100,
+so that they may generally be interpreted as the effect of a US$1000 increase in imports
+or exports per worker on changes in the dependent variable in percentage points.17
+
+
+3.1     Wages and Wage Inequality
+Table 2 displays the results of microregion-level regressions of differences in log average
+hourly wages between 2000 and 2010 on ISm , XDm and controls. In Panel A, the sample
+of wage-earners includes workers in all sectors, while Panels B, C and D only consider
+workers in the agricultural and extractive, manufacturing and nontraded sectors respec-
+tively. The OLS estimates in column (1) of Panel A suggest that larger export demand
+shocks are associated with higher growth in wages over these ten years, and that this
+effect is statistically significant. Columns (2) through (5) of Panel A show that the result
+is qualitatively unchanged by our instrumental variables strategy and robustness checks,
+including specifications with region fixed effects (column (3)), a lagged dependent vari-
+able (column (4)) and both of these two additional controls (column (5)). In our preferred
+specification, column (2), a US$1000 per worker increase in exports to China is associated
+with higher decadal growth in wages of approximately 1.76 percentage points.
+    Panels B through D suggest that the largest effect of rising export demand from China
+was on the set of industries most directly affected by this shock: the agricultural and
+extractive sectors. The baseline IV specification in column (2) of Panel B indicates that a
+microregion subject to the average demand shock of US$594 per worker saw wage growth
+in these sectors that was higher by 3.7 percentage points over the course of the decade.
+Given that the average wage in agricultural and extractive sectors increased by 52% during
+this period, a back-of-the-envelope calculation would suggest that the estimated effect of
+the ‘China demand shock’ is equal to 7.2% of the observed wage increase in these sectors.
+Panels C and D indicate that growth in wages in agricultural and extractive sectors also
+spilled over to other industries, as average wages in the manufacturing and nontraded
+sectors also grew faster in microregions more exposed to Chinese export demand, though
+only the result for manufacturing is statistically significant in our preferred specification.
+  17
+     This interpretation is, of course, approximate when the dependent variable is measured as a long
+difference of logarithms, but exact when the dependent variable is in long differences of shares.
+
+
+
+
+                                                 17
+                          Table 2: Results - Log Average Hourly Wages
+                                       OLS         IV           IV          IV          IV
+                                        (1)        (2)          (3)         (4)         (5)
+             Panel A. All Sectors
+             ISm                  -3.46           -3.19        -.70        -3.57       -1.06
+                                       (2.90)     (2.87)      (2.48)       (2.84)      (2.40)
+             XDm                      1.98***    1.76**      2.26***     1.84***     2.33***
+                                       (.62)       (.74)       (.73)       (.71)       (.71)
+
+
+             Panel B. Agricultural/Extractive Sectors
+             ISm                 1.15      -.92       2.40                 -6.39        .36
+                                       (6.31)     (7.61)      (7.82)       (6.94)      (7.26)
+             XDm                      5.98***    6.31***     6.74***     7.02***     6.96***
+                                       (1.93)     (2.29)      (2.08)       (1.93)      (1.93)
+
+
+             Panel C. Manufacturing Sectors
+             ISm              -7.84***  -7.69***             -7.19***    -8.51***    -7.16***
+                                       (1.42)     (1.24)      (1.42)       (1.43)      (1.42)
+             XDm                      2.93***    2.95***     3.22***     2.78***     3.23***
+                                       (.61)       (.64)       (.68)       (.62)       (.69)
+
+
+             Panel D. Nontraded Sectors
+             ISm               -4.23              -3.85       -1.70       -4.72*       -1.69
+                                       (2.62)     (2.47)      (2.04)       (2.45)      (2.03)
+             XDm                       .94*        .61         .95*        .93*        .94*
+                                       (.49)       (.50)       (.55)       (.51)       (.53)
+
+
+             Region Fixed Effects                               X                        X
+             Lag Dep. Variable                                               X           X
+             1st Stage (KP F-stat.)                334.7       250.3       245.2       195.3
+
+Notes. This table displays estimated effects of Chinese import and export shocks on changes between
+2000 and 2010 in log average hourly wages, as captured by βI and βX from equation (1). Panel A presents
+results for all sectors, Panel B for agricultural and extractive sectors, Panel C for manufacturing sectors,
+and Panel D for nontraded sectors. Each column corresponds to a different regression with specification
+indicated. In the columns marked with IV, we instrument imports from (exports to) China using a
+measure based on growth in Chinese exports to (imports from) all countries, excluding Brazil, relative
+to a weighted cross-country average. The unit of observation is a microregion (N=558). Coefficients
+and standard errors are multiplied by 100, so that the unit of the coefficients is roughly percentage
+increase. All regressions include a constant and the following controls: 2000 workforce, 2000 share of
+workforce in agricultural sectors, 2000 share of workforce in extractive sectors, 2000 share of workforce
+in manufacturing, 2000 share of workforce in nontraded sectors, 2000 share of workforce in informal jobs,
+2000 share of workforce in rural areas, and a cubic polynomial of income per capita in 2000. Regressions
+in columns (3) and (5) include region fixed effects, and in columns (4) and (5) include the lag of the
+dependent variable for the period 1991-2000, instrumented with 1991 levels. All regressions are weighted
+by share of national workforce. Standard errors are clustered by mesoregion, 138 clusters. Source: 1991,
+2000 and 2010 Brazilian Census, and CEPII BACI. *** p<.01, ** p<.05, * p<.1.
+
+
+
+
+                                                    18
+       Table 3: Results - Log Average Hourly Wages by Formality and Occupation
+                                         OLS        IV         IV          IV         IV
+                                          (1)       (2)        (3)         (4)        (5)
+               Panel A. Formal Jobs
+               ISm               -6.37***         -5.83***   -3.46*     -4.67***     -2.77
+                                         (1.74)    (1.60)     (1.91)     (1.38)      (1.74)
+               XDm                      1.45***   1.12**     1.40***     .91**      1.23***
+                                         (.48)      (.47)     (.43)       (.46)       (.42)
+
+
+               Panel B. Informal Jobs
+               ISm                 2.47             3.24      6.00        2.55        5.20
+                                         (5.31)    (5.50)     (5.20)     (5.43)      (5.02)
+               XDm                      2.34**     2.14*     2.64**      2.24**     2.76***
+                                         (1.03)    (1.17)     (1.08)     (1.13)      (1.03)
+
+
+               Panel C. Skilled Occupations
+               ISm                 -.62     -.85               .71
+                                         (3.13)    (3.36)     (3.15)
+               XDm                       1.13*       .72     1.16**
+                                         (.60)      (.64)     (.59)
+
+
+               Panel D. Unskilled Occupations
+               ISm               -5.22*** -5.14***            -2.22
+                                         (1.79)    (1.76)     (2.01)
+               XDm                      2.33***   2.24***    2.47***
+                                         (.72)      (.81)     (.67)
+
+
+               Region Fixed Effects                             X                      X
+               Lag Dep. Variable                                            X          X
+               1st Stage (KP F-stat.)               334.7     250.3       245.2      195.3
+
+Notes. This table displays estimated effects of Chinese import and export shocks on changes between
+2000 and 2010 in log average hourly wages, as captured by βI and βX from equation (1). Panel A
+presents results for workers in formal jobs, Panel B for workers in informal jobs, Panel C for workers in
+skilled occupations, and Panel D for workers in unskilled occupations. A skilled occupation is defined
+as an occupation of skill level 3 or 4 according to the ISCO-08 classification. Each column corresponds
+to a different regression with specification indicated. In the columns marked with IV, we instrument
+imports from (exports to) China using a measure based on growth in Chinese exports to (imports from)
+all countries, excluding Brazil, relative to a weighted cross-country average. The unit of observation is
+a microregion (N=558). Coefficients and standard errors are multiplied by 100, so that the unit of the
+coefficients is roughly percentage increase. All regressions include a constant and the following controls:
+2000 workforce, 2000 share of workforce in agricultural sectors, 2000 share of workforce in extractive
+sectors, 2000 share of workforce in manufacturing, 2000 share of workforce in nontraded sectors, 2000
+share of workforce in informal jobs, 2000 share of workforce in rural areas, and a cubic polynomial of
+income per capita in 2000. Regressions in columns (3) and (5) include region fixed effects, and in columns
+(4) and (5) include the lag of the dependent variable for the period 1991-2000, instrumented with 1991
+levels. All regressions are weighted by share of national workforce. Standard errors are clustered by
+mesoregion, 138 clusters. Source: 1991, 2000 and 2010 Brazilian Census, and CEPII BACI. *** p<.01,
+** p<.05, * p<.1.
+
+
+
+
+                                                     19
+                      Table 4: Results - Inequality and Social Assistance
+                                         OLS       IV         IV        IV         IV
+                                          (1)      (2)        (3)       (4)        (5)
+                Panel A. Wage Inequality (Gini Coefficient)
+                ISm              1.34***   1.40***   1.12**           1.40***    1.11**
+                                         (.39)     (.41)     (.46)     (.41)      (.46)
+                XDm                      .07       .06        .09       .06       .09
+                                         (.11)     (.10)     (.12)     (.10)      (.12)
+
+
+                Panel B. Bolsa Familia
+                ISm                -.20            -.15       .07
+                                         (.30)     (.33)     (.19)
+                XDm                      -.25*    -.25**     -.14*
+                                         (.14)     (.13)     (.07)
+
+
+                Region Fixed Effects                           X                   X
+                Lag Dep. Variable                                        X         X
+                1st Stage (KP F-stat.)             334.7     250.3      245.2     195.3
+
+Notes. This table displays estimated effects of Chinese import and export shocks, as captured by βI and
+βX from equation (1), on two outcomes. In Panel A, the dependent variable is the change in microregion-
+level wage inequality, as measured by the wage Gini coefficient, between 2000 and 2010. In Panel B,
+the dependent variable is the share of workforce participating in Bolsa Familia in 2010. Each column
+corresponds to a different regression with specification indicated. In the columns marked with IV, we
+instrument imports from (exports to) China using a measure based on growth in Chinese exports to
+(imports from) all countries, excluding Brazil, relative to a weighted cross-country average. The unit
+of observation is a microregion (N=558). Coefficients and standard errors in both panels are multiplied
+by 100, so that the coefficients in Panel B are in percentage points. All regressions include a constant
+and the following controls: 2000 workforce, 2000 share of workforce in agricultural sectors, 2000 share
+of workforce in extractive sectors, 2000 share of workforce in manufacturing, 2000 share of workforce in
+nontraded sectors, 2000 share of workforce in informal jobs, 2000 share of workforce in rural areas, and
+a cubic polynomial of income per capita in 2000. Regressions in columns (3) and (5) include region fixed
+effects, and in columns (4) and (5) include the lag of the dependent variable for the period 1991-2000,
+instrumented with 1991 levels. All regressions are weighted by share of national workforce. Standard
+errors are clustered by mesoregion, 138 clusters. Source: 1991, 2000 and 2010 Brazilian Census, and
+CEPII BACI. *** p<.01, ** p<.05, * p<.1.
+
+
+    Meanwhile, while the results in Panel A suggest that the Chinese import supply shock
+is not associated with statistically significant changes in average wages overall, Panel C
+indicates that it did have an effect for manufacturing, the sector most directly affected
+by Chinese import competition. The IV results in column (2) of Panel C indicate that a
+microregion exposed to the average import supply shock of US$225 per worker experienced
+growth in manufacturing wages that was smaller by 1.7 percentage points over this period.
+    Table 3 breaks down the effects of the shocks on the growth in average wages of workers
+in formal and informal jobs (Panels A and B), and in skilled and unskilled occupations
+(Panels C and D). The wage effects of ISm appear to be concentrated in the formal
+sector; the estimated coefficient on ISm is negative for the subcategory of formal jobs and
+positive (though insignificant) for informal jobs. Also, although the wage effect of Chinese
+
+                                                  20
+import competition on workers in skilled occupations remains insignificantly different from
+zero, higher values of ISm are significantly associated with slower average wage growth
+for workers in unskilled occupations in the baseline IV specification in Panel D. This
+result becomes smaller and loses statistical significance after controlling for region-specific
+trends. Meanwhile, the export demand shock is associated with positive wage growth for
+all four of these categories – for both skilled and unskilled occupations, and for both
+formal and informal jobs.
+    These heterogeneous effects of ISm on different subgroups of the workforce imply
+that Chinese import competition may have affected levels of inequality. Indeed, when we
+consider effects on local wage inequality in Panel A of Table 4, we find that import shocks
+but not export shocks are associated with relatively higher growth in wage inequality, as
+measured by the microregion-level wage Gini coefficient. Since we multiply all coefficients
+by 100, the estimate in column (2) implies that in locations experiencing an import
+competition shock that was greater by US$1000, the wage Gini coefficient rose by an
+additional 0.014 between 2000 and 2010; this is equivalent to a 2.6% increase in wage
+inequality relative to average 2000 levels. The coefficient on XDm is economically and
+statistically indistinguishable from zero in each of the specifications; that is, we find no
+evidence that the demand-side shock contributed to rises in local wage inequality.
+    In Panel B of Table 4, we consider the impact of the ‘China shocks’ on social assistance
+in Brazil, by examining the distribution of takeup of the cash transfer program Bolsa
+Família across microregions in 2010. While participation in Bolsa Família was on a
+very large scale in 2010 – according to the census data, more than 7% of the Brazilian
+workforce received Bolsa Família in this year – the program was implemented only after
+2002. Thus, in this case, we use levels rather than long differences on the left-hand side
+of our regressions, so that the dependent variable is the proportion of the local workforce
+receiving Bolsa Família in 2010.18 The results suggest that a larger export demand shock
+is associated with lower takeup of Bolsa Família in 2010; according to the baseline IV
+specification, in a microregion experiencing the average export demand shock of US$594,
+the proportion of the local workforce receiving Bolsa Família in 2010 was lower by 0.15
+percentage points. The estimated effects of Chinese import competition on participation
+in Bolsa Família are statistically insignificant in all three specifications.
+
+
+3.2     Migration and Employment
+We next consider whether the two ‘China shocks’ are also associated with changes in
+the pattern of migration across microregions, and microregion-level employment rates.
+  18
+     As of 2000, Brazil had a similar program on a much smaller scale, Bolsa Escola, with a Brazil-wide
+participation rate of less than 1%. The results are not affected if we instead use differences between Bolsa
+Escola takeup rates in 2000 and Bolsa Família takeup rates in 2010 as the left-hand-side variable.
+
+
+                                                    21
+In Table 5, we display the results of regressions whose dependent variable is the long
+difference in the proportion of the workforce that migrated into the microregion within
+the five years before the census.19 Column (2) reports that the change in the share of
+recent migrants in the local workforce was 0.89 percentage points lower on average in
+microregions experiencing a $1000 per worker higher import supply shock; these results
+are robust across all five specifications. This suggests that in-migration grew by 4.9%
+less in a microregion exposed to the average increase in import supply from China. The
+analogous estimate for XDm is positive, but much smaller in magnitude and statistically
+insignificant in each of the four IV specifications. The slowdown in local in-migration
+rates associated with Chinese import competition is reminiscent of the findings of Kovak
+(2011), who observes a migration response to the Brazilian trade liberalization of the early
+1990s using 2000 census data.
+
+
+                                   Table 5: Results - In-Migration
+                                              OLS      IV      IV       IV       IV
+                                               (1)     (2)     (3)      (4)      (5)
+
+
+                     ISm                      -.86*   -.89*   -.83**   -.92*   -.83**
+                                              (.44)   (.46)    (.35)   (.54)    (.41)
+                     XDm                      .21**    .11     .17      .13      .17
+                                              (.09)   (.10)    (.12)   (.10)    (.11)
+
+
+                     Region Fixed Effects                       X                X
+                     Lag Dep. Variable                                   X       X
+                     1st Stage (KP F-stat.)           334.7    250.3   245.2    195.3
+
+Notes. This table displays estimated effects of Chinese import and export shocks on changes between
+2000 and 2010 in the share of the workforce that in-migrated to the microregion in the previous five
+years, as captured by βI and βX from equation (1). Each column corresponds to a different regression
+with specification indicated. In the columns marked with IV, we instrument imports from (exports to)
+China using a measure based on growth in Chinese exports to (imports from) all countries, excluding
+Brazil, relative to a weighted cross-country average. The unit of observation is a microregion (N=558).
+Coefficients and standard errors are multiplied by 100, so that the coefficients represent percentage point
+changes. All regressions include a constant and the following controls: 2000 workforce, 2000 share of
+workforce in agricultural sectors, 2000 share of workforce in extractive sectors, 2000 share of workforce
+in manufacturing, 2000 share of workforce in nontraded sectors, 2000 share of workforce in informal jobs,
+2000 share of workforce in rural areas, and a cubic polynomial of income per capita in 2000. Regressions
+in columns (3) and (5) include region fixed effects, and in columns (4) and (5) include the lag of the
+dependent variable for the period 1991-2000, instrumented with 1991 levels. All regressions are weighted
+by share of national workforce. Standard errors are clustered by mesoregion, 138 clusters. Source: 1991,
+2000 and 2010 Brazilian Census, and CEPII BACI. *** p<.01, ** p<.05, * p<.1.
+
+
+
+  19
+    These regressions thus examine changes in the microregion-level pattern of migration in the five years
+before 2010 as compared to the five years before 2000.
+
+
+
+
+                                                      22
+                         Table 6: Results - Private Sector Employment
+                                            OLS     IV        IV        IV       IV
+                                            (1)     (2)       (3)       (4)      (5)
+                   Panel A. All Sectors
+                   ISm                .56*          .67*    1.24***     .28    .92***
+                                            (.33)   (.34)    (.33)     (.38)     (.34)
+                   XDm                      .07     .08       .07       .07      .08
+                                            (.11)   (.10)    (.10)     (.12)     (.11)
+
+
+                   Panel B. Agricultural/Extractive Sectors
+                   ISm                -.39   -.25     -.16             -.01      .06
+                                            (.26)   (.28)    (.32)     (.25)     (.28)
+                   XDm                      .07     .06      -.01       .11      .06
+                                            (.18)   (.18)    (.15)     (.14)     (.13)
+
+
+                   Panel C. Manufacturing Sectors
+                   ISm               -.20   -.29              .05       .34      .65
+                                            (.52)   (.55)    (.67)     (.56)     (.71)
+                   XDm                      -.06    -.12     -.10      -.16      -.15
+                                            (.10)   (.10)    (.09)     (.10)     (.10)
+
+
+                   Panel D. Nontraded Sectors
+                   ISm              1.18*  1.21*             1.34*    1.39*     1.43*
+                                            (.63)   (.67)    (.73)     (.72)     (.78)
+                   XDm                      .11     .18       .22       .04      .11
+                                            (.15)   (.16)    (.15)     (.12)     (.14)
+
+
+                   Region Fixed Effects                        X                  X
+                   Lag Dep. Variable                                     X        X
+                   1st Stage (KP F-stat.)           334.7    250.3     245.2    195.3
+
+Notes. This table displays estimated effects of Chinese import and export shocks on changes between
+2000 and 2010 in the share of the workforce employed in the private sector, as captured by βI and
+βX from equation (1). Panel A presents results for all sectors, Panel B for agricultural and extractive
+sectors, Panel C for manufacturing sectors, and Panel D for nontraded sectors. Each column corresponds
+to a different regression with specification indicated. In the columns marked with IV, we instrument
+imports from (exports to) China using a measure based on growth in Chinese exports to (imports from)
+all countries, excluding Brazil, relative to a weighted cross-country average. The unit of observation is
+a microregion (N=558). Coefficients and standard errors are multiplied by 100, so that the coefficients
+represent percentage point changes. All regressions include a constant and the following controls: 2000
+workforce, 2000 share of workforce in agricultural sectors, 2000 share of workforce in extractive sectors,
+2000 share of workforce in manufacturing, 2000 share of workforce in nontraded sectors, 2000 share of
+workforce in informal jobs, 2000 share of workforce in rural areas, and a cubic polynomial of income per
+capita in 2000. Regressions in columns (3) and (5) include region fixed effects, and in columns (4) and
+(5) include the lag of the dependent variable for the period 1991-2000, instrumented with 1991 levels.
+All regressions are weighted by share of national workforce. Standard errors are clustered by mesoregion,
+138 clusters. Source: 1991, 2000 and 2010 Brazilian Census, and CEPII BACI. *** p<.01, ** p<.05, *
+p<.1.
+
+
+
+
+                                                    23
+    Brazilians’ willingness to migrate – the census data indicates that the average share
+of recent migrants across microregions was 8.3% in 2000 and 12.4% in 2010 – might
+have served to dampen the effects of the trade shocks on microregion-level employment
+rates. Indeed, while the damaging impact of Chinese import competition on employment
+status has been an important finding of studies of high-income countries (e.g. Autor
+et al. 2013 for the US), Panel A of Table 6 shows that we do not observe a negative
+correlation between ISm and changes in private sector employment rates of Brazilian
+microregions from 2000 to 2010. On the contrary, our preferred specification yields a
+positive coefficient that is marginally statistically significant. The estimate is magnified
+and becomes significant at the 1% level in the specifications with region fixed effects; this
+is a puzzling result. Meanwhile, the effect of the ‘China demand shock’ on the change
+in the proportion of the local workforce employed in the private sector is very small and
+statistically insignificant in all five specifications.20
+    Panels B to D of Table 6 provide a breakdown of the changes in employment structure
+associated with the two ‘China shocks’, using the difference between 2000 and 2010 in
+the share of a microregion’s working-age population employed in the agricultural and
+extractive, manufacturing and nontraded sectors as the dependent variables. This analysis
+yields few statistically significant coefficient estimates. However, Panel D suggests that the
+finding of rising employment rates in locations competing with Chinese imports appears to
+have been driven by growth in the share of the workforce employed in nontraded sectors.
+This result is similar to the findings of Menezes-Filho and Muendler (2011), who observe
+movement of Brazilian formal sector workers from manufacturing into services after the
+early 1990s trade liberalization.
+
+
+3.3     Job Quality
+We now examine the effects of China’s emergence on the prevalence of ‘good jobs’ in
+affected microregions, using two measures of job quality: informality and occupational
+skill level. We first consider informality, which is widespread in the Brazilian economy:
+in 2000, more than half of private sector workers were working in the informal sector as
+defined in this paper. Being part of the informal sector brings disadvantages for workers
+and firms, since they are not granted some legal rights, such as property rights, and do
+not benefit from some public services linked to employment.
+    Table 7 shows that shocks to export demand from China are associated with a shift
+towards ‘good jobs’ by this measure: a rise in formal-sector jobs at the expense of the
+informal sector. The baseline IV results in Panels A and B suggest that a rise in exports
+to China of US$1000 is associated with an average increase in the proportion of a microre-
+  20
+    When comparing these results to our findings on takeup of Bolsa Família in Table 4, it is important
+to note that eligibility for Bolsa Família is not directly conditional on employment status.
+
+
+                                                  24
+gion’s workforce in formal jobs that is larger by 0.31 percentage points and an average
+decline in the share of informal jobs that is greater by 0.24 percentage points, though
+the result for the informal share is statistically insignificant. The size of these effects is
+similar across all of the regression specifications in each case.21
+    As discussed in Section 2.1, our measure of occupational skill level, which is based
+on an international definition, is a dummy variable broadly distinguishing between man-
+agerial, professional and technical workers and workers directly involved in production.
+Panel B of Table 8 shows that the proportion of the workforce in skilled occupations
+in the agricultural and extractive sectors rose more quickly in areas more affected by
+Chinese demand, while this was not the case for unskilled occupations in these sectors.
+Our estimates suggest that a microregion subject to the mean Chinese export demand
+shock experienced 18.6% higher growth in the share of the workforce employed in skilled
+agricultural or extractive sector jobs. The results in Panel A indicate that this led to a
+positive effect of XDm on the share of workers in skilled occupations overall, though this
+estimate is not statistically significant.
+    Meanwhile, Panel C of Table 8 shows that the proportion of the working-age population
+employed in skilled manufacturing occupations saw a statistically significant decline in
+locations with higher ISm : an increase of US$1000 in Chinese imports was associated
+with a reduction of approximately 0.28 percentage points in this share between 2000 and
+2010 in the baseline IV specification. Given that the average share of the workforce
+employed in skilled occupations in manufacturing grew from 0.8% in 2000 to 1% in 2010,
+a back-of-the-envelope counterfactual exercise suggests that the share of skilled jobs in
+the manufacturing sector would have grown 31% more on average if it were not for rising
+import competition from China. Taken together with the results in Table 3, it thus
+appears that local labour markets were affected by the ‘China supply shock’ through
+declines in both average unskilled wages and skilled manufacturing employment shares.
+    Tables 7 and 8 also provide additional insight on the nature of the shift towards the
+nontraded sector in locations more affected by Chinese import competition, as documented
+in Table 6. Table 8 indicates that growth in the share of nontraded sector employment
+mainly occurred in relatively unskilled occupations, while Table 7 suggests that these
+jobs were primarily in the formal sector. This conclusion is supported by the results of
+regressions with the share of the workforce in formal or informal agricultural/extractive,
+manufacturing or nontraded jobs on the left-hand side, which may be found in Tables
+A2 and A3. Across all of the IV specifications, only the regressions for formal jobs in
+nontraded sectors yield statistically significant coefficient estimates for ISm .
+  21
+     Tables A2 and A3 show that the estimated effect of XDm on the proportion of the workforce in formal
+agricultural or extractive sector jobs is positive in all five specifications, while the estimated impact of
+XDm on the share of the workforce in informal jobs in agricultural or extractive sectors is negative in all
+five specifications. None of these results is statistically significant.
+
+
+                                                    25
+                                      Table 7: Results – Informality
+                                            OLS      IV        IV        IV        IV
+                                            (1)      (2)       (3)       (4)       (5)
+                  Panel A. Formal Jobs
+                  ISm               .83***          .80***   1.16***    .88**    1.25***
+                                            (.29)    (.29)    (.37)     (.36)     (.44)
+                  XDm                      .36**    .31**     .31**     .32**    .32***
+                                            (.14)    (.15)    (.12)     (.15)     (.12)
+
+
+                  Panel B. Informal Jobs
+                  ISm                -.28            -.13      .08       .11       .30
+                                            (.38)    (.43)    (.48)     (.39)     (.45)
+                  XDm                      -.28**    -.24     -.24      -.21       -.21
+                                            (.14)    (.16)    (.16)     (.16)     (.16)
+
+
+                  Region Fixed Effects                          X                   X
+                  Lag Dep. Variable                                       X         X
+                  1st Stage (KP F-stat.)             334.7    250.3     245.2     195.3
+
+Notes. This table displays estimated effects of Chinese import and export shocks on changes between 2000
+and 2010 in the share of the workforce employed in formal and informal private sector jobs, as captured
+by βI and βX from equation (1). Panel A presents results for formal jobs and Panel B for informal jobs.
+Each column corresponds to a different regression with dependent variable and specification indicated.
+In the columns marked with IV, we instrument imports from (exports to) China using a measure based
+on growth in Chinese exports to (imports from) all countries, excluding Brazil, relative to a weighted
+cross-country average. The unit of observation is a microregion (N=558). Coefficients and standard errors
+are multiplied by 100, so that the coefficients represent percentage point changes. All regressions include
+a constant and the following controls: 2000 workforce, 2000 share of workforce in agricultural sectors,
+2000 share of workforce in extractive sectors, 2000 share of workforce in manufacturing, 2000 share of
+workforce in nontraded sectors, 2000 share of workforce in rural areas, and a cubic polynomial of income
+per capita in 2000. Regressions in columns (3) and (5) include region fixed effects, and in columns (4)
+and (5) include the lag of the dependent variable for the period 1991-2000, instrumented with 1991 levels.
+All regressions are weighted by share of national workforce. Standard errors are clustered by mesoregion,
+138 clusters. Source: 1991, 2000 and 2010 Brazilian Census, and CEPII BACI. *** p<.01, ** p<.05, *
+p<.1.
+
+
+
+
+                                                     26
+                            Table 8: Results – Occupational Skill Level
+                                      Skilled Occupations           Unskilled Occupations
+                                      OLS      IV     IV             OLS     IV     IV
+                                       (1)      (2)          (3)     (4)      (5)       (6)
+             Panel A. All Sectors
+             ISm                 -.21          -.04         .10      .77*     .71     1.14**
+                                      (.22)    (.33)        (.38)    (.41)   (.50)     (.55)
+             XDm                       .05     .07          .07      .02      .01       .00
+                                      (.06)    (.07)        (.08)    (.13)   (.13)     (.14)
+
+
+             Panel B. Agricultural/Extractive Sectors
+             ISm                -.03    -.04*   -.04                 -.36     -.21      -.12
+                                      (.02)    (.02)        (.02)    (.25)   (.27)     (.30)
+             XDm                      .06**    .05*         .05*     .01      .00       -.06
+                                      (.03)    (.03)        (.03)    (.16)   (.17)     (.14)
+
+
+             Panel C. Manufacturing Sectors
+             ISm              -.30**  -.28**                -.26*    .09      -.00      .30
+                                      (.12)    (.13)        (.13)    (.43)   (.48)     (.60)
+             XDm                       .01     .01          .02      -.08     -.13      -.11
+                                      (.02)    (.02)        (.02)    (.09)   (.09)     (.08)
+
+
+             Panel D. Nontraded Sectors
+             ISm               .11      .27                 .38     1.07**   .94*      .96*
+                                      (.20)    (.31)        (.35)    (.54)   (.56)     (.58)
+             XDm                      -.02     .00          .01      .13      .17       .21
+                                      (.05)    (.06)        (.06)    (.16)   (.18)     (.17)
+
+
+             Region Fixed Effects                             X                          X
+             1st Stage (KP F-stat.)            334.7        250.3             334.7    250.3
+
+Notes. This table displays estimated effects of Chinese import and export shocks on changes between
+2000 and 2010 in the share of the workforce employed in skilled and unskilled occupations, as captured
+by βI and βX from equation (1). Panel A presents results for all sectors, Panel B for agricultural and
+extractive sectors, Panel C for manufacturing sectors, and Panel D for nontraded sectors. Each column
+corresponds to a different regression with dependent variable and specification indicated. The dependent
+variable in columns 1 to 3 is the change in the share of workforce in skilled occupations, and in columns
+4 to 6 it is the change in the share of workforce in unskilled occupations. A skilled occupation is defined
+as an occupation of skill level 3 or 4 according to the ISCO-08 classification. In the columns marked
+with IV, we instrument imports from (exports to) China using a measure based on growth in Chinese
+exports to (imports from) all countries, excluding Brazil, relative to a weighted cross-country average.
+The unit of observation is a microregion (N=558). Coefficients and standard errors are multiplied by 100,
+so that the coefficients represent percentage point changes. All regressions include a constant and the
+following controls: 2000 workforce, 2000 share of workforce in agricultural sectors, 2000 share of workforce
+in extractive sectors, 2000 share of workforce in manufacturing, 2000 share of workforce in nontraded
+sectors, 2000 share of workforce in informal jobs, 2000 share of workforce in rural areas, and a cubic
+polynomial of income per capita in 2000. Regressions in columns (3) and (6) include region fixed effects.
+All regressions are weighted by share of national workforce. Standard errors are clustered by mesoregion,
+138 clusters. Source: 2000 and 2010 Brazilian Census, and CEPII BACI. *** p<.01, ** p<.05, * p<.1.
+
+
+
+
+                                                       27
+4    Conclusion
+In this paper, we investigate the effects of China’s ascent into one of the world’s largest
+economies on local labour markets in Brazil. As in other developing countries, Brazil’s
+imports from China are dominated by manufactures while most of the growth in its exports
+to China has been concentrated in agricultural and extractive sectors. We use data from
+the Brazilian demographic censes of 2000 and 2010 to provide empirical evidence of the
+heterogeneous effects on Brazilian labour markets of shocks to both Chinese import supply
+and export demand. Using a shift-share methodology, we compare trends in local labour
+markets with a similar initial employment structure (proportion of workers in agricultural,
+extractive and manufacturing sectors) but differently exposed to these two ‘China shocks’
+due to specialization in different specific industries.
+    We find that local labour markets more affected by Chinese import competition expe-
+rienced slower growth in manufacturing wages, greater increases in wage inequality and
+a relative decline in the share of the workforce employed in skilled manufacturing jobs.
+However, imports from China do not appear to have led to either a fall in employment
+rates or higher takeup of social assistance (as measured by participation in the Bolsa
+Família program of cash transfers) in affected regions. Meanwhile, in local labour mar-
+kets experiencing larger growth in Chinese export demand, average hourly wages increased
+more quickly and without an accompanying increase in wage inequality, while 2010 Bolsa
+Família participation rates were lower. While there is little evidence of an effect of Chi-
+nese demand on local employment rates, we do observe positive effects on job quality: an
+increase in the share of formal employment at the expense of informal jobs, and a rise in
+the share of the local workforce in skilled agricultural or extractive sector occupations.
+    Overall, our findings suggest that growth in commodities-for-manufactures trade spurred
+by the rise of China has created winners as well as losers. Even though the increase in
+export demand from China has mainly involved the relatively unglamorous agricultural
+and extractive sectors, local labour markets specialized in these industries appear to have
+flourished in the presence of this commodity export boom. Moreover, while areas special-
+ized in manufacturing sectors do seem to have suffered from rising Chinese import supply,
+our findings of slower growth of in-migration rates in more affected regions, along with
+shifts in the structure of local employment towards nontraded industries, also provide
+evidence of adjustment in response to competition from China.
+
+
+
+
+                                           28
+References
+Anderson, T.W., and Cheng Hsiao, “Estimation of Dynamic Models with Error Compo-
+nents,” Journal of the American Statistical Association 76:375 (1981), 598-606.
+Aragón, Fernando M., and Juan Pablo Rud, “Natural Resources and Local Communities:
+Evidence from a Peruvian Gold Mine,” American Economic Journal: Economic Policy
+5:2 (2013), 1-25.
+Autor, David H., David Dorn, and Gordon H. Hanson, “The China Syndrome: Local
+Labor Market Effects of Import Competition in the United States,” American Economic
+Review 103:6 (2013), 2121-2168.
+Bartik, Timothy J., Who Benefits from State and Local Economic Development Policies?
+(Kalamazoo, MI: W.E. Upjohn Institute for Employment Research, 1991).
+Bloom, Nicholas, Mirko Draca, and John Van Reenen, “Trade Induced Technical Change?
+The Impact of Chinese Imports on Innovation, IT and Productivity,” NBER working
+paper 16717 (2011).
+Bloomberg, “Rousseff Wants China Buying More Than Soybeans, Vale’s Iron Ore,” http://
+www.bloomberg.com/news/2011-04-10/rousseff-wants-china-buying-more-than-soybeans-
+vale-s-iron-ore.html (April 10 2011).
+Bustos, Paula, Bruno Caprettini, and Jacopo Ponticelli, “Agricultural Productivity and
+Structural Transformation: Evidence from Brazil,” mimeograph (2013).
+Dauth, Wolfgang, Sebastian Findeisen, and Jens Suedekum, “The Rise of the East and
+the Far East: German Labor Markets and Trade Integration,” Journal of the European
+Economic Association, forthcoming.
+di Giovanni, Julian, Andrei A. Levchenko, and Jing Zhang, “The Global Welfare Impact
+of China: Trade Integration and Technological Change,” American Economic Journal:
+Macroeconomics, forthcoming.
+Dix-Carneiro, Rafael, “Trade Liberalization and Labor Market Dynamics,” Econometrica,
+forthcoming.
+Economist, “Seeking Protection” (January 14 2012).
+Goldberg, Pinelopi Koujianou, and Nina Pavcnik, “The Response of the Informal Sector
+to Trade Liberalization,” Journal of Development Economics 72:2 (2003), 463-496.
+Gonzaga, Gustavo, Naércio Menezes Filho, and Cristina Terra, “Trade Liberalization and
+the Evolution of Skill Earnings Differentials in Brazil,” Journal of International Economics
+68:2 (2006), 345-367.
+
+
+                                            29
+Helpman, Elhanan, Oleg Itskhoko, Marc-Andreas Muendler, and Stephen J. Redding,
+“Trade and Inequality: From Theory to Estimation,” NBER working paper 17991 (2012).
+Hsieh, Chang-Tai, and Ralph Ossa, “A Global View of Productivity Growth in China,”
+NBER working paper 16778 (2011).
+Hsieh, Chang-Tai, and Keong T. Woo, “The Impact of Outsourcing to China on Hong
+Kong’s Labor Market,” American Economic Review 95:5 (2005), 1673-1687.
+Iacovone, Leonardo, Ferdinand Rauch, and L. Alan Winters, “Trade as an Engine of
+Creative Destruction: Mexican Experience with Chinese Competition,” Journal of Inter-
+national Economics 89:2 (2013), 379-392.
+Kovak, Brian K., “Local Labor Market Effects of Trade Policy: Evidence from Brazilian
+Liberalization,” mimeograph (2011).
+Kovak, Brian K., “Regional Effects of Trade Reform: What is the Correct Measure of
+Liberalization?” American Economic Review 103:5 (2013), 1960-1976.
+Los Angeles Times, “Brazil’s Commodities-Heavy Trade with China Gives Some Pause”
+(July 16 2011).
+McCaig, Brian, and Nina Pavcnik, “Export Markets and Labor Allocation in a Poor
+Country,” mimeograph (2012).
+Menezes-Filho, Naércio Aquino, and Marc-Andreas Muendler, “Labor Reallocation in
+Response to Trade Reform,” NBER working paper 17372 (2011).
+Mion, Giordano, and Linke Zhu, “Import Competition from and Offshoring to China: A
+Curse or Blessing for Firms?” Journal of International Economics 89:1 (2013), 202-215.
+Nataraj, Shanthi, “The Impact of Trade Liberalization on Productivity: Evidence from
+India’s Formal and Informal Manufacturing Sectors,” Journal of International Economics
+85:2 (2011), 292-301.
+Paz, Lourenço S., “The Impacts of Trade Liberalization on Informal Labor Markets: A
+Theoretical and Empirical Evaluation of the Brazilian Case,” Journal of International
+Economics 92:2 (2014), 330-348.
+Pessoa, João Paulo, “International Competition and Labor Market Effects,” mimeograph
+(2014).
+Pierce, Justin R., and Peter K. Schott, “The Surprisingly Swift Decline of U.S. Manufac-
+turing Employment,” NBER working paper 18655 (2012).
+Topalova, Petia, “Trade Liberalization, Poverty, and Inequality: Evidence from Indian
+Districts,” in Ann Harrison (ed.), Globalization and Poverty (Chicago: University of
+Chicago Press, 2007).
+
+
+                                          30
+A      Additional Figures and Tables
+                        Distribution of 'China shocks' across microregions
+                    5           Import Supply                          Export Demand
+
+
+
+
+                                                             2
+                    4
+
+
+
+
+                                                             1.5
+                    3
+          Density
+
+
+
+
+                                                         Density
+                                                          1
+                    2
+
+
+
+
+                                                             .5
+                    1
+                    0
+
+
+
+
+                                                             0
+
+
+                        0       1           2   3                  0   5         10         15
+                                     IS                                     XD
+
+        N = 558 microregions.
+
+
+
+        Figure A1: Distributions of Import Supply and Export Demand Measures
+Notes. These graphs show the distributions of the import supply and export demand measures (ISm and
+XDm ) described in Section 2.2. The solid lines are kernel densities. Source: 2000 Brazilian Census, and
+CEPII BACI.
+
+
+
+
+                                                    31
+          Table A1: List of Sectors and Additional Summary Statistics (Part 1)
+                                                      Import   Export     Import Supply   Export Demand
+                                                      Share     Share      from China           to China
+                                                                          Mean     IV     Mean        IV
+                                                       (1)          (2)    (3)     (4)     (5)        (6)
+               Agriculture: rice                        -            -      -       -       -           -
+               Agriculture: maize                       -       .000        -       -     .000          -
+               Agriculture: other cereals             .000           -    .000    .000      -           -
+               Agriculture: cotton                    .000      .005      .000    .000    .013          -
+               Agriculture: sugar cane                  -            -      -      -        -           -
+               Agriculture: tobacco                   .000      .010      .000    .000    .022        .015
+               Agriculture: soya                        -       .229        -       -     .555        .259
+               Agriculture: manioc                      -            -      -       -       -           -
+               Agriculture: flowers and ornamentals   .000      .000      .000    .000    .000          -
+               Agriculture: citrus fruits               -       .000        -       -     .000        .000
+               Agriculture: coffee                      -       .000        -       -     .000        .000
+               Agriculture: cocoa                       -            -      -       -       -           -
+               Agriculture: grapes                      -            -      -       -       -           -
+               Agriculture: bananas                     -            -      -       -       -           -
+               Agriculture: other                     .007      .000      .006    .000    .000        .000
+               Agriculture: bovine animals              -            -      -       -       -           -
+               Agriculture: sheep                       -            -      -       -       -           -
+               Agriculture: pigs                        -            -      -       -       -           -
+               Agriculture: birds                       -            -      -       -       -           -
+               Agriculture: beekeeping                .000      .000      .000      -     .000        .000
+               Agriculture: silk                      .000           -    .000      -       -           -
+               Agriculture: other animals             .000      .000      .000    .000    .000          -
+               Forestry                               .000      .000      .000    .000    .000        .000
+               Fishing and aquaculture                  -       .000        -      -      .000        .000
+               Mining: coal                           -.001     .000      -.002   -.018   .000         -
+               Mining: oil and gas                      -       .137        -       -     .219        .015
+               Mining: radioactive metals               -            -      -       -       -           -
+               Mining: precious metals                  -            -      -       -       -           -
+               Mining: other metals                   .000      .453      .000    -.001   .917        .649
+               Mining: nonmetals for construction     .000      .001      .000    .000    .001        .002
+               Mining: precious stones                .000      .000      .000    .000    .001        .001
+               Mining: other nonmetals                .000      .000      .001    .000    .000        .001
+               Manuf: meat and fish                   .004      .008      .002    .000    .005        .001
+               Manuf: fruits and vegetables           .002      .003      .002    .000    .003        .000
+               Manuf: oils and fats                   .000      .026      .000    .000    .045        .015
+               Manuf: dairy products                  .000      .000      .000     -      .000        .000
+               Manuf: sugar                           .000      .018      .000    .000    .019         -
+               Manuf: coffee                          .000      .000      .000     -      .000        .000
+               Manuf: other food                      .003      .000      .001    .000    .000        .000
+               Manuf: beverages                       .000      .000      .000    .000    .000        .000
+               Manuf: tobacco                         .000           -    .000    .000      -          -
+
+
+
+Notes. This table displays the share of each sector in the total growth of Brazil’s imports and exports
+to China between 2000 and 2010 in columns (1) and (2), the means across microregions of the sector-
+microregion-level variables used to calculate ISm and XDm in columns (3) and (5), and the means across
+microregions of the sector-microregion-level variables used to calculate ivISm and ivXDm in columns
+(4) and (6). Source: 2000 and 2010 Brazilian Census, and CEPII BACI.
+
+
+
+
+                                                               32
+          Table A1: List of Sectors and Additional Summary Statistics (Part 2)
+                                                         Import      Export   Import Supply   Export Demand
+                                                         Share       Share     from China           to China
+                                                                              Mean     IV     Mean        IV
+                                                          (1)         (2)      (3)     (4)     (5)        (6)
+             Manuf: spinning and weaving                 .026        .000     .009    .000    .000        .000
+             Manuf: other textile products               .029        .000     .014    .001    .000        .000
+             Manuf: apparel                              .025        .000     .008    .001    .000        .000
+             Manuf: leather processing                   .000        .011     .000    .000    .014        .000
+             Manuf: leather products                     .001        .000     .000    .000    .000        .000
+             Manuf: footwear                             .003        .000     .001    .001    .000        .000
+             Manuf: wood products                        .001        .001     .001    .000    .001        .002
+             Manuf: pulp and paper                       .003        .039     .003    .000    .041        .002
+             Manuf: paper products                       .001        .000     .000    .000    .000        .000
+             Manuf: printing and recording               .003        .000     .001    .000    .000        .000
+             Manuf: coke                                 .003          -      .040    -.119     -          -
+             Manuf: refined petroleum                    .002        .000     .001    .000    .000        .000
+             Manuf: nuclear fuel                           -           -        -      -        -          -
+             Manuf: paints and varnishes                 .000        .000     .000    .000    .000        .000
+             Manuf: pharmaceuticals                      .018        .001     .004    .002    .000        .000
+             Manuf: cleaning and hygiene products        .001        .001     .000    .000    .000        .000
+             Manuf: other chemicals                      .065        .008     .026    .014    .004        .003
+             Manuf: rubber products                      .014        .000     .004    .001    .000        .000
+             Manuf: plastic products                     .025        .000     .007    .001    .000        .000
+             Manuf: glass products                       .006        .000     .002    .001    .000        .000
+             Manuf: ceramic products                     .009        .000     .006    .000    .000        .000
+             Manuf: other nonmetallic mineral products   .003        .000     .001    .000    .000        .000
+             Manuf: basic metals                         .064        .026     .027    .002    .013        .003
+             Manuf: metal products                       .029        .002     .007    .001    .000        .000
+             Manuf: machinery                            .133        .005     .038    .010    .002        .002
+             Manuf: domestic appliances                  .019        .000     .009    .001    .000        .000
+             Manuf: computing                            .073        .000     .033    .017    .000        .000
+             Manuf: electrical equipment                 .080        .001     .023    .005    .000        .000
+             Manuf: electronics                          .192        .001     .065    .024    .000        .001
+             Manuf: medical instruments                  .006        .000     .002    .000    .000        .000
+             Manuf: measuring instruments                .008        .000     .004    .001    .000        .000
+             Manuf: optical equipment                    .061        .000     .030    .006    .000        .002
+             Manuf: watches and clocks                   .002        .000     .002    .000    .000        .000
+             Manuf: motor vehicles                       .009        .000     .002    .000    .000        .001
+             Manuf: motor vehicle bodies and parts       .011        .002     .003    .000    .001        .001
+             Manuf: shipbuilding                         .018          -      .016    .000      -          -
+             Manuf: railway products                     .000        .000     .000    .000    .000         -
+             Manuf: aircraft                             .000        .011     .000     -      .012        .005
+             Manuf: other transport                      .009        .000     .007    .001    .000         -
+             Manuf: furniture                            .005        .000     .002    .000    .000        .000
+             Manuf: other                                .026        .001     .008    .001    .000        .000
+
+Notes. This table displays the share of each sector in the total growth of Brazil’s imports and exports
+to China between 2000 and 2010 in columns (1) and (2), the means across microregions of the sector-
+microregion-level variables used to calculate ISm and XDm in columns (3) and (5), and the means across
+microregions of the sector-microregion-level variables used to calculate ivISm and ivXDm in columns
+(4) and (6). Source: 2000 and 2010 Brazilian Census, and CEPII BACI.
+
+
+
+
+                                                                33
+                        Table A2: Results - Formal Private Sector Jobs
+                                            OLS      IV         IV        IV       IV
+                                            (1)       (2)       (3)       (4)      (5)
+                   Panel A. Agricultural/Extractive Sectors
+                   ISm                 .09    -.00      .06              -.01     .05
+                                            (.12)    (.10)      (.12)    (.11)    (.12)
+                   XDm                      .17      .17        .17      .15      .17
+                                            (.12)    (.13)      (.11)    (.12)    (.11)
+
+
+                   Panel B. Manufacturing Sectors
+                   ISm               -.27     -.28              -.16     .45      .53
+                                            (.55)    (.57)      (.62)    (.65)    (.73)
+                   XDm                      -.00     -.06       -.06     -.10     -.11
+                                            (.08)    (.08)      (.09)    (.08)    (.10)
+
+
+                   Panel C. Nontraded Sectors
+                   ISm              1.04**   1.09**           1.26***    .75     1.00**
+                                            (.45)    (.50)      (.43)    (.57)    (.45)
+                   XDm                      .20*     .21        .21      .09      .11
+                                            (.12)    (.13)      (.13)    (.16)    (.14)
+
+
+                   Region Fixed Effects                          X                 X
+                   Lag Dep. Variable                                       X       X
+                   1st Stage (KP F-stat.)            334.7      250.3    245.2    195.3
+
+Notes. This table displays estimated effects of Chinese import and export shocks on changes between
+2000 and 2010 in the share of the workforce employed in formal private sector jobs, as captured by βI
+and βX from equation (1). Panel A presents results for agricultural and extractive sectors, Panel B for
+manufacturing sectors, and Panel C for nontraded sectors. Each column corresponds to a different regres-
+sion with specification indicated. In the columns marked with IV, we instrument imports from (exports
+to) China using a measure based on growth in Chinese exports to (imports from) all countries, excluding
+Brazil, relative to a weighted cross-country average. The unit of observation is a microregion (N=558).
+Coefficients and standard errors are multiplied by 100, so that the coefficients represent percentage point
+changes. All regressions include a constant and the following controls: 2000 workforce, 2000 share of
+workforce in agricultural sectors, 2000 share of workforce in extractive sectors, 2000 share of workforce
+in manufacturing, 2000 share of workforce in nontraded sectors, 2000 share of workforce in informal jobs,
+2000 share of workforce in rural areas, and a cubic polynomial of income per capita in 2000. Regressions
+in columns (3) and (5) include region fixed effects, and in columns (4) and (5) include the lag of the
+dependent variable for the period 1991-2000, instrumented with 1991 levels. All regressions are weighted
+by share of national workforce. Standard errors are clustered by mesoregion, 138 clusters. Source: 1991,
+2000 and 2010 Brazilian Census, and CEPII BACI. *** p<.01, ** p<.05, * p<.1.
+
+
+
+
+                                                    34
+                       Table A3: Results - Informal Private Sector Jobs
+                                               OLS           IV     IV       IV      IV
+                                                (1)          (2)    (3)      (4)     (5)
+                      Panel A. Agricultural/Extractive Sectors
+                      ISm               -.48**  -.24   -.22    -.12                 -.10
+                                               (.23)        (.23)   (.28)   (.22)   (.26)
+                      XDm                      -.10         -.11    -.18    -.07    -.13
+                                               (.12)        (.14)   (.14)   (.12)   (.13)
+
+
+                      Panel B. Manufacturing Sectors
+                      ISm               .07     -.01                .20     -.00    .21
+                                               (.12)        (.10)   (.13)   (.11)   (.14)
+                      XDm                      -.06*        -.06*   -.04    -.06*   -.04
+                                               (.03)        (.03)   (.03)   (.04)   (.03)
+
+
+                      Panel C. Nontraded Sectors
+                      ISm               .14      .11                .08     .28     .27
+                                               (.35)        (.38)   (.47)   (.36)   (.46)
+                      XDm                      -.09         -.04    .01     -.05    -.02
+                                               (.14)        (.15)   (.12)   (.15)   (.12)
+
+
+                      Region Fixed Effects                           X               X
+                      Lag Dep. Variable                                       X      X
+                      1st Stage (KP F-stat.)                334.7   250.3   245.2   195.3
+
+Notes. This table displays estimated effects of Chinese import and export shocks on changes between
+2000 and 2010 in the share of the workforce employed in informal private sector jobs, as captured by βI
+and βX from equation (1). Panel A presents results for agricultural and extractive sectors, Panel B for
+manufacturing sectors, and Panel C for nontraded sectors. Each column corresponds to a different regres-
+sion with specification indicated. In the columns marked with IV, we instrument imports from (exports
+to) China using a measure based on growth in Chinese exports to (imports from) all countries, excluding
+Brazil, relative to a weighted cross-country average. The unit of observation is a microregion (N=558).
+Coefficients and standard errors are multiplied by 100, so that the coefficients represent percentage point
+changes. All regressions include a constant and the following controls: 2000 workforce, 2000 share of
+workforce in agricultural sectors, 2000 share of workforce in extractive sectors, 2000 share of workforce
+in manufacturing, 2000 share of workforce in nontraded sectors, 2000 share of workforce in informal jobs,
+2000 share of workforce in rural areas, and a cubic polynomial of income per capita in 2000. Regressions
+in columns (3) and (5) include region fixed effects, and in columns (4) and (5) include the lag of the
+dependent variable for the period 1991-2000, instrumented with 1991 levels. All regressions are weighted
+by share of national workforce. Standard errors are clustered by mesoregion, 138 clusters. Source: 1991,
+2000 and 2010 Brazilian Census, and CEPII BACI. *** p<.01, ** p<.05, * p<.1.
+
+
+
+
+                                                       35
+                  CENTRE FOR ECONOMIC PERFORMANCE
+                          Recent Discussion Papers
+
+1268   Seçil Hülya Danakol    Foreign Direct Investment and Domestic
+       Saul Estrin            Entrepreneurship: Blessing or Curse?
+       Paul Reynolds
+       Utz Weitzel
+
+1267   Nattavudh Powdthavee   What Can Life Satisfaction Data Tell Us
+       Mark Wooden            About Discrimination Against Sexual
+                              Minorities? A Structural Equation Model for
+                              Australia and the United Kingdom
+1266   Dennis Novy            Trade and Uncertainty
+       Alan M. Taylor
+
+1265   Tobias Kretschmer      Video Killed the Radio Star? Online Music
+       Christian Peukert      Videos and Digital Music Sales
+
+1264   Diego Battiston        Immigration and the Access to Social
+       Richard Dickens        Housing in the UK
+       Alan Manning
+       Jonathan Wadsworth
+1263   Alexandre B. Cunha     Political Competition and the Limits of
+       Emanuel Ornelas        Political Compromise
+
+1262   Alexander C. Lembcke   The Impact of Mandatory Entitlement to Paid
+                              Leave on Employment in the UK
+
+1261   Nicholas Bloom         Trapped Factors and China’s Impact on
+       Paul M. Romer          Global Growth
+       Stephen J. Terry
+       John Van Reenen
+1260   Alexander C. Lembcke   Home Computers and Married Women's
+                              Labor Supply
+
+1259   Michael Carter         The Political Economy of Inclusive Rural
+       John Morrow            Growth
+
+1258   Nicholas Bloom         IT and Management in America
+       Erik Brynjolfsson
+       Lucia Foster
+       Ron Jarmin
+       Megha Patnaik
+       Itay Saporta-Eksten
+       John Van Reenen
+1257   David W. Johnston             When Work Disappears: Racial Prejudice and
+       Grace Lordan                  Recession Labour Market Penalties’
+
+1256   A. Chevalier                  Economic Uncertainty, Parental Selection and
+       O. Marie                      the Criminal Activity of the ‘Children of the
+                                     Wall’
+
+1255   W. David Bradford             Looking Ahead: Subjective Time Perception
+       Paul Dolan                    and Individual Discounting
+       Matteo M. Galizzi
+
+1254   Marc J. Melitz                Missing Gains from Trade?
+       Stephen J. Redding
+
+1253   Charlotte Cabane              Childhood Sporting Activities and Adult
+       Andrew E. Clark               Labour-Market Outcomes
+
+1252   Andrew E. Clark               Upward Social Mobility, Well-being and
+       Emanuela D'Angelo             Political Preferences: Evidence from the
+                                     BHPS
+1251   Juliano Assunção,             Flex Cars and Competition in Ethanol and
+       João Paulo Pessoa             Gasoline Retail Markets
+       Leonardo Rezende
+1250   Oriana Bandiera               Managing the Family Firm: Evidence from
+       Andrea Prat                   CEOs at Work
+       Raffaella Sadun
+
+1249   Vincent Sterk                 The Transmission of Monetary Policy
+       Silvana Tenreyro              Operations through Redistributions and
+                                     Durable Purchases
+1248   Guy Michaels                  Resetting the Urban Network: 117-2012
+       Ferdinand Rauch
+
+1247   Thiemo Fetzer                 An Urban Legend?! Power Rationing,
+       Oliver Pardo                  Fertility and its Effects on Mothers
+       Amar Shanghavi
+1246   João Paulo Pessoa             Decoupling of Wage Growth and
+       John Van Reenen               Productivity Growth? Myth and Reality
+
+              The Centre for Economic Performance Publications Unit
+                       Tel 020 7955 7673 Fax 020 7404 0612
+               Email info@cep.lse.ac.uk Web site http://cep.lse.ac.uk
+

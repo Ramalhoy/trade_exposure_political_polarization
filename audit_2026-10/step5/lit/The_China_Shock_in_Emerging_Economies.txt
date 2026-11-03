@@ -1,0 +1,1633 @@
+          The China Shock in Emerging Economies:
+        Unbundling the Electoral Consequences of Trade
+                      Exposure in Brazil*
+                                       Daniel B. Jones1
+                                  Irene Menéndez González2
+                                         Erica Owen3
+
+                                      September 20, 2026
+
+
+
+
+            How has the rise of China in the global economy shaped electoral outcomes in
+        emerging economies? Unlike advanced economies, emerging economies face import
+        competition and export opportunities, creating winners and losers. Trade exposure
+        may also activate two competing political responses, economic voting and redistribu-
+        tion demands, which either reinforce or offset each other depending on the incum-
+        bent’s partisanship. Using a shift-share instrumental variable approach, we study how
+        Chinese trade exposure has shaped Brazilian elections between 2002-2022. When
+        the Workers’ Party (PT) is incumbent, import competition reduces PT support and
+        increases support for the non-PT Left and invalid votes. When PT is in opposition,
+        import competition increases PT support. These patterns suggest a combination of
+        economic voting and redistribution demands, but their net effect depends on the in-
+        cumbent. Export expansion reduced PT support in all elections. To understand trade
+        politics, we must account for how reduced-form coefficients may conceal offsetting
+        political effects.
+
+
+
+
+    * We thank Michael Becher, Stephen Chaudoin, Italo Colantone, Layna Mosley, Stephanie
+
+Rickard, Theo Serlin, and participants at APSA, EPSA, PEIO, and the CIVICA workshop on
+Technology, Globalization and Democratic Backsliding at IE University for helpful comments.
+    1
+      University of Pittsburgh. daniel.jones@pitt.edu.
+2
+  IE University. irene.menendez@ie.edu.
+3
+  University of Pittsburgh. ericaowen@pitt.edu. Corresponding author.
+
+                                                 1
+1       Introduction
+The rise of China as the world’s manufacturing powerhouse has reshaped politics across the globe.
+A rich literature focused on the advanced economies has examined the economic and political
+effects of import competition, including the backlash against globalization (for review, see Walter
+2021).1 Developing and emerging markets have also been profoundly impacted by the rise of
+China, but through fundamentally different exposure. Many, like Brazil, have experienced growth
+in manufacturing imports, as in the advanced economies, and also an increase in primary sector
+exports to China (Costa, Garred, and Pessoa 2016). This dual exposure has transformed trade and
+labor markets (Chagas and Sant’Anna 2024; Dix-Carneiro and Kovak 2023). Yet direct evidence
+of the political effects of the China shock specifically in the Global South remains limited, and
+what evidence exists points to competing mechanisms rather than consensus.2
+    In this research note, we examine the political economy of the “China shock” in emerging
+markets, with a focus on Brazil. Brazil is a large democracy, with a regionally varied economy.
+It underwent a significant trade liberalization process between 1990 and 1995; it then experienced
+a major increase in exports to and imports from China beginning in 2001. Evidence suggests
+that trade integration shapes political outcomes, including voter preferences (Cavalcante, Moreno-
+Louzada, and Menezes Filho 2023; Iacoella, Justino, and Martorano 2020; Rettl 2025) and legis-
+lators’ positions on international trade (Campello and Urdinez 2021). Brazil’s political-economic
+structure, combined with data availability, makes it well suited to studying the political economy
+of trade shocks in emerging markets, though the theoretical mechanisms apply more broadly.
+    One potential mechanism linking trade exposure to election outcomes relates to left-right policy
+preferences, whereby negative (positive) shocks are thought to push preferences leftward toward
+    1
+     Import competition has been linked to more authoritarian values (Ballard-Rosa, Jensen, and
+Scheve 2022), greater support for protectionist policies and parties (Che et al. 2022; Colantone and
+Stanig 2018a,b; Feigenbaum and Hall 2015), polarization (Autor et al. 2020), and anti-incumbent
+effects (Baccini and Weymouth 2021; Jensen, Quinn, and Weymouth 2017; Margalit 2011).
+    2
+     More broadly, previous work on the political economy of trade in the Global South contin-
+ues to debate whether and how economic interests shape preferences over trade (e.g Baker 2005;
+Beaulieu, Yatawara, and Wang 2005; Dolan and Milner 2023; Jamal and Milner 2005; Mayda and
+Rodrik 2005; Menéndez González, Owen, and Walter 2023; Rudra 2008).
+
+
+                                                 1
+(away from) demands for redistribution. The findings for Brazil are mixed and contradictory. On
+the one hand, tariff liberalization in the 1990s is associated with greater support for both left-wing
+(Lula in 2002) and right-wing (Bolsonaro in 2018) populism (Iacoella, Justino, and Martorano
+2020). Alternatively, declining global exports from 2010–2018 reduced PT support as affected
+citizens turned to evangelical churches rather than the state for redistribution (Rettl 2025). Other
+work finds, instead, that positive export shocks produced rightward shifts via reduced demand for
+redistribution, with imports showing no effect (Cavalcante, Moreno-Louzada, and Menezes Filho
+2023).3
+   Another channel linking trade exposure to elections emphasizes voting as a retrospective eco-
+nomic evaluation of the incumbent regardless of ideology.4 Cross-national evidence suggests that
+trade’s effect on government approval depends on skill composition, with high-skill exports rais-
+ing approval among skilled workers and high-skill imports lowering it, with the opposite true for
+low-skill workers, creating a polarization effect (Aksoy, Guriev, and Treisman 2024). In Latin
+America and Brazil specifically, voters reward incumbents for commodity-driven economic out-
+comes tied to international forces like U.S. interest rates (Campello and Zucco Jr 2016). Yet to our
+knowledge, no study directly tests an economic-voting model of the China shock in Brazil at the
+aggregate level.
+   We argue that a more complete understanding of the political economy of regional trade shocks
+requires modeling both sides of the shock and the possibility of competing political responses at
+once. Trade shocks may shape party preferences by altering demands for redistribution, while also
+affecting electoral support for incumbents through economic voting. Thus, estimated effects re-
+flect a net outcome whose meaning varies depending on the partisanship of the incumbent, rather
+than a single mechanism. This approach addresses three features of existing work that so far com-
+plicate the interpretation of trade exposure coefficients and their political implications: studies
+commonly focus on a single political channel without considering that a shock can activate multi-
+ple, potentially offsetting responses; imports and exports are typically modeled in isolation, even
+   3
+    On export booms and backlash, see Helms (2024), Serlin (2022), and Scheve and Serlin
+(2024).
+   4
+       See Healy and Malhotra (2013) for a review.
+
+
+
+                                                  2
+though both factors matter; and existing research examines different outcomes and time horizons,
+making it difficult to assess whether estimated effects reflect common underlying mechanisms or
+context-specific dynamics.
+   Empirically, we examine how regional trade exposure shaped support for PT in Brazilian pres-
+idential elections from 2002 to 2022, using microregion-level shift-share measures of import and
+export exposure. We first show that these shocks affect local labor markets as expected, then
+estimate their effects on PT vote share separately for each election, allowing the identity of the
+incumbent – PT for most of the period and the far right in 2022 – to structure our interpretation.5
+We find evidence that the redistribution mechanism dominates with respect to exports, with exports
+robustly linked to lower support for PT, regardless of election round or incumbency. The story for
+imports is more nuanced; when PT is incumbent, the economic voting and redistribution pressures
+appear to offset each other. In the second round, the effect is positive and statistically different
+from zero only in 2022, when PT was not the incumbent, indicating support for both redistribution
+demands and anti-incumbent voting. To unpack these mechanisms further, we show that in the first
+round, there is an increase in support for non-PT Left parties linked to import exposure when PT
+is incumbent. Additionally, we find evidence of economic voting in the form of disapproval votes:
+import exposure leads to greater shares of invalid ballots in every year. Analysis of survey data
+broadly supports the aggregate findings.
+   This paper makes several contributions. Our theory and findings underscore the need to under-
+stand and be careful to interpret the context and potential competing mechanisms. By unpacking
+the mechanisms through which trade exposure shapes political responses, we bring more clarity to
+political economy debates about how globalization drives politics. Additionally, our findings sug-
+gest that unlike in advanced economies, exposure to import competition need not lead to increasing
+support for the far right, nor need the Left benefit electorally from economic growth associated with
+exports. They are thus relevant to the broader globalization backlash literature.
+   5
+    We exclude 2006 in the main analysis in order to allow the shock time to impact economic
+outcomes.
+
+
+
+
+                                                 3
+2      Trade, mass politics, and multiple political responses
+In this section, we develop a framework for understanding how trade shocks affect political out-
+comes, especially in emerging economies that face multiple types of exposure. Our central claim
+is that the electoral consequences of trade shocks depend both on the nature of the shock–whether
+it generates economic gains or losses–and on the multiple political responses such shocks can ac-
+tivate. Because these responses may operate simultaneously and in opposing directions, estimated
+effects should be interpreted as net outcomes rather than as evidence in favor of or in opposition to
+a single underlying mechanism.
+
+
+2.1     Economic consequences
+
+First, to understand whether and how economic interests influence politics in an era of globaliza-
+tion, it is important to develop a theory of trade that accounts for both winners and losers. This
+is especially important in emerging markets, which have often experienced a double-sided trade
+shock with China: increased imports of manufactured goods alongside commodity export booms.
+The standard approach in the literature is to theorize about the effects of imports (and sometimes
+exports) on workers and their communities (e.g. Autor, Dorn, and Hanson 2013). Communities
+with greater employment in exposed industries will thus be more negatively (positively) affected
+by import (export) exposure.
+      Empirical evidence from emerging markets demonstrates that trade liberalization had impor-
+tant labor market consequences. For Brazil in particular, the 1990-95 tariff cuts negatively im-
+pacted employment (Dix-Carneiro and Kovak 2017), wages (Dix-Carneiro and Kovak 2019; Ko-
+vak 2013), and formal and informal transitions between jobs (Dix-Carneiro, Soares, and Ulyssea
+2018). Workers in regions that faced larger tariff declines experienced worse formal labor mar-
+ket outcomes compared to workers in other regions. Additionally, liberalization was associated
+with disruptions and growing wage inequality in Latin America, particularly affecting informal
+and low-wage workers (Dix-Carneiro and Kovak 2023). Rising export demand from China after
+its entry into the WTO, however, led to increased income and wages, lower unemployment and
+lower informality (Cavalcante, Moreno-Louzada, and Menezes Filho 2023).
+      We posit that communities exposed to greater import competition will be negatively impacted,
+
+                                                 4
+while those exposed to greater exports will benefit. As evidence of our mechanism, we document
+that exports are linked to higher wages, while import exposure is linked to lower wages.
+
+
+2.2     Political channels
+
+How might such trade shocks shape political outcomes? Existing research suggests several path-
+ways. We focus on economic channels that predict varied political responses regionally depending
+on exposure to trade.6
+      The first mechanism emphasizes policy demands and partisan preferences. Negative shocks can
+increase support for redistribution or protection, leading voters to favor parties that advocate such
+policies.7 Classic accounts of embedded liberalism argue that governments sustained globalization
+by compensating those harmed through redistributive policies (Hibbs 1977; Ruggie 1982). Left
+parties often championed this compromise, though they also sometimes promoted more protec-
+tionist alternatives. More recent scholarship raises questions about the erosion of this arrangement
+in advanced economies (e.g. Ballard-Rosa et al. 2021; Hays 2017) and highlights its limited fea-
+sibility in emerging markets, where tariff revenue has declined and fiscal capacity is constrained
+(Bastiaens and Rudra 2019).8 In such contexts, the partisan consequences of trade may depend on
+whether redistribution is viewed as credible and salient (e.g. Holland 2018). Given that our empir-
+ical case is Brazil, we focus on demands for redistribution as a more salient policy than potential
+trade protection.9 Thus, those exposed to negative (positive) trade shocks are likely to demand
+more (less) compensation and support parties accordingly.
+   6
+     In other words, we do not consider the role of consumer preferences. Imports make goods
+cheaper, exports make goods more expensive, and this can have important political consequences,
+including in Latin America as shown by Baker (2005). However, we would not expect this effect
+to vary across regions.
+   7
+     Voter preferences in response to economic shocks may differ based on the source and nature
+of the shocks. For instance, see Chaudoin and Mangini (2024).
+   8
+   For analysis of how firm-level exposure shaped votes in a Costa Rican referendum on the U.S.
+FTA, see Méndez and Van Patten (2025).
+   9
+     One aspect of Brazil’s economic engagement with China that began to receive negative atten-
+tion was Chinese investment in resources and critical infrastructure, including from Bolsonaro in
+the 2018 campaign. See Moehlecke, N Fasolin, and Spektor (2025) and Urdinez (2023).
+
+                                                 5
+   The second mechanism is economic voting, which expects voters to reward or punish incum-
+bents based on economic performance. Canonical studies emphasize macroeconomic indicators
+such as inflation and unemployment, but more recent work also suggests that voters respond to
+the material conditions in their local labor markets.10 This logic applies directly to trade shocks:
+communities that gain economically from trade exposure are expected to increase support for in-
+cumbents, while communities that lose are expected to reduce support for the incumbent.11 Im-
+portantly, such responses are consistent with several distinct channels, not only individual self-
+interest. A shock can register directly, through a person’s own job or wages; locally, through a
+weaker regional labor market and eroded public services that reach even those not personally dis-
+placed; or sociotropically, through the hardship of friends, neighbors, and the broader community
+(Ansolabehere, Meredith, and Snowberg 2014; Bisbee 2025; Frieden 2022; Scheve and Slaughter
+2001).
+   Instead of voting for the incumbent or opposition, especially under compulsory voting, accountability-
+driven discontent has a third possible outlet. A citizen who wants to punish the incumbent but sees
+no acceptable alternative among the parties on offer cannot simply stay home at low cost: ille-
+gal abstention in Brazil carries a fine and, in most states, downstream administrative penalties.
+Given this constraint, discontent is instead expressed through a spoiled or blank ballot (Katz and
+Levin 2018). On this account, invalid voting is not demobilization but a substitute for switching
+one’s vote: the same economic-voting logic redirected into ballot spoilage rather than suppressed.
+We expect that increased import (export) exposure increases (decreases) invalid ballots (defined
+as spoiled or blank ballots). Note that this is conceptually distinct from illegal abstention, which
+more plausibly reflects a resource-based mechanism: a decline in local wages leaves individuals
+with less capacity or motivation to participate at all, in line with evidence that economic dislocation
+can reduce turnout through apathy rather than protest (Gonzalez-Rostani 2024). Though empirical
+work on Latin America often pools both into a single “non-voting” or “disengagement” measure
+(Cohen 2018; Lioy 2024), we treat invalid voting as an indicator of disapproval, and thus as an
+extension of the economic-voting channel. Empirically, we distinguish between these two types of
+  10
+       For work on the aggregate public opinion effects of trade, see Owen and Quinn (2016).
+  11
+       E.g. Jensen, Quinn, and Weymouth (2017).
+
+
+
+                                                  6
+absenteeism where possible.
+   We summarize the anticipated net effects of competing pressures on different outcomes of
+interest in Table 1. For both imports and exports, we note how an increase in exposure affects
+the political outcome of interest through the channel of economic voting and/or redistribution. We
+then note the aggregate effect. Critically, whether the different mechanisms create reinforcing
+or offsetting pressures depends on who is in government. When a left party is the incumbent,
+economic voting and demands for redistribution will tend to push electoral behavior in opposite
+directions. In contrast, when a right party governs, both mechanisms push electoral behavior in
+the same direction. Therefore, regression coefficients capture the net or overall effect of trade
+exposure.
+   Empirically, this leads to several predictions in the context of Brazil. Regarding PT vote share,
+when PT is incumbent, the economic voting and redistribution channels push against each other,
+for both import and export exposure. This means that the aggregate effects are ex ante ambiguous.
+However, when PT is not incumbent, imports (exports) should lead to greater (lower) PT share as
+both mechanisms push in the same direction. Trade exposure also has implications for the support
+of non-PT Left parties. This outcome is primarily influenced by demands for redistribution, and
+we should expect imports (exports) to increase (decrease) demand for redistribution, and thus the
+share of non-PT Left parties.12 Finally, trade exposure can also shape citizens’ decision to engage
+in absenteeism in the form of invalid ballots, which can be viewed as a form of disapproval voting.
+This operates primarily through economic voting; imports (exports) should increase (decrease)
+invalid ballots, as it increases (decreases) the likelihood of disapproval votes.
+   In summary, these mechanisms are not mutually exclusive: multiple political responses may
+be activated by the same trade shock. As a result, the interpretation of empirical findings must
+be context-dependent. Shocks to the local economy can generate political responses through in-
+cumbent punishment or reward, as well as through shifts in partisan support driven by distributive
+considerations. Our empirical design allows us to partially differentiate between economic vot-
+  12
+     Of course, negative trade shocks may increase demand for redistribution, but whether this
+translates into partisan support depends on the credibility of left parties as providers of compen-
+sation and the availability of alternative political responses. Additionally, as Rettl (2025) argues,
+voters may also seek non-governmental forms of redistribution and social assistance.
+
+
+                                                  7
+                           Table 1: Expected electoral effects of trade
+                               Imports                                Exports
+                         Econ voting Redist. Aggregate Econ voting Redist Aggregate
+ ∆ PT share
+   PT incumbent                −           +          +/−              +           −         +/−
+   PT non-incumbent            +           +           +               −           −          −
+
+ ∆ Non PT-Left share                       +           +                           −          −
+
+ ∆ Invalid share               +                       +               −                      −
+
+
+ing, redistribution-based, and non-voting responses. The direction and relative strength of these
+responses depend on institutional features such as the party system, the set of political alternatives
+available to voters, and how responsibility for economic outcomes is assigned. Though we fo-
+cus on economic channels, we discuss the role of other channels (e.g. cultural grievances) in the
+conclusion.
+
+
+
+3    Political context: Brazil
+Brazil is an interesting and important case in which to examine the mass political economy effects
+of trade shocks. Brazil is a multiparty presidential democracy composed of 26 states and over
+5,500 municipalities, with a federal system that grants considerable autonomy to subnational gov-
+ernments. Presidential elections are held every four years under a two-round runoff system: if no
+candidate secures more than 50% of the vote in the first round, the top two contenders advance to a
+second round. It is the largest democracy with compulsory voting for those aged 18-70 (Katz and
+Levin 2018).
+    During the period examined in this study, PT (Partido dos Trabalhadores) or the Workers’ Party
+was either the incumbent or the primary opposition party. PT’s electoral breakthrough occurred
+in 2002 when Luiz Inácio Lula da Silva – then widely viewed as a left-populist challenger – was
+elected president. Notably, on trade, the 2002 PT manifesto emphasized export expansion, diver-
+sification of trading partners, and greater integration with emerging economies, including China,
+as well as measures to protect domestic production from import competition. Overall, Lula largely
+continued the macroeconomic policies of his predecessor, while implementing a progressive set of
+
+                                                  8
+social policies. The PT advanced a redistributive agenda focused on poverty alleviation, through
+flagship programs such as Bolsa Famı́lia, which lifted millions of Brazilians out of poverty and ex-
+panded social protections across the country (Hunter and Power 2007; Samuels and Zucco 2018).
+As a result, PT is the organizing feature of Brazilian politics: citizens hold strong pro- or anti-PT
+views, and no other party elicits comparably strong opinions (Samuels and Zucco 2018).
+   Importantly, Brazil experienced a series of major political and economic shocks during the
+period covered by our study. In response to the 2008 global financial crisis, the PT government
+shifted its economic policy stance, expanding public lending and increasing the state’s role in the
+economy. In late 2014, Brazil entered its worst recession in recent memory,13 driven by multiple
+factors, including the end of the commodity boom. Dilma Rousseff, elected in 2010 as Lula’s
+successor and re-elected in a tightly contested race in 2014, was impeached in 2016 amid mounting
+political pressure and allegations of fiscal misconduct. The period was also marked by numerous
+corruption scandals involving the PT. Following Rousseff’s removal, her vice president Michel
+Temer (MDB) assumed the presidency. Temer was deeply unpopular and barred from running in
+2018 due to campaign finance violations. Lula, the PT’s standard bearer and a figure more popular
+than the party he leads, was also ruled ineligible to run due to a 2017 corruption conviction. As a
+result, a relatively unknown running mate, Fernando Haddad, former mayor of São Paulo, led the
+PT ticket in 2018 and lost to Jair Bolsonaro, whose platform of social conservatism and nationalism
+marked a rupture in the political system (Samuels, Mello, and Zucco 2024).14 In 2022, Lula, his
+conviction later annulled, narrowly defeated Bolsonaro in the 2022 runoff, returning the PT to
+power.15
+   Given this sequence of shocks, we examine each election separately rather than pooling across
+the period, benchmarking results against 2002. This approach also lets the identity of the incum-
+bent (PT or otherwise) inform our expectations for how trade shocks should shape support for the
+party.
+  13
+   https://www.elibrary.imf.org/display/book/9781484339749/ch002.
+xml.
+  14
+    See Hunter and Power (2019) for discussion of how this crisis for Brazil and the PT, combined
+with the collapse of the center and center-right, created the opening Bolsonaro exploited.
+  15
+       See summary in Appendix Table A.1.
+
+
+                                                 9
+4         Empirical approach and data
+
+4.1       Trade Exposure Measures
+
+We construct measures of exposure to imports and exports similar to those used elsewhere in the
+literature on the “China shock” (e.g. Autor, Dorn, and Hanson 2013) and, in particular, largely
+follow the data construction of Costa, Garred, and Pessoa (2016). We consider exposure at the
+microregion level; there are 558 microregions in Brazil, akin to commuting zones in the U.S.
+context. We take 2000 as a baseline year, before global trade activity with China significantly
+increased.16 We measure the industry composition of workers in each microregion in that base year.
+The base year industrial composition dictates which microregions will be more or less impacted
+by the rise of China in the global economy, based on the industries that saw heightened exports to
+and imports from China over the subsequent period.
+            Emp
+      Let Empjrr denote the share of workers in microregion r who work in industry j in the year
+2000. Our data source for these counts is Brazilian Census microdata from 2000.17 We then
+calculate nationwide changes in trade flows by industry for each year relative to the base year.
+We draw on the BACI Database, developed by the Centre d’Etudes Prospectives et d’Informations
+Internationales (CEPII). The BACI database provides annual-level data on bilateral trade flows for
+200 countries at the product level, measured as the dollar value of imported and exported goods.
+Let ∆Mjt (∆Xjt ) denote the dollar value of imports (exports) from China in industry j in year t
+minus the dollar value of imports from China in that industry in 2000.
+      The product of local base-year employment shares and changes in dollar value of imports
+and exports, summed across all industries within a microregion, forms measures that capture the
+expected local labor market impact of trade exposure. The measures isolate changes in labor
+market activity driven by baseline industry composition and exogenous global forces – in this
+case, China’s rise in the world economy – while excluding endogenous locally driven year-to-year
+    16
+         See Appendix Figure A.1.
+    17
+     The Census includes formal and informal sector workers. We restrict to individuals aged 18-
+60, given our interest in individuals in the labor market. We collapse the counts of individuals
+to the microregion-by-industry level, using a version of industry codes in the Census from Costa,
+Garred, and Pessoa (2016) – 82 total traded industries.
+
+
+                                                10
+                           Figure 1: Exposure to the China shock (2014)
+
+
+
+
+              (a) Import exposure                                      (b) Export exposure
+
+              Note: Reporting levels of trade exposure by microregion, split into quartiles.
+
+
+variation in actual local labor market conditions.
+   That is all captured in the following equations:
+
+                                               X Empjr ∆Mjt
+                                    ∆IErt =                                                      (1)
+                                                     Empr N ormj
+
+
+                                                X Empjr ∆Xjt
+                                    ∆XErt =                                                      (2)
+                                                     Empr N ormj
+
+   N ormj is the nationwide number of workers in industry j, meant to normalize the magnitude of
+the change in import or export dollar value by the prominence of the industry; it is also constructed
+from the Census data.
+   Figure 1 presents maps showing the distribution of import and export exposure across microre-
+gions for 2014 (relative to 2000). It shows more regional variation in export exposure than in
+import exposure, which is most concentrated in the south.
+
+
+
+
+                                                   11
+4.1.1     Outcome Measures and Control Variables
+
+We rely on a number of outcome variables in our microregion-year-level analysis to capture the
+different mechanisms outlined in Table 1. Our main outcome measures relate to presidential elec-
+tions and are drawn from the Tribunal Superior Eleitoral (TSE).18 First, we examine the change
+in the share of votes received by PT (out of valid votes) in the final round of each of the 2010,
+2014, 2018, and 2022 presidential elections, measured at the microregion level relative to the 2002
+election. We denote the change in year t relative to 2002 in microregion i as ∆P Tit .
+      Next, in the first round, we examine changes in support for PT, as well as for the non-PT Left.
+This allows us to better distinguish anti-incumbent voting from redistributive demands. A voter
+who does not approve of the incumbent but wants redistribution can move their vote from PT to
+non-PT Left parties in round 1. Both are measured as share of valid votes.19 We also construct the
+share of invalid votes, combining spoiled and blank ballots, divided by total votes, as an additional
+measure of anti-incumbent voting.
+      We also use the Census data to construct a series of controls. Specifically, from the 2000 Census
+microdata (restricted to ages 18-60), we calculate for each microregion: the share of workers in
+agriculture, the share of workers in manufacturing, the share of workers in non-traded industries,
+shares of workers by race/ethnic group, the average income, the share of workers with at least 11
+years of education, and the total workforce count. Finally, we draw on the Census data also as
+outcomes to estimate labor market impacts of our import and export exposure measures. See Table
+A.2 for summary statistics.
+
+
+4.2     Empirical Approach
+
+In OLS form, our main estimating equation would be:
+
+
+                           ∆Yrt = α + β1 IErt + β2 XErt + Xr + δs + εrt                            (3)
+  18
+   Election years 2002-2014 are accessed through the R package electionsBR. 2018 and 2022 are
+downloaded directly from the TSE.
+  19
+     We code parties as left based on the Brazilian Legislature Surveys (Zucco 2023). Parties
+included are: PSOL, PCdoB, PSTU, PT, REDE, PSB, and PDT.
+
+
+                                                   12
+∆Yrt represents the change in share of Y for microregion r in year t relative to 2002; for instance,
+∆P Tit is the change in PT vote share. The import and export exposure measures are as described
+in the previous section, and are based on differences relative to the year 2002. Xi is the vector of
+microregion-level controls drawn from 2000 Census data. δs are state fixed effects.
+   We adopt a two-stage least-squares (2SLS) approach to support a causal interpretation of our
+estimates. As others do (including, e.g. Costa, Garred, and Pessoa 2016), we construct parallel
+import and export exposure measures that are identical to those outlined in equations 1 and 2 but
+that replace the “change in imports/exports” term (∆Mit , ∆Xit ) with the changes in imports or
+exports between the rest of world (excluding Brazil) and China. We then use those as instruments
+for our main measures. In addition to further purging endogeneity from our specification, the
+2SLS specification also helps address measurement error that may exist in the trade data. Thus,
+our main approach matches what is described in equation 3, but estimated as 2SLS using rest-
+of-world parallels to each import and export measure as instruments for those appearing in the
+equation. We cluster standard errors at the mesoregion level, which is a grouping of microregions.
+   We present first-stage estimates from our two-stage least squares specifications in Appendix
+Table B.1 for the 2022 (vs. 2000) version of the shock measures and instruments. The strength of
+the first stage varies year to year. We thus report F-statistics in results tables throughout our paper.
+The F-statistic is consistently roughly 10 or much higher.
+   We estimate this model separately for each presidential election from 2010 to 2022.20 Doing so
+allows us to consider how the political environment, especially the identity of the incumbent party,
+shapes responses to trade exposure. In elections in 2010, 2014, and 2018, PT can be considered
+the incumbent party. Thus, our coefficient estimates across years reflect the competing pressures
+of economic voting (reward/punishment of incumbent) and demand for redistribution. The 2022
+election is different because the incumbent party is the far right, and PT is the opposition.21 In this
+election, the economic voting channel operates in a different direction than in the other elections.
+  20
+     We note again that we exclude the 2006 election to allow time for economic effects to materi-
+alize.
+  21
+       We note that Lula, a two-term president and founder of PT, is the PT candidate in 2022.
+
+
+
+
+                                                  13
+5         Results
+
+5.1       Labor Market Effects
+
+Our argument rests on trade exposure affecting PT support through its real impact on local labor
+markets. Before turning to election outcomes, we test this link directly, estimating the same model
+outlined above but with Census microdata from 2000 and 2010 and changes in microregion-level
+earnings as the outcome.
+      Table 2 presents our results. Column 1 only includes state fixed effects; Column 2 adds Census-
+derived controls noted in the prior section. Across both specifications, as expected, we find that
+export exposure has positive impacts on earnings and import exposure has a negative effect on
+earnings. To provide a more direct interpretation of the magnitude of the coefficients: a one stan-
+dard deviation increase in import exposure reduces earnings by between 2.3 and 4.8 percent, while
+a one standard deviation increase in export exposure increases earnings by between 2.6 and 2.9
+percent.22
+
+                  Table 2: Impacts of China Trade Exposure on Labor Market Outcomes
+
+                                                   (1)             (2)
+                                               Log Income      Log Income
+                              VARIABLES       2010 vs 2000    2010 vs 2000
+
+                              Imp. Exp.        -0.103***       -0.050***
+                                                 (0.018)         (0.016)
+                              Ex. Exp.         0.025***        0.023***
+                                                 (0.005)         (0.006)
+
+                              Observations         558            558
+                              Controls             No             Yes
+                              KP rk Wald F        11.82          9.781
+      Notes: All specifications are 2SLS. Outcome in each column is difference between 2010 and
+      2000 earnings, averaged to microregion-level. Census controls are defined in data section.
+      Standard errors (in parentheses) are clustered at the mesoregion level. Appendix Table C.1
+      reports all coefficients, including controls. *** p<0.01, ** p<0.05, * p<0.1
+
+
+    22
+         One standard deviation is 0.47 for import exposure and 1.15 for export exposure.
+
+
+
+
+                                                   14
+5.2     Aggregate election results
+
+We now turn to our key results, drawn from microregion-by-election-year election outcomes.
+      Table 3 reports the change in PT vote share from the second round of the presidential elections.
+We find that export exposure consistently reduces PT vote share across years. Relatively constant
+effects of export exposure suggest that results reflect net effects in which redistributive responses
+outweigh economic voting. Although trade shocks plausibly generate incumbent punishment or
+reward, the observed patterns are more consistent with voters on balance responding through de-
+mands for (less) redistribution than through retrospective evaluation of incumbents. A one standard
+deviation increase in export exposure decreases PT share by between 2.0 and 3.4 percentage points
+across the years.23
+      The effect of imports is more nuanced.24 For years when PT is incumbent, the coefficient on
+imports is not statistically different from zero, suggesting that countervailing pressures of redis-
+tributive and anti-incumbent voting are at play. In 2022, when PT is in opposition, the coefficient
+is positive and statistically significant, and the magnitude is double that of other years. The mag-
+nitude of the effect in that year is such that a one standard deviation increase in import exposure
+increases PT share by roughly 1.7 percentage points. We advance these connections to theory as
+“suggestive,” because there are of course other potential differences between 2022 and earlier years
+that could impact voters’ preferences and how they materialize in election results.
+      Turning to first-round election results provides a way to examine competing anti-incumbent
+preferences and demand for redistribution that does not rely on comparing 2022 to other years. For
+example, in 2014, a voter who is anti-incumbent but wants redistribution can express that in Round
+1 by moving their vote from PT to non-PT Left parties. We thus examine (1) vote share for PT and
+(2) vote share for left parties excluding PT.
+      Results are reported in Table 4. Panel A reports results for the PT candidate; Panel B reports
+  23
+     In a paper focused on a different time period and different shock to trade exposure, Rettl (2025)
+finds that a decline in exports is associated with a decrease in support for PT.
+  24
+    In Appendix Tables B.2 and B.3 we report results from models that include either import
+exposure or export exposure, but not both. Results are generally similar, though evidence on
+impacts of export exposure becomes less precise in later years.
+
+
+
+                                                  15
+           Table 3: Impacts of China Trade Exposure on Round 2 Pres. PT Vote Share
+
+                               (1)              (2)              (3)             (4)
+                             PT Share         PT Share         PT Share        PT Share
+          VARIABLES        2010 vs 2002     2014 vs 2002     2018 vs 2002    2022 vs 2002
+
+          Imp. Exp.             1.638           -1.016           1.387           3.109*
+                               (1.584)         (1.609)          (2.067)          (1.741)
+          Ex. Exp.           -1.584***       -2.145***          -1.479*         -1.265**
+                               (0.598)         (0.806)          (0.826)          (0.573)
+
+          Observations          557              557              557                557
+          KP rk Wald F         10.02            9.366            15.85              23.14
+   Notes: All specifications are 2SLS. Standard errors (in parentheses) are clustered at the mesore-
+   gion level. Table reporting all controls are reported in Appendix Table C.2. *** p<0.01, **
+   p<0.05, * p<0.1
+
+combined vote shares for left parties excluding PT. In Panel A, across all years, we find that support
+for PT declines with higher export exposure – which we had previously shown is associated with
+higher incomes. Per Panel B, we do not find that these votes move to other left parties, implying
+they move to center and right parties instead. As with Round 2 results, the fact that this is true
+across all years and does not vary with PT incumbency suggests that, for export exposure, the
+demand for redistribution channel dominates.
+   We again see a different pattern with respect to import exposure. In Panel A, the coefficient on
+import exposure is negative in 2010, and negative and statistically significant in 2014 and 2018,
+indicating reduced PT share as a function of import exposure when PT is incumbent. In 2022,
+when Bolsonaro and not PT was the incumbent, the coefficient is instead positive, though not
+statistically significant. In Panel B, increases in import exposure are associated with shifts towards
+other left parties. In 2014 and 2018, the positive shifts toward other left parties are consistent with
+a combination of anti-incumbent (PT) preferences and demand for redistribution; this manifests
+here as reduced support for PT but ongoing support for the left. In 2022, demand for redistribution
+and anti-incumbent preferences should combine to produce generally positive coefficients for both
+PT and other left parties. While not significant, that is the pattern we observe.
+   Finally, we estimate effects of trade exposure on rates of invalid voting – spoiled or blank
+ballots – which we argue provides evidence of the economic voting channel. Results are reported
+
+
+                                                  16
+  Table 4: Impacts of China Trade Exposure on Support for Presidential Candidates in Round 1
+                              Panel A: PT Presidential Candidate
+                              (1)            (2)             (3)               (4)
+                            PT Share      PT Share        PT Share           PT Share
+         VARIABLES        2010 vs 2002 2014 vs 2002 2018 vs 2002           2022 vs 2002
+
+         Imp. Exp.             -1.327        -3.114**         -2.641*          1.069
+                              (1.686)         (1.447)         (1.592)         (1.465)
+         Ex. Exp.           -1.557***       -2.092***        -1.369**        -1.106**
+                              (0.590)         (0.729)         (0.653)         (0.473)
+
+         Observations          557             557             557              557
+         KP rk Wald F         10.02           9.366           15.85            23.14
+
+                               Panel B: Left Parties, Excluding PT
+                               (1)             (2)             (3)              (4)
+                          Left excl. PT Left excl. PT Left excl. PT        Left excl. PT
+         VARIABLES        2010 vs 2002 2014 vs 2002 2018 vs 2002           2022 vs 2002
+
+         Imp. Exp.            0.671         3.233***         3.424**           0.830
+                             (0.989)         (0.953)         (1.397)          (0.793)
+         Ex. Exp.             -0.102          0.219           0.028            0.174
+                             (0.483)         (0.392)         (0.366)          (0.259)
+
+         Observations          557             557             557              557
+         KP rk Wald F         10.02           9.366           15.85            23.14
+   Notes: All specifications are 2SLS. Standard errors (in parentheses) are clustered at the mesore-
+   gion level. Table reporting all controls are reported in Appendix Tables C.3 and C.4 . ***
+   p<0.01, ** p<0.05, * p<0.1
+
+in Table 5. Import exposure, but not export exposure, consistently increases rates of casting an
+invalid vote, regardless of who the incumbent party is.25
+   Taken together, these results underscore the presence of multiple political mechanisms linking
+trade exposure to voting behavior. In second-round vote share, at least with regard to import
+exposure, we find that when the PT governs, economic voting and redistributive considerations
+offset one another, muting aggregate effects. When the PT competes as the opposition, these
+mechanisms reinforce one another. And on an outcome that should primarily operate through the
+  25
+    In Appendix Table B.4, we also report rates of abstention, and find that in 2022 in particular,
+abstention increases with import exposure.
+
+
+                                                17
+               Table 5: Impacts of China Trade Exposure on Invalid Votes in Round 2
+
+                                 (1)              (2)             (3)              (4)
+                               Invalid          Invalid         Invalid          Invalid
+            VARIABLES       2010 vs 2002     2014 vs 2002    2018 vs 2002     2022 vs 2002
+
+            Imp. Exp.          0.580**          0.627**         1.446***        0.816***
+                               (0.266)          (0.316)          (0.547)         (0.194)
+            Ex. Exp.            0.133            0.168            0.061           0.067
+                               (0.082)          (0.107)          (0.154)         (0.047)
+
+            Observations          557             557             557              557
+            KP rk Wald F         10.02           9.366           15.85            23.14
+      Notes: All specifications are 2SLS. Standard errors (in parentheses) are clustered at the mesore-
+      gion level. Table reporting all controls are reported in Appendix Table C.5. *** p<0.01, **
+      p<0.05, * p<0.1
+
+economic voting channel – casting invalid votes – we find that it responds to import exposure as
+expected.
+
+
+5.3     Individual level results
+
+In this section, we present micro-level results to support the findings. We draw on the Brazilian
+Electoral Study (ESEB), available each presidential election year (Centro de Estudos de Opinião
+Pública (CESOP)/UNICAMP 2023). We draw on available data to control for age, gender, whether
+the respondent is white, has a high school degree or more, identifies as evangelical, and works in
+the secondary sector.26 We estimate an instrumental-variable regression via 2SLS and include state
+and election fixed effects, clustering by microregion. Unlike our aggregate analysis, which we
+estimate separately for each election, the individual-level survey samples are too small to support
+year-by-year estimation, so we instead pool election years from 2010–2022 to match the years of
+the aggregate analysis.
+      We consider four outcomes that mirror the main analysis: voted for PT in the second round
+(conditional on a valid ballot), voted PT in the first round, voted for the non-PT Left in the first
+round, and casting an invalid vote in the second round. We present our key coefficient estimates
+  26
+    A more fine-grained breakdown is not consistently available. The secondary sector includes
+industry, construction and mining. Results are robust to the exclusion of this indicator.
+
+                                                   18
+                                  Figure 2: Coefficient plots: ESEB
+
+
+
+
+           Imports
+
+
+
+                                                                                      Outcome
+
+                                                                              Voted PT, 2nd rd
+                                                                              Voted PT, 1st rd
+                                                                              Voted left non-PT, 1st rd
+                                                                              Abstained or spoiled, 2nd rd
+
+
+
+
+           Exports
+
+
+
+
+                     -.05           0                          .05       .1
+                                        Coefficient estimate
+
+
+
+
+Note: Controls for age, gender, secondary or higher, evangelical, white, employment in secondary
+sector; state and election fixed effects included. Standard errors clustered by microregion. See
+Appendix Table C.6 for full results.
+
+graphically in Figure 2. Results, especially in response to import exposure, are largely consistent
+with aggregate findings. Import exposure leads to a shift towards voting for PT in both rounds, the
+non-PT Left in the first round, and an increase in casting an invalid vote or abstaining.27 Effects on
+export exposure are less precisely estimated.
+   One benefit of the individual-level data is that we can consider heterogeneity in how different
+groups respond to trade exposure. If our theory is correct, we should expect those most negatively
+impacted to be more likely to respond. In Appendix Tables B.5 and B.6, we revisit labor market
+effects and find that nonwhite and male workers’ earnings are most negatively impacted by import
+exposure shocks. We similarly split the individual-level data along these dimensions in Appendix
+Figures B.3 and B.4. Those same groups generally show larger responses on our individual-level
+political outcomes. By showing that the people more impacted on the labor outcomes are more re-
+sponsive on the political outcomes, these results help address potential concerns around ecological
+  27
+       Unlike in the aggregate analysis, we are not able to separate both forms of absenteeism.
+
+
+                                                        19
+inference and aggregation bias in our main results.
+
+
+
+6         Conclusions
+This paper revisits the political consequences of the China shock in an emerging economy. We ex-
+amine Brazil, a context in which trade integration with China has involved both import competition
+and export expansion, and where the electoral implications of these joint shocks remain compara-
+tively understudied. Our results show that allowing for multiple political channels rather than one
+is essential for interpreting reduced-form coefficients that would otherwise aggregate offsetting
+effects.
+     The interaction between economic voting and redistributive politics is central to interpreting
+these results, especially with respect to import exposure. When PT governs, these two mecha-
+nisms push electoral behavior in opposing directions, muting aggregate effects; when a right-wing
+incumbent governs, as in 2022, the mechanisms reinforce one another and PT gains support. Our
+results drawing on other outcomes (e.g., first-round election results) support these patterns.
+     Interestingly, the pattern of results we observe for export exposure is distinct from import ex-
+posure in a way that was not anticipated by our theoretical framework. Where import exposure
+appears to operate through both theoretical channels, our results are most consistent with export
+exposure operating primarily through the demand for redistribution channel and not economic vot-
+ing. One possible explanation is asymmetry in economic voting, with political responses primarily
+to negative shocks. But, as already noted, there is existing evidence of rewarding incumbents for
+positive economic outcomes in our setting (Campello and Zucco Jr 2016).28 A different possibil-
+ity relates to some of our supplementary analysis, where we found that the (positive) economic
+effects of export exposure are more uniform across groups, while the (negative) effects of import
+exposure impact some groups more than others.29 Existing work from the U.S. setting documents
+how political effects of trade exposure may hinge on which groups are most impacted (Baccini
+    28
+     There are of course a number of papers on whether economic voting has symmetric effects or
+not; for instance, Park (2019) revisits the issue and finds weak support for asymmetry.
+    29
+         Appendix Tables B.5 and B.6.
+
+
+
+                                                 20
+and Weymouth 2021) or the relative rather than absolute impacts across groups (Jones, Owen, and
+Sung 2026). That could provide one explanation for the stronger economic voting response to
+import exposure than export exposure in our setting. A further possibility, consistent with work on
+grievance and status threat, is that import competition – unlike export gains – is experienced as a
+loss to be defended against rather than a gain to be rewarded, independent of its precise distribu-
+tional footprint. We leave further exploration of these possibilities for future research.
+   Taken together, our findings caution against interpreting trade exposure coefficients as evi-
+dence of a single political mechanism. Instead, they highlight the importance of viewing electoral
+responses to globalization as the aggregation of multiple, context-dependent political reactions
+operating at the same time. And more broadly, our results highlight that extending China shock
+frameworks to other emerging economies requires attention to institutional context: party systems,
+redistributive capacity, and the structure of trade exposure itself.
+
+
+
+
+                                                  21
+References
+
+Aksoy, Cevat Giray, Sergei Guriev, and Daniel Treisman (2024). Globalization, Government Pop-
+   ularity, and the Great Skill Divide. The Journal of Politics 86(4):1177–1191.
+Ansolabehere, Stephen, Marc Meredith, and Erik Snowberg (2014). Mecro-Economic Voting: Lo-
+   cal Information and Micro-Perceptions of the Macro-Economy. Economics & Politics 26(3):380–
+   410. eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1111/ecpo.
+   12040.
+Autor, David, David Dorn, and Gordon Hanson (2013). The China Syndrome: Local Labor Market
+   Effects of Import Competition in the United States. The American Economic Review 103(6):2121–
+   2168.
+Autor, David, David Dorn, Gordon Hanson, and Kaveh Majlesi (2020). Importing Political Polar-
+   ization? The Electoral Consequences of Rising Trade Exposure. American Economic Review
+   110(10):3139–3183.
+Baccini, Leonardo and Stephen Weymouth (2021). Gone for good: Deindustrialization, white voter
+   backlash, and US presidential voting. American Political Science Review 115(2):550–567.
+Baker, Andrew (2005). Who Wants to Globalize? Consumer Tastes and Labor Markets in a Theory
+   of Trade Policy Beliefs. American Journal of Political Science 49(4):924–938.
+Ballard-Rosa, Cameron, Amalie Jensen, and Kenneth Scheve (2022). Economic decline, social
+   identity, and authoritarian values in the United States. International Studies Quarterly 66(1):sqab027.
+Ballard-Rosa, Cameron, Mashail A Malik, Stephanie J Rickard, and Kenneth Scheve (2021). The
+   economic origins of authoritarian values: Evidence from local trade shocks in the United King-
+   dom. Comparative political studies 54(13):2321–2353.
+Bastiaens, Ida and Nita Rudra (2019). Democracies in Peril: Taxation and Redistribution in Glob-
+   alizing Economies. New York, NY: Cambridge University Press.
+Beaulieu, Eugene, Ravindra A. Yatawara, and Wei Guo Wang (2005). Who Supports Free Trade in
+   Latin America? World Economy 7(28):941–58.
+
+
+
+                                                22
+Bisbee, James (2025). What You See Out Your Front Door: How Political Beliefs Respond to Local
+   Trade Shocks. Manuscript.
+Campello, Daniela and Francisco Urdinez (2021). Voter and Legislator Responses to Localized
+   Trade Shocks from China in Brazil. Comparative Political Studies 54(7):1131–1162.
+Campello, Daniela and Cesar Zucco Jr (2016). Presidential success and the world economy. The
+   Journal of Politics 78(2):589–602.
+Cavalcante, Vitor, Luca Moreno-Louzada, and Naercio Menezes Filho (2023). Globalization and
+   Political Preferences in the Developing World. CENTRO.
+Centro de Estudos de Opinião Pública (CESOP)/UNICAMP (2023). Estudo Eleitoral Brasileiro –
+   ESEB 2022. Banco de Dados do CESOP/Unicamp. Available at https://unicamp.br.
+   Accessed: 2026-09-17. Campinas, Brazil.
+Chagas, Lucas Squarize and Vinicios P Sant’Anna (2024). International Trade and wage inequality:
+   evidence from Brazil. International Economics 180:100536.
+Chaudoin, Stephen and Michael-David Mangini (2024). Robots, Foreigners, and Foreign Robots:
+   Policy Responses to Automation and Trade. Journal of Politics.
+Che Yi Lu, Yi, Justin R. Pierce, Peter Schott, and Zhigang Tao (2022). Did trade liberalization with
+   China influence US elections? Journal of International Economics 139:103652.
+Cohen, Mollie J (2018). Protesting via the null ballot: An assessment of the decision to cast an
+   invalid vote in Latin America. Political Behavior 40(2):395–414.
+Colantone, Italo and Piero Stanig (2018a). Global competition and Brexit. American political sci-
+   ence review 112(2):201–218.
+— (2018b). The trade origins of economic nationalism: Import competition and voting behavior
+   in Western Europe. American Journal of Political Science 62(4):936–953.
+Costa, Francisco, Jason Garred, and Joao Paulo Pessoa (2016). Winners and losers from a commodities-
+   for-manufactures trade boom. Journal of International Economics 102:50–69.
+Dix-Carneiro, Rafael and Brian K. Kovak (2017). Trade Liberalization and Regional Dynamics.
+   American Economic Review 107(10):2908–46.
+
+
+                                                23
+Dix-Carneiro, Rafael and Brian K. Kovak (2019). Margins of labor market adjustment to trade.
+   Journal of International Economics 117:125–142.
+Dix-Carneiro, Rafael and Brian K Kovak (2023). Globalization and inequality in Latin America.
+   Tech. rep. National Bureau of Economic Research.
+Dix-Carneiro, Rafael, Rodrigo R. Soares, and Gabriel Ulyssea (2018). Economic Shocks and
+   Crime: Evidence from the Brazilian Trade Liberalization. American Economic Journal: Ap-
+   plied Economics 10(4):158–95.
+Dolan, Lindsay R. and Helen V. Milner (2023). Low-Skilled Liberalizers: Support for Free Trade
+   in Africa. International Organization 77(4):848–870.
+Feigenbaum, James and Andrew Hall (2015). How Legislators Respond to Localized Economic
+   Shocks: Evidence from Chinese Import Competition. Journal of Politics 77(4):1012–1030.
+Frieden, Jeffry (Sept. 2022). Attitudes, Interests, and the Politics of Trade: A Review Article.
+   Political Science Quarterly 137(3):569–588. eprint: https : / / academic . oup . com /
+   psq/article-pdf/137/3/569/48807880/psquar\_137\_3\_569.pdf.
+Gonzalez-Rostani, Valentina (2024). Engaged robots, disengaged workers: Automation and polit-
+   ical alienation. Economics & Politics 36(3):1703–1730.
+Hays, Jude C (2017). Embedded Liberalism and the Populist Backlash. Oxford Research Encyclo-
+   pedia.
+Healy, Andrew and Neil Malhotra (2013). Retrospective voting reconsidered. Annual Review of
+   Political Science 16:285–287.
+Helms, Benjamin (2024). Global economic integration and nativist politics in emerging economies.
+   American Journal of Political Science 68(2):595–612.
+Hibbs, Douglas A. (1977). Political Parties and Macroeconomic Policy. American Political Science
+   Review 71(4):1467–1487.
+Holland, Alisha C. (2018). Diminished Expectations: Redistributive Preferences in Truncated Wel-
+   fare States. World Politics 70(4):555–594.
+
+
+
+
+                                                24
+Hunter, Wendy and Timothy J. Power (2007). Rewarding Lula: Executive Power, Social Policy,
+   and the Brazilian Elections of 2006. Latin American Politics and Society 49(1):1–30.
+— (2019). Bolsonaro and Brazil’s Illiberal Backlash. Journal of Democracy 30(1):68–82.
+Iacoella, Francesco, Patricia Justino, and Bruno Martorano (2020). Roots of dissent: Trade liber-
+   alization and the rise of populism in Brazil. 2020/118. WIDER Working Paper.
+Jamal, Amaney and Helen V. Milner (2005). Economic Self-Interest, Information, and Trade Pol-
+   icy Preferences: Evidence from an Experiment in Tunisia. Review of International Political
+   Economy 4(26):545–72.
+Jensen, J Bradford, Dennis P Quinn, and Stephen Weymouth (2017). Winners and losers in inter-
+   national trade: The effects on US presidential voting. International Organization 71(3):423–
+   457.
+Jones, Daniel B, Erica Owen, and Rena Sung (2026). Relative exposure to negative economic
+   shocks, racial animus, and voting. International Organization 80(3):497–528.
+Katz, Gabriel and Ines Levin (2018). A general model of abstention under compulsory voting.
+   Political Science Research and Methods 6(3):489–508.
+Kovak, Brian K. (2013). Regional Effects of Trade Reform: What Is the Correct Measure of Lib-
+   eralization? American Economic Review 103(5):1960–76.
+Lioy, Alberto (2024). “I would prefer not to”: Establishing the missing link between invalid voting
+   and public protest in Latin America. Latin American Politics and Society 66(1):106–132.
+Margalit, Yotam (2011). Costly Jobs: Trade-related Layoffs, Government Compensation, and Vot-
+   ing in U.S. Elections. American Political Science Review 105(1):166–188.
+Mayda, Anna-Maria and Dani Rodrik (2005). Why are some people (and countries) more protec-
+   tionist than others? European Economic Review 49(6):1393–1430.
+Méndez, Esteban and Diana Van Patten (2025). Voting on a trade agreement: Firm networks and
+   attitudes towards openness. Review of Economic Studies 92(6):4059–4083.
+
+
+
+
+                                                25
+Menéndez González, Irene, Erica Owen, and Stefanie Walter (2023). Low-skill products by high-
+   skill workers: The distributive effects of trade in emerging and developing countries. Compar-
+   ative Political Studies 56(11):1724–1759.
+Moehlecke, Carolina, Guilherme N Fasolin, and Matias Spektor (2025). Beyond Jobs: When Cit-
+   izens Reject Socially Irresponsible Foreign Direct Investment. International Studies Quarterly
+   69(3):sqaf046.
+Owen, Erica and Dennis Quinn (2016). Does Economic Globalization Influence the U.S. Policy
+   Mood?: A Study of U.S. Public Sentiment, 1954-2011. British Journal of Political Science
+   46(1):95–125.
+Park, Ju Yeon (2019). Punishing without rewards? A comprehensive examination of the asymmetry
+   in economic voting. Electoral Studies 57:1–18.
+Rettl, Paula (2025). Turning Away from the State: Trade Shocks and Informal Insurance in Brazil.
+   Tech. rep. Harvard Business School Working Paper 25-038.
+Rudra, Nita (2008). Globalization and the Race to the Bottom in Developing Countries. New York,
+   NY: Cambridge University Press.
+Ruggie, John (1982). International Regimes, Transactions, and Change: Embedded Liberalism in
+   the Postwar Economic Order. International Organization 36(2):379–415.
+Samuels, David J, Fernando Mello, and Cesar Zucco (2024). Polarization and perceptions of status
+   gain and loss: The case of Brazil. Available at SSRN 4727821.
+Samuels, David J and Cesar Zucco (2018). Partisans, antipartisans, and nonpartisans: voting be-
+   havior in Brazil. Cambridge University Press.
+Scheve, Kenneth and Theo Serlin (2024). Trains, trade, and transformation: A spatial Rogowski
+   theory of America’s 19th-century protectionism. American Journal of Political Science.
+Scheve, Kenneth F. and Matthew J. Slaughter (2001). What Determines Individual Trade-Policy
+   Preferences? Journal of International Economics 54(2):267–292.
+Serlin, Theo (2022). The Export Boom and the Backlash: Reactions to Positive Economic Change
+   in First World War America. Working paper. Working paper, Stanford University.
+
+
+                                               26
+Urdinez, Francisco (2023). “They own our country!” voter reaction to anti-China rhetoric: The
+   case of the presidential election in Brazil in 2018. Electoral Studies 86:102708.
+Walter, Stefanie (2021). The Backlash against Globalization. Annual Review of Political Science
+   33.
+Zucco, Cesar (2023). Brazilian Legislative Surveys (Waves 1-9, 1990-2021). Version V1.
+
+
+
+
+                                               27
+             The China Shock in Emerging Economies
+                           Appendix
+                                       List of Figures
+
+A.1   Brazil’s Trade with China, 2000–2024 . . . . . . . . . . . . . . . . . . . . . . . .       2
+B.1   Coefficient estimates, PT incumbent 2010-2018 . . . . . . . . . . . . . . . . . . .        4
+B.2   Coefficient estimates, in 2022 . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   4
+B.3   Coefficient estimates across men v. women . . . . . . . . . . . . . . . . . . . . .        8
+B.4   Coefficient estimates across white and non-white . . . . . . . . . . . . . . . . . .       9
+
+                                       List of Tables
+
+A.1   Brazil presidential election results (second round), 2002–2022 . . . . . . . . . . .        1
+A.2   Aggregate-Level Data Summary Statistics . . . . . . . . . . . . . . . . . . . . . .         1
+B.1   First-Stage Regression Coefficients (2022) . . . . . . . . . . . . . . . . . . . . . .      3
+B.2   Impacts of China Trade Import Exposure on Support for PT Pres. Cand. in Round 2             5
+B.3   Impacts of China Trade Export Exposure on Support for PT Pres. Cand. in Round 2             5
+B.4   Impacts of China Trade Exposure on Non-Voting in Round 2 . . . . . . . . . . . .            6
+B.5   Impacts of China Trade Exposure on Earnings Across White v. Nonwhite . . . . .             10
+B.6   Impacts of China Trade Exposure on Earnings Across Men v. Women . . . . . . .              10
+C.1   Full Results: Impacts of China Trade Exposure on Labor Market Outcomes (Table
+      2) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   12
+C.2   Full Results: Impacts of China Trade Exposure on Round 2 Pres. PT Vote Share
+      (Table 3) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    13
+C.3   Full Results: Impacts of China Trade Exposure on Support for Presidential Candi-
+      dates in Round 1, Panel A — PT Presidential Candidate (Table 4) . . . . . . . . .          14
+C.4   Full Results: Impacts of China Trade Exposure on Support for Presidential Candi-
+      dates in Round 1, Panel B — Left Parties Excluding PT (Table 4) . . . . . . . . .          15
+C.5   Full Results: Impacts of China Trade Exposure on Invalid Votes in Round 2 (Table
+      5) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   16
+C.6   Full Results: Trade exposure and political behavior from ESEB (Fig. 2) . . . . . .         17
+
+
+
+
+                                              0
+Appendix
+
+A     Summary information
+
+           Table A.1: Brazil presidential election results (second round), 2002–2022
+
+                Year PT           Vote share Opponent              Vote share
+                2002 Lula           61.27% Serra (PSDB)              38.73%
+                2006 Lula           60.83% Alckmin (PSDB)            39.17%
+                2010 Rousseff       56.05% Serra (PSDB)              43.95%
+                2014 Rousseff       51.64% Neves (PSDB)              48.36%
+                2018 Haddad          44.87% Bolsonaro (PSL)          55.13%
+                2022 Lula           50.90% Bolsonaro (PL)            49.10%
+Note: Lula was the planned candidate in 2018 but was deemed ineligible. We consider PT to be
+                          the incumbent in all elections 2006-2018.
+
+
+                     Table A.2: Aggregate-Level Data Summary Statistics
+
+                                                     Summary
+                            N                              2,232
+                            PT share, round 2      55.09 (18.17)
+                            PT share, round 1      48.18 (18.72)
+                            Left excl. PT, round 1   8.01 (9.20)
+                            Abstention, round 1     20.97 (4.61)
+                            Blank, round 1           1.97 (0.98)
+                            Spoiled, round 1         3.97 (1.85)
+                            Disengaged, round 1     26.91 (4.80)
+                            Abstention, round 2     22.82 (5.28)
+                            Blank, round 2           1.23 (0.54)
+                            Spoiled, round 2         3.28 (1.75)
+                            Disengaged, round 2     27.33 (5.33)
+                            Import exposure          0.33 (0.36)
+                            Export exposure          0.90 (1.76)
+    Notes: Reporting means and standard deviations (in parentheses). Drawn from all years in
+    sample; unit of observation: microregion-by-year.
+
+
+
+
+                                              1
+                Figure A.1: Brazil’s Trade with China, 2000–2024
+
+
+
+
+Note: Trade values in billions of USD, non-inflation adjusted. Data from UN Comtrade.
+
+
+
+
+                                          2
+B     Additional Results
+
+                       Table B.1: First-Stage Regression Coefficients (2022)
+
+                                                  (1)         (2)
+                               VARIABLES       Imp. Exp.    Ex. Exp.
+
+                               IV: Imp. Exp.   0.005***    -0.012***
+                                                (0.000)     (0.002)
+                               IV: Ex. Exp.      0.000     0.020***
+                                                (0.000)     (0.003)
+
+                               Observations       557          557
+                               F-stat            323.7        24.38
+                               KP rk Wald F      23.14        23.14
+                                Robust standard errors in parentheses
+                                  *** p<0.01, ** p<0.05, * p<0.1
+    Notes: All specifications are ordinary least squares, taking instrumented variables as outcomes
+    and instrumental variables as independent variables. We use the 2022 versions of both. Unit of
+    observation is the microregion. We include the same controls as in our 2SLS: Census controls
+    are agri. worker share, manu. worker share, non-traded industry share, race shares, higher
+    ed. share, average income, and total workforce count by microregion, all from the year 2000.
+    Standard errors are clustered at the mesoregion level. F-stat included in the final row of the
+    table is the F-stat of the two instruments.
+
+    We also present the results of our individual analysis, splitting the sample between the years PT
+is incumbent (2010-2018) and not (2022). The results for 2010-2018 are presented in Figure B.1.
+For imports, we find that the coefficient is positive and statistically significant for support PT in
+second round, voted for non-PT Left in first round, and abstain/invalid ballot in the second round.
+This is all consistent with our findings in the aggregate level. None of the coefficients on exports
+are statistically different from zero.
+    The results for 2022 are presented in Figure B.2. Coefficients are generally not statistically
+different from zero, which may represent a power issue. However, they are signed in the same
+direction for import exposure and export exposure as in the aggregate results. We interpret these
+results with more caution because the instruments are weak, with KP F-statistics ranging from
+approximately 6.5 to 7.0.
+
+
+
+
+                                                  3
+                  Figure B.1: Coefficient estimates, PT incumbent 2010-2018
+
+
+
+
+Note: Covers 2010, 2014, 2018. 2SLS controlling for age, race, secondary education or more,
+secondary sector, and evangelical. State and year FE, clustered at microregion. All KP Wald
+statistics are > 10.
+
+
+                           Figure B.2: Coefficient estimates, in 2022
+
+
+
+
+Note: Covers 2022. 2SLS controlling for age, race, secondary education or more, secondary
+sector, and evangelical. State and year FE, clustered at microregion.
+
+
+                                               4
+Table B.2: Impacts of China Trade Import Exposure on Support for PT Pres. Cand. in Round 2
+
+                                       (1)                     (2)                     (3)                     (4)
+                                     PT Share                PT Share                PT Share                PT Share
+           VARIABLES               2010 vs 2002            2014 vs 2002            2018 vs 2002            2022 vs 2002
+
+           Imp. Exp.                     1.403                   -1.234                  1.694                  3.403*
+                                        (1.557)                 (1.624)                 (2.196)                 (1.902)
+
+           Observations                   557            557              557                                     557
+           First-stage F                 628.9          1018             206.4                                   559.1
+                                         Robust standard errors in parentheses
+                                           *** p<0.01, ** p<0.05, * p<0.1
+  Notes: All specifications are 2SLS, with exposure measures instrumented for using rest-of-world parallels. Unit of observation is the microre-
+  gion. Outcome in each column is difference in year “y” PT Vote Share (with “y” as noted in column header) vs 2002 PT Vote Share. Standard
+  errors are clustered at the mesoregion level.
+
+
+
+
+Table B.3: Impacts of China Trade Export Exposure on Support for PT Pres. Cand. in Round 2
+
+                                       (1)                     (2)                     (3)                     (4)
+                                     PT Share                PT Share                PT Share                PT Share
+           VARIABLES               2010 vs 2002            2014 vs 2002            2018 vs 2002            2022 vs 2002
+
+           Ex. Exp.                    -1.179*                -2.419***                  -1.181                  -0.684
+                                       (0.633)                  (0.838)                 (0.867)                 (0.618)
+
+           Observations                   557            557              557                                     557
+           First-stage F                 16.52          15.74            20.90                                   30.48
+                                         Robust standard errors in parentheses
+                                           *** p<0.01, ** p<0.05, * p<0.1
+  Notes: All specifications are 2SLS, with exposure measures instrumented for using rest-of-world parallels. Unit of observation is the microre-
+  gion. Outcome in each column is difference in year “y” PT Vote Share (with “y” as noted in column header) vs 2002 PT Vote Share. Standard
+  errors are clustered at the mesoregion level.
+
+
+
+
+                                                                     5
+             Table B.4: Impacts of China Trade Exposure on Non-Voting in Round 2
+                 Panel A: Non-Voting (Abstention, Blank, or Spoiled)
+                         (1)            (2)             (3)            (4)
+                    Non-voting      Non-voting      Non-voting      Non-voting
+         VARIABLES 2010 vs 2002 2014 vs 2002 2018 vs 2002 2022 vs 2002
+
+         Imp. Exp.                   1.073**                 1.717**                 1.481**                 2.199***
+                                     (0.494)                 (0.712)                 (0.644)                  (0.410)
+         Ex. Exp.                     0.216                  0.663**                  -0.011                   0.191
+                                     (0.202)                 (0.336)                 (0.171)                  (0.133)
+
+         Observations                   557            557              557                                     557
+         KP rk Wald F                  10.02          9.366            15.85                                   23.14
+                                       Robust standard errors in parentheses
+                                         *** p<0.01, ** p<0.05, * p<0.1
+
+                                             Panel B: Abstention
+                                     (1)             (2)            (3)                                      (4)
+                                  Abstained      Abstained       Abstained                                Abstained
+         VARIABLES               2010 vs 2002 2014 vs 2002 2018 vs 2002                                  2022 vs 2002
+
+         Imp. Exp.                     0.610                  1.232*                   0.036                 1.611***
+                                      (0.414)                 (0.665)                 (0.632)                 (0.410)
+         Ex. Exp.                      0.127                  0.566*                   -0.074                  0.146
+                                      (0.176)                 (0.330)                 (0.159)                 (0.128)
+
+         Observations                   557            557              557                                     557
+         KP rk Wald F                  10.02          9.366            15.85                                   23.14
+                                       Robust standard errors in parentheses
+                                         *** p<0.01, ** p<0.05, * p<0.1
+Notes: All specifications are 2SLS, with exposure measures instrumented for using rest-of-world parallels. Unit of observation is the microre-
+gion. Outcome in each column is the difference between the year “y” rate (with “y” as noted in column header) and the 2002 rate, for the
+second round of the presidential election. In Panel A the outcome is the share of registered voters who abstained or cast a blank or spoiled
+ballot; in Panel B it is the share of registered voters who abstained. Standard errors are clustered at the mesoregion level.
+
+
+
+
+                                                                   6
+B.1   Heterogeneity in exposure
+
+In this section, we examine whether differential economic impacts across groups lead to differential
+political impacts. We do this because we have argued that labor market impacts drive political
+response. As additional evidence of this, we look within groups to show that those who are most
+exposed to trade shocks also are more responsive politically at the individual level.
+   First, we document heterogeneity in labor market outcomes. We show that while both male
+and female workers are negatively affected by import exposure, male workers are more negatively
+affected (Table B.6).
+   Turning to political responses, we present coefficient plots that split the sample between various
+groups. First, in Figure B.3, we find that across all four outcomes, men exposed to greater import
+exposure are more likely to vote for PT in both rounds; more likely to support the non-PT Left in
+the first round; and more likely to abstain/submit invalid ballot. For women, import exposure is
+associated only with an increase in support for the non-PT Left in the first round. While men and
+women are both negatively affected by imports, the effect is larger for men, and thus suggests the
+more exposed are more responsive politically. Exports do not have a statistically significant effect
+on political behavior for either group.
+   Second, we show that there are differential income effects by racial group. Nonwhite workers
+are more negatively affected than white workers, as shown in Table B.5. In Figure B.4 we show
+that non-white workers exposed to imports are more likely to support PT in the second round and
+the non-PT Left in the first round; white workers exposed to imports are also more likely to support
+not PT left in first round or abstain/cast invalid ballot. For white workers, exports are associated
+with a decrease in likelihood of supporting PT in the second round.
+
+
+
+
+                                                 7
+                               Figure B.3: Coefficient estimates across men v. women
+
+                                          Exposure coefficients, split by Sex
+                                              Imports                                    Exports
+
+
+
+                 (1) PT, 2nd rd
+
+
+
+
+                  (2) PT, 1st rd
+
+
+
+
+         (3) Non-PT left, 1st rd
+
+
+
+
+     (4) Abstain/Invalid, 2nd rd
+
+
+
+
+                                   -.05   0        .05           .1        -.06   -.04   -.02      0   .02
+                                                    Coefficient (90% CI)
+
+                                                    Men          Women
+
+
+Note: Covers 2010, 2014, 2018 and 2022. 2SLS controlling for age, race, secondary education or
+      more, secondary sector, and evangelical. State and year FE, clustered at microregion.
+
+
+
+
+                                                             8
+                         Figure B.4: Coefficient estimates across white and non-white
+
+                                         Exposure coefficients, split by Race
+                                              Imports                                         Exports
+
+
+
+                (1) PT, 2nd rd
+
+
+
+
+                 (2) PT, 1st rd
+
+
+
+
+        (3) Non-PT left, 1st rd
+
+
+
+
+    (4) Abstain/Invalid, 2nd rd
+
+
+
+
+                                  -.05   0      .05         .1          .15      -.1   -.05             0   .05
+                                                      Coefficient (90% CI)
+
+                                                  White              Non-white
+
+
+Note: Covers 2010, 2014, 2018 and 2022. 2SLS controlling for age, sex, secondary education or
+     more, secondary sector, and evangelical. State and year FE, clustered at microregion.
+
+
+
+
+                                                                 9
+    Table B.5: Impacts of China Trade Exposure on Earnings Across White v. Nonwhite
+
+                                (1)                  (2)                    (3)                          (4)
+                            Log Income           Log Income           Earnings (Resid.)            Earnings (Resid.)
+    VARIABLES                Nonwhite              White                 Nonwhite                       White
+
+    Imp. Exp.                -0.067***             -0.039**                -0.067***                    -0.047***
+                               (0.020)              (0.016)                 (0.020)                      (0.015)
+    Ex. Exp.                  0.020***             0.025***                0.019***                     0.021***
+                               (0.006)              (0.006)                 (0.006)                      (0.005)
+
+    Observations                  558           558               558                                        558
+    Controls                      Yes           Yes               Yes                                        Yes
+    KP rk Wald F                 9.781         9.781             9.781                                      9.781
+                                    Robust standard errors in parentheses
+                                      *** p<0.01, ** p<0.05, * p<0.1
+Notes: All specifications are 2SLS. Outcome in each column is difference between 2010 and 2000 earnings, averaged to microregion-by-race
+group level. Census controls are defined in data section. Standard errors (in parentheses) are clustered at the mesoregion level.
+
+
+
+
+      Table B.6: Impacts of China Trade Exposure on Earnings Across Men v. Women
+
+                                (1)                  (2)                    (3)                           (4)
+                            Log Income           Log Income           Earnings (Resid.)            Earnings (Resid.)
+    VARIABLES                  Male                Female                   Male                        Female
+
+    Imp. Exp.                -0.055***             -0.037**                -0.060***                    -0.045***
+                               (0.017)              (0.015)                 (0.017)                      (0.015)
+    Ex. Exp.                  0.024***             0.023***                0.021***                     0.022***
+                               (0.006)              (0.005)                 (0.006)                      (0.005)
+
+    Observations                  558           558               558                                        558
+    Controls                      Yes           Yes               Yes                                        Yes
+    KP rk Wald F                 9.781         9.781             9.781                                      9.781
+                                    Robust standard errors in parentheses
+                                      *** p<0.01, ** p<0.05, * p<0.1
+Notes: All specifications are 2SLS. Outcome in each column is difference between 2010 and 2000 earnings, averaged to microregion-by-sex
+level. Census controls are defined in data section. Standard errors (in parentheses) are clustered at the mesoregion level.
+
+
+
+
+                                                               10
+C   Full Regression Results from Main Text
+
+
+
+
+                             11
+Table C.1: Full Results: Impacts of China Trade Exposure on Labor Market Outcomes (Table 2)
+
+                                                                                (1)                     (2)
+                                                                            Log Income              Log Income
+                    VARIABLES                                              2010 vs 2000            2010 vs 2000
+
+                    Imp. Exp.                                                -0.103***               -0.050***
+                                                                               (0.018)                 (0.016)
+                    Ex. Exp.                                                 0.025***                0.023***
+                                                                               (0.005)                 (0.006)
+                    Workforce (2000)                                                                 -0.000***
+                                                                                                       (0.000)
+                    Share self-employed (2000)                                                        -0.300**
+                                                                                                       (0.137)
+                    Share in primary sector (2000)                                                      -0.316
+                                                                                                       (0.758)
+                    Share in agriculture (2000)                                                         0.704
+                                                                                                       (0.755)
+                    Share in manufacturing (2000)                                                      0.244*
+                                                                                                       (0.130)
+                    Share in non-traded sectors (2000)                                                  -0.063
+                                                                                                       (0.195)
+                    Share white (2000)                                                                  -0.028
+                                                                                                       (0.141)
+                    Share Black (2000)                                                                  0.120
+                                                                                                       (0.141)
+                    Share 11+ yrs education (2000)                                                      -0.039
+                                                                                                       (0.142)
+
+                    Observations                                     558                                  558
+                    Controls                                         No                                   Yes
+                    KP rk Wald F                                    11.82                                9.781
+                                         Robust standard errors in parentheses
+                                          *** p<0.01, ** p<0.05, * p<0.1
+   Notes: Complete results for Table 2. All specifications are 2SLS, with exposure measures instrumented for using rest-of-world parallels.
+   Unit of observation is the microregion. The outcome in each column is the difference between 2010 and 2000 mean log earnings, averaged
+   to the microregion level. Both columns include state fixed effects, whose coefficients are not reported; column 2 adds the microregion-level
+   Census controls reported in the table, all measured in the year 2000. Regressions are weighted by microregion workforce. Standard errors are
+   clustered at the mesoregion level.
+
+
+
+
+                                                                    12
+Table C.2: Full Results: Impacts of China Trade Exposure on Round 2 Pres. PT Vote Share (Table
+3)
+
+                                                          (1)                     (2)                    (3)                     (4)
+                                                        PT Share                PT Share               PT Share                PT Share
+ VARIABLES                                            2010 vs 2002            2014 vs 2002           2018 vs 2002            2022 vs 2002
+
+ Imp. Exp.                                                 1.638                   -1.016                  1.387                  3.109*
+                                                          (1.584)                 (1.609)                 (2.067)                 (1.741)
+ Ex. Exp.                                               -1.584***               -2.145***                 -1.479*                -1.265**
+                                                          (0.598)                 (0.806)                 (0.826)                 (0.573)
+ Workforce (2000)                                        0.000**                   0.000                 0.000**                0.000***
+                                                          (0.000)                 (0.000)                 (0.000)                 (0.000)
+ Share self-employed (2000)                            71.463***               83.626***               79.887***               67.993***
+                                                         (11.050)                (13.084)                (12.455)                (12.718)
+ Share in primary sector (2000)                           -49.956                 -45.473                 -89.712                 -43.338
+                                                         (81.542)                (90.628)                (89.629)               (109.292)
+ Share in agriculture (2000)                              -13.188                 -37.066                 19.647                  -19.816
+                                                         (75.605)                (84.796)                (86.507)               (107.185)
+ Share in manufacturing (2000)                         -53.963***              -88.323***              -89.324***              -87.215***
+                                                         (17.512)                (19.189)                (20.625)                (19.988)
+ Share in non-traded sectors (2000)                    -78.952***              -96.536***              -72.926***               -45.162**
+                                                         (22.769)                (27.087)                (22.035)                (19.478)
+ Avg. income (2000)                                        0.006                   0.012                   0.005                   0.001
+                                                          (0.008)                 (0.009)                 (0.011)                 (0.010)
+ Share white (2000)                                       -13.967                -27.760*              -68.062***              -64.222***
+                                                         (11.654)                (15.251)                (16.984)                (16.021)
+ Share Black (2000)                                       12.874                   -0.975               -38.363**               -41.105**
+                                                         (12.619)                (16.587)                (17.266)                (16.728)
+ Share 11+ yrs education (2000)                        -39.879***              -44.825***              -82.363***              -94.072***
+                                                         (12.676)                (14.718)                (17.155)                (16.102)
+ Murders per 10k                                           -0.718               -1.596***               -1.775***               -3.342***
+                                                          (0.487)                 (0.453)                 (0.494)                 (0.536)
+ Share evangelical (2000)                               -0.276***                -0.271**               -0.634***               -0.628***
+                                                          (0.085)                 (0.125)                 (0.111)                 (0.092)
+
+ Observations                                          557              557                                 557                     557
+ KP rk Wald F                                         10.02            9.366                               15.85                   23.14
+                                            Robust standard errors in parentheses
+                                             *** p<0.01, ** p<0.05, * p<0.1
+   Notes: Complete results for Table 3. All specifications are 2SLS, with exposure measures instrumented for using rest-of-world parallels.
+   Unit of observation is the microregion. The outcome in each column is the difference between the year in the column header and 2002 in
+   the PT share of the second-round head-to-head vote. All specifications include state fixed effects, whose coefficients are not reported, and
+   the microregion-level Census controls reported in the table, measured in the year 2000; regressions are weighted by microregion workforce.
+   Standard errors are clustered at the mesoregion level.
+
+
+
+
+                                                                    13
+Table C.3: Full Results: Impacts of China Trade Exposure on Support for Presidential Candidates
+in Round 1, Panel A — PT Presidential Candidate (Table 4)
+
+                                                          (1)                     (2)                     (3)                     (4)
+                                                        PT Share                PT Share                PT Share                PT Share
+ VARIABLES                                            2010 vs 2002            2014 vs 2002            2018 vs 2002            2022 vs 2002
+
+ Imp. Exp.                                                  -1.327                -3.114**                 -2.641*                  1.069
+                                                           (1.686)                 (1.447)                 (1.592)                 (1.465)
+ Ex. Exp.                                                -1.557***               -2.092***                -1.369**                -1.106**
+                                                           (0.590)                 (0.729)                 (0.653)                 (0.473)
+ Workforce (2000)                                         0.000**                   0.000                  0.000*                0.000***
+                                                           (0.000)                 (0.000)                 (0.000)                 (0.000)
+ Share self-employed (2000)                             80.223***               95.779***               73.649***               53.823***
+                                                          (10.273)                (11.532)                (10.622)                (10.709)
+ Share in primary sector (2000)                          -120.691*                 -99.695             -158.773***                 -82.644
+                                                          (63.032)                (76.364)                (60.408)                (78.567)
+ Share in agriculture (2000)                               38.361                   6.612                  86.420                  17.005
+                                                          (60.367)                (72.817)                (58.350)                (77.456)
+ Share in manufacturing (2000)                          -56.876***              -75.658***              -67.656***              -82.021***
+                                                          (15.829)                (15.923)                (14.630)                (15.902)
+ Share in non-traded sectors (2000)                    -103.353***             -110.714***             -103.847***              -44.428***
+                                                          (22.090)                (21.028)                (18.831)                (15.637)
+ Avg. income (2000)                                         0.010                   0.009                   0.011                   -0.006
+                                                           (0.009)                 (0.008)                 (0.008)                 (0.008)
+ Share white (2000)                                       -22.408*               -31.322**              -58.580***              -67.917***
+                                                          (12.789)                (14.870)                (12.758)                (14.275)
+ Share Black (2000)                                         1.840                   -3.521                 -18.161              -45.071***
+                                                          (13.601)                (15.697)                (13.339)                (14.877)
+ Share 11+ yrs education (2000)                         -52.145***              -43.623***              -64.364***              -76.832***
+                                                          (13.455)                (12.544)                (12.823)                (13.350)
+ Murders per 10k                                         -1.214***               -1.840***               -1.537***               -2.750***
+                                                           (0.453)                 (0.484)                 (0.392)                 (0.468)
+ Share evangelical (2000)                                 -0.212**                 -0.204*               -0.304***               -0.409***
+                                                           (0.087)                 (0.123)                 (0.091)                 (0.078)
+
+ Observations                                          557              557                                  557                     557
+ KP rk Wald F                                         10.02            9.366                                15.85                   23.14
+                                            Robust standard errors in parentheses
+                                             *** p<0.01, ** p<0.05, * p<0.1
+   Notes: Complete results for Panel A of Table 4. All specifications are 2SLS, with exposure measures instrumented for using rest-of-world
+   parallels. Unit of observation is the microregion. The outcome in each column is the difference between the year in the column header and
+   2002 in the PT share of all valid first-round votes. All specifications include state fixed effects, whose coefficients are not reported, and
+   the microregion-level Census controls reported in the table, measured in the year 2000; regressions are weighted by microregion workforce.
+   Standard errors are clustered at the mesoregion level.
+
+
+
+
+                                                                    14
+Table C.4: Full Results: Impacts of China Trade Exposure on Support for Presidential Candidates
+in Round 1, Panel B — Left Parties Excluding PT (Table 4)
+
+                                                            (1)                      (2)                     (3)                      (4)
+                                                       Left excl. PT            Left excl. PT           Left excl. PT            Left excl. PT
+ VARIABLES                                             2010 vs 2002             2014 vs 2002            2018 vs 2002             2022 vs 2002
+
+ Imp. Exp.                                                   0.671                3.233***                  3.424**                   0.830
+                                                            (0.989)                 (0.953)                  (1.397)                 (0.793)
+ Ex. Exp.                                                    -0.102                  0.219                    0.028                   0.174
+                                                            (0.483)                 (0.392)                  (0.366)                 (0.259)
+ Workforce (2000)                                            0.000                   -0.000                0.000***                   0.000
+                                                            (0.000)                 (0.000)                  (0.000)                 (0.000)
+ Share self-employed (2000)                                  -1.233              -26.649***                   3.913                   -0.057
+                                                            (8.279)                 (8.290)                  (9.148)                 (7.461)
+ Share in primary sector (2000)                             64.154                  22.643                  87.835*                  52.536
+                                                           (47.726)                (43.570)                 (49.673)                (36.786)
+ Share in agriculture (2000)                                -44.203                  -5.335                 -77.897*                 -34.584
+                                                           (44.617)                (40.945)                 (46.319)                (34.258)
+ Share in manufacturing (2000)                            18.061**                   -0.542                   0.655                18.909***
+                                                            (7.156)                 (8.463)                  (9.774)                 (7.152)
+ Share in non-traded sectors (2000)                          -2.209               32.069**                 27.725**                   4.107
+                                                           (10.205)                (13.633)                 (11.760)                 (8.683)
+ Avg. income (2000)                                          0.003                   0.004                    -0.005                0.006**
+                                                            (0.003)                 (0.004)                  (0.004)                 (0.003)
+ Share white (2000)                                        16.374*               21.519***                    4.801                  10.285
+                                                            (8.620)                 (7.776)                  (7.802)                 (8.026)
+ Share Black (2000)                                         14.072                21.482**                    -2.052                 10.416
+                                                            (9.654)                 (8.484)                  (8.493)                 (9.094)
+ Share 11+ yrs education (2000)                           11.964**                 13.166*                    8.443                   3.145
+                                                            (6.036)                 (7.189)                  (7.616)                 (5.819)
+ Murders per 10k                                             0.112                   -0.180                 -0.602**               -0.661***
+                                                            (0.226)                 (0.264)                  (0.240)                 (0.221)
+ Share evangelical (2000)                                 -0.637***               -0.276***                -0.722***               -0.617***
+                                                            (0.079)                 (0.074)                  (0.093)                 (0.075)
+
+ Observations                                           557              557                                   557                      557
+ KP rk Wald F                                          10.02            9.366                                 15.85                    23.14
+                                             Robust standard errors in parentheses
+                                              *** p<0.01, ** p<0.05, * p<0.1
+   Notes: Complete results for Panel B of Table 4. Specification as in Table C.3. The outcome in each column is the difference between the year
+   in the column header and 2002 in the combined first-round vote share of left parties other than the PT, as a percentage of all valid first-round
+   votes. Parties are coded as left using the Brazilian Legislature Surveys: PSOL, PCdoB, PSTU, REDE, PSB and PDT. Standard errors are
+   clustered at the mesoregion level.
+
+
+
+
+                                                                      15
+Table C.5: Full Results: Impacts of China Trade Exposure on Invalid Votes in Round 2 (Table 5)
+
+                                                           (1)                     (2)                    (3)                     (4)
+                                                         Invalid                 Invalid                Invalid                 Invalid
+VARIABLES                                             2010 vs 2002            2014 vs 2002           2018 vs 2002            2022 vs 2002
+
+Imp. Exp.                                                 0.580**                 0.627**               1.446***                0.816***
+                                                          (0.266)                 (0.316)                 (0.547)                (0.194)
+Ex. Exp.                                                    0.133                  0.168                   0.061                  0.067
+                                                          (0.082)                 (0.107)                 (0.154)                (0.047)
+Workforce (2000)                                            0.000                  -0.000                0.000**                  0.000
+                                                          (0.000)                 (0.000)                 (0.000)                (0.000)
+Share self-employed (2000)                                -3.414*                  -1.599                  -3.625                 0.574
+                                                          (1.862)                 (1.445)                 (2.328)                (1.335)
+Share in primary sector (2000)                            11.154*                  8.371                37.892**                  9.330
+                                                          (6.348)                 (8.293)                (17.658)                (6.235)
+Share in agriculture (2000)                                -7.451                  -9.366               -38.568**               -11.591*
+                                                          (6.277)                 (8.116)                (17.191)                (6.040)
+Share in manufacturing (2000)                            4.613***                  -0.510                 -4.311*               -3.169**
+                                                          (1.654)                 (1.992)                 (2.467)                (1.341)
+Share in non-traded sectors (2000)                         6.064*                  1.546                   7.570                  1.872
+                                                          (3.440)                 (2.919)                 (4.683)                (1.706)
+Avg. income (2000)                                         -0.001                0.002***                -0.003**                 -0.000
+                                                          (0.001)                 (0.001)                 (0.001)                (0.001)
+Share white (2000)                                         -2.128                  -1.996                  -0.395                 -0.068
+                                                          (1.866)                 (1.826)                 (2.440)                (1.562)
+Share Black (2000)                                        -3.735*                -3.803**                  -3.912                -2.674*
+                                                          (1.977)                 (1.938)                 (2.621)                (1.547)
+Share 11+ yrs education (2000)                           7.866***                 3.603*                   0.352                  2.746
+                                                          (2.310)                 (2.103)                 (3.213)                (1.671)
+Murders per 10k                                           0.151**                  0.070                0.192***                  -0.022
+                                                          (0.072)                 (0.050)                 (0.063)                (0.049)
+Share evangelical (2000)                                    0.003                  0.003                   -0.013                 0.000
+                                                          (0.012)                 (0.015)                 (0.027)                (0.012)
+
+Observations                                           557              557                                 557                     557
+KP rk Wald F                                          10.02            9.366                               15.85                   23.14
+                                            Robust standard errors in parentheses
+                                             *** p<0.01, ** p<0.05, * p<0.1
+   Notes: Complete results for Table 5. Specification as in Table C.2. The outcome in each column is the difference between the year in the
+   column header and 2002 in the invalid-vote rate, defined as blank plus spoiled ballots as a percentage of those who turned out in the second
+   round. Standard errors are clustered at the mesoregion level.
+
+
+
+
+                                                                    16
+   Table C.6: Full Results: Trade exposure and political behavior from ESEB (Fig. 2)
+
+                                (1)          (2)            (3)                (4)
+                             PT (2nd)     PT (1st)    non-PT left (1st)   invalid (2nd)
+ Import exposure (1-year)    0.0459∗∗      0.0199        0.0299∗∗∗          0.0303∗∗
+                             (0.0227)     (0.0206)       (0.0102)           (0.0124)
+
+ Export exposure (1-year)     -0.0205      -0.0010         0.0036            -0.0038
+                             (0.0136)     (0.0132)        (0.0065)          (0.0071)
+
+ Age                        -0.0014∗∗∗     -0.0002       -0.0006∗∗         -0.0022∗∗∗
+                             (0.0004)     (0.0004)        (0.0003)          (0.0003)
+
+ Female                      0.0486∗∗∗   0.0377∗∗∗         0.0100            -0.0003
+                             (0.0106)    (0.0095)         (0.0071)          (0.0077)
+
+ Secondary or more          -0.0914∗∗∗   -0.1427∗∗∗      0.0490∗∗∗         -0.0341∗∗∗
+                             (0.0118)     (0.0119)       (0.0060)           (0.0085)
+
+ Evangelical                -0.1357∗∗∗   -0.1401∗∗∗       0.0130∗            -0.0005
+                             (0.0140)     (0.0121)        (0.0074)          (0.0083)
+
+ White                      -0.0849∗∗∗   -0.0843∗∗∗       -0.0047           -0.0139∗
+                             (0.0118)     (0.0150)        (0.0080)          (0.0079)
+
+ Secondary sector             0.0198       0.0159          0.0024            0.0219
+                             (0.0174)     (0.0188)        (0.0106)          (0.0142)
+ KP Wald F                    15.62         16.01           16.01             16.93
+ Observations                  7684         7627            7627              9126
+Notes: Complete results for Figure 2. Standard errors (in parentheses) clustered by microre-
+gion. ∗ p < 0.10, ∗∗ p < 0.05, ∗∗∗ p < 0.01
+
+
+
+
+                                          17
+
