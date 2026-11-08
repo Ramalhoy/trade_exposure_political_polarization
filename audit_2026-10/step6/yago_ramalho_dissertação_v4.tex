@@ -1018,14 +1018,12 @@ go to a single extreme candidate (also low dispersion, yet arguably
 not a moderate outcome).
 This limitation matters little for the federal-deputy vote, where the median microregion splits its vote among 13 to 22 scored parties, so a vote concentrated on a single extreme party does not occur in the sample.
 
-Figure \ref{fig:brazil-polarization-map-2x2} shows the distribution of $P^{D}_{rt}$ across microregions in each of the four elections, with microregions shaded by within-year quintile so that the darkest tone (Q5) marks the most polarized fifth of the distribution in that election.
-% TODO(figure): the map and the description below refer to the presidential index; regenerate for the deputy index and update the text.
-In the presidential vote, the Northeast remains in the lowest quintiles in every election. The South concentrates the most polarized microregions in 2010 and 2014 (about two thirds of its microregions in the top quintile) but much less in 2018 and 2022, when the top quintile spreads over the Centre-West, the North and the interior of the Southeast. Many of these regions are commodity producers, but this spatial association only motivates the analysis and does not identify a causal relationship.
+Figure \ref{fig:brazil-polarization-map-2x2} shows the distribution of $P^{D}_{rt}$ for the federal-deputy vote across microregions in each of the four elections, with microregions shaded by within-year quintile so that the darkest tone (Q5) marks the most polarized fifth of the distribution in that election. The geography differs from the one usually drawn from presidential returns. The deputy vote is most dispersed in the South and the Northeast, where between a fifth and a third of microregions fall in the top quintile in every election. The Southeast moves up over the period (8 per cent of its microregions in the top quintile in 2010, 28 per cent in 2022), while the North and the Centre-West move down: by 2022 they hold almost no microregion in the top quintile. These patterns describe where the vote is spread across distant parties, and they only motivate the analysis; they do not identify a causal relationship.
 
 
 
 \begin{figure}[H]
-  \caption{Political polarization in Brazil (microregional map)}
+  \caption{Dispersion of the federal-deputy vote by microregion, 2010--2022}
   \label{fig:brazil-polarization-map-2x2}
   \centering
   \includegraphics[width=\textwidth]{figures/brazil_polarization_map_2x2.pdf}
@@ -1176,7 +1174,6 @@ Constructing the variable requires a concordance between the CNAE~2.0 employment
   \caption{Evolution of Brazilian Total Exports, 2010–2022}
   \label{fig:exports}
   \centering
-  % TODO(figure): regenerate from step5/out/s5_exports_series.csv (real_bn column)
   \includegraphics[width=\textwidth]{figures/exports.pdf}
   \par\noindent\footnotesize \textit{Source:} Elaborated by the author based on data from the Brazilian Ministry of Development, Industry, Trade and Services (MDIC) -- Comex Stat. Values were deflated to constant 2010 USD using the U.S. Consumer Price Index (CPI).
 \end{figure}
@@ -1320,9 +1317,8 @@ As Section~\ref{sec:inference} showed, the two smaller benchmarks could not have
   \centering
   \caption{Randomization distribution of the studentized statistic, federal-deputy Dalton}
   \label{fig:ri}
-  % TODO(figure): regenerate. step4_primary.R must be rerun with the permutation draws saved (t* for S0 and S3), then plot the two histograms with the observed t (0.78 and -0.81).
   \includegraphics[width=\textwidth]{figures/ri_distribution_studentized.pdf}
-  \par\noindent\footnotesize \textit{Note:} Distribution of $t^{*}=\hat\beta^{*}/\widehat{\mathrm{se}}_{AKM}$ over $B = 9{,}999$ within-stratum permutations of the shock paths, for each design. The vertical line marks the observed statistic.
+  \par\noindent\footnotesize \textit{Note:} Distribution of $t^{*}=\hat\beta^{*}/\widehat{\mathrm{se}}_{AKM}$ over $B = 9{,}999$ within-stratum permutations of the shock paths, for each design. The vertical line marks the observed statistic. The several modes of the S0 distribution reflect the few dominant shock paths: draws differ mainly in which industries receive the oil and iron-ore shocks. One S0 draw beyond $\pm 8$ is not shown.
 \end{figure}
 
 \section{Secondary family}
@@ -1398,7 +1394,15 @@ $\hat\beta$ without top 10 & & $-0.079$ & & $-0.092$ \\
 \end{table}
 
 \textbf{Specification curve.} A specification curve varies, one at a time and in combination, the control set (base or extended), the recentring, the strata, the sample (all microregions or those exporting to the S3 destinations), the coverage of scored votes, the index (Dalton, Esteban--Ray with $\alpha = 1$ or $1.4$, centre-emptying) and the office, for 256 specifications per design, each tested with 999 permutations. It is descriptive: the main result is not chosen from it. For the deputy Dalton index, all 32 S0 estimates are positive (from $0.008$ to $0.088$, all with $p \geq 0.21$) and all 32 S3 estimates are negative (from $-0.039$ to $-0.007$, all with $p \geq 0.11$). Across all 512 specifications, 8 have $p < 0.05$, all of them S3 estimates for the Esteban--Ray index ($\alpha = 1.4$) of the gubernatorial vote without recentring; recentring removes them.
-% TODO(figure): add the specification-curve figure from step4a/out/step4_speccurve.csv.
+Figure~\ref{fig:speccurve} shows all 512 estimates ranked within each design.
+
+\begin{figure}[htbp]
+  \centering
+  \caption{Specification curve}
+  \label{fig:speccurve}
+  \includegraphics[width=\textwidth]{figures/spec_curve.pdf}
+  \par\noindent\footnotesize \textit{Note:} Each point is one specification (256 per design), ranked by its estimate; the main specification is in black. Shapes mark the studentized randomization $p$-value ($B = 999$). Dashed lines mark $\pm 0.162$. Offices, indices, controls, recentring, strata, sample and coverage vary as described in the text.
+\end{figure}
 
 \section{Interpreting the null}
 \label{sec:interpretation}
@@ -1718,7 +1722,6 @@ Rank & UF & Estado & EPW Médio & Microrregiões\\
 \begin{figure}[H]
   \centering
   \caption{Exposure shocks map per microregion}
-  % TODO(figure): regenerate from the v7 treatment (the current map predates it, like the old Table C1)
   \includegraphics[width=\textwidth,height=1\textheight,keepaspectratio]{figures/exposure_map.pdf}
   \par\noindent\footnotesize \textit{Note:} $\Delta$EPW from Equation~\ref{eq:my_equation}; shades in grey denote microregional quintiles computed within each election year.
 \end{figure}

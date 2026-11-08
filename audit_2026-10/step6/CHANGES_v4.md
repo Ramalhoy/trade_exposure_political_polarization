@@ -69,7 +69,7 @@
 
 | Item | Where |
 |---|---|
-| Regenerate figures: deputy map (Fig. 3), exports series (Fig. 4), studentized RI distribution (Fig. 5; needs `step4_primary.R` rerun saving draws), exposure map (App. C); add a specification-curve figure | `% TODO(figure)` comments |
+| ~~Regenerate figures~~ done 08/11 (step7_figures.R): deputy map, exports, studentized RI distribution, specification curve, exposure map; the BLS violin (Fig. 2) is unchanged | `figures_v4/` |
 | Add a bib entry `borusyakhull2023` (Borusyak & Hull 2023, *Econometrica* 91(6)) and a CEPII BACI citation | `% TODO(bib)` |
 | Check that `\cite{dippel}` is Dippel–Gold–Heblich and `\cite{colantone}` is Colantone–Stanig, and the three Brexit values (12.233, 0.14, 10.6) in `colantone2018.pdf` | tex L1233 |
 | Chapter 2 literature characterisations not verified against sources (step 5, NOT VERIFIED rows) | Ch. 2 |
