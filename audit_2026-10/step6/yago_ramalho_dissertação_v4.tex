@@ -1,0 +1,2372 @@
+\documentclass[
+	% -- opções da classe memoir --
+	11pt,				% tamanho da fonte
+	% openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
+	oneside,			% para impressão apenas no anverso (apenas frente). Oposto a twoside
+	a4paper,			% tamanho do papel. 
+	% -- opções da classe abntex2 --
+	%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
+	%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
+	%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
+	%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
+	% -- opções do pacote babel --
+	english,			% idioma adicional para hifenização
+	%french,				% idioma adicional para hifenização
+	%spanish,			% idioma adicional para hifenização
+	english				% o último idioma é o principal do documento
+	]{abntex2ppgsi}
+
+% ---
+% Pacotes básicos 
+% ---
+\usepackage[T1]{fontenc}
+\usepackage{sourceserifpro}
+\usepackage{sourcecodepro}
+\usepackage{mathastext}
+% \usepackage{lmodern}			% Usa a fonte Latin Modern			
+% \usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage{lastpage}			% Usado pela Ficha catalográfica
+\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
+\usepackage{color}				% Controle das cores
+\usepackage{graphicx}			% Inclusão de gráficos
+\usepackage{microtype} 			% para melhorias de justificação
+\usepackage{pdfpages}     %para incluir pdf
+\usepackage{algorithm}			%para ilustrações do tipo algoritmo
+\usepackage{mdwlist}			%para itens com espaço padrão da abnt
+\usepackage[noend]{algpseudocode}			%para ilustrações do tipo algoritmo
+ \usepackage{threeparttable} 
+\usepackage{booktabs}      % professional lines
+\usepackage{tabularx}      % flexible width
+\usepackage[table]{xcolor} % row colors
+\usepackage{geometry}
+\usepackage{siunitx}
+  \sisetup{table-format=-1.3, table-number-alignment=center}
+% Set margins
+\geometry{top=2.8cm, bottom=2.5cm, left=3cm, right=2.5cm}
+
+\usepackage{amsmath,amssymb,amsthm}
+\theoremstyle{plain}
+\newtheorem{assumption}{Assumption}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+
+\makeatletter
+\@ifundefined{assumption}{%
+  \theoremstyle{plain}%
+  \newtheorem{assumption}{Assumption}%
+  \newtheorem{lemma}{Lemma}%
+  \newtheorem{proposition}{Proposition}%
+  \theoremstyle{remark}%
+  \newtheorem{remark}{Remark}%
+}{}
+\makeatother
+
+% Set placement of page number
+\geometry{footskip=0.7in}
+\usepackage{amsmath}   % for equations
+\usepackage{hyperref}  % for hyperlinks
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+		\usepackage{enumitem}
+% ---
+% Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
+% ---
+\usepackage{lipsum}				% para geração de dummy text
+% ---
+
+% ---
+% Pacotes de citações
+% ---
+
+\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
+\usepackage[alf,abnt-and-type =&]{abntex2cite}	% Citações padrão ABNT
+
+
+
+
+% --- 
+% CONFIGURAÇÕES DE PACOTES
+% --- 
+
+
+% ---
+% Configurações do pacote backref
+% Usado sem a opção hyperpageref de backref
+\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+% Texto padrão antes do número das páginas
+\renewcommand{\backref}{}
+% Define os textos da citação
+\renewcommand*{\backrefalt}[4]{
+	\ifcase #1 %
+		Nenhuma citação no texto.%
+	\or
+		Citado na página #2.%
+	\else
+		Citado #1 vezes nas páginas #2.%
+	\fi}%
+% ---
+
+% ---
+% Informações de dados para CAPA e FOLHA DE ROSTO
+% ---
+
+%-------------------------------------------------------------------------
+% Comentário adicional do PPgSI - Informações sobre o ``instituicao'':
+%
+% Não mexer. Deixar exatamente como está.
+%
+%-------------------------------------------------------------------------
+\instituicao{
+	UNIVERSIDADE FEDERAL DO ESPÍRITO SANTO
+	\par
+	CENTRO DE CIÊNCIAS JURÍDICAS E ECONÔMICAS
+	\par
+	PROGRAMA DE PÓS-GRADUAÇÃO EM ECONOMIA}
+
+%-------------------------------------------------------------------------
+% Comentário adicional do PPgSI - Informações sobre o ``título'':
+%
+% Em maiúscula apenas a primeira letra da sentença (do título), exceto 
+% nomes próprios, geográficos, institucionais ou Programas ou Projetos ou 
+% siglas, os quais podem ter letras em maiúscula também.
+%
+% O subtítulo do trabalho é opcional.
+% Sem ponto final.
+%
+% Atenção: o título da Dissertação na versão corrigida não pode mudar. 
+% Ele deve ser idêntico ao da versão original.
+%
+%-------------------------------------------------------------------------
+\titulo{Trade Exposure and Political Polarization: Evidence from the Brazilian Case}
+
+%-------------------------------------------------------------------------
+% Comentário adicional do PPgSI - Informações sobre o ``autor'':
+%
+% Todas as letras em maiúsculas.
+% Nome completo.
+% Sem ponto final.
+%-------------------------------------------------------------------------
+\autor{\uppercase{Yago Ramalho Silva}}
+
+%-------------------------------------------------------------------------
+% Comentário adicional do PPgSI - Informações sobre o ``local'':
+%
+% Não incluir o ``estado''.
+% Sem ponto final.
+%-------------------------------------------------------------------------
+\local{Vitória}
+
+%-------------------------------------------------------------------------
+% Comentário adicional do PPgSI - Informações sobre a ``data'':
+%
+% Colocar o ano do depósito (ou seja, o ano da entrega) da respectiva 
+% versão, seja ela a versão original (para a defesa) seja ela a versão 
+% corrigida (depois da aprovação na defesa). 
+%
+% Atenção: Se a versão original for depositada no final do ano e a versão 
+% corrigida for entregue no ano seguinte, o ano precisa ser atualizado no 
+% caso da versão corrigida. 
+% Cuidado, pois o ano da ``capa externa'' também precisa ser atualizado 
+% nesse caso.
+%
+% Não incluir o dia, nem o mês.
+% Sem ponto final.
+%-------------------------------------------------------------------------
+\data{2026}
+
+%-------------------------------------------------------------------------
+% Comentário adicional do PPgSI - Informações sobre o ``Orientador'':
+%
+% Se for uma professora, trocar por ``Profa. Dra.''
+% Nome completo.
+% Sem ponto final.
+%-------------------------------------------------------------------------
+\orientador{Prof. Dr. Henrique Augusto Campos Fernandez Hott}
+
+%-------------------------------------------------------------------------
+% Comentário adicional do PPgSI - Informações sobre o ``Coorientador'':
+%
+% Opcional. Incluir apenas se houver co-orientador formal, de acordo com o 
+% Regulamento do Programa.
+%
+% Se for uma professora, trocar por ``Profa. Dra.''
+% Nome completo.
+% Sem ponto final.
+%-------------------------------------------------------------------------
+
+
+\tipotrabalho{Dissertação (Mestrado)}
+
+\preambulo{
+%-------------------------------------------------------------------------
+% Comentário adicional do PPgSI - Informações sobre o texto ``Versão 
+% original'':
+%
+% Não usar para Qualificação.
+% Não usar para versão corrigida de Dissertação.
+%
+%-------------------------------------------------------------------------
+\vspace{2\baselineskip}
+%-------------------------------------------------------------------------
+% Comentário adicional do PPgSI - Informações sobre o ``texto principal do
+% preambulo'':
+%
+% Para Qualificação, trocar por: Texto de Exame de Qualificação apresentado à Escola de Artes, Ciências e Humanidades da Universidade de São Paulo como parte dos requisitos para obtenção do título de Mestre em Ciências pelo Programa de Pós-graduação em Sistemas de Inf%mação.
+%
+%-------------------------------------------------------------------------
+Projeto de dissertação apresentado ao Programa
+de Pós-Graduação em Economia como requisito
+parcial à qualificação do curso de mestrado.
+%
+\newline Área de concentração: Métodos Quantitativos 
+%-------------------------------------------------------------------------
+% Comentário adicional do PPgSI - Informações sobre o texto da ``Versão 
+% corrigida'':
+%
+% Não usar para Qualificação.
+% Não usar para versão original de Dissertação.
+% 
+% Substituir ``xx de xxxxxxxxxxxxxxx de xxxx'' pela ``data da defesa''.
+%
+%-------------------------------------------------------------------------
+}
+% ---
+
+
+% ---
+% Configurações de aparência do PDF final
+
+% alterando o aspecto da cor azul
+\definecolor{blue}{RGB}{41,5,195}
+
+% informações do PDF
+\makeatletter
+\hypersetup{
+     	%pagebackref=true,
+		pdftitle={\@title}, 
+		pdfauthor={\@author},
+    	pdfsubject={\imprimirpreambulo},
+	    pdfcreator={LaTeX com abnTeX2 adaptado para o PPgSI-EACH-USP},
+		pdfkeywords={abnt}{latex}{abntex}{abntex2}{qualificação de mestrado}{dissertação de mestrado}{ppgsi}, 
+		colorlinks=true,       		% false: boxed links; true: colored links
+    	linkcolor=black,          	% color of internal links
+    	citecolor=black,        		% color of links to bibliography
+    	filecolor=black,      		% color of file links
+		urlcolor=black,
+		bookmarksdepth=4,
+		hypertexnames=false
+}
+\makeatother
+% --- 
+
+% --- 
+% Espaçamentos entre linhas e parágrafos 
+% --- 
+
+% O tamanho do parágrafo é dado por:
+\setlength{\parindent}{1cm}
+
+% Controle do espaçamento entre um parágrafo e outro:
+\setlength{\parskip}{2pt}  % tente também \onelineskip
+\renewcommand{\baselinestretch}{1.5}
+
+% Espaçamento entre texto e elementos flutuantes (figuras, tabelas e imagens):
+\setlength{\textfloatsep}{20pt plus 4pt minus 2pt}
+\setlength{\floatsep}{18pt plus 4pt minus 2pt}
+\setlength{\intextsep}{18pt plus 4pt minus 2pt}
+\setlength{\abovecaptionskip}{8pt plus 2pt minus 1pt}
+\setlength{\belowcaptionskip}{8pt plus 2pt minus 1pt}
+
+% Numeração contínua das notas de rodapé ao longo dos capítulos:
+\counterwithout{footnote}{chapter}
+
+% Numeração de elementos nos apêndices: 1A, 2A; 1B, 2B; etc.
+\newcommand{\configurarNumeracaoApendices}{%
+  \counterwithin{figure}{chapter}%
+  \counterwithin{table}{chapter}%
+  \counterwithin{equation}{chapter}%
+  \counterwithin{algorithm}{chapter}%
+  \renewcommand{\thefigure}{\arabic{figure}\Alph{chapter}}%
+  \renewcommand{\thetable}{\arabic{table}\Alph{chapter}}%
+  \renewcommand{\theequation}{\arabic{equation}\Alph{chapter}}%
+  \renewcommand{\thealgorithm}{\arabic{algorithm}\Alph{chapter}}%
+  \makeatletter
+  \renewcommand{\theHfigure}{appendix.\Alph{chapter}.\arabic{figure}}%
+  \renewcommand{\theHtable}{appendix.\Alph{chapter}.\arabic{table}}%
+  \renewcommand{\theHequation}{appendix.\Alph{chapter}.\arabic{equation}}%
+  \renewcommand{\theHalgorithm}{appendix.\Alph{chapter}.\arabic{algorithm}}%
+  \makeatother
+}
+
+% ---
+% compila o indice
+% ---
+\makeindex
+% ---
+
+	% Controlar linhas orfas e viuvas
+  \clubpenalty10000
+  \widowpenalty10000
+  \displaywidowpenalty10000
+
+% ----
+% Início do documento
+% ----
+\begin{document}
+
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing 
+
+% ----------------------------------------------------------
+% ELEMENTOS PRÉ-TEXTUAIS
+% ----------------------------------------------------------
+% \pretextual
+
+% ---
+% Capa
+% ---
+%-------------------------------------------------------------------------
+% Comentário adicional do PPgSI - Informações sobre a ``capa'':
+%
+% Esta é a ``capa'' principal/oficial do trabalho, a ser impressa apenas 
+% para os casos de encadernação simples (ou seja, em ``espiral'' com 
+% plástico na frente).
+% 
+% Não imprimir esta ``capa'' quando houver ``capa dura'' ou ``capa brochura'' 
+% em que estas mesmas informações já estão presentes nela.
+%
+%-------------------------------------------------------------------------
+\imprimircapa
+% ---
+
+% ---
+% Folha de rosto
+% (o * indica que haverá a ficha bibliográfica)
+% ---
+\imprimirfolhaderosto*
+
+\begin{fichacatalografica}
+    \includepdf{fig_ficha_catalografica.pdf}
+\end{fichacatalografica}
+
+\cleardoublepage
+\pdfbookmark[0]{Declaração de uso de inteligência artificial}{declaracao-ia}
+\thispagestyle{empty}
+\begin{center}
+\textbf{Declaração de uso de inteligência artificial}
+\end{center}
+\vspace*{\fill}
+\noindent\hfill
+\begin{minipage}{0.82\textwidth}
+\itshape
+Declaro que ferramentas de inteligência artificial generativa (IAGs) foram utilizadas neste trabalho nas seguintes etapas: 
+\begin{itemize} 
+\item (GPT‑5.2) foi utilizada com a finalidade de auxiliar na revisão gramatical e na geração de tabelas em formatação adequada. 
+\item Claude Code e Codex foram utilizadas para execução de códigos mais complexos, aprimoramento de código-base e geração de figuras e mapas. 
+\end{itemize}
+Declaro ainda que todas as informações foram revisadas pelo autor. O
+autor assume integral responsabilidade pela originalidade, veracidade e
+integridade do trabalho, inclusive por eventuais imprecisões, inconsistências ou
+plágios provenientes do uso de tais ferramentas, em conformidade com a
+Política de Integridade na Atividade Científica do CNPq estabelecida na
+Portaria CNPq n\textsuperscript{o} 2.644, de março de 2026.
+\end{minipage}
+\vspace*{\fill}
+\cleardoublepage
+
+% ---
+% RESUMOS
+% ---
+
+% resumo em português
+\setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
+\begin{resumo}
+
+%-------------------------------------------------------------------------
+% Comentário adicional do PPgSI - Informações sobre ``referência'':
+% 
+% Troque os seguintes campos pelos dados de sua Dissertação (mantendo a 
+% formatação e pontuação):
+%   - SOBRENOME
+%   - Nome1
+%   - Nome2
+%   - Nome3
+%   - Título do trabalho: subtítulo do trabalho
+%   - AnoDeDefesa
+%
+% Mantenha todas as demais informações exatamente como estão.
+% 
+% [Não usar essas informações de ``referência'' para Qualificação]
+%
+%-------------------------------------------------------------------------
+\begin{flushleft}
+SILVA, YAGO RAMALHO \textbf{Trade Exposure and Political Polarization}: Evidence from the Brazilian Case. \imprimirdata. \pageref{LastPage} f. Dissertação (Mestrado em Economia) – Centro de Ciências Jurídicas e Econômicas, Universidade Federal do Espírito Santo, Vitória, 2026.
+\end{flushleft}
+
+Esta dissertação estima o efeito de choques locais de exportação sobre a dispersão ideológica do voto nas microrregiões brasileiras entre 2010 e 2022. Em um contexto de ressurgência global de projetos populistas e de uma literatura crescente que associa a globalização a efeitos políticos polarizantes, o Brasil é um caso de interesse: o centro político moderado se enfraqueceu no período, ao mesmo tempo em que o ciclo das commodities gerou choques comerciais espacialmente desiguais.
+A exposição é medida por dois desenhos shift-share recentrados, que interagem a estrutura local de 2010 com choques nacionais: as exportações brasileiras por trabalhador, por indústria (152 indústrias), e a demanda de importação do resto do mundo, por país de destino (201 destinos). A polarização é medida pelo índice de Dalton ponderado pelos votos para deputado federal, construído a partir dos escores ideológicos do Brazilian Legislative Survey; os índices para presidente e governador são resultados secundários. A análise segue um plano registrado antes das estimações, com inferência por randomização studentizada sobre os choques, validada por simulações de Monte Carlo e por testes de falsificação.
+Nenhum dos dois desenhos detecta efeito. O desenho de demanda por destino descarta efeitos maiores que 0,075 desvio-padrão por desvio-padrão de exposição (conjunto de randomização de 90\%: $[-0{,}075;\ 0{,}045]$), o que exclui o tamanho de efeito documentado para o Brexit, mas não os efeitos menores documentados para o voto no PT ou para a extrema direita alemã; o desenho por indústria é impreciso demais para limitar o efeito. Nenhum teste secundário (assimetria entre expansões e contrações, direção ideológica, outros cargos) sobrevive à correção para testes múltiplos. A variação que identifica o efeito se concentra em poucos choques (petróleo e minério de ferro) e em poucas microrregiões portuárias e de terminais, o que limita a generalização do resultado.
+
+Palavras-chaves: Polarização política. Desenho shift-share. Inferência por randomização. Brasil. Choques de exportação.
+\end{resumo}
+
+% resumo em inglês
+%-------------------------------------------------------------------------
+% Comentário adicional do PPgSI - Informações sobre ``resumo em inglês''
+%
+% Caso a Qualificação ou a Dissertação inteira seja elaborada no idioma inglês,
+% então o ``Abstract'' vem antes do ``Resumo''.
+%
+%-------------------------------------------------------------------------
+\begin{resumo}[Abstract]
+\begin{otherlanguage*}{english}
+
+%-------------------------------------------------------------------------
+% Comentário adicional do PPgSI - Informações sobre ``referência em inglês''
+%
+% Troque os seguintes campos pelos dados de sua Dissertação (mantendo a
+% formatação e pontuação):
+%     - SURNAME
+%     - FirstName1
+%     - MiddleName1
+%     - MiddleName2
+%     - Work title: work subtitle
+%     - DefenseYear (Ano de Defesa)
+%
+% Mantenha todas as demais informações exatamente como estão.
+%
+% [Não usar essas informações de ``referência'' para Qualificação]
+%
+%-------------------------------------------------------------------------
+
+
+\begin{flushleft}
+SILVA, YAGO RAMALHO \textbf{Trade Exposure and Political Polarization}: Evidence from the Brazilian Case. \imprimirdata. \pageref{LastPage} f. Dissertação (Mestrado em Economia) – Centro de Ciências Jurídicas e Econômicas, Universidade Federal do Espírito Santo, Vitória, 2026.
+\end{flushleft}
+
+
+This dissertation estimates the effect of local export shocks on the ideological dispersion of the vote in Brazilian microregions between 2010 and 2022. Given the global resurgence of populist political projects and a growing literature linking globalization to politically polarizing effects, Brazil is a relevant case: its moderate political centre weakened over the period while the commodity cycle produced spatially uneven trade shocks.
+Exposure is measured by two recentred shift-share designs that interact the 2010 local structure with national shocks: Brazilian exports per worker by industry (152 industries) and rest-of-world import demand by destination country (201 destinations). Polarization is measured by the vote-share-weighted Dalton index of the federal-deputy vote, built from the ideology scores of the Brazilian Legislative Survey; the presidential and gubernatorial indices are secondary outcomes. The analysis follows a plan registered before estimation, with inference by studentized randomization over the shocks, validated by Monte Carlo simulation and falsification tests.
+Neither design detects an effect. The destination-demand design rules out effects larger than 0.075 standard deviations per standard deviation of exposure (90\% randomization set $[-0.075, 0.045]$), which excludes the effect size reported for the Brexit vote but not the smaller effects reported for the PT vote share or the German far right; the industry-export design is too imprecise to bound the effect. No secondary test (asymmetry between booms and busts, ideological direction, other offices) survives multiple-testing correction. The identifying variation is concentrated in a few shocks (oil and iron ore) and a few port and terminal microregions, which limits how far the result generalizes.
+
+
+Keywords: Political polarization. Shift-share design. Randomization inference. Brazil. Export shocks.
+\end{otherlanguage*}
+\end{resumo}
+
+
+
+
+
+% ---
+% ---
+% inserir lista de figuras
+% ---
+\pdfbookmark[0]{\listfigurename}{lof}
+\listoffigures*
+\cleardoublepage
+% ---
+
+% ---
+% inserir lista de tabelas
+% ---
+\pdfbookmark[0]{\listtablename}{lot}
+\listoftables*
+\cleardoublepage
+% ---
+
+
+% ---
+% inserir o sumario
+% ---
+
+\tableofcontents*
+\cleardoublepage
+% ---
+
+
+
+% ----------------------------------------------------------
+% ELEMENTOS TEXTUAIS
+% ----------------------------------------------------------
+\textual
+
+
+%-------------------------------------------------------------------------
+\chapter{Introduction}
+\label{ch:introduction}
+
+
+
+In recent years, the rise of populism and political polarization has become a source of widespread concern and wariness in the public sphere.\footnote{For examples of recent news articles and reports, see: \href{https://populismindex.com/report/}{Authoritarian Populism Index (2024)} \cite{index}, \href{https://noticias.uol.com.br/ultimas-noticias/afp/2025/01/16/hrw-alerta-para-deterioracao-galopante-da-democracia-na-america-latina.com}{``HRW alerta para deterioração 'galopante' da democracia na América Latina" \cite{uol}}, \href{https://www.ipea.gov.br/portal/categorias/45-todas-as-noticias/noticias/16008-polarizacao-e-desinformacao-ameacam-coesao-social-e-democracia-na-america-latina-alertam-especialistas.com}{``Polarização e desinformação ameaçam coesão social e democracia na América Latina, alertam especialistas"} \cite{ipea}, \href{https://www.nytimes.com/2025/01/23/world/europe/trump-europe-right-immigration-ukraine.html}{``Trump is leading a global surge to the right"} \cite{nyt}, \href{https://www.economist.com/the-world-ahead/2025/11/12/could-brazils-mega-election-herald-the-end-of-polarisation}{``Could Brazil's mega-election herald the end of polarisation?"}  \cite{economist}} Since the 2000s and at an increasingly steady pace, populism has ceased to be a phenomenon common only to the Latin American experience in the twentieth century and has become a global issue, especially in the aftermath of the election of Donald Trump and the \emph{Brexit} referendum in 2016 \cite{Scheiring}. A growing body of work in economics and political science points to exposure to international trade and the broader process of market liberalization as one of its economic roots \cite{Rodrik, rodrik2, Autor}.
+
+Beyond its intrinsic interest for the study of voting behaviour, polarization can also be read as a fiscal and administrative outcome, which is what places this question within public-sector economics and not only within electoral studies. In a federation where states and municipalities execute most social spending while depending on intergovernmental transfers and on national coalitions to legislate, who is elected determines what is provided and at what cost, for three reasons. First, \emph{policy continuity}: ideologically distant successors are more likely to discontinue inherited programmes, converting electoral turnover into sunk administrative costs and interrupted provision of local public goods. Second, \emph{governability}: Brazilian coalitional presidentialism requires a moderate legislative centre to pass budgets and reforms, so an emptying centre raises the price of governing and the volatility of the transfers on which subnational finances rest \cite{hunter,ZUCCO,melloespektor2018}. Third, the \emph{subnational fiscal cycle}: as \citeonline{Novaes} shows, commodity shocks already move incumbency in Brazilian municipalities, so the same external shocks that this dissertation uses as treatment are known to travel through local public finances. Measuring whether trade shocks move polarization is therefore a question about the stability of public policy and the finances of subnational governments, and not only about how citizens vote.
+
+Despite the extensive literature in both economics and political science on the relationship between economic shocks, such as increased trade exposure, and political behaviour, the causal mechanisms linking these shocks to sustained increases in polarization remain only partially understood \cite{Autor}. Existing research consistently suggests that greater trade exposure tends to engender stronger support for ideologically extreme candidates. However, this is a multifaceted and asymmetric process: negative shocks simultaneously increase support for expansive social policy and redistribution, while eroding trust in political institutions \cite{Margalit}.
+
+Although studies for the Brazilian case have explored changes in the behaviour of voters when exposed to trade (e.g., \citeonline{Dix1}; \citeonline{Novaes}; \citeonline{Ogeda}), there is a gap regarding the magnitude and specific channels through which these effects contribute to political polarization in particular. This dissertation addresses that gap by asking: what is the effect of local exposure to export shocks on the ideological dispersion of the vote in Brazilian microregions?
+
+The working hypothesis comes from the demand side: a negative export shock compresses local labour demand, generates economic stress, and therefore raises the relative appeal of more extreme candidates. A loss of a given size is also expected to move voters away from the centre more than an equal-sized gain moves them back. As reported in Chapter~\ref{ch:results}, the data do not detect either effect: the pooled estimates are null in both designs, and the coefficient on export busts is not distinguishable from zero.
+
+Two main reasons govern the decision to use Brazil as a case study. First, institutionally, its system of coalitional presidentialism demands a strong and moderate centre to operate, and that centre has been eroding over the past decade, which makes the country a demanding test of whether economic shocks push the electorate apart \cite{hunter, ZUCCO}. Second, at the economic level, the 2010--2022 window covers a full export cycle: Brazilian exports, in constant 2010 dollars, peaked at 246 billion dollars in 2011, fell to 163 billion in 2016 and recovered to 249 billion in 2022 \cite{cooney}, and these movements reached regions very unevenly.
+
+To measure local exposure, this dissertation builds two shift-share designs that interact pre-determined 2010 local structures with national shocks \cite{Rettl, bartik, quasi-experimental}. The first follows \citeonline{Rettl}: it weights the change in Brazilian exports per worker in each industry by the industry's share of local employment. The second weights the growth of import demand in each destination country by the local value of 2010 exports to that country, so its shocks come from foreign demand and not from Brazilian supply. Both treatments are recentred on their expected value under the randomization of the shocks \cite{borusyakhull2023}. Changes in polarization between 2010 and each later election (2014, 2018, 2022) are stacked and estimated with state-by-year fixed effects. The primary outcome is the vote-share-weighted Dalton index \cite{dalton} of the federal-deputy vote, built from microregional vote shares and the party ideology scores of the Brazilian Legislative Survey \cite{ZUCCO}. The deputy vote spreads over 13 to 22 scored parties in the median microregion, so the index measures dispersion; in presidential races the same index mostly tracks the winner's vote share. The presidential and gubernatorial indices, a centre-emptying index \cite{wachsmann} and the direction of the vote are secondary or descriptive outcomes. The analysis, the inference and the decision rules were registered before any estimate was produced.
+
+Neither design detects an effect of export shocks on the dispersion of the deputy vote. The destination-demand design bounds it: its 90\% randomization set is $[-0.075, 0.045]$ standard deviations per standard deviation of exposure, which rules out effects as large as the one reported for the Brexit vote \cite{colantone} but not the smaller effects reported for the PT vote share in Brazil \cite{Rettl} or for the German far right \cite{dippel}. The industry-export design is too imprecise to bound the effect (90\% set $[-0.100, 0.239]$). No secondary test survives correction for multiple testing.
+
+This dissertation contributes to three literatures. The first is the trade-and-voting literature that follows \citeonline{Autor} and \citeonline{colantone}, which measures import competition in advanced economies and reads political responses off a directional partisan outcome: a two-party vote share, or the vote for an identified radical party. Here the shock comes from the export side, in a commodity-exporting middle-income economy where the identifying variation comes mostly from oil and iron ore. Whether the demand-side mechanism survives that transposition is an open empirical question, and Brazil's 2010--2022 export cycle provides a test of it. The second is the literature on the measurement of polarization \cite{esteban,duclos,dalton}, from which this work takes a continuous index of ideological dispersion built from elite-survey ideology scores \cite{ZUCCO}, computed for 557 microregions and three offices. It replaces the binary left--right divide used by \citeonline{Ogeda} and the single-candidate outcome used by \citeonline{barros} with a metric that registers movement on both flanks. The third is the methodological literature on shift-share identification \cite{quasi-experimental,goldsmith,adao}. The design-based inference used here was validated before use: a Monte Carlo exercise showed that randomization inference on the raw coefficient over-rejects in this setting, while its studentized version holds its size, and the main result is stated as an equivalence bound, not as a failure to reject.
+
+The remainder of the dissertation is organized as follows. Chapter~\ref{ch:theoretical-framework} reviews the literature on trade exposure, economic stress and the populist backlash, and situates the Brazilian political and economic context of 2010--2022 within it. Chapter~\ref{ch:data-variables} describes the data and the construction of the polarization outcomes. Chapter~\ref{ch:empirical-strategy} presents the two shift-share designs, the inference and the validation of the design. Chapter~\ref{ch:results} reports the results and discusses what the null does and does not establish, and Chapter~\ref{ch:conclusion} concludes. Three appendices report sample exclusions and data quality, the industrial-classification harmonisation on which the industry design rests, and exposure by state.
+
+\chapter{Theoretical framework}
+\label{ch:theoretical-framework}
+
+\section{Globalization, economic dislocation, and the populist backlash}
+
+Modern populism is defined above all by \emph{skepticism}. It manifests itself as distrust towards globalization, immigration, the free market, intellectual authority, and many other pillars of contemporary liberal and democratic societies. Instead, it favors nationalism, a sense of collective identity (often grounded in race, religion, and ethnicity), and a clear-cut polarizing narrative that divides society into two perfectly opposing groups \cite{Muller}. 
+
+
+Populism may emerge from either the left or the right of the political spectrum and, as \citeonline{Mudde} characterizes it, constitutes a thin-centered ideology that attaches itself to more substantive doctrines. Nevertheless, it frequently culminates in authoritarian tendencies and anti-pluralist rhetoric. The political science and sociology literature identifies several explanations for the recent rise of populism, with globalization gaining prominence as a plausible cause.\footnote{Recent works featuring said relationship include \citeonline{Rodrik, broz, milner, walter} and others.} Integration into the global economy increases economic risks for certain communities, especially for less-educated, working-class voters in contexts marked by individual economic insecurity \cite{mughan}. They are at the mercy of the ups and downs of international business cycles, and a certain heterogeneity of results is expected within a given region, since some regions present a greater dependency on trade \cite{rodrikQA}. Other authors emphasize the role of cultural narratives, portraying populism as a reaction against progressive and liberal agendas. In any case, the causal role of economic insecurity in fueling the populist backlash against globalization is non-negligible \cite{Scheiring}. 
+
+
+Neoclassical trade theory predicts that globalization raises aggregate output but creates both winners and losers. More precisely, globalization can lead to social unrest and political instability. As \citeonline{Guriev} argues, both high-skilled workers in human-capital-abundant countries and low-skilled workers in human-capital-scarce economies tend to benefit from market integration. In contrast, low- and middle-skilled workers in advanced economies may benefit from cheaper imported goods and some aggregate-demand gains, but their jobs face greater risk as production in low human-capital–intensive sectors shifts to lower-wage countries. Middle-skilled jobs are particularly exposed because their relatively higher wages strengthen incentives for outsourcing and offshoring, while many low-skilled jobs remain tied to local manual services and cannot easily be relocated. Consistent with this framework, a growing literature suggests that globalization has contributed significantly to job polarization and rising inequality in advanced economies \cite{dehdari}. When social safety nets fail to cushion these adverse effects, anti-globalization sentiment may grow, enabling populist politicians, especially nationalist and the radical-right, to mobilize support by targeting the perceived winners of globalization: highly educated, metropolitan elites working in knowledge-intensive service sectors such as finance, consulting, and software \cite{colantone}.
+
+More systematically, following \citeonline{Rodrik}, the key causal channels through which globalization shocks influence populism can be divided into demand-side and supply-side mechanisms. On the demand side, the primary channel is economic dislocation, which shapes voters’ preferences and can intensify identity-based perceptions such as “us vs. them” narratives discussed earlier, nostalgia for past prosperity, and increased attachment to traditional values related to ethnicity, race, or religion. On the supply side, globalization shocks may prompt shifts in candidates’ platforms and encourage political parties to deploy cultural and identity-based rhetoric, strategically redirecting voters’ attention away from economic issues and toward cultural grievances.
+
+
+The applied literature that followed has been less concerned with establishing that trade exposure moves votes than with identifying \emph{how}, and its
+proposed channels can be grouped into four.\footnote{Examples of applied papers: \citeonline{dippel, dippel2, Autor, becher, blanchard, che, Jensen, colantone}.} The first is distributive: as local resources contract, competition over public goods and transfers intensifies, and incumbents who cannot expand the pie become easier to blame. The second is identitarian: economic loss raises the salience of group membership, so that demand for protection arrives bundled with demand for cultural closure, which political entrepreneurs can then exploit through strategic extremism. The third is organizational: trade exposure weakens the institutions that had aggregated working-class preferences so that the same grievance that once flowed into programmatic left parties finds no organized channel. The fourth is credibility: when redistributive promises become fiscally implausible, the left's characteristic offer loses force, and identity-based appeals from the right become comparatively more attractive \cite{colantone,Margalit}. What unites these four is a common demand-side logic: it is localized dislocation, not the aggregate gains from trade, that moves voters, and it does so heterogeneously across places of differing exposure \cite{rodrikQA}. 
+
+
+\citeonline{Autor} argue that the causal linkages between economic shocks and sustained increases in partisanship remain poorly understood. They examine the impact of the exposure of local labor markets’ to foreign competition from China on the rising of the political polarization in the United States since the 2000s. Districts facing a higher penetration of Chinese imports were much more likely to elect a conservative Republican at the expense of moderate candidates. In other words, trade shocks favored conservative views at the expense of centrists. The rightward realignement in affiliations and voting was carried mostly by non-Hispanic White Americans. In contrast, in majority-minority districts that were exposed to the China shock, liberal Democrats fared better. Although political donations were polarized in districts that faced trade shocks, the net electoral benefits also went to the Republican party. Their design matters here because it captures effects on both sides of the spectrum, not a single directional trend.
+
+The evidence reviewed so far concerns import competition. The closest analogue to the shock studied here is the collapse of German exports between 1928 and 1932, examined by \citeonline{brey}. Using a shift-share measurement and instrumenting German exports with US imports from the United Kingdom and France, the authors find that counties more exposed to the export decline saw a smaller increase in the Nazi vote, with gains for middle-class parties and a fall in turnout. The Nazi advance came instead through an indirect channel: the low urban demand made agricultural items prices fall, which in turn made farmers turn their opinion towards parties with price support in their programs. That way, economic shocks raises support for extreme parties only when those parties offer a credible response to certain groups. 
+
+The closest modern evidence on export losses comes from the 2018--2019 trade war, in which Chinese retaliatory tariffs struck US agricultural exports, soybeans above all. \citeonline{chyzh2021bean} find that Republican House vote share fell more between 2016 and 2018 in soy-producing counties. \citeonline{kim2021tariffs} and \citeonline{fetzer2021tariffs} show that retaliation was targeted at Republican-leaning areas and that exposed counties moved against the governing party in the 2018 midterms. Over a longer horizon the picture changes. \citeonline{autor2024heartland} find that retaliation had clear negative employment effects, concentrated in agriculture and partly offset by compensatory farm subsidies, yet by 2020 the trade war had not cost the governing party support in the exposed regions. Two lessons follow for the present design. First, a loss of external demand can move votes directionally, against the incumbent, without any widening of the ideological distribution. Second, the political response to an export loss is sensitive to timing and compensation: it appears within one electoral cycle and can be undone by the next, which makes a four-year stacked difference a demanding horizon for an export shock.
+
+Similarly, \citeonline{gonzalez} makes a related point for automation shocks in advanced democracies, with the particularity that economic distress translates into political polarization through electoral institucions. More precisely, when the income of routine workers declines, their demand for transfers increases, and outsider parties are in a better position to exploit it, since their promises of radical redistribution are considered more credible than those of established parties, which carry a policy record and closer ties to organized interests. In majoritarian systems with multiple districts, outsiders can target transfers at exposed workers in competitive districts without raising the overall tax burden, and polarization takes a distributive form. In proportional systems where governments depend on coalition building, however, voters expect the outsider's proposals to be moderated by its mainstream partner, which reduces its credibility advantage on redistribution and leads parties to differentiate themselves on cultural positions instead, such as immigration and national identity. The empirical evidence presented by the author is consistent with this distinction: Trump's 2016 campaign concentrated pro-worker rhetoric where exposed workers and close races coincided, while the AfD's manifesto had almost no redistributive content and the party performed better where exposure coincided with anti-immigrant sentiment.
+
+\section{Empirical evidence on trade exposure and voting in Brazil}
+
+For the Brazilian case, \citeonline{Ogeda} analysed the channels through which the process of trade liberalization in the 1990s impacted on the voting behaviour for presidency in the period from 1989 to 2014. Their main thesis is that the weakening of labor unions could be seen as a mechanism for the impact of tariff cuts on the vote-share for left-wing candidates. In order to do that, the authors used electoral data for presidential elections and checked whether microregions facing greater local labor shocks faced variations in the share of votes cast to left-wing candidates. The Brazilian trade liberalization can be interpreted as a natural experiment, and it enables the employment of methods such as a diff-in-diff. The results suggest that these regions had a reduction in left-wing parties support, and these effects are stable over the period. 
+
+More recently, \citeonline{barros} examine whether the differential
+exposure of men and women to the 2014--2017 Brazilian recession contributed to
+the election of Jair Bolsonaro in 2018. Their design is closely aligned with the one adopted here: they construct shift-share shocks at the
+microregional level, weighting national industry employment changes by the
+pre-crisis (2010) local employment structure, and identify effects under the
+quasi-experimental shocks perspective of \citeonline{quasi-experimental}. Their
+overall labor-demand shock has no significant effect on
+the vote for Bolsonaro, but the
+heterogeneity appears once the shock is decomposed. Regions where men are hit harder
+than women shift towards Bolsonaro, while regions where women are relatively more
+affected move in the opposite direction. The authors read this asymmetry through a
+compensation, or status-threat, mechanism: men facing a relative loss of
+economic status gravitate towards a candidate whose authoritarian and masculine
+rhetoric promises to restore it. Two features of the study bear directly on the
+present work. First, it shows that, in the Brazilian context, an apparently null
+aggregate shock can mask economically meaningful effects that surface only under
+decomposition, and it differs from this dissertation in
+both treatment and outcome: \citeonline{barros} decompose a recession shock
+by gender and measure a directional, partisan outcome (support for a single
+candidate) whereas the present work decomposes an export shock by sign and
+measures the ideological dispersion of the electorate (polarization) across the
+full 2010--2022 cycle. The two designs are thus complementary, one asking how
+economic shocks redirect partisan choice, the other how they reshape the spread
+of the ideological distribution itself.
+
+A third Brazilian study evaluates the direction of the shock: \citeonline{costa2025} exploits the same China-driven variation through a shift-share design over municipalities, interacting 2000 sectoral employment shares with Chinese import-supply and export-demand shocks instrumented by China's trade with countries other than Brazil, and follows city-council races from 2000 to 2020. Rather than asking how voters respond, the paper asks who runs: import exposure raises party affiliation, the number of candidates and the effective number of candidates, makes candidates younger, more educated and less often female, and lowers the share of left-wing candidates. The export shock, by contrast, has almost no effect, its only consistent result being a small increase in the share of highly educated candidates. The study matters here for two reasons. First, it documents an asymmetry between import and export shocks within Brazil, with data similar to those used in this dissertation. Second, it speaks to the supply side of Figure~\ref{fig:rodrik-framework}: if export shocks do not change the local candidate pool even in municipal races, where supply can vary across places, the assumption that supply-side responses are common within state-by-year cells and absorbed by the fixed effects is less restrictive than it might appear.
+
+A close study to the present one is \citeonline{joneschina}, who examine the 558 Brazilian microregions over the 2010--2022 presidential elections with shift-share measures of import and export exposure to China. Their exposure shares come from the 2000 Census, so they cover informal workers, and their measures are instrumented by China's trade with the rest of the world. Export exposure raises local earnings and lowers PT vote share in every election, by 2.0 to 3.4 percentage points per standard deviation. Those votes do not go to other left parties, so they move towards the centre and the right. The authors read this as a fall in the demand for redistribution among the winners from trade. Import exposure behaves differently: its effect on PT changes sign with the identity of the incumbent, which they interpret as economic voting and redistributive demand pulling against each other while the PT governs and in the same direction once it is in opposition, and it raises the share of invalid ballots. Taken together, the two designs show that export gains in Brazil move votes along the left--right axis; whether they also move votes apart is the question this dissertation asks.
+
+\citeonline{Novaes} propose a novel explanation linking variation in incumbency effects with exogenous commodity shocks. While voters attempt to sanction incumbents for economic performance, changes in commodity prices affect their evaluations and condition the electoral fortunes of incumbents vis-à-vis challengers. The argument is tested in Brazilian municipalities, combining a plausibly exogenous measure of variation in commodity prices with a close election regression discontinuity design. Their results show that increases in the price of agricultural commodities greatly enhance the prospects of incumbents, while negative shocks exacerbate their incumbency disadvantage, especially in rural municipalities. 
+
+Brazilian evidence on the labour-market side of this chain is more recent. \citeonline{hoyos} uses the tariff reductions of 1990-95 in a shift-share design over microregions and find that more exposed regions reallocated employment away from manufacturing and non-tradables and towards primary activities. In this particular case and relevant for the present work, the authors show how a single sector dominancy can violate consistency conditions à la \citeonline{quasi-experimental}. They also estimate spillovers through migration and geographic proximity, so that local estimates can be read as approximations to regional general-equilibrium responses.
+
+Brazil's coalitional presidentialism could, in principle, restrain extreme positions, since it requires negotiation and a strong political centre. The literature shows, however, that the system is under stress and that extremism has risen over the past decade, especially among right-wing politicians and parties \cite{ZUCCO}; the emptying of the centre, discussed in Section~\ref{sec:brazilian-context}, is the clearest evidence of this process. On the economic side, Brazilian exports fell by about a third in real terms between 2011 and 2016 and then recovered, reaching a new high in 2022 \cite{cooney}. The aftermath of the 2008 crisis, the political crisis, the anti-PT sentiment and the election of the far-right president Jair Bolsonaro in 2018 make the period a natural one to study \cite{hunter, status}.
+
+As a whole, the Brazilian studies converge on three findings. First, they establish that local trade shocks in Brazil have
+electoral consequences that are measurable at the microregional level: tariff cuts moved presidential vote shares \cite{Ogeda}, commodity prices moved
+incumbency \cite{Novaes}, and labour-demand shocks moved candidate support \cite{barros}. Second, that the mechanisms are plausibly institutional rather
+than purely material (\citeonline{Ogeda} locate theirs in union weakening,
+\citeonline{barros} in relative status) so that identical income losses can produce different political responses depending on who bears them. 
+Third, and methodologically, that aggregate nulls in this setting are not informative on their own: the central lesson of \citeonline{barros} is that an overall shock with no effect concealed a substantial one that surfaced only under decomposition.
+
+Three openings remain. The first is the outcome. Every study cited measures a
+directional quantity: the left's vote share, the incumbent's survival,
+one candidate's support, so none can register a movement that pushes voters
+towards both extremes at once, which is the pattern \citeonline{Autor} found
+in the United States and the one a theory of polarization predicts.
+The second is the shock, which has concentrated on import
+competition and on tariff liberalization that operate by displacing
+domestic producers; the 2010--2022 window instead offers a large swing in
+external demand, which compresses the returns to production without destroying
+its capacity, and whose political consequences have yet not been examined for a commodity exporter or for polarization as dispersion. 
+The third is the direction of the shock. With the notable exception of
+\citeonline{Novaes}, who does distinguish price increases from decreases, the
+literature estimates a single coefficient on a signed shock, imposing by
+construction that a boom of a given size moves votes exactly as far as a bust of the same size moves them in the opposite direction, an assumption that the
+loss-aversion logic underlying the whole grievance mechanism gives every reason
+to doubt. The Brazilian evidence that separates import from export exposure is mixed: export exposure leaves the municipal candidate pool almost unchanged \cite{costa2025} but moves the PT vote \cite{joneschina}.
+This dissertation addresses these three points with a continuous, non-directional
+polarization outcome computed for 557 microregions; two export shocks built for a
+commodity exporter, one from Brazilian exports by industry and one from foreign
+import demand by destination; and a separate coefficient for export busts, tested
+as a pre-registered secondary hypothesis.
+
+
+
+\section{The Brazilian context: coalitional presidentialism, negative partisanship, and the 2010--2022 export cycle}
+\label{sec:brazilian-context}
+
+To keep the empirical discussion consistent with the time horizon of this project, the relevant political cycle starts in 2010 and extends through the elections of 2014, 2018 and 2022, comprising four general elections (for federal deputy, governor and president) and the trade shocks of the intervening years.
+
+The political literature documents a gradual
+exhaustion of the post-1994 equilibrium, in which the PT--PSDB dispute
+had organised national disputes for two decades. The 2013 protests,
+the 2014 launch of Operação Lava Jato, the 2015--2016 recession and
+the impeachment of Dilma Rousseff in 2016 acted as compounding shocks
+to a fragmented multiparty presidentialism, eroding the credibility
+of established parties and opening space for outsider competitors
+\cite{melloespektor2018,hunter}. Survey evidence shows
+that this period was marked less by a generalised growth in
+partisanship than by the consolidation of \emph{antipetismo} as a
+durable negative identity, with the PT acting as the single anchor of
+both positive and negative attachments in a mostly nonpartisan
+electorate \cite{samuelszucco2018,renno2020}.
+
+In the survey literature, negative partisanship it denotes an attachment defined by rejection of a party rather than
+by identification with one, and it is diagnosed by the standard battery of
+questions on which parties a respondent would never vote for
+\cite{samuelszucco2018}. Its Brazilian relevance is structural. Across the
+2002--2018 period the PT was the only party for which a substantial share of the
+electorate reported either a positive or a negative attachment, so the country's
+principal partisan cleavage came to be organised around one party's supporters
+and its opponents, while attachments to every other party remained thin
+\cite{samuelszucco2018,renno2020}. \emph{Antipetismo} is the label the
+literature gives to the negative pole of that cleavage; the phenomenon is
+symmetric in kind to the positive pole, and no claim about the merits of either
+is intended or required here.
+
+This has two consequences for this dissertation. First, an electorate organised
+around rejection rather than programmatic identification is one in which
+economic grievance has an unusually direct route into vote choice, because the
+grievance does not need to be translated into a positive programme before it can
+be expressed. Second, a cleavage anchored on a single
+party is a national object: it does not vary across microregions except
+through vote shares, and its evolution over the period is common within any
+state-by-year cell. It is, therefore, absorbed by fixed effects. Negative partisanship
+thus enters this work as part of the context that makes the question worth
+asking.
+
+On the international side, the same window covers the commodity super-cycle (whose peak in real prices is conventionally
+dated to 2011--2014), a sharp recomposition of Brazilian exports
+towards a narrower commodity bundle of primary and resource-based goods directed at China, and a phase
+of low and declining backward participation in global value chains. By the early 2020s, soybeans, iron ore, crude
+petroleum, beef and pulp alone accounted for the bulk of bilateral
+flows, and the share of mineral and agricultural products in total
+Brazilian exports rose from 54.3\% in 2014 to 65.2\% in 2021
+\cite{callegari,iedi}.
+Brazil's backward participation in global value chains remained among the lowest of large emerging economies, meaning that exports remained concentrated in resource-based products, with foreign value added accounting for under 20\% of gross exports, a pattern in which manufactured inputs are imported and resource-based outputs are sold abroad with little embedded foreign content \cite{callegari}.
+
+
+This asymmetric exposure has measurable subnational consequences:
+microregions specialised in tradeable manufacturing experienced
+prolonged declines in formal employment and earnings after earlier
+tariff cuts \cite{Dix1}, while regions exposed
+to Chinese import competition saw further losses in manufacturing
+employment and rising informality during the 2000s and 2010s
+\cite{paz2019,paz2022}. Conversely, microregions benefiting
+from China's export demand experienced faster wage growth and
+lower take-up of cash transfers \cite{costa2012}, generating sharp spatial heterogeneity in
+trade exposure that maps imperfectly onto pre-existing political
+cleavages. This pattern is documented in the literature concerning Latin American responses to globalization shocks \cite{dix2025, costa2012}. This spatial and structural unevenness is the raw material on which the
+shift-share designs of Chapter~\ref{ch:empirical-strategy} are built. As that chapter shows, however, the identifying variation is narrower than the breadth of the export basket suggests: most of it comes from the oil and iron-ore shocks and from the microregions that produce or ship those goods.
+
+
+
+\section{Hypothesis}
+\label{sec:hypothesis}
+
+
+The main hypothesis (H1) is that export-shock exposure changes the ideological dispersion of the local vote \cite{Rodrik}. Regions most affected by negative export shocks are expected to show a wider dispersion of the vote across ideologically distant parties as a result of heightened economic distress among voters. H1 is tested on the Dalton index of the federal-deputy vote and is stated two-sided, since a positive shock is a local gain that could narrow the distribution. The prediction concerns the spread of the votes, not the success of any particular candidate or group.
+
+This conjecture is consistent with the broader political economy literature connecting economic losses to radicalization \cite{Autor, Margalit}. In Brazil, \citeonline{Rettl} finds that export losses reduced the PT vote share, and more so where evangelicals are concentrated.
+Previous work has shown that the state in Latin America often lacks
+credibility from the voter's perspective \cite{holland}, weakening
+the redistributive promise of left-wing parties and potentially
+making cultural and identity-based appeals from the populist right
+more salient.
+These conditions may exacerbate the cultural channel identified by
+\citeonline{colantone} and \citeonline{Rodrik}, creating an
+environment in which economic dislocation translates more readily
+into ideological radicalization.
+
+
+\begin{figure}[H]
+\caption{Causal framework linking trade-driven economic dislocation to electoral
+polarization, adapted from \citeonline{Rodrik}}
+\label{fig:rodrik-framework}
+\centering
+\begin{tikzpicture}[
+  font=\small,
+  >=Latex,
+  box/.style={draw=blue!55!black, fill=blue!8, thick, align=center,
+              minimum width=4.6cm, minimum height=1.0cm},
+  boxwide/.style={box, minimum width=5.6cm},
+  supplybox/.style={draw=gray!60, fill=gray!12, thick, dashed, align=center,
+                    minimum width=5.6cm, minimum height=1.0cm},
+  outbox/.style={draw=orange!80!black, fill=orange!12, thick, align=center,
+                 minimum width=5.6cm, minimum height=1.15cm},
+  demandarr/.style={->, draw=blue!55!black, thick},
+  supplyarr/.style={->, draw=gray!60, thick, dashed},
+  alab/.style={font=\bfseries},
+  slab/.style={font=\bfseries, text=gray!55!black}
+]
+
+% ---------- Nodes ----------
+\node[box] (glob) {Globalization shock\\{\footnotesize(commodity \& export cycle)}};
+\node[box] (econ) [below=9mm of glob]
+      {Economic dislocation\\{\footnotesize(local export-shock exposure)}};
+
+\node[boxwide] (prefs) [below=11mm of econ, xshift=10mm]
+      {Individual policy\\preferences};
+\node[outbox] (elect) [below=11mm of prefs]
+      {\textbf{Electoral polarization}\\[1pt]\footnotesize (Dalton index of the\\ federal-deputy vote)};
+\node[supplybox] (party) [below=13mm of elect]
+      {Party programs /\\candidate ideology};
+
+% ---------- Demand-side (identified) arrows ----------
+\draw[demandarr] (glob) -- (econ)
+      node[midway, right, font=\footnotesize\itshape, text=blue!55!black] {shift-share};
+\draw[demandarr] (econ) -- (prefs) node[midway, left,  alab] {a};
+\draw[demandarr] (prefs) -- (elect);
+
+% ---------- Supply-side (not separately identified) arrows ----------
+\draw[supplyarr] (party) -- (elect);
+
+% Path c: economic dislocation -> party programs (left route)
+\coordinate (cX)   at ($(econ.west)+(-1.35cm,0)$);
+\coordinate (cTop) at (cX |- econ.west);
+\coordinate (cBot) at (cX |- party.west);
+\draw[gray!60, thick, dashed] (econ.west) -- (cTop) -- (cBot);
+\draw[supplyarr] (cBot) -- (party.west);
+\node[slab] at ($(cTop)!0.55!(cBot) + (-0.20cm,0)$) {b};
+
+% ---------- Demand / supply divider + side labels ----------
+\coordinate (divY) at ($(elect.center)+(0,-0.45cm)$);
+\coordinate (rlab) at ($(prefs.east)+(2.0cm,0)$);
+\coordinate (divL) at ($(cX)+(-0.30cm,0)$);
+\coordinate (divR) at ($(prefs.east)+(2.9cm,0)$);
+\draw[densely dotted, gray] (divL |- divY) -- (divR |- divY);
+\node[gray, align=center] at ($(rlab |- divY)+(0,1.3cm)$)
+      {DEMAND SIDE\\{\footnotesize(identified)}};
+\node[gray, align=center] at ($(rlab |- divY)+(0,-1.0cm)$)
+      {SUPPLY SIDE\\{\footnotesize(absorbed by FE)}};
+
+% ---------- Legend ----------
+\node[draw=black!40, rounded corners, fill=black!2, align=left,
+      font=\footnotesize, text width=11cm, inner sep=5pt]
+      (leg) [below=10mm of party]
+      {\textcolor{blue!55!black}{\textbf{------}}\; \textbf{Demand-side ($a$):}
+        locally varying transmission of the trade shock into the polarization
+        outcome; jointly captured by the stacked first-difference estimate
+        (not separately identified).\\[3pt]
+       \textcolor{gray!60}{\textbf{-\,-\,-}}\; \textbf{Supply-side ($b$):}
+        national party strategy; common within state$\times$year and hence
+        absorbed by the fixed effects. Shown for completeness, not estimated here.};
+
+\end{tikzpicture}
+\par\noindent\footnotesize \textit{Note:} The retained pathways ($a$, $b$) are
+shown; line style indicates which the empirical design speaks to. Solid blue:
+demand-side channels jointly captured by the stacked first-difference estimate.
+Dashed grey: supply-side channels operating through national party strategy,
+absorbed by the state$\times$year fixed effects and shown for completeness
+rather than separately identified.
+\end{figure}
+
+The exposure measures constructed in this dissertation are export shocks in a commodity-exporting developing economy, a different setting from the one in most of the literature on trade shocks (increased import competition in developed economies). The mechanisms shown in Figure~\ref{fig:rodrik-framework} carry over: a negative export shock compresses local labour demand and generates the economic dislocation that the demand-side account converts into anti-system sentiment. A positive export shock is a local gain, so the boom and bust phases of the commodity cycle need not move polarization symmetrically. This motivates the separate coefficient on export busts in Section~\ref{sec:decomposition}. The industry-export design follows \citeonline{Rettl}, who applies it to the Brazilian case.
+
+Two secondary hypotheses follow from this framework, and both were registered before estimation. H1b states that the effect of negative shocks on dispersion is positive and larger than the (possibly null) effect of positive shocks, consistent with the evidence of \citeonline{Autor} and \citeonline{louzada}. H2 states that the mechanism operates through the right flank of the ideological distribution, in line with the Brazilian evidence on the rise of \emph{antipetismo} and conservative mobilization \cite{status,samuelszucco2018}; it is tested on the vote-weighted mean ideology of each office. Heterogeneity by pre-existing sectoral structure, with commodity-exporting regions responding differently from manufacturing-oriented ones \cite{ferraz2014,oecd2022brazil}, is treated as descriptive only: the design has too few independent shocks to support inference on subgroups.
+
+
+
+\chapter{Data and variables}
+\label{ch:data-variables}
+
+\section{Sample, sources, and coverage}
+
+The empirical analysis covers the four general elections held between 2010 and 2022, for federal deputy, governor and president, using first-round returns. Electoral data come from the Brazilian Superior Electoral Court (TSE). Product-level export data by industry, and municipal exports by destination country, come from Comex Stat (Ministry of Development, Industry, Trade and Services). Foreign import demand comes from the CEPII BACI database of bilateral trade flows. Employment by industry and microregion is drawn from RAIS (Relação Anual de Informações Sociais), the administrative register of formal employment. Party ideology scores come from the Brazilian Legislative Surveys \cite{ZUCCO}.
+% TODO(bib): add a citation for CEPII BACI (Gaulier and Zignago, 2010).
+
+The estimation sample comprises $1{,}671$ microregion-by-year observations,
+spanning 557 microregions and three first differences relative to the 2010 base
+year; the regressions report $1{,}668$ observations once the state-by-year fixed
+effects absorb singleton cells. Two exclusions account for the difference
+between these figures and the $1{,}674$ raw observations implied by 558
+microregions in three difference years.
+
+The first is a single microregion, Japurá (AM). It recorded 866 formal jobs in 2010, none of them in an industry that exports, so its tradable employment share is zero, it has no row in the share matrix, and the manufacturing share of its tradable employment, a control in the specification curve, is undefined. It is dropped from the sample, which removes three observations. The second is the Distrito Federal, which forms its own state and contains a single microregion; its three observations are absorbed as state-by-year singletons by the fixed effects and are not dropped by any sample rule.
+Table~\ref{tab:data_sources} summarizes all data sources.
+
+\begin{table}[H]
+\centering
+\caption{Data sources}
+\label{tab:data_sources}
+\begin{threeparttable}
+\begin{tabularx}{\textwidth}{p{3.5cm} X p{3.0cm}}
+\toprule
+\textbf{Variable} & \textbf{Source and description} & \textbf{Coverage} \\
+\midrule
+\addlinespace[0.3em]
+\multicolumn{3}{l}{\textbf{Outcome variables}} \\[0.3em]
+Dalton polarization ($P^{D}$), federal deputy (primary) & TSE first-round party votes (nominal and party-list) weighted by BLS ideology scores \cite{ZUCCO} & 2010--2022 \\[0.3em]
+Dalton polarization ($P^{D}$), governor and president & TSE first-round candidate votes, by party, weighted by BLS scores & 2010--2022 \\[0.3em]
+Mean ideology ($\bar{y}$), Esteban--Ray, centre-emptying ($P^{N}$) & Same vote shares and scores; $P^{N}$ is the vote share outside the band $[-0.25, 0.25]$ & 2010--2022 \\[0.5em]
+\multicolumn{3}{l}{\textbf{Treatment variables}} \\[0.3em]
+S0: industry exports per worker & RAIS 2010 employment shares (CNAE 2.0) and Comex Stat national exports (NCM), both mapped to ISIC Rev.~4 & 2010--2022 \\[0.3em]
+S3: destination import demand & Comex Stat 2010 municipal exports by destination; BACI imports of each destination from all origins except Brazil & 2010--2022 \\[0.5em]
+\multicolumn{3}{l}{\textbf{Controls (all fixed at 2010)}} \\[0.3em]
+Log GDP per capita & IBGE municipal GDP, summed to the microregion and divided by Census population & 2010 \\[0.3em]
+Log population & IBGE Census 2010 & 2010 \\[0.3em]
+Tradable employment share ($\theta_r$, S0) & Share of 2010 formal employment in the 152 exporting industries & 2010 \\[0.3em]
+Export exposure ($\theta^{dest}_r$, S3) & 2010 exports per worker to the 201 destinations of the design & 2010 \\[0.3em]
+Urban share, education share, manufacturing share of tradables & IBGE Census 2010 and RAIS; used only in the specification curve & 2010 \\[0.3em]
+\bottomrule
+\end{tabularx}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item \textit{Note:} Ideology scores from the Brazilian Legislative Survey (BLS) are matched to election
+years as described in \hyperref[tab:bls_match]{Table~\ref{tab:bls_match}}. Education share: adults aged 25 or older with at least complete secondary schooling.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+
+% ------------------------------------------------------------
+\section{Outcome: measuring political polarization}
+% ------------------------------------------------------------
+ 
+\subsection{Temporal alignment of BLS waves to election years}
+\label{subsec:bls}
+
+The literature distinguishes at least two related but conceptually
+distinct phenomena: \emph{ideological dispersion}, which captures how
+spread out the distribution of political preferences is around some
+central tendency, and \emph{bipolarization}, which specifically captures
+the tendency of that distribution to cluster into two opposing camps with
+a vacated center \cite{esteban,duclos}.
+Both are theoretically relevant for the argument developed here.
+The ideal measure should (i) exploit the continuous ideological scores
+provided by \citeonline{ZUCCO} rather than reducing them to categories,
+(ii) exhibit meaningful variation across microregions and election years, and (iii) still be interpretable 
+in terms of the left-right axis that is central to the theoretical framework.
+ 
+Because the ideological scores from \citeonline{ZUCCO} are estimated
+at the national party level (reflecting elite perceptions of party
+positions and not voter-level beliefs), all variation across microregions
+in the polarization index constructed from them comes from variation in
+\emph{vote shares}, not from variation in the ideological scores themselves.
+This separates the ideological content of each party label (a national
+parameter) from the revealed preferences of local electorates (the
+variable of substantive interest), at the cost of an identifying assumption:
+voters perceive the ideological positions of parties consistently with
+elite perceptions, at least in general terms.
+
+Two further construction choices bear on how the index should be read. Vote
+shares are computed from \emph{first-round} returns throughout, because a
+dispersion index is not meaningful over a two-candidate runoff, where the
+measure would be mechanically determined by the ideological distance between the
+two survivors and the closeness of the race. Second, coverage of the vote
+by BLS-scored parties is high but not complete, and votes for unscored parties
+are dropped, not imputed. In the presidential vote, scored parties account for
+$99.7$ per cent of valid first-round votes in 2010, $98.6$ in 2014, $96.1$ in
+2018 and $99.4$ in 2022; the 2018 shortfall is concentrated in NOVO ($2.5$ per cent)
+and PATRIOTA ($1.3$ per cent). Coverage is lower in the federal-deputy vote, which
+is spread over many more parties: $90.2$, $93.7$, $91.3$ and $86.4$ per cent.
+Appendix~\ref{ch:supplementary-tables} reports the excluded presidential parties year by year.
+
+The choice of the federal-deputy vote as the primary outcome follows from what the
+index can measure in each office. In the median microregion, the deputy vote is
+spread over 13 to 22 scored parties, while the presidential vote is concentrated in
+4 to 8. With so few options, the presidential index behaves mostly as a function of the
+winner's vote share: within state-by-year cells, the winner's share and its square
+explain 52 per cent of the variation of the presidential index in 2010 and 96 per
+cent in 2022, against 2 to 18 per cent for the deputy index. A change in the
+presidential index therefore says more about how lopsided the race was than about
+how far apart the electorate is. The presidential and gubernatorial indices are kept
+as secondary outcomes.
+
+The Brazilian Legislative Surveys (BLS) have been fielded in the year after each
+legislative election since 1993, the first wave dating from 1990, while general elections
+occur in even years. As an alignment rule for constructing an ideological index,
+this research uses the BLS wave fielded immediately before each
+election, as it best captures the ideological positions of
+parties as perceived by legislators (and, by extension, as signaled
+to voters) at the time ballots are cast.
+Table~\ref{tab:bls_match} summarizes the correspondence adopted.
+ 
+\begin{table}[h!]
+\centering
+\caption{Correspondence between elections and BLS waves}
+\label{tab:bls_match}
+\begin{tabularx}{0.75\textwidth}{ccc}
+\toprule
+\textbf{Election} & \textbf{BLS wave used} & \textbf{BLS field year} \\
+\midrule
+2010 & BLS 6 & 2009 \\
+2014 & BLS 7 & 2013 \\
+2018 & BLS 8 & 2017 \\
+2022 & BLS 9 & 2021 \\
+\bottomrule
+\end{tabularx}
+\par\noindent\footnotesize\textit{Note:} Brazilian Legislative Surveys (BLS) data from \cite{ZUCCO}. BLS 9 (2021) was the most recent wave available at the time of writing. BLS waves do not necessarily cover the same set of parties across years.
+\end{table}
+ 
+The 2018 score of the Partido Social Liberal (PSL), Bolsonaro's party, needs separate treatment. 
+With little to no significant political influence throughout most of its existence and lacking any 
+meaningful prior ideological identity, it could be argued that PSL qualifies as a personalistic party in the sense of 
+\cite{Gunther}: an organization whose electoral appeal rests entirely 
+on the personal charisma of its candidate rather than any programmatic platform. The party worked as a vehicle
+for Bolsonaro's candidacy and grew into relevancy based on this fact alone. Under this 
+classification, the candidate himself signals the party's ideological position, not the other way 
+around. BLS 8 (2017) scores neither PSL nor Bolsonaro, so the 2018 PSL vote is assigned Bolsonaro's individual score from BLS 9 ($0.862$). This is the one exception to the alignment rule of Table~\ref{tab:bls_match}: the score comes from a wave fielded after the 2018 election, when Bolsonaro had already governed for two years.
+
+Figure~\ref{fig:polarization} shows the distribution of BLS ideology scores of parties and presidents in each wave from 1990 to 2021, on the Zucco--Power scale (from $-1$ on the left to $+1$ on the right). The violin plots depict the density of party positions in each wave, with major parties labeled and colour-coded by ideological camp. The mean position moved to the right after 2009, from $-0.13$ in that wave to $0.16$ in 2021. Positions on the far right are not new, however: every wave includes at least one party scored above $0.6$. The figure describes the ideological options available to voters, not the vote tallies, which enter the analysis through the microregional vote shares.
+
+\begin{figure}[H]
+  \caption{Ideological Positioning of Brazilian Political Parties, 1990--2021}
+  \label{fig:polarization}
+  \centering
+  \includegraphics[width=\textwidth]{figures/ideology_strip_violin.pdf}
+  \par\noindent\footnotesize \textit{Note:} Dataset retrieved from \citeonline{ZUCCO}.
+            Ideology scores are estimated on a continuous scale from approximately $-1$
+            (far left) to $+1$ (far right).
+            The shaded band denotes the center interval $[-0.25, 0.25]$.
+            Vertical lines through each point represent one standard error of the ideology 
+			estimate. The violin shape represents the distribution of party positions in each year,
+            with wider sections indicating a higher concentration of parties at that score.
+
+\end{figure}
+
+The measure proposed here captures the distribution of votes across the ideological positions of parties, and not the distribution of attitudes among voters. \citeonline{feres} uses the 2022 Brazilian Electoral Study to find that the value and policy preferences of Lula and Bolsonaro voters are more similar than usually assumed, that the polarization observed is asymmetric, with the far-right vote considerably more eccentric than the centre-left one, and that support for cash transfers programms are orthogonal to the values dimension that structures the vote. In other words, an electorate whose attitudes are moderate and multidimensional can still distribute its votes over increasingly distant party positions, which is the phenomenon the Dalton index is built to register. 
+
+\subsection{Primary measure: the Dalton polarization index}
+ 
+The primary polarization measure follows \citeonline{dalton},
+whose index is the vote-share-weighted standard deviation of party
+positions.
+Formally, let $v_{rpt}$ denote the share of party $p$ in the scored valid
+vote of microregion $r$ at election $t$,
+and let $y_{pt}$ denote the BLS point estimate for that party in the
+wave matched to election $t$ as per Table~\ref{tab:bls_match}.
+The weighted mean ideological position of microregion $r$ at time
+$t$ is:
+ 
+\begin{equation}
+    \bar{y}_{rt} = \sum_{p} v_{rpt} \, y_{pt},
+    \label{eq:ymean}
+\end{equation}
+ 
+\noindent and the Dalton polarization index is:
+ 
+\begin{equation}
+    P^{D}_{rt} = 
+        \sqrt{\, \sum_{p} v_{rpt} \left( y_{pt} - \bar{y}_{rt}
+        \right)^{2} \,},
+    \label{eq:poldalton}
+\end{equation}
+ 
+\noindent 
+ 
+Higher values of $P^{D}_{rt}$ indicate that the local vote is
+spread across candidates occupying more ideologically distant
+positions.
+The index equals zero when all valid votes concentrate on a single
+party regardless of ideology, and reaches its maximum when the
+vote is evenly split between the two most ideologically distant
+parties in the race.
+Because the index is measured in the same units as the BLS
+ideological scores themselves changes in
+$P^{D}_{rt}$ can be interpreted directly in terms of the left-right
+scale.
+ 
+The original application of \citeonline{dalton} uses voters'
+mean perceptions of party positions drawn from the Comparative
+Study of Electoral Systems (CSES).
+The present research substitutes BLS legislative survey estimates,
+which offer two advantages in this specific context: they are
+available at the exact temporal resolution required by the panel
+(one wave per legislative cycle), and they are validated against
+an independent expert survey (PREPPS, 17 parties and two presidents) at $r = 0.97$ \cite{ZUCCO}.
+CSES coverage of Brazil is sparse and inconsistent across the four
+election years in the sample, making the BLS the clearly preferable
+input.
+ 
+A key advantage of $P^{D}_{rt}$ in the present setting is that it
+uses the full continuous ideological scale, so it never degenerates
+to a constant across microregions or election years, which is a risk for
+any measure that relies on categorical thresholds, as discussed
+below.
+A known limitation is that $P^{D}_{rt}$ does not distinguish between
+a region where all votes go to the moderate center (low dispersion,
+low polarization, a more desirable behavior) and one where all votes
+go to a single extreme candidate (also low dispersion, yet arguably
+not a moderate outcome).
+This limitation matters little for the federal-deputy vote, where the median microregion splits its vote among 13 to 22 scored parties, so a vote concentrated on a single extreme party does not occur in the sample.
+
+Figure \ref{fig:brazil-polarization-map-2x2} shows the distribution of $P^{D}_{rt}$ across microregions in each of the four elections, with microregions shaded by within-year quintile so that the darkest tone (Q5) marks the most polarized fifth of the distribution in that election.
+% TODO(figure): the map and the description below refer to the presidential index; regenerate for the deputy index and update the text.
+In the presidential vote, the Northeast remains in the lowest quintiles in every election. The South concentrates the most polarized microregions in 2010 and 2014 (about two thirds of its microregions in the top quintile) but much less in 2018 and 2022, when the top quintile spreads over the Centre-West, the North and the interior of the Southeast. Many of these regions are commodity producers, but this spatial association only motivates the analysis and does not identify a causal relationship.
+
+
+
+\begin{figure}[H]
+  \caption{Political polarization in Brazil (microregional map)}
+  \label{fig:brazil-polarization-map-2x2}
+  \centering
+  \includegraphics[width=\textwidth]{figures/brazil_polarization_map_2x2.pdf}
+  \par\noindent\footnotesize \textit{Note:} The index was calculated based on BLS scores reported by \citeonline{ZUCCO}, and shades in grey denote microregional quintiles computed within each election year.
+
+\end{figure}
+
+
+\subsection{Supplementary indicator: the center-emptying index}
+ 
+For comparability with the descriptive evidence in \citeonline{ZUCCO},
+a second indicator is reported as a supplementary exercise.
+Following \citeonline{wachsmann}, political polarization is proxied by
+the complement of the aggregate vote share accruing to candidates
+whose party's BLS estimate falls within a ``neutral'' ideological
+interval:
+ 
+\begin{equation}
+    P^{N}_{rt} = 1 - S^{N}_{rt},
+    \label{eq:poleq}
+\end{equation}
+ 
+\noindent where $S^{N}_{rt}$ is the aggregate vote share of parties
+whose estimated position lies in $[-0.25,\; 0.25]$.
+Higher values indicate greater polarization through the emptying of
+the political center.
+This measure is well-motivated theoretically, but its applicability as
+a \emph{primary} outcome in presidential election years is limited by
+the small number of viable candidates.
+In the 2018 presidential election, for instance, all eight scored parties fall outside the neutral band, so $P^{N}_{rt} = 1$ in every microregion and the index has no variation in that cycle. 
+Appendix E of \citeonline{ZUCCO} shows that the substantive message
+regarding the shrinking of the center is robust to widening the
+threshold to $[-0.40,\; 0.40]$. Given these constraints, $P^{N}_{rt}$ is reported only as a descriptive supplement to $P^{D}_{rt}$, in the specification curve of Chapter~\ref{ch:results}.
+
+\section{Control variables}
+\label{subsec:controls}
+ 
+All controls in $\mathbf{X}_{r,2010}$ are measured in 2010, before the first difference begins, so that none of them can itself respond to the export shocks of 2010--2022. Their construction and sources are summarised in Table~\ref{tab:data_sources}. They fall into two groups: terms required by the shift-share design itself, and characteristics of the microregion that plausibly predict both its export specialization and its political behaviour.
+
+The first group follows from the construction of the treatments. In the industry design (S0), the exposure shares are incomplete: they sum to the tradable employment share $\theta_r = \sum_j s_{rj}$ and not to one, so microregions with larger tradable sectors load more heavily on any realization of the shocks. \citeonline{quasi-experimental} show that the estimator is consistent only when $\theta_r$ is controlled for. The destination design (S3) has the same structure: its shares sum to the 2010 value of exports per worker to the 201 destinations of the design, $\theta^{dest}_r$, which enters as $\log(1+\theta^{dest}_r)$ together with an indicator for microregions that exported nothing to those destinations in 2010. Both treatments are also recentred (Section~\ref{sec:recentring}), which removes the part of each treatment that is predictable from the shares alone.
+
+The second group comprises log GDP per capita and log population. Brazilian microregions differ sharply along both dimensions, and these differences are not independent of trade: agricultural and extractive microregions are systematically poorer and smaller than manufacturing ones, and the same characteristics are associated with political behaviour independently of any trade shock. The log transformation reduces the influence of a small number of highly skewed observations, mostly in the Amazon. The urban share, the share of adults with at least complete secondary schooling, and the manufacturing share of tradable employment are not in the base specification but enter an extended control set in the specification curve. Education is the covariate the comparative literature most consistently associates both with vulnerability to trade shocks and with receptiveness to anti-establishment appeals \cite{mughan,Guriev,colantone}; adding the extended set moves the industry-design estimate from $0.034$ to $0.054$ and the destination-design estimate from $-0.029$ to $-0.030$, with no change in conclusions.
+
+These controls do not remove the concern, formalised in the shares perspective of \citeonline{goldsmith}, that local specialization is itself the product of geography, settlement and policy, all of which may shape politics directly. Under the shocks perspective adopted here, identification instead requires that the shocks be as good as randomly assigned conditional on these controls \cite{quasi-experimental}. Whether that holds is examined through the falsification test on pre-2010 elections and the leverage diagnostics of Section~\ref{sec:robustness}.
+
+
+
+\section{Descriptive statistics}
+
+\begin{table}[!htbp]
+\centering
+\caption{Descriptive statistics}
+\label{tab:desc_stats}
+\begin{threeparttable}
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lrrrrrrrr@{}}
+\toprule
+Variable & $N$ & Mean & SD & Min & P25 & Median & P75 & Max \\
+\midrule
+\multicolumn{9}{l}{\textit{Outcomes (change from 2010)}} \\
+$\Delta$ Dalton, deputy (primary) & 1,671 & 0.049 & 0.070 & -0.173 & 0.002 & 0.045 & 0.095 & 0.344 \\
+$\Delta$ Dalton, governor        & 1,671 & 0.119 & 0.162 & -0.354 & 0.016 & 0.127 & 0.224 & 0.597 \\
+$\Delta$ Dalton, president       & 1,671 & 0.226 & 0.141 & -0.095 & 0.072 & 0.264 & 0.332 & 0.544 \\
+$\Delta$ Center-emptying, president & 1,671 & 0.218 & 0.186 & -0.239 & 0.054 & 0.218 & 0.383 & 0.613 \\
+\midrule
+\multicolumn{9}{l}{\textit{Treatments}} \\
+S0, $\Delta$EPW (raw)            & 1,671 & 0.112 & 0.494 & -4.726 & 0.004 & 0.039 & 0.146 & 9.107 \\
+S0, recentred                    & 1,671 & -0.441 & 0.685 & -4.834 & -0.676 & -0.248 & -0.049 & 6.986 \\
+S3, raw    & 1,671 & 0.034 & 1.766 & -22.126 & -0.090 & 0.000 & 0.068 & 20.525 \\
+S3, recentred & 1,671 & -0.395 & 1.966 & -38.519 & -0.283 & -0.020 & 0.000 & 11.834 \\
+\midrule
+\multicolumn{9}{l}{\textit{Controls (2010)}} \\
+Tradable emp.\ share ($\theta_r$) & 1,671 & 0.250 & 0.147 & 0.002 & 0.125 & 0.247 & 0.365 & 0.681 \\
+Exports per worker ($\theta^{dest}_r$) & 1,671 & 4.131 & 13.382 & 0.000 & 0.019 & 1.179 & 3.500 & 174.545 \\
+Log GDP per capita             & 1,671 & 16.251 & 0.653 & 14.871 & 15.706 & 16.311 & 16.711 & 18.170 \\
+Log population                 & 1,671 & 12.126 & 0.943 & 7.875  & 11.516 & 12.066 & 12.605 & 16.441 \\
+Urban share                    & 1,671 & 0.721  & 0.165 & 0.223  & 0.586  & 0.728  & 0.864  & 1.000 \\
+Education share                & 1,671 & 0.262  & 0.089 & 0.098  & 0.192  & 0.251  & 0.318  & 0.554 \\
+Manuf.\ share of tradable emp. & 1,671 & 0.642  & 0.254 & 0.000  & 0.463  & 0.699  & 0.854  & 1.000 \\
+\bottomrule
+\end{tabular*}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item \textit{Note:} Outcomes and treatments are first differences between the base year 2010 and election year $t\in\{2014,2018,2022\}$; controls are measured in 2010. The S3 treatments and $\theta^{dest}_r$ are in thousands of 2010 US dollars of exports per worker. Recentred treatments subtract the expected treatment under within-stratum permutation of the shocks (Section~\ref{sec:recentring}). The regressions use each treatment divided by its standard deviation. $N=1{,}671$ microregion-by-year observations across 557 microregions; the regression sample of $1{,}668$ drops the three Distrito Federal observations as state-by-year singletons. Governor indices use the repaired 2022 panel (Appendix~\ref{ch:supplementary-tables}).
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+Table~\ref{tab:desc_stats} reports descriptive statistics for the estimation sample of $1{,}671$ microregion-by-difference observations (557 microregions across three first differences relative to 2010).
+
+All the polarization outcomes increase on average over the period, so the local vote grew more ideologically dispersed between 2010 and 2022, consistent with the documented hollowing of the Brazilian centre \cite{ZUCCO}. The increase is largest in the presidential vote (mean $0.226$, positive in 96 per cent of observations) and smallest in the federal-deputy vote (mean $0.049$, positive in 76 per cent). Part of this level increase may reflect the widening of the ideological range on offer after 2014, and not only a redistribution of votes within a fixed range; the design uses only the variation within state-by-year cells, which absorbs the national time path.
+
+The raw industry treatment displays a modest positive mean change ($0.112$) alongside a standard deviation more than four times as large ($0.494$) and a range from $-4.73$ to $9.11$: microregions experienced both pronounced export contractions and pronounced expansions over the commodity cycle \cite{cooney}. The distribution is concentrated near zero (median $0.039$, lower quartile $0.004$) because exposure is scaled by the tradable footprint $\theta_r$, which averages one quarter of formal employment. Recentring shifts both treatments down, because the industries and destinations that employ or buy the most received, on average, smaller shocks than the average of their stratum; what remains is the part of each treatment that the shares alone do not predict. The destination treatment is far more skewed than the industry one: a handful of microregions with very high exports per worker, mostly port and terminal locations, account for its tails, a feature to which Section~\ref{sec:robustness} returns.
+
+The controls confirm the structural heterogeneity of the Brazilian territory. The urban share ranges from $0.22$ to fully urbanised (mean $0.72$); log population and log GDP per capita span more than eight and roughly three log points respectively, reflecting the coexistence of small rural microregions and large metropolitan ones; the education share averages $0.262$ with a range of $0.098$ to $0.554$. The tradable footprint $\theta_r$ ranges from essentially zero to $0.68$ with a mean of $0.25$, while \emph{within} tradables the manufacturing share averages $0.64$ and varies over the full unit interval. A microregion can therefore have a small tradable sector that is entirely manufacturing, or a large one that is entirely agricultural.
+
+The dataset has four main limitations.
+
+\textit{(i) Classification mismatch between exports and employment.} RAIS is natively coded in CNAE~2.0 and Comex~Stat in NCM. Both are mapped to ISIC~Rev.~4; Appendix~\ref{ch:data-construction-industrial-classification} sets out the procedure in full. The destination design does not need this mapping, since its shares come from municipal exports by destination.
+
+\textit{(ii) Formal employment only.} RAIS covers the universe of formal employment, and nothing else. In microregions where informality is high, both the exposure shares $s_{rj}$ and the normalising denominators $L_{r,2010}$ and $L_{j,2010}$ are computed over a subset of the workforce that is neither random nor uniformly sized across space. A microregion's measured tradable footprint $\theta_r$ therefore understates its true exposure wherever tradable activity is informal, and the political response to a shock may be understated where the shock's incidence falls on workers RAIS does not observe. There is also a dynamic version of the problem: if a negative export shock pushes workers into informality and not out of employment \cite{paz2019,dix2025}, the adjustment margin most relevant to the mechanism is the one the data cannot see.
+
+\textit{(iii) Ideology scores measured at the national party level.} The BLS scores are estimates of party positions as perceived by legislators, not of candidate positions as perceived by voters, and they carry no subnational variation. As discussed in Section~\ref{subsec:bls}, this rests on an identifying assumption that cannot be tested with these data: that voters in Rondônia and in Rio Grande do Sul read the same party label the same way. The scores are also estimates; Chapter~\ref{ch:results} propagates their uncertainty through the results.
+
+\textit{(iv) Incomplete party coverage.} Parties without a BLS score are dropped, not imputed, and the attrition is not uniform across years or offices: it ranges from $0.3$ (2010) to $3.9$ per cent (2018) of the presidential vote and from $6.3$ (2014) to $13.6$ per cent (2022) of the deputy vote. In the presidential vote it is not ideologically neutral either, since the largest single omission in 2018 is NOVO, a right-wing party.
+\chapter{Empirical Strategy}
+\label{ch:empirical-strategy}
+
+This chapter describes how the effect of export shocks on the dispersion of the vote is estimated and how the design was validated before any estimate was produced. The strategy proceeds in four steps. First, two shift-share measures of local exposure to export shocks are constructed at the microregional level and recentred. Second, the estimating equation is specified as a stacked first-difference model with state-by-year fixed effects. Third, inference is drawn from the randomization of the shocks, and the main result is stated as an equivalence bound. Fourth, a validation suite probes the data, the inference and the identifying assumption.
+
+\section{Shift-share designs for export shocks}
+
+Shift-share designs (also called ``Bartik designs", in reference to \citeonline{bartik}) are useful in the context of heterogeneous exposure to a common set of shocks. As the name suggests, they combine a set of shifts and a set of exposure shares \cite{shift}. Formally, a shift-share variable \(z_r\) can be written as \hyperref[eq:ssd]{Equation~(\ref{eq:ssd})}:
+
+\begin{equation}
+    z_r = \sum_{n=1}^{N} s_{rn} \times g_n
+        \label{eq:ssd}
+\end{equation}
+
+\noindent where \(g_1, ..., g_N\) are the shocks (``shifts") and \(s_{r1},...,s_{rN}\) are the exposure shares of unit $r$. In the canonical formulation the shares form a complete partition of the unit's activity, so that \(\sum_{n} s_{rn} = 1\). In many applied settings, however, the shares are incomplete: the shock-bearing industries or markets cover only part of local economic activity, and the sum of shares varies across units. This is the case in both designs used here. As \citeonline{quasi-experimental} show, when shares are incomplete the sum of shares becomes a confounder under the shocks perspective and must be included as a control.
+
+Two identification perspectives govern how shift-share designs support causal inference \cite{causal}. Under the shares perspective, the source of exogenous variation comes from the initial shares being uncorrelated with potential outcomes conditional on observables, and it is up to the researcher to justify why the shares themselves should be considered exogenous \cite{goldsmith}. Under the shocks perspective, independent shocks can identify causal effects even when the shares are endogenous, provided that the shocks are as good as randomly assigned across industries or markets, conditional on observables \cite{quasi-experimental}. This dissertation adopts the shocks perspective, and its inference treats the shocks as the random object.
+
+\subsection{S0: Brazilian exports per worker by industry}
+
+The first design follows \citeonline{Rettl} and builds on related applications in Brazil that connect commodity and manufacturing shocks to local outcomes \cite{costa2012,campellourdinez2021}. It measures Exposure to Changes in Exports from Brazil to the Rest of the World per Worker, or Exposure Per Worker ($EPW$), as in \hyperref[eq:my_equation]{Equation~(\ref{eq:my_equation})}:
+
+\begin{equation}
+\Delta EPW_{rt}
+=
+\sum_j
+\underbrace{\frac{L_{rj,2010}}{L_{r,2010}}}_{\text{Exposure share } s_{rj}}
+\times
+\underbrace{\frac{\Delta EXP_{jt}}{L_{j,2010}}}_{\text{Sectoral shock } g_{jt}},
+\label{eq:my_equation}
+\end{equation}
+
+\noindent where \( r \) indexes microregions,\footnote{Analogous to what the literature conventionally calls ``commuting zones''; this dissertation uses the official term.} \( t \in \{2014, 2018, 2022\} \) indexes election years and \( j \) indexes 152 industry groups, built from 177 classes of ISIC Rev.~4, the common classification to which both employment and export records are harmonised (Appendix~\ref{ch:data-construction-industrial-classification}). \( L_{rj,2010} \) is the number of formal employees in microregion \( r \) and industry \( j \) in 2010, and \( L_{r,2010} \) is total formal employment in the microregion in the same year, across all industries. \( \Delta EXP_{jt} \) is the change in Brazilian exports of industry \( j \) between 2010 and \( t \), in constant tens of thousands of U.S. dollars FOB, normalised by national employment in the industry in 2010, \( L_{j,2010} \). The shares are fixed at 2010 throughout, to prevent post-treatment changes in local structure from contaminating identification.
+
+The intuition, following \citeonline{Rettl}, is that a microregion's exposure to a change in exports is a function of its pre-shock employment structure: a microregion in which a large share of workers is employed in an industry whose exports fell steeply receives a more negative score than one with little employment in that industry. This logic is consistent with evidence that trade booms and busts generate heterogeneous local winners and losers depending on pre-existing specialization \cite{costa2012}, and with Brazilian evidence showing that localized trade shocks produce measurable electoral responses \cite{campellourdinez2021}.
+
+Two features of this design matter for what it can identify. First, its shocks are \emph{realised} Brazilian export values, not foreign demand: they combine changes in world demand and prices with changes in Brazilian supply, so their exogeneity is an assumption about Brazilian industries' export paths. Second, normalising by national employment makes the shocks largest in capital-intensive industries. In practice, two shock paths carry most of the identifying variation: crude oil, whose shock rose from $-4.1$ in 2014 to $53.6$ in 2022, and iron ore, whose shock was negative in every year ($-14.1$, $-31.4$ and $-20.3$). Section~\ref{sec:robustness} quantifies this concentration.
+
+Constructing the variable requires a concordance between the CNAE~2.0 employment classification and the NCM export classification, which do not share a common coding system. Following \citeonline{Rettl}, both systems are converted to ISIC Rev.~4, resulting in 177 matched four-digit classes merged into 152 industry groups, close to the 174 industries reported by \citeonline{Rettl}, whose crosswalk follows a different and partly manual route. The export data are mapped \textit{directly} from six-digit NCM to ISIC Rev.~4 in a single step, using the official correspondence table published by the \citeonline{ISIC} and accessed through the \textit{concordance} package for R \cite{concordance2020}, with documented manual overrides (Appendix~\ref{ch:data-construction-industrial-classification}). For NCM-6 codes that the UN table associates with more than one ISIC class, export value is allocated across the matched classes using occurrence-share weights, following the logic developed by \citeonline{pierceschott2012} for U.S. trade data and extended by \citeonline{vanbeveren2012} for EU data.\footnote{A two-stage chain through CNAE~2.0 (NCM $\to$ CNAE~2.0 $\to$ ISIC Rev.~4) is also feasible using the tables published by IBGE/CONCLA, but is rejected here for two reasons. First, applying fractional $1/n$ allocation weights at \textit{each} hop compounds the dilution of a product's value across more ISIC classes than a single-hop map warrants. Second, of the 9{,}628 NCM codes exported in 2010, 2014, 2018 or 2022, 1{,}245 are absent from the NCM--CNAE~2.0 table maintained by IBGE/CONCLA, which leaves 15.7 per cent of export value orphaned at the first hop. The UN HS--ISIC table maps the six-digit codes directly and recovers most of these orphans: after the full procedure, less than 1 per cent of export value remains unmatched in every year. The employment side of the crosswalk uses the IBGE CNAE~2.0~$\to$~ISIC Rev.~4 table in a single hop, since RAIS is natively coded in CNAE.} Figure~\ref{fig:exports} shows the evolution of total exports from 2010 to 2022 in constant 2010 dollars: a peak in 2011, a fall of about a third to 2016, and a recovery to a new high in 2022.
+
+\begin{figure}[H]
+  \caption{Evolution of Brazilian Total Exports, 2010–2022}
+  \label{fig:exports}
+  \centering
+  % TODO(figure): regenerate from step5/out/s5_exports_series.csv (real_bn column)
+  \includegraphics[width=\textwidth]{figures/exports.pdf}
+  \par\noindent\footnotesize \textit{Source:} Elaborated by the author based on data from the Brazilian Ministry of Development, Industry, Trade and Services (MDIC) -- Comex Stat. Values were deflated to constant 2010 USD using the U.S. Consumer Price Index (CPI).
+\end{figure}
+
+\subsection{S3: foreign import demand by destination}
+
+The second design replaces Brazilian export performance by the growth of foreign demand, so that the shocks do not depend on Brazilian supply. Its shares are the 2010 value of each microregion's exports to each destination country, per formal worker, and its shocks are the growth of each destination's imports from the rest of the world:
+
+\begin{equation}
+z^{S3}_{rt} = \sum_d \underbrace{\frac{X_{rd,2010}}{L_{r,2010}}}_{s_{rd}} \times \underbrace{\sum_p \omega_{pd}\, \frac{M_{dpt} - M_{dp,2010}}{(M_{dpt} + M_{dp,2010})/2}}_{g_{dt}},
+\label{eq:s3}
+\end{equation}
+
+\noindent where $X_{rd,2010}$ is the value of microregion $r$'s 2010 exports to destination $d$ (Comex Stat, municipal data aggregated to microregions), $M_{dpt}$ is destination $d$'s imports of six-digit product $p$ from all origins except Brazil in year $t$ (BACI, deflated by the U.S. CPI), and $\omega_{pd}$ is the share of product $p$ in Brazil's 2010 exports to $d$. The shock is therefore the arc growth of the rest of the world's sales to each destination, weighted by the Brazilian export basket in that market. Five entrepôt destinations (the Netherlands, Singapore, Hong Kong, the United Arab Emirates and Saint Lucia) are dropped, because exports recorded to them are largely re-exported to unknown final markets; 201 destinations remain. The shares sum to $\theta^{dest}_r$, the 2010 exports per worker to those destinations, which enters as a control. The destination design shares a limitation with S0: exports are recorded at the municipality of the exporting firm or terminal, which is not necessarily where the goods are produced.
+
+\subsection{Recentring and exchangeability}
+\label{sec:recentring}
+
+Under the shocks perspective, a shift-share treatment can still be correlated with the error if some regions are systematically more exposed to whatever shocks occur, for instance because their shares are larger or tilted towards industries whose shocks tend to be large \cite{borusyakhull2023}. The fix is to recentre each treatment on its expected value under the randomization the design assumes. Here the shocks are assumed exchangeable within strata: ISIC sections A (agriculture), B (extraction) and C (manufacturing) for S0, and five groups of World Bank regions for S3 (East Asia, Pacific and South Asia; Europe, Central Asia and North America; Latin America and the Caribbean; Middle East and North Africa; Sub-Saharan Africa). What is permuted is the whole 2014--2018--2022 path of a shock, so the serial correlation of each industry's or destination's shocks is preserved. Industries or destinations with identical shares in every microregion cannot be told apart and are merged into one unit, which leaves 149 units for S0 and 201 for S3. Under within-stratum permutation, the expected treatment has a closed form,
+
+\begin{equation}
+\mu_{rt} = \sum_{k} \Big( \sum_{n \in k} s_{rn} \Big)\, \bar{g}_{kt},
+\label{eq:mu}
+\end{equation}
+
+\noindent where $\bar{g}_{kt}$ is the unweighted mean shock of stratum $k$ in year $t$. The recentred treatment is $\tilde{z}_{rt} = z_{rt} - \mu_{rt}$, and the estimating equation uses $\tilde{z}_{rt}$ divided by its standard deviation.
+
+\section{Estimating equation}
+
+The estimating equation is a stacked first-difference model at the microregion-by-election-year level. Each observation records the change in a polarization outcome between the fixed base year 2010 and an election year $t \in \{2014, 2018, 2022\}$, together with the recentred treatment for the same period:
+
+\begin{equation}
+    \Delta P_{srt} = \alpha_{st} + \beta\, \frac{\tilde{z}_{srt}}{\mathrm{sd}(\tilde{z})} + \boldsymbol{\gamma}' \mathbf{X}_{r,2010} + \varepsilon_{srt},
+    \label{eq:eq2}
+\end{equation}
+
+\noindent where $\Delta P_{srt}$ is the change in the polarization index of microregion $r$ in state $s$, $\alpha_{st}$ are state-by-year fixed effects, and $\mathbf{X}_{r,2010}$ are the 2010 controls of Section~\ref{subsec:controls}. The fixed effects absorb any shock common to a state in a given election, including national and state-level campaign dynamics and the supply side of Figure~\ref{fig:rodrik-framework}. All outcomes are standardised over the estimation sample, so $\beta$ is the change in the outcome, in standard deviations, associated with a one-standard-deviation difference in recentred exposure. The equation is estimated separately for S0 and S3; the primary outcome is the Dalton index of the federal-deputy vote.
+
+\subsection{Booms and busts}
+\label{sec:decomposition}
+
+Because losses and gains are expected to act differently, the secondary hypothesis H1b separates the recentred treatment into its positive and negative parts, $\tilde{z}^{+}_{rt} = \max\{\tilde{z}_{rt}, 0\}$ and $\tilde{z}^{-}_{rt} = \max\{-\tilde{z}_{rt}, 0\}$, each divided by the standard deviation of $\tilde{z}$, and enters both in Equation~(\ref{eq:eq2}). Both regressors are magnitudes, so a larger value of $\tilde{z}^{-}$ means a worse bust and the framework predicts a positive coefficient $\beta_{-}$. Because the positive and negative parts are non-linear in the shocks, their expected values are obtained by simulation over the permutations. This estimator was not part of the Monte Carlo validation of Section~\ref{sec:robustness}, and its tests are reported as unvalidated.
+
+\section{Inference}
+\label{sec:inference}
+
+Inference is design-based: it uses the randomization of the shocks that the identifying assumption implies, and not the sampling of microregions. For each design, the shock paths are permuted within strata $B = 9{,}999$ times; for each permutation, the treatment is rebuilt and recentred and the regression is re-estimated. Conventional standard errors clustered by region, by mesoregion or by spatial distance are reported for reference only: \citeonline{adao} show that units with similar shares have correlated errors regardless of distance, so these errors can understate uncertainty in shift-share designs.
+
+The test statistic is studentized: each draw records $t^{*} = \hat\beta^{*}/\widehat{\mathrm{se}}_{AKM}(\hat\beta^{*})$, where $\widehat{\mathrm{se}}_{AKM}$ is the standard error of \citeonline{adao}, clustered by shock unit across years. The $p$-value is the share of draws with $|t^{*}| \geq |t|$, with the usual $+1$ correction. The choice of statistic was made on evidence. A Monte Carlo exercise on the actual shares and shocks (Section~\ref{subsec:montecarlo}) showed that randomization inference on the raw coefficient rejects a true null in 7.8 per cent (S0) and 18.5 per cent (S3) of replications at a nominal 5 per cent level, because the realised shocks are an unusual draw: they leave less residual variation in the treatment than most permutations do. Studentizing corrects this: the studentized test rejects in 3.7 per cent (S0) and 1.8 per cent (S3) of replications.
+
+Confidence sets are obtained by inverting the test: a value $b$ belongs to the 90 or 95 per cent set if the studentized test of $\beta = b$ does not reject at 10 or 5 per cent. The sets are computed by bisection and checked on a grid of width 0.002, which confirms that the acceptance regions are intervals.
+
+\textbf{Equivalence.} A failure to reject zero is not evidence of a zero effect. The primary hypothesis is therefore also stated as an equivalence test: an effect is ruled out at a benchmark $\delta$ when the whole 90 per cent set lies inside $[-\delta, \delta]$, which is the two one-sided tests procedure at 5 per cent. Three benchmarks were fixed in advance from published estimates, converted to the units of $\beta$ (standard deviations of the outcome per standard deviation of exposure): $0.038$, the effect of export shocks on the PT vote share in Brazil \cite{Rettl}; $0.059$, the effect of trade exposure on the far-right vote in Germany \cite{dippel}; and $0.162$, the effect of import competition on the Leave vote in the Brexit referendum \cite{colantone}.
+% TODO(bib): check that \cite{dippel} is Dippel, Gold and Heblich (2015) and \cite{colantone} is Colantone and Stanig (2018, APSR); 0.162 = 12.233 x 0.14 / 10.6 (their Table 1, col. 1).
+The Monte Carlo exercise also measured whether each benchmark is attainable: with a true effect of zero, the probability that the 90 per cent set falls inside $\pm\delta$ is $0.003$, $0.085$ and $0.930$ for S0 and $0.001$, $0.042$ and $0.706$ for S3 at the three benchmarks. Only the largest benchmark can be reached, so the failure to exclude the two smaller ones is uninformative and is not read as consistency with them.
+
+\textbf{Multiple testing and decision rules.} The primary family has two tests, one per design, adjusted by Holm's method. The secondary family has ten: for each design, the Esteban--Ray index of the deputy vote, the mean ideology $\bar{y}$ of the presidential, gubernatorial and deputy votes (H2), and the bust coefficient (H1b); it is adjusted by the Benjamini--Hochberg procedure at $q = 0.05$. Each design is then classified as EQ (the 90 per cent set excludes at least one benchmark), POS or NEG (it excludes zero) or INC (neither), and a pre-registered decision table maps each combination of classes into the sentence the text may write. The plan, the decision table and its amendments were committed to a version-controlled repository before the estimates they govern, with one exception: the definition of $\theta^{dest}_r$, discussed below, was amended after a first set of results had been seen.
+
+\section{Validation of the design}
+\label{sec:robustness}
+
+Before the main estimates were run, the design was put through five gates, with thresholds fixed in advance.
+
+\subsection{Reconciliation with the raw data}
+
+Every outcome was rebuilt from the raw TSE files and compared with the panels used in estimation. For the federal-deputy vote, the panel matches the TSE totals of valid votes exactly in 2010, 2014 and 2018 and differs by $-0.023$ per cent in 2022; party-level votes in 2010 and 2014 match the candidate files exactly. The presidential panel matches exactly in 2014--2022 and in 2010 differs only by the 64,698 in-transit votes, which belong to no microregion. The check found one error: the 2022 gubernatorial panel counted votes later annulled by the electoral courts ($+0.180$ per cent, 160,004 of them in Roraima). The panel was repaired, and all 27 states now match the TSE totals exactly. Export totals reproduce the official figures to within $0.1$ per cent and the RAIS 2010 contract count reproduces the official 44.07 million.
+
+\subsection{Monte Carlo size and power}
+\label{subsec:montecarlo}
+
+The second gate simulates outcomes with a known effect on the actual shares, shocks and controls. The errors are the residuals of the deputy outcome on the controls and fixed effects, resampled by microregion (keeping each microregion's three differences together) within states, and the test is run on 1,000 simulated samples for each effect size. With a true effect of zero, the studentized test rejects in 3.7 per cent (S0) and 1.8 per cent (S3) of replications; the S3 test is therefore conservative. Bias is negligible ($0.0009$ and $0.0019$ at a true effect of $0.038$). Power is low: at a true effect of $0.038$, the test rejects in 11.5 per cent (S0) and 9.1 per cent (S3) of replications, and at $0.076$ in 38.5 and 25.7 per cent. The design can detect only large effects, which is why the main result is stated as a bound.
+
+\subsection{Falsification on pre-2010 elections}
+
+If the shocks of 2010--2022 predict changes in polarization that happened before them, the exposed regions were already on different trends. The third gate regresses the change in the deputy Dalton index between 2002 and 2010, and between 2006 and 2010, built from the raw 2002 and 2006 TSE files with the BLS 2001 and 2005 waves, on the same treatments. The rule required a studentized $p \geq 0.05$, and both designs pass: $p = 0.813$ and $0.879$ for S0, $0.436$ and $0.096$ for S3. Passing a test with this little power is weak evidence, however. The S3 estimates for the pre-period ($+0.046$ and $+0.048$) are of the same order as the main estimate and of the opposite sign, and the test cannot exclude pre-trends of that size. The bound reported in Chapter~\ref{ch:results} should be read as conditional on the absence of such a trend.
+
+\subsection{Independent rebuild}
+
+The fourth gate rebuilt both treatments and the main coefficient from the raw files with independent code that shares nothing with the estimation pipeline, following only the written specification. Both rebuilt coefficients match the pipeline to within $10^{-8}$. A first run of this check found a discrepancy of 11 per cent in the S3 coefficient, traced to the definition of $\theta^{dest}_r$: the pipeline summed exports over all destinations, including the entrepôts, while the specification implied the 201 destinations of the design. The definition was amended to the latter. This amendment was made after the first S3 result had been seen; under the earlier definition the 90 per cent set was $[-0.070, 0.047]$, and the classification of the result is the same under both.
+
+\subsection{Replication}
+
+The fifth gate, the replication of the original estimates of \citeonline{Rettl} with this pipeline, could not be done, because the inputs needed for it are not available.
+
+\subsection{Uncertainty in the ideology scores}
+
+The BLS scores are estimates. To propagate their uncertainty, 500 sets of party scores were drawn by bootstrapping the legislator-level placements, the outcomes were rebuilt for each set, and each design was re-classified. The rule fixed in advance was that the text would report score uncertainty as material if the classification changed in more than 5 per cent of draws.
+\chapter{Results}
+\label{ch:results}
+
+This chapter reports the estimates of the registered analysis. Section~\ref{sec:main-results} presents the primary family, Section~\ref{sec:secondary} the secondary family, Section~\ref{sec:main-robust} the checks on the main result, and Section~\ref{sec:interpretation} discusses what the null does and does not establish.
+
+\section{Main estimates}
+\label{sec:main-results}
+
+Table~\ref{tab:primary} reports the primary family: the effect of each recentred treatment on the change in the Dalton index of the federal-deputy vote.
+
+\begin{table}[!htbp]
+\centering
+\caption{Export shocks and the dispersion of the federal-deputy vote: primary family}
+\label{tab:primary}
+\begin{threeparttable}
+\small
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lcc@{}}
+\toprule
+ & S0: industry exports & S3: destination demand \\
+\midrule
+$\hat\beta$ (SD per SD) & 0.034 & $-0.029$ \\
+AKM standard error & 0.043 & 0.036 \\
+Studentized RI $p$-value & 0.631 & 0.296 \\
+Holm-adjusted $p$-value & 0.631 & 0.592 \\
+\addlinespace
+90\% randomization set & $[-0.100,\ 0.239]$ & $[-0.075,\ 0.045]$ \\
+95\% randomization set & $[-0.157,\ 0.280]$ & $[-0.088,\ 0.094]$ \\
+RI $p$-value at $\beta = -0.162$ / $+0.162$ & 0.047 / 0.245 & 0.001 / 0.019 \\
+Smallest symmetric bound excluded & 0.239 & 0.075 \\
+\addlinespace
+Excludes 0.038 / 0.059 / 0.162 & no / no / no & no / no / yes \\
+Classification & INC & EQ \\
+\addlinespace
+Shock units (strata) & 149 (3) & 201 (5) \\
+Observations & 1,668 & 1,668 \\
+\bottomrule
+\end{tabular*}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item \textit{Note:} Stacked first differences from 2010 to 2014, 2018 and 2022, with state-by-year fixed effects; outcome standardised; treatment recentred and divided by its standard deviation. Controls: log GDP per capita, log population and $\theta_r$ (S0); log GDP per capita, log population, $\log(1+\theta^{dest}_r)$ and $\mathbf{1}\{\theta^{dest}_r = 0\}$ (S3). Inference: studentized randomization inference with $B=9{,}999$ within-stratum permutations of whole shock paths; sets obtained by test inversion. INC: inconclusive; EQ: the 90\% set lies inside $\pm 0.162$. $\theta^{dest}_r$ is summed over the 201 design destinations; under the earlier definition (all destinations), $\hat\beta = -0.026$ and the 90\% set is $[-0.070, 0.047]$, with the same classification.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+Neither design detects an effect. The industry-export design (S0) estimates $\hat\beta = 0.034$ with a studentized $p$-value of $0.631$, and its 90 per cent randomization set, $[-0.100, 0.239]$, is too wide to rule out any of the benchmarks: the design is inconclusive. The destination-demand design (S3) estimates $\hat\beta = -0.029$ ($p = 0.296$) with a 90 per cent set of $[-0.075, 0.045]$. That set lies inside $\pm 0.162$, so S3 rules out an effect as large as the one documented for import competition and the Brexit vote, but it contains $\pm 0.038$ and $\pm 0.059$. Under the decision table fixed in advance, this combination licenses one sentence:
+
+\begin{quote}
+The destination-demand design rules out effects on the ideological dispersion of federal-deputy votes larger than 0.075 SD per SD (90\% randomization set $[-0.075, 0.045]$), which excludes the effect size reported for Brexit (0.162) but not those reported for PT vote share (0.038) or the extreme right in Germany (0.059); the industry-export design is too imprecise to bound the effect ($[-0.100, 0.239]$).
+\end{quote}
+
+As Section~\ref{sec:inference} showed, the two smaller benchmarks could not have been excluded by either design even if the true effect were zero, so their non-exclusion carries no information. For the same reason, randomization inference on the raw coefficient, which gives $p = 0.049$ for S3, is not reported as evidence: that test over-rejects in this design (Section~\ref{subsec:montecarlo}).
+
+\begin{figure}[htbp]
+  \centering
+  \caption{Randomization distribution of the studentized statistic, federal-deputy Dalton}
+  \label{fig:ri}
+  % TODO(figure): regenerate. step4_primary.R must be rerun with the permutation draws saved (t* for S0 and S3), then plot the two histograms with the observed t (0.78 and -0.81).
+  \includegraphics[width=\textwidth]{figures/ri_distribution_studentized.pdf}
+  \par\noindent\footnotesize \textit{Note:} Distribution of $t^{*}=\hat\beta^{*}/\widehat{\mathrm{se}}_{AKM}$ over $B = 9{,}999$ within-stratum permutations of the shock paths, for each design. The vertical line marks the observed statistic.
+\end{figure}
+
+\section{Secondary family}
+\label{sec:secondary}
+
+Table~\ref{tab:secondary} reports the ten secondary tests. None survives the Benjamini--Hochberg correction; the smallest adjusted $q$-value is $0.952$, and no unadjusted $p$-value is below $0.5$.
+
+\begin{table}[!htbp]
+\centering
+\caption{Secondary family}
+\label{tab:secondary}
+\begin{threeparttable}
+\small
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lcccccc@{}}
+\toprule
+ & \multicolumn{3}{c}{S0: industry exports} & \multicolumn{3}{c}{S3: destination demand} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}
+Test & $\hat\beta$ & $p$ & $q_{BH}$ & $\hat\beta$ & $p$ & $q_{BH}$ \\
+\midrule
+Esteban--Ray ($\alpha = 1$), deputy & $-0.025$ & 0.733 & 0.952 & 0.007 & 0.832 & 0.952 \\
+Mean ideology $\bar{y}$, president (H2) & 0.012 & 0.796 & 0.952 & $-0.001$ & 0.970 & 0.970 \\
+Mean ideology $\bar{y}$, governor (H2) & $-0.007$ & 0.756 & 0.952 & 0.010 & 0.512 & 0.952 \\
+Mean ideology $\bar{y}$, deputy (H2) & $-0.015$ & 0.616 & 0.952 & $-0.006$ & 0.808 & 0.952 \\
+Bust coefficient $\beta_{-}$ (H1b)$^{a}$ & $-0.012$ & 0.856 & 0.952 & 0.022 & 0.502 & 0.952 \\
+\bottomrule
+\end{tabular*}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item \textit{Note:} Specification of Table~\ref{tab:primary}. $p$: studentized randomization inference ($B = 9{,}999$). $q_{BH}$: Benjamini--Hochberg adjustment across the ten tests. Governor outcomes use the repaired 2022 panel. $\bar{y}$ is the vote-weighted mean BLS score, so a positive coefficient is a shift to the right.
+\item[a] Coefficient on the negative part of the recentred treatment, with the positive part also included; positive values mean that busts raise dispersion. Its test uses simulated recentring and a $t$-statistic clustered by microregion, and was not validated by the Monte Carlo exercise.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+Three results stand out. First, the direction of the vote does not respond either: the mean ideology of the presidential, gubernatorial and deputy votes is unrelated to either treatment, so the null on dispersion does not hide a shift of the whole distribution to one side (H2). Second, the Esteban--Ray index, which weights the distance between large groups of voters more heavily than the Dalton index does, gives the same answer. Third, there is no evidence that export busts raise dispersion (H1b): the bust coefficient has the predicted sign only in S3, where it is small and far from significant ($0.022$, $p = 0.502$), and the wrong sign in S0.
+
+\section{How robust is the main result?}
+\label{sec:main-robust}
+
+\textbf{Uncertainty in the ideology scores.} Across the 500 bootstrap draws of the BLS scores, the classification of S0 changes in 0.6 per cent of draws and that of S3 in none, below the 5 per cent threshold fixed in advance. The S3 estimate ranges from $-0.029$ to $-0.021$ between the 5th and 95th percentiles of the draws, and the S0 estimate from $0.025$ to $0.035$.
+
+\textbf{Weak-shock-robust intervals.} The AKM0 confidence sets of \citeonline{adao}, which remain valid when the shocks carry little identifying variation, give a bounded set for S0 ($[-0.198, 0.103]$, $p = 0.516$) but an unbounded set for S3 in every outcome. The randomization set of S3 is bounded only because it conditions on the realised shares and on the exchangeability of the shocks within strata.
+
+\textbf{Concentration of the identifying variation.} Table~\ref{tab:leverage} lists the five microregions that carry most of the identifying variation in each design, measured by their share of $\sum \tilde{x}^{\perp}\tilde{x}$, the sum of the products of the residualised and raw treatments. In S0, ten microregions carry 57 per cent of it, led by oil and iron-ore producers; Japaratuba and Coari record no exports at all and are exposed through their oil employment. In S3, ten microregions carry 94 per cent, and they are export terminals or ports: Angra dos Reis (crude oil), Parauapebas and Anchieta (iron ore), Abaetetuba (live cattle) and Paranaguá. Without its ten highest-leverage microregions, each design's estimate becomes about $-0.08$ to $-0.09$ ($-0.079$ for S0 and $-0.092$ for S3), outside S3's own 90 per cent set. This is descriptive, not a test, but it means the S3 bound describes the response to oil, iron-ore and port-logistics shocks in a small number of places. For the 18 distinct microregions in the two top-10 lists, the raw TSE vote counts equal the panel exactly.
+
+\begin{table}[!htbp]
+\centering
+\caption{Microregions with the highest leverage}
+\label{tab:leverage}
+\begin{threeparttable}
+\small
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}clclc@{}}
+\toprule
+ & \multicolumn{2}{c}{S0: industry exports} & \multicolumn{2}{c}{S3: destination demand} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+Rank & Microregion (main exposure) & Share & Microregion (main export) & Share \\
+\midrule
+1 & Japaratuba, SE (oil and gas) & 0.117 & Baía da Ilha Grande, RJ (crude oil) & 0.289 \\
+2 & Coari, AM (oil and gas) & 0.117 & Parauapebas, PA (iron ore) & 0.198 \\
+3 & Parauapebas, PA (iron ore) & 0.082 & Cametá, PA (live cattle) & 0.114 \\
+4 & Macaé, RJ (oil) & 0.073 & Ouro Preto, MG (iron ore) & 0.094 \\
+5 & Itabira, MG (iron ore) & 0.063 & Paranaguá, PR (port: poultry, soy) & 0.077 \\
+\addlinespace
+Top 10 & & 0.574 & & 0.941 \\
+$\hat\beta$ without top 10 & & $-0.079$ & & $-0.092$ \\
+\bottomrule
+\end{tabular*}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item \textit{Note:} Share of $\sum_{r,t} \tilde{x}^{\perp}_{rt}\tilde{x}_{rt}$, where $\tilde{x}$ is the recentred treatment and $\tilde{x}^{\perp}$ its residual on controls and fixed effects. Main exposure from RAIS 2010 (largest tradable industry); main export from Comex Stat 2010 municipal data (largest SH4 heading of the leading exporting municipality).
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\textbf{Specification curve.} A specification curve varies, one at a time and in combination, the control set (base or extended), the recentring, the strata, the sample (all microregions or those exporting to the S3 destinations), the coverage of scored votes, the index (Dalton, Esteban--Ray with $\alpha = 1$ or $1.4$, centre-emptying) and the office, for 256 specifications per design, each tested with 999 permutations. It is descriptive: the main result is not chosen from it. For the deputy Dalton index, all 32 S0 estimates are positive (from $0.008$ to $0.088$, all with $p \geq 0.21$) and all 32 S3 estimates are negative (from $-0.039$ to $-0.007$, all with $p \geq 0.11$). Across all 512 specifications, 8 have $p < 0.05$, all of them S3 estimates for the Esteban--Ray index ($\alpha = 1.4$) of the gubernatorial vote without recentring; recentring removes them.
+% TODO(figure): add the specification-curve figure from step4a/out/step4_speccurve.csv.
+
+\section{Interpreting the null}
+\label{sec:interpretation}
+
+The design rules out large effects and is silent on small ones. Three readings of this null are compatible with the evidence, and they are not mutually exclusive.
+
+The first is that export shocks may not be the margin along which Brazilian polarization moved in this period. The national events of 2013--2018 (the protests, \emph{Lava Jato}, the recession and the impeachment) are common within state-by-year cells and are absorbed by the fixed effects, and they may have dominated any locally varying economic channel.
+
+The second concerns the outcome. A dispersion index could miss a shift of the whole distribution to one side, which is the pattern found by \citeonline{joneschina} for the PT vote. This reading was tested and does not hold: the mean ideology of the vote does not respond to either treatment in any office (Table~\ref{tab:secondary}).
+
+The third is power. With five to six effective shocks in each design and the identifying variation concentrated in a handful of microregions, the design detects an effect of $0.038$ in only about one replication in ten (Section~\ref{subsec:montecarlo}). What the design can say is the bound: in S3, effects larger than $0.075$ standard deviations per standard deviation are ruled out. Effects of the size documented for the PT vote in Brazil remain possible, and an absence of effect cannot be claimed.
+
+A related possibility is that the shock and the vote operate on different dimensions. \citeonline{feres} find that the policy preferences of Lula and Bolsonaro voters are more similar than usually assumed, and that the vote is structured by values. An economic shock could move economic preferences without moving a vote structured by values, which the BLS left--right scores summarise only in part.
+
+\chapter{Conclusion and expected extensions}
+\label{ch:conclusion}
+
+This dissertation asked whether local export shocks changed the ideological dispersion of the Brazilian electorate between 2010 and 2022. Two recentred shift-share designs, one built from Brazilian exports per worker by industry and one from foreign import demand by destination, were related to the Dalton index of the federal-deputy vote in a stacked first-difference model with state-by-year fixed effects. The analysis, the inference and the decision rules were registered before estimation, and the inference was validated by a Monte Carlo exercise, a falsification test on pre-2010 elections and an independent rebuild from the raw data.
+
+Neither design detects an effect. The destination-demand design rules out effects larger than $0.075$ standard deviations per standard deviation of exposure, which excludes the effect size documented for import competition and the Brexit vote but not the smaller effects documented for the PT vote in Brazil or for the German far right. The industry-export design is too imprecise to bound the effect. The secondary tests agree: the direction of the vote does not respond in any office, export busts do not raise dispersion, and no test survives correction for multiple testing. Uncertainty in the ideology scores does not change these conclusions.
+
+These findings have clear limits. The design relies on five to six effective shocks, mostly oil and iron ore, and ten microregions carry 94 per cent of the destination design's identifying variation; these are terminals and ports, where exports are recorded but not necessarily produced. The weak-shock-robust intervals cannot bound the destination design, and only the largest of the three benchmarks was within its reach. The falsification test passes, but its S3 pre-period estimates are of the same order as the main estimate, so the bound assumes no pre-trend of that size. One amendment, the definition of the export-exposure control in the destination design, was made after a first result had been seen; the result is the same under both definitions. Finally, the replication gate could not be run.
+
+Three extensions follow from these limits. The first is to raise the number of independent shocks: a destination design at the product level (destination $\times$ HS4) raises the effective number of shocks two- to threefold in a design-only diagnostic, and an import-competition design built from Chinese exports spreads the identifying variation over more than a hundred effective microregions, against fewer than ten in the current destination design. The second is to study the oil and iron-ore regions directly, where most of the variation lies, with synthetic-control comparisons that exploit the timing of the oil collapse after 2014 and of the mining disasters of 2015 and 2019, and the fiscal channel through royalties. The third is to measure the labour-market pass-through of these shocks with RAIS employment, which would show whether the extractive shocks that identify the design reached local workers at all.
+
+% ----------------------------------------------------------
+% ELEMENTOS PÓS-TEXTUAIS
+% ----------------------------------------------------------
+\postextual
+% ----------------------------------------------------------
+
+
+% ----------------------------------------------------------
+% Referências bibliográficas
+% ----------------------------------------------------------
+\bibliography{bibliography}
+
+
+%---------------------------------------------------------------------
+% INDICE REMISSIVO
+%---------------------------------------------------------------------
+%%%%%MF\phantompart
+%%%%%MF\printindex
+%---------------------------------------------------------------------
+\begin{apendicesenv}
+\configurarNumeracaoApendices
+
+\chapter{Supplementary tables}
+\label{ch:supplementary-tables}
+
+
+\section*{Sample exclusions and data quality}
+
+The voting samples exclude two categories of votes:
+overseas and out-of-district ballots, and votes for parties lacking a BLS ideological classification. Table~\ref{tab:tab:overseas_votes} reports overseas
+and out-of-district votes by year. Overseas votes (code ZZ) grew substantially
+over the period, from 0.083\% of the national total in 2010 to 0.249\% in 2022,
+tracking both expanding diaspora communities and rising voter participation among
+nationals abroad. In-transit votes are recorded under a separate code (VT) only in 2010 (0.064\%); in 2014 the 73,706 in-transit votes are recorded under the municipality where they were cast and are therefore included. Together, these exclusions remain negligible (never exceeding 0.5\% of the national vote), and overseas ballots cannot be assigned to any microregion by design.
+
+
+\begin{table}[!h]
+\centering
+\caption{\label{tab:tab:overseas_votes}Overseas and out-of-district votes excluded from the sample (first round)}
+\begin{minipage}{0.90\textwidth}
+\centering
+\begin{tabular}{ccrrr}
+\toprule
+Year & Code & Votes excluded & Total votes & Share (\%)\\
+\midrule
+2010 & VT & 64,698 & 101,590,153 & 0.064\\
+2010 & ZZ & 84,303 & 101,590,153 & 0.083\\
+2014 & ZZ & 132,739 & 104,023,802 & 0.128\\
+2018 & ZZ & 193,381 & 107,050,749 & 0.181\\
+2022 & ZZ & 294,525 & 118,229,719 & 0.249\\
+\bottomrule
+\multicolumn{5}{p{0.90\textwidth}}{\rule{0pt}{1em}\footnotesize\textit{Note:} Presidential election. ZZ denotes votes cast abroad; VT denotes in-transit voters. Share computed over total valid votes cast in each election year, including abroad. Source: TSE, \texttt{votacao\_candidato\_munzona} and \texttt{detalhe\_votacao\_munzona}.}\\
+\end{tabular}
+\end{minipage}
+\end{table}
+
+
+Table~\ref{tab:parties_no_bls} lists the parties that received valid presidential votes but are excluded from the polarization indices because they have no score in the corresponding pre-election BLS wave. Most years see modest exclusions (0.28\% in 2010, 1.38\% in 2014, 0.63\% in 2022), drawn from fringe parties and new entrants. The exception is 2018, when 3.88\% of valid votes went to unscored parties, mainly NOVO (2.50\%) and PATRIOTA (1.26\%). NOVO is scored in BLS 9 ($0.711$, on the right), so its omission in 2018 probably lowers the measured presidential dispersion in that year; the size of that effect was not computed.
+
+\begin{table}[!h]
+\centering
+\begin{threeparttable}
+\caption{\label{tab:parties_no_bls}Parties excluded from polarization index due to missing BLS ideological score (first round)}
+\begin{tabular}{llrr}
+\toprule
+Year & Party & Votes & Share (\%)\\
+\midrule
+\addlinespace[0.3em]
+\multicolumn{4}{l}{\textbf{2010 — total excluded: 0.28\%}}\\
+\hspace{1em}2010 & PCB  & 38,858    & 0.04\\
+\hspace{1em}2010 & PCO  & 12,135    & 0.01\\
+\hspace{1em}2010 & PRTB & 57,733    & 0.06\\
+\hspace{1em}2010 & PSDC & 88,951    & 0.09\\
+\hspace{1em}2010 & PSTU & 83,997    & 0.08\\
+\addlinespace[0.3em]
+\multicolumn{4}{l}{\textbf{2014 — total excluded: 1.38\%}}\\
+\hspace{1em}2014 & PCB  & 47,584    & 0.05\\
+\hspace{1em}2014 & PCO  & 12,251    & 0.01\\
+\hspace{1em}2014 & PRTB & 446,442   & 0.43\\
+\hspace{1em}2014 & PSC  & 779,607   & 0.75\\
+\hspace{1em}2014 & PSDC & 60,969    & 0.06\\
+\hspace{1em}2014 & PSTU & 90,561    & 0.09\\
+\addlinespace[0.3em]
+\multicolumn{4}{l}{\textbf{2018 — total excluded: 3.88\%}}\\
+\hspace{1em}2018 & DC           & 41,531    & 0.04\\
+\hspace{1em}2018 & \textbf{NOVO}& \textbf{2,666,108} & \textbf{2.50}\tnote{a}\\
+\hspace{1em}2018 & PATRI        & 1,347,151 & 1.26\\
+\hspace{1em}2018 & PPL          & 30,023    & 0.03\\
+\hspace{1em}2018 & PSTU         & 55,413    & 0.05\\
+\addlinespace[0.3em]
+\multicolumn{4}{l}{\textbf{2022 — total excluded: 0.63\%}}\\
+\hspace{1em}2022 & DC    & 16,346  & 0.01\\
+\hspace{1em}2022 & PCB   & 45,002  & 0.04\\
+\hspace{1em}2022 & PSTU  & 25,161  & 0.02\\
+\hspace{1em}2022 & UNIÃO & 600,202 & 0.51\\
+\hspace{1em}2022 & UP    & 53,200  & 0.05\\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item Presidential election, first round. Votes are those assigned to microregions (excluding votes abroad); shares are computed over national valid votes including abroad. All exclusions individually fall below 1\% of the national vote except NOVO and PATRIOTA in 2018.
+\item[\textit{a}]\textit{The largest single exclusion; see the text.}
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+
+\section*{Repair of the 2022 gubernatorial panel}
+
+The reconciliation of every outcome with the raw TSE files (Section~\ref{sec:robustness}) found that the 2022 gubernatorial panel exceeded the TSE totals of valid votes by 0.180 per cent. In each of the 11 affected states, the excess equals the votes of candidates whose candidacy was later annulled, which the TSE records separately; Roraima alone accounts for 160,004 of them. The panel was rebuilt from the TSE candidate files excluding those votes, and after the repair all 27 states match the TSE totals exactly. All gubernatorial results in this dissertation use the repaired panel. The other offices and years were not affected.
+
+\chapter{Data Construction and Industrial Classification Harmonisation}
+\label{ch:data-construction-industrial-classification}
+
+
+Constructing the export shock variable requires reconciling two administrative
+databases that were designed under distinct classification frameworks. Formal
+employment records drawn from the \textit{Relação Anual de Informações Sociais}
+(RAIS) assign each establishment to a five-digit subclass of the
+\textit{Classificação Nacional de Atividades Econômicas} version 2.0
+(CNAE~2.0), while export transaction records from the \textit{Secretaria de
+Comércio Exterior} (SECEX/Comex~Stat) are coded at the eight-digit level of the
+\textit{Nomenclatura Comum do Mercosul} (NCM~2012), itself an extension of the
+Harmonised System (HS). Because these systems were not designed for direct
+correspondence, a common classification key is required: both series are mapped to the
+\textit{International Standard Industrial Classification of All Economic
+Activities}, Revision~4 (ISIC~Rev.~4). The two sides of the crosswalk use different official
+sources, each in a single hop. On the employment side, RAIS subclasses are
+truncated to the four-digit CNAE~2.0 class and mapped to ISIC~Rev.~4 through
+the correspondence table of the Comissão Nacional de Classificações (CONCLA)
+of the IBGE.\footnote{Available at
+\url{https://concla.ibge.gov.br/classificacoes/correspondencias/} Because
+CNAE~2.0 was designed as a national detailing of ISIC~Rev.~4, this map is
+almost entirely many-to-one at the class level; the few classes matched to
+more than one ISIC class have employment split uniformly.} This is
+unproblematic because CNAE~2.0 nests within ISIC~Rev.~4 by construction. On
+the export side, the six-digit root of each NCM code (identical to the HS
+six-digit heading) is mapped directly to ISIC~Rev.~4 using the
+correspondence table published by the United Nations Statistics Division
+\cite{ISIC}, accessed through the \textit{concordance} package
+\cite{concordance2020}.
+
+The scope of ISIC in general covers productive activities, i.e., economic
+activities within the production boundary of the System of National Accounts (SNA).
+ISIC~Rev.~4 comprises 419 distinct classes at the four-digit level, distributed
+across 21 sections, 88 divisions and 238 groups \cite{ISIC}. 
+The shift-share identification strategy is premised on international goods competition, which means that only sectors that participate in merchandise trade are
+theoretically eligible for inclusion. In practice, this restricts the universe
+to ISIC Sections~A (\textit{Agriculture, Forestry and Fishing}), B
+(\textit{Mining and Quarrying}), and C (\textit{Manufacturing}), which together
+account for 189 four-digit classes (38, 14 and 137). All remaining sections (construction, utilities, financial intermediation, public administration, personal services and so on) are excluded, as no NCM code maps into them and local employment in these activities would not be expected to generate export shocks in traded goods.
+
+The construction of the export shock variable requires, for each ISIC class,
+both a corresponding flow of export revenues (in USD) and a corresponding stock of formal
+employment. An ISIC four-digit class that appears only in the NCM--ISIC
+crosswalk but not in the CNAE--ISIC crosswalk does not
+enter the employment share calculation.
+
+Furthermore, any ISIC four-digit class that records zero aggregate exports or zero aggregate formal employment contributes no information to the shift-share weighting and is dropped; in the final universe this happens to a single composite group (uranium and thorium ores, ISIC 0721), which has exports but no formal employment. Classes whose activities cannot be separated in the data are merged into composite groups (for instance, crude petroleum and natural gas), which yields the 152 industry groups used in the design. The one microregion dropped from the sample, Japurá (AM), drops for a different reason: none of its formal employment is in a retained class.
+
+
+A concrete example illustrates the procedure. Iron ore is among Brazil's
+largest exports throughout the analysis period and is classified at the
+six-digit level as NCM~2012 code 260111 (``non-agglomerated iron ores''). The
+UN correspondence table associates this NCM with two ISIC Rev.~4 four-digit
+classes: 0710 (``mining of iron ores'') and 0990 (``support activities for
+other mining and quarrying''). Each class receives half of the export value
+recorded under 260111, reflecting the equal weight that the dictionary assigns
+to the two industrial activities involved in producing the traded good:
+
+\begin{figure}[ht]
+\centering
+\caption{An example of single-hop NCM--ISIC mapping with occurrence-share weights
+   under the unmodified UN dictionary.}
+\begin{tikzpicture}[
+  every node/.style={font=\small},
+  node distance=2.6cm and 3.8cm,
+  ncm/.style ={draw, rounded corners=2pt, minimum width=4.2cm, minimum height=0.9cm,
+               align=center,
+               fill=gray!10},
+  isic/.style={draw, rounded corners=2pt, minimum width=4.6cm, minimum height=0.9cm,
+               align=center,
+               fill=gray!5},
+  arr/.style ={-{Latex[length=2.2mm]}, thick}
+]
+\node[ncm] (ncm) {NCM 260111 \\ \scriptsize iron ores, non-agglomerated};
+\node[isic, right=of ncm, yshift= 1.1cm] (i1) {ISIC 0710 \\ \scriptsize mining of iron ores};
+\node[isic, right=of ncm, yshift=-1.1cm] (i2) {ISIC 0990 \\ \scriptsize support activities, mining};
+\draw[arr] (ncm.east) -- node[above, sloped] {\scriptsize $w = 0.500$} (i1.west);
+\draw[arr] (ncm.east) -- node[below, sloped] {\scriptsize $w = 0.500$} (i2.west);
+\end{tikzpicture}
+\par\noindent\footnotesize \textit{Note:} 
+   In the final pipeline this code is reassigned in full to ISIC~0710 by
+   the primary-industry override described in the text.
+\label{fig:crosswalk_example}
+\end{figure}
+
+
+Formally, if NCM-6 code $j$ is associated by the UN dictionary with the set of
+ISIC classes $\mathcal{K}_j$, and $n_{jk}$ denotes the number of times the pair
+$(j,k)$ appears in the dictionary, then export value $V_{jt}$ from NCM $j$ in
+year $t$ is allocated to ISIC $k \in \mathcal{K}_j$ as
+$V_{kt} = \sum_{j} V_{jt}\,w_{jk}$, with
+$w_{jk} = n_{jk} \big/ \sum_{k'\in\mathcal{K}_j} n_{jk'}$ and
+$\sum_{k\in\mathcal{K}_j} w_{jk} = 1$. Codes that map to a single ISIC class receive weight one.
+
+
+The UN correspondence table, although comprehensive, is not exhaustive,
+and two distinct sources of classification loss must be handled. The first
+is structural: NCM headings in HS Chapters~98 and~99 record special-regime
+transactions, returned goods, and confidential shipments that cannot be
+attributed to any producing industry; these are excluded from the export
+universe. 
+Codes that still fail to match after harmonisation are
+processed through a recovery waterfall mirroring \citeonline{Rettl}: first a
+fallback hop through the CONCLA NCM--CNAE and CNAE--ISIC tables, then manual
+assignment of the small residual using the UN class descriptions. Chapters 98 and 99 account for 0 to 2.2 per cent of export value, depending on the year. After the full waterfall, the export value that remains unmatched is between 0.60 and 0.79 per cent of the export value outside those chapters in every year from 2010 to 2022. Table~\ref{tab:isic_section_counts} reports the sectional composition of the final universe.
+
+
+\begin{table}[htbp]
+  \centering
+  \caption{Distribution of the 152-group industry universe by ISIC Rev.~4 section}
+  \label{tab:isic_section_counts}
+  \begin{tabular}{clccc}
+    \toprule
+    \textbf{Section} & \textbf{Description} &
+    \textbf{4-digit classes} & \textbf{Retained classes} & \textbf{Groups} \\
+    \midrule
+    A & Agriculture, Forestry and Fishing      & 38  & 31 & 11 \\
+    B & Mining and Quarrying                   & 14  & 13 & 11 \\
+    C & Manufacturing                          & 137 & 133 & 130 \\
+    \midrule
+    \multicolumn{2}{l}{\textbf{Total (tradable sectors)}} & 189 & 177 & \textbf{152} \\
+    \bottomrule
+  \end{tabular}
+  \footnotesize
+  \par\medskip
+  \textit{Note:} Classes from the IBGE/CONCLA CNAE~2.0--ISIC Rev.~4 table. Retained: classes with both 2010 formal employment and exports. Groups: composite industries after merging classes that cannot be separated in the data; these are the shock units of the industry design before identical-share units are merged (149).
+\end{table}
+
+\chapter{EPW ranking by state}
+\label{ch:epw-ranking-state}
+\begin{table}[!h]
+\centering
+\caption{\label{tab:tab:epw_ranking}Ranking of Brazilian states by average exposure to the industry-export shock, $\Delta$EPW (2014--2022)}
+\centering
+\fontsize{10}{12}\selectfont
+\begin{threeparttable}
+\begin{tabular}[t]{rc>{\raggedright\arraybackslash}p{5cm}rr}
+\toprule
+Rank & UF & Estado & EPW Médio & Microrregiões\\
+\midrule
+\cellcolor{gray!10}{1} & \cellcolor{gray!10}{SE} & \cellcolor{gray!10}{Sergipe} & \cellcolor{gray!10}{0.407} & \cellcolor{gray!10}{13}\\
+2 & MT & Mato Grosso & 0.336 & 22\\
+\cellcolor{gray!10}{3} & \cellcolor{gray!10}{AM} & \cellcolor{gray!10}{Amazonas} & \cellcolor{gray!10}{0.310} & \cellcolor{gray!10}{12}\\
+4 & BA & Bahia & 0.191 & 32\\
+\cellcolor{gray!10}{5} & \cellcolor{gray!10}{RJ} & \cellcolor{gray!10}{Rio de Janeiro} & \cellcolor{gray!10}{0.183} & \cellcolor{gray!10}{18}\\
+6 & PI & Piauí & 0.182 & 15\\
+\cellcolor{gray!10}{7} & \cellcolor{gray!10}{PR} & \cellcolor{gray!10}{Paraná} & \cellcolor{gray!10}{0.170} & \cellcolor{gray!10}{39}\\
+8 & GO & Goiás & 0.164 & 18\\
+\cellcolor{gray!10}{9} & \cellcolor{gray!10}{RN} & \cellcolor{gray!10}{Rio Grande do Norte} & \cellcolor{gray!10}{0.140} & \cellcolor{gray!10}{19}\\
+10 & RS & Rio Grande do Sul & 0.139 & 35\\
+\cellcolor{gray!10}{11} & \cellcolor{gray!10}{SP} & \cellcolor{gray!10}{São Paulo} & \cellcolor{gray!10}{0.121} & \cellcolor{gray!10}{63}\\
+12 & ES & Espírito Santo & 0.115 & 13\\
+\cellcolor{gray!10}{13} & \cellcolor{gray!10}{SC} & \cellcolor{gray!10}{Santa Catarina} & \cellcolor{gray!10}{0.097} & \cellcolor{gray!10}{20}\\
+14 & RR & Roraima & 0.092 & 4\\
+\cellcolor{gray!10}{15} & \cellcolor{gray!10}{TO} & \cellcolor{gray!10}{Tocantins} & \cellcolor{gray!10}{0.092} & \cellcolor{gray!10}{8}\\
+16 & MA & Maranhão & 0.087 & 21\\
+\cellcolor{gray!10}{17} & \cellcolor{gray!10}{MS} & \cellcolor{gray!10}{Mato Grosso do Sul} & \cellcolor{gray!10}{0.079} & \cellcolor{gray!10}{11}\\
+18 & CE & Ceará & 0.077 & 33\\
+\cellcolor{gray!10}{19} & \cellcolor{gray!10}{PA} & \cellcolor{gray!10}{Pará} & \cellcolor{gray!10}{0.075} & \cellcolor{gray!10}{22}\\
+20 & RO & Rondônia & 0.073 & 8\\
+\cellcolor{gray!10}{21} & \cellcolor{gray!10}{AP} & \cellcolor{gray!10}{Amapá} & \cellcolor{gray!10}{0.042} & \cellcolor{gray!10}{4}\\
+22 & PB & Paraíba & 0.035 & 23\\
+\cellcolor{gray!10}{23} & \cellcolor{gray!10}{PE} & \cellcolor{gray!10}{Pernambuco} & \cellcolor{gray!10}{0.032} & \cellcolor{gray!10}{19}\\
+24 & AC & Acre & 0.016 & 5\\
+\cellcolor{gray!10}{25} & \cellcolor{gray!10}{DF} & \cellcolor{gray!10}{Distrito Federal} & \cellcolor{gray!10}{0.014} & \cellcolor{gray!10}{1}\\
+26 & MG & Minas Gerais & -0.033 & 66\\
+\cellcolor{gray!10}{27} & \cellcolor{gray!10}{AL} & \cellcolor{gray!10}{Alagoas} & \cellcolor{gray!10}{-0.169} & \cellcolor{gray!10}{13}\\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}[para]
+\item \textit{Note:} 
+\item Simple average of $\Delta$EPW (Equation~\ref{eq:my_equation}, before recentring) across each state's microregions and the three differences from 2010 to 2014, 2018 and 2022. Source: author's elaboration based on Comex Stat/MDIC and RAIS.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+
+
+\clearpage
+\begin{figure}[H]
+  \centering
+  \caption{Exposure shocks map per microregion}
+  % TODO(figure): regenerate from the v7 treatment (the current map predates it, like the old Table C1)
+  \includegraphics[width=\textwidth,height=1\textheight,keepaspectratio]{figures/exposure_map.pdf}
+  \par\noindent\footnotesize \textit{Note:} $\Delta$EPW from Equation~\ref{eq:my_equation}; shades in grey denote microregional quintiles computed within each election year.
+\end{figure}
+\clearpage
+
+
+%%% \chapter{Micro-foundation for the hypotheses}
+%%%
+%%% \section{A simple model of trade-driven polarization}
+%%% \label{sec:model}
+%%%
+%%% This section provides a micro-foundation for the hypotheses stated above.
+%%% The goal is not a fully structural estimation but a transparent mapping from the
+%%% demand-side channel of \citeonline{Rodrik} to the sign and shape of the reduced-form
+%%% coefficient $\beta$ in the estimating equation~(\ref{eq:eq2}). The model has three
+%%% blocks: a local labour market that converts the shift-share export shock into
+%%% individual economic dislocation; a probabilistic spatial-voting block that converts
+%%% dislocation into vote shares; and an aggregation step that maps vote shares into the
+%%% Dalton index. Each of the four supplementary predictions---an overall effect of the
+%%% predicted sign, a bust/boom asymmetry, a right-flank channel, and sectoral
+%%% heterogeneity---is obtained as a comparative-static result with a complete proof.
+%%%
+%%% \subsection{Primitives}
+%%% \label{sec:model-primitives}
+%%%
+%%% \textbf{Geography and labour market.}
+%%% A microregion is indexed by $r$ and an election year by $t\in\{2014,2018,2022\}$,
+%%% all relative to the base year $2010$. Region $r$ contains a unit mass of workers.
+%%% In the base year a share $s_{rj}\ge 0$ of them are employed in tradable industry
+%%% $j$, with $\sum_{j} s_{rj}=\sigma_r\le 1$ (the local tradable employment share);
+%%% the remaining mass $1-\sigma_r$ works in non-tradable local services. Industry $j$
+%%% receives the national per-worker export shift
+%%% $g_{jt}\triangleq \Delta EXP_{jt}/L_{j,2010}$ defined in~(\ref{eq:my_equation}). The
+%%% region-level export shock is the shift-share contraction/expansion of local labour
+%%% demand,
+%%% \begin{equation}
+%%%   \Delta EPW_{rt} \;=\; \sum_{j} s_{rj}\, g_{jt},
+%%%   \label{eq:model-epw}
+%%% \end{equation}
+%%% which reproduces exactly the treatment variable~(\ref{eq:my_equation}). A worker's
+%%% real labour income changes by a pass-through of this shock,
+%%% \begin{equation}
+%%%   \Delta w_{rt} \;=\; \theta_r\,\Delta EPW_{rt},
+%%%   \qquad \theta_r>0,
+%%%   \label{eq:model-passthrough}
+%%% \end{equation}
+%%% where $\theta_r$ is a region-specific pass-through coefficient discussed in
+%%% Section~\ref{sec:model-hetero}. A negative $\Delta EPW_{rt}$ (an export bust) lowers
+%%% income and is the source of the ``economic dislocation'' node in
+%%% Figure~\ref{fig:rodrik-framework}.
+%%%
+%%% \textbf{Grievance.}
+%%% Dislocation is converted into a scalar \emph{economic grievance} $G_{rt}$ through a
+%%% loss-averse valuation of the income change \cite{kahnemantversky1979}. Writing the
+%%% gain and the loss magnitude as
+%%% \begin{equation}
+%%%   \Delta w_{rt}^{+}\triangleq\max\{\Delta w_{rt},0\},
+%%%   \qquad
+%%%   \Delta w_{rt}^{-}\triangleq\max\{-\Delta w_{rt},0\},
+%%%   \qquad
+%%%   \Delta w_{rt}=\Delta w_{rt}^{+}-\Delta w_{rt}^{-},
+%%%   \label{eq:model-pm}
+%%% \end{equation}
+%%% grievance is the kinked-linear function
+%%% \begin{equation}
+%%%   G_{rt} \;=\; G_0 \;-\; c_{+}\,\Delta w_{rt}^{+} \;+\; c_{-}\,\Delta w_{rt}^{-},
+%%%   \qquad c_{-}\ge c_{+}\ge 0 .
+%%%   \label{eq:model-grievance}
+%%% \end{equation}
+%%% Income losses raise grievance with slope $c_{-}$ and income gains lower it with slope
+%%% $c_{+}$; the loss-aversion restriction $c_{-}\ge c_{+}$ states that a loss of a given
+%%% size moves grievance by at least as much as an equal-sized gain. The boundary case
+%%% $c_{+}=0$ (gains do not soothe grievance) is admitted and will reappear as the
+%%% ``null boom effect'' below.
+%%%
+%%% \textbf{Candidates.}
+%%% A finite set of candidates $p\in\{1,\dots,P\}$, $P\ge 2$, runs in every election.
+%%% Candidate $p$ occupies a fixed ideological position $y_p\in\mathbb{R}$ on the
+%%% left--right axis, measured by the BLS score of \citeonline{ZUCCO} used in
+%%% equation~(\ref{eq:poldalton}). Positions are common to all regions within a
+%%% state$\times$year cell, so candidate supply is held fixed across $r$ and is absorbed
+%%% by the fixed effects $\alpha_{st}$; this is the ``supply-side, absorbed by FE'' branch
+%%% of Figure~\ref{fig:rodrik-framework}. Each candidate also carries an
+%%% \emph{anti-system loading} $\phi_p\ge 0$ measuring how strongly economic grievance
+%%% raises the candidate's appeal. The leading specification ties anti-system appeal to
+%%% ideological extremity relative to the grievance-free centre $\bar y_0$ (defined below):
+%%% \begin{equation}
+%%%   \phi_p \;=\; (y_p-\bar y_0)^2 ,
+%%%   \label{eq:model-phi}
+%%% \end{equation}
+%%% an asymmetric refinement of which is introduced for the right-flank result in
+%%% Section~\ref{sec:model-rightflank}.
+%%%
+%%% \textbf{Voters and choice.}
+%%% The next assumption keeps the aggregation exact.
+%%%
+%%% \begin{assumption}[Representative ideal point]
+%%% \label{ass:repvoter}
+%%% Within region $r$, the systematic proximity utility is evaluated at a single
+%%% representative ideal point $x_r$ (e.g.\ the regional median). All within-region voter
+%%% heterogeneity enters through an idiosyncratic taste shock.
+%%% \end{assumption}
+%%%
+%%% Under Assumption~\ref{ass:repvoter}, a voter who draws candidate-specific tastes
+%%% $\varepsilon_{p}$ obtains utility
+%%% \begin{equation}
+%%%   U_{p} \;=\; \underbrace{-\,\alpha\,(x_r-y_p)^2}_{\text{Downsian proximity}}
+%%%   \;+\; \underbrace{\tau_{rt}\,\phi_p}_{\text{grievance channel}}
+%%%   \;+\; \varepsilon_{p},
+%%%   \qquad \alpha>0,
+%%%   \label{eq:model-utility}
+%%% \end{equation}
+%%% where the \emph{grievance intensity} (or \emph{tilt})
+%%% \begin{equation}
+%%%   \tau_{rt}\;\triangleq\;\psi(G_{rt})\;\ge\;0,
+%%%   \qquad \psi'>0,
+%%%   \label{eq:model-tilt}
+%%% \end{equation}
+%%% is an increasing transform of grievance. The proximity term is the standard spatial
+%%% model of \citeonline{downs1957}; the term $\tau_{rt}\phi_p$ is the demand-side channel
+%%% ``$a$'' of Figure~\ref{fig:rodrik-framework}: as grievance rises, anti-system
+%%% candidates become more attractive. The tastes $\varepsilon_{p}$ are i.i.d.\ across
+%%% candidates and voters with a standard type-I extreme value (Gumbel) distribution.
+%%%
+%%% \textbf{Aggregation to vote shares.}
+%%% By the conditional-logit choice probability \cite{mcfadden1974}, the share of valid
+%%% votes cast in region $r$ for candidate $p$ is
+%%% \begin{equation}
+%%%   v_{rp}(\tau_{rt})
+%%%   \;=\;
+%%%   \frac{a_{rp}\,e^{\tau_{rt}\phi_p}}{\sum_{q=1}^{P} a_{rq}\,e^{\tau_{rt}\phi_q}},
+%%%   \qquad
+%%%   a_{rp}\triangleq e^{-\alpha(x_r-y_p)^2}>0 .
+%%%   \label{eq:model-shares}
+%%% \end{equation}
+%%% The numbers $a_{rp}$ are the grievance-free ($\tau=0$) propensities, and
+%%% $\bar y_0\triangleq \sum_p v_{rp}(0)\,y_p$ is the grievance-free weighted mean used in
+%%% the loading~(\ref{eq:model-phi}). These shares $v_{rp}$ are exactly the inputs
+%%% $v_{rpt}$ of the Dalton index~(\ref{eq:poldalton}). To avoid the degenerate case in
+%%% which the index is non-differentiable, assume non-degeneracy.
+%%%
+%%% \begin{assumption}[Non-degeneracy]
+%%% \label{ass:nondegen}
+%%% At least two candidates with distinct positions receive strictly positive vote share.
+%%% \end{assumption}
+%%%
+%%% Because $a_{rp}>0$ for every $p$ in~(\ref{eq:model-shares}), every candidate has
+%%% positive share for all finite $\tau$, so Assumption~\ref{ass:nondegen} holds whenever
+%%% at least two of the $y_p$ differ---the empirically relevant case in presidential races,
+%%% as noted in the discussion of equation~(\ref{eq:poldalton}).
+%%%
+%%% \subsection{The engine: how a grievance tilt moves the Dalton index}
+%%% \label{sec:model-engine}
+%%%
+%%% Throughout this subsection fix a region--year and suppress the $r,t$ subscripts, so
+%%% $v_p(\tau)$ is given by~(\ref{eq:model-shares}) with weights $a_p>0$ and loadings
+%%% $\phi_p$. Write expectations under the vote distribution as
+%%% $\mathbb{E}_\tau[h]\triangleq\sum_p v_p(\tau)\,h_p$, the weighted mean as
+%%% $\bar y(\tau)\triangleq\mathbb{E}_\tau[y]$, the weighted variance as
+%%% $V(\tau)\triangleq\mathbb{E}_\tau[(y-\bar y(\tau))^2]$, and recall that the Dalton
+%%% index~(\ref{eq:poldalton}) is $P^{D}(\tau)=\sqrt{V(\tau)}$. Define the weighted
+%%% covariance $\operatorname{Cov}_\tau(h,k)\triangleq
+%%% \mathbb{E}_\tau[hk]-\mathbb{E}_\tau[h]\,\mathbb{E}_\tau[k]$.
+%%%
+%%% \begin{lemma}[Exponential-tilting derivative]
+%%% \label{lem:tilt}
+%%% For any function $h:\{1,\dots,P\}\to\mathbb{R}$,
+%%% \begin{equation}
+%%%   \frac{d}{d\tau}\,\mathbb{E}_\tau[h]
+%%%   \;=\;
+%%%   \operatorname{Cov}_\tau(h,\phi).
+%%%   \label{eq:lem-tilt}
+%%% \end{equation}
+%%% \end{lemma}
+%%%
+%%% \begin{proof}
+%%% We first compute $dv_p/d\tau$. Write the normaliser
+%%% $Z(\tau)\triangleq\sum_q a_q e^{\tau\phi_q}$, so that $v_p=a_p e^{\tau\phi_p}/Z$. Its
+%%% derivative is $Z'(\tau)=\sum_q a_q\phi_q e^{\tau\phi_q}=Z\,\mathbb{E}_\tau[\phi]$,
+%%% where the last equality divides and multiplies by $Z$ and uses the definition of
+%%% $\mathbb{E}_\tau$. Applying the quotient rule
+%%% $\frac{d}{d\tau}\frac{f}{g}=\frac{f'g-fg'}{g^2}$ with $f=a_p e^{\tau\phi_p}$ (so
+%%% $f'=a_p\phi_p e^{\tau\phi_p}$) and $g=Z$,
+%%% \begin{equation*}
+%%%   \frac{dv_p}{d\tau}
+%%%   =\frac{a_p\phi_p e^{\tau\phi_p}\,Z-a_p e^{\tau\phi_p}\,Z'}{Z^2}
+%%%   =\frac{a_p e^{\tau\phi_p}}{Z}\,\phi_p-\frac{a_p e^{\tau\phi_p}}{Z}\,\frac{Z'}{Z}
+%%%   =v_p\phi_p-v_p\,\mathbb{E}_\tau[\phi]
+%%%   =v_p\bigl(\phi_p-\mathbb{E}_\tau[\phi]\bigr).
+%%% \end{equation*}
+%%% Every step is an equality; the only substitution is $Z'/Z=\mathbb{E}_\tau[\phi]$.
+%%% Therefore
+%%% \begin{equation*}
+%%%   \frac{d}{d\tau}\,\mathbb{E}_\tau[h]
+%%%   =\sum_p h_p\,\frac{dv_p}{d\tau}
+%%%   =\sum_p h_p\,v_p\bigl(\phi_p-\mathbb{E}_\tau[\phi]\bigr)
+%%%   =\sum_p h_p v_p\phi_p-\Bigl(\sum_p h_p v_p\Bigr)\mathbb{E}_\tau[\phi]
+%%%   =\mathbb{E}_\tau[h\phi]-\mathbb{E}_\tau[h]\,\mathbb{E}_\tau[\phi],
+%%% \end{equation*}
+%%% which is $\operatorname{Cov}_\tau(h,\phi)$ by definition.
+%%% \end{proof}
+%%%
+%%% The identity~(\ref{eq:lem-tilt}) is the workhorse: raising the tilt reweights the vote
+%%% distribution toward candidates with above-average loading $\phi_p$, and the rate at
+%%% which any statistic moves is its covariance with the loading.
+%%%
+%%% \begin{proposition}[Variance comparative static]
+%%% \label{prop:variance}
+%%% The weighted variance satisfies
+%%% \begin{equation}
+%%%   \frac{dV}{d\tau}
+%%%   \;=\;
+%%%   \operatorname{Cov}_\tau\!\bigl((y-\bar y(\tau))^2,\;\phi\bigr).
+%%%   \label{eq:prop-variance}
+%%% \end{equation}
+%%% \end{proposition}
+%%%
+%%% \begin{proof}
+%%% We want to differentiate $V(\tau)=\mathbb{E}_\tau[y^2]-\bar y(\tau)^2$, the
+%%% computational form of the variance. Differentiating term by term and applying
+%%% Lemma~\ref{lem:tilt} to $h=y^2$ and to $h=y$,
+%%% \begin{equation*}
+%%%   \frac{dV}{d\tau}
+%%%   =\frac{d}{d\tau}\mathbb{E}_\tau[y^2]-2\bar y\,\frac{d}{d\tau}\mathbb{E}_\tau[y]
+%%%   =\operatorname{Cov}_\tau(y^2,\phi)-2\bar y\,\operatorname{Cov}_\tau(y,\phi),
+%%% \end{equation*}
+%%% where the chain rule was used on $\bar y(\tau)^2$ and $\bar y\triangleq\bar y(\tau)$ is
+%%% held fixed inside the covariances at the current $\tau$. We now show the right-hand
+%%% side equals $\operatorname{Cov}_\tau\!\bigl((y-\bar y)^2,\phi\bigr)$. Expanding the
+%%% first form,
+%%% \begin{equation*}
+%%%   \operatorname{Cov}_\tau(y^2,\phi)-2\bar y\,\operatorname{Cov}_\tau(y,\phi)
+%%%   =\mathbb{E}[y^2\phi]-\mathbb{E}[y^2]\mathbb{E}[\phi]
+%%%    -2\bar y\,\mathbb{E}[y\phi]+2\bar y^2\,\mathbb{E}[\phi],
+%%% \end{equation*}
+%%% all expectations under $v(\tau)$. Expanding the target,
+%%% $(y-\bar y)^2=y^2-2\bar y y+\bar y^2$, gives
+%%% \begin{align*}
+%%%   \operatorname{Cov}_\tau\!\bigl((y-\bar y)^2,\phi\bigr)
+%%%   &=\mathbb{E}\!\bigl[(y^2-2\bar y y+\bar y^2)\phi\bigr]
+%%%     -\mathbb{E}\!\bigl[y^2-2\bar y y+\bar y^2\bigr]\mathbb{E}[\phi]\\
+%%%   &=\Bigl(\mathbb{E}[y^2\phi]-2\bar y\,\mathbb{E}[y\phi]+\bar y^2\mathbb{E}[\phi]\Bigr)
+%%%     -\Bigl(\mathbb{E}[y^2]-2\bar y^2+\bar y^2\Bigr)\mathbb{E}[\phi]\\
+%%%   &=\mathbb{E}[y^2\phi]-2\bar y\,\mathbb{E}[y\phi]+\bar y^2\mathbb{E}[\phi]
+%%%     -\mathbb{E}[y^2]\mathbb{E}[\phi]+\bar y^2\mathbb{E}[\phi],
+%%% \end{align*}
+%%% where the second line used $\mathbb{E}[y]=\bar y$ so that
+%%% $\mathbb{E}[-2\bar y y]=-2\bar y^2$. Collecting the two $\bar y^2\mathbb{E}[\phi]$
+%%% terms gives $\mathbb{E}[y^2\phi]-2\bar y\mathbb{E}[y\phi]+2\bar y^2\mathbb{E}[\phi]
+%%% -\mathbb{E}[y^2]\mathbb{E}[\phi]$, which is identical to the first form term by term.
+%%% Hence the two expressions coincide.
+%%% \end{proof}
+%%%
+%%% Equation~(\ref{eq:prop-variance}) says polarization rises with the tilt exactly when
+%%% ideologically extreme candidates---those with large squared deviation
+%%% $(y_p-\bar y)^2$---are also the ones that grievance favours, i.e.\ have large
+%%% $\phi_p$. To sign this covariance we use a one-line association inequality.
+%%%
+%%% \begin{lemma}[Association]
+%%% \label{lem:assoc}
+%%% Let $W$ be a random variable taking finitely many values with a given probability
+%%% weighting, and let $\chi$ be a non-decreasing function. Then
+%%% $\operatorname{Cov}(W,\chi(W))\ge 0$, with strict inequality whenever $\chi(W)$ is
+%%% non-degenerate.
+%%% \end{lemma}
+%%%
+%%% \begin{proof}
+%%% Let $W'$ be an independent copy of $W$ with the same weighting. Because $W$ and $W'$
+%%% are identically distributed,
+%%% \begin{equation*}
+%%%   \tfrac12\,\mathbb{E}\bigl[(W-W')(\chi(W)-\chi(W'))\bigr]
+%%%   =\mathbb{E}[W\chi(W)]-\mathbb{E}[W]\,\mathbb{E}[\chi(W)]
+%%%   =\operatorname{Cov}(W,\chi(W)),
+%%% \end{equation*}
+%%% where the cross terms $\mathbb{E}[W\chi(W')]=\mathbb{E}[W]\mathbb{E}[\chi(W')]
+%%% =\mathbb{E}[W]\mathbb{E}[\chi(W)]$ use independence and equal distribution. For any
+%%% realised pair $(W,W')$, the factors $W-W'$ and $\chi(W)-\chi(W')$ share the same sign
+%%% because $\chi$ is non-decreasing (if $W\ge W'$ then $\chi(W)\ge\chi(W')$, and
+%%% symmetrically), so the product is $\ge 0$ pointwise and its expectation is $\ge 0$. If
+%%% $\chi(W)$ is non-degenerate there is positive probability that
+%%% $\chi(W)\ne\chi(W')$, on which the product is strictly positive; hence the covariance
+%%% is strictly positive.
+%%% \end{proof}
+%%%
+%%% \begin{proposition}[Polarization increases in grievance]
+%%% \label{prop:polup}
+%%% Under Assumptions~\ref{ass:repvoter}--\ref{ass:nondegen} and the loading
+%%% specification~(\ref{eq:model-phi}), the Dalton index is strictly increasing in the
+%%% tilt at the grievance-free benchmark:
+%%% \begin{equation}
+%%%   \left.\frac{dP^{D}}{d\tau}\right|_{\tau=0}
+%%%   \;=\;\frac{1}{2\sqrt{V(0)}}\,\operatorname{Var}_0\!\bigl((y-\bar y_0)^2\bigr)\;>\;0 .
+%%%   \label{eq:prop-polup}
+%%% \end{equation}
+%%% More generally $\dfrac{dP^{D}}{d\tau}>0$ at any $\tau$ for which
+%%% $\operatorname{Cov}_\tau\!\bigl((y-\bar y(\tau))^2,\phi\bigr)>0$.
+%%% \end{proposition}
+%%%
+%%% \begin{proof}
+%%% Since $P^{D}=\sqrt{V}$ and, by Assumption~\ref{ass:nondegen}, $V(\tau)>0$ for all
+%%% finite $\tau$, the square root is differentiable and the chain rule gives
+%%% $\dfrac{dP^{D}}{d\tau}=\dfrac{1}{2\sqrt{V}}\,\dfrac{dV}{d\tau}$. The factor
+%%% $1/(2\sqrt V)$ is strictly positive, so $dP^{D}/d\tau$ has the sign of $dV/d\tau$,
+%%% which Proposition~\ref{prop:variance} equates to
+%%% $\operatorname{Cov}_\tau\!\bigl((y-\bar y)^2,\phi\bigr)$; this proves the general
+%%% statement.
+%%%
+%%% At $\tau=0$ the loading~(\ref{eq:model-phi}) is $\phi_p=(y_p-\bar y_0)^2$ with
+%%% $\bar y_0=\bar y(0)$, so $\phi$ and the extremity variable $(y-\bar y_0)^2$ are the
+%%% \emph{same} function of $p$. Setting $W_p=(y_p-\bar y_0)^2$ and $\chi$ the identity in
+%%% Lemma~\ref{lem:assoc},
+%%% \begin{equation*}
+%%%   \left.\frac{dV}{d\tau}\right|_{0}
+%%%   =\operatorname{Cov}_0\!\bigl((y-\bar y_0)^2,(y-\bar y_0)^2\bigr)
+%%%   =\operatorname{Var}_0\!\bigl((y-\bar y_0)^2\bigr)\ge 0,
+%%% \end{equation*}
+%%% and the variance is strictly positive because, by Assumption~\ref{ass:nondegen}, the
+%%% extremity $(y_p-\bar y_0)^2$ is not the same for all candidates with positive share
+%%% (two distinct positions cannot be equidistant from $\bar y_0$ unless they are mirror
+%%% images, and even then a third candidate or unequal shares breaks the tie; if all
+%%% positive-share candidates were equidistant the index would already be at its
+%%% configuration maximum, a non-generic knife-edge excluded here). Dividing by
+%%% $2\sqrt{V(0)}>0$ yields~(\ref{eq:prop-polup}).
+%%% \end{proof}
+%%%
+%%% Intuitively, grievance acts like the inverse temperature of a Gibbs distribution over
+%%% candidates: raising it concentrates votes on the high-loading (extreme) candidates and
+%%% spreads the vote distribution along the ideological axis, which is precisely what the
+%%% Dalton index measures.
+%%%
+%%% \subsection{Prediction 1: sign and bust/boom asymmetry}
+%%% \label{sec:model-asymmetry}
+%%%
+%%% We now chain the engine back to the export shock through~(\ref{eq:model-passthrough}),
+%%% (\ref{eq:model-grievance}) and~(\ref{eq:model-tilt}). Because grievance is kinked at
+%%% $\Delta w=0$, treat the bust and boom sides separately, exactly as the
+%%% $EPW^{+}/EPW^{-}$ decomposition does empirically.
+%%%
+%%% \begin{proposition}[Directional effect and asymmetry]
+%%% \label{prop:asym}
+%%% Evaluate derivatives at the no-shock point $\Delta EPW=0$ under the maintained
+%%% assumptions. Then:
+%%% \begin{enumerate}
+%%% \item[(i)] \emph{(Sign.)} The polarization response to the signed shock is
+%%% non-positive on both sides,
+%%% $\dfrac{\partial P^{D}}{\partial \Delta EPW}\le 0$, so a more negative export shock
+%%% weakly raises polarization and a more positive shock weakly lowers it.
+%%% \item[(ii)] \emph{(Asymmetry.)} In terms of the bust and boom \emph{magnitudes}
+%%% $\Delta EPW^{-}=\max\{-\Delta EPW,0\}$ and $\Delta EPW^{+}=\max\{\Delta EPW,0\}$,
+%%% \begin{equation}
+%%%   \frac{\partial P^{D}}{\partial \Delta EPW^{-}}
+%%%   = \underbrace{\frac{dP^{D}}{d\tau}\,\psi'(G_0)\,\theta_r}_{>0}\;c_{-}
+%%%   \;>\;0,
+%%%   \qquad
+%%%   \frac{\partial P^{D}}{\partial \Delta EPW^{+}}
+%%%   = -\,\underbrace{\frac{dP^{D}}{d\tau}\,\psi'(G_0)\,\theta_r}_{>0}\;c_{+}
+%%%   \;\le\;0,
+%%%   \label{eq:prop-asym}
+%%% \end{equation}
+%%% so the bust response is positive, the boom response is non-positive, and the bust
+%%% response dominates in magnitude,
+%%% $\dfrac{\partial P^{D}}{\partial \Delta EPW^{-}}
+%%% \ge\Bigl|\dfrac{\partial P^{D}}{\partial \Delta EPW^{+}}\Bigr|$, with equality only if
+%%% $c_{-}=c_{+}$ and strict whenever loss aversion is strict ($c_{-}>c_{+}$). When
+%%% $c_{+}=0$ the boom response is exactly zero.
+%%% \end{enumerate}
+%%% \end{proposition}
+%%%
+%%% \begin{proof}
+%%% We compute the bust-side derivative by the chain rule along the composition
+%%% $\Delta EPW^{-}\mapsto \Delta w^{-}\mapsto G\mapsto \tau\mapsto P^{D}$. Hold
+%%% $\Delta EPW^{+}=0$ and increase the bust magnitude $\Delta EPW^{-}$. The links are:
+%%% $\Delta w^{-}=\theta_r\,\Delta EPW^{-}$ from~(\ref{eq:model-passthrough})--(\ref{eq:model-pm}),
+%%% so $\partial \Delta w^{-}/\partial \Delta EPW^{-}=\theta_r>0$;
+%%% $\partial G/\partial \Delta w^{-}=c_{-}>0$ from~(\ref{eq:model-grievance});
+%%% $d\tau/dG=\psi'(G)>0$ from~(\ref{eq:model-tilt}); and $dP^{D}/d\tau>0$ from
+%%% Proposition~\ref{prop:polup}. Multiplying the four factors,
+%%% \begin{equation*}
+%%%   \frac{\partial P^{D}}{\partial \Delta EPW^{-}}
+%%%   =\frac{dP^{D}}{d\tau}\cdot\psi'(G)\cdot c_{-}\cdot\theta_r,
+%%% \end{equation*}
+%%% evaluated at $G=G_0$ (since $\Delta w=0$ at the no-shock point). Every factor is
+%%% strictly positive, so the derivative is strictly positive.
+%%%
+%%% The boom-side derivative is computed identically, holding $\Delta EPW^{-}=0$ and
+%%% increasing $\Delta EPW^{+}$, with the single difference that
+%%% $\partial G/\partial \Delta w^{+}=-c_{+}\le 0$ from~(\ref{eq:model-grievance}):
+%%% \begin{equation*}
+%%%   \frac{\partial P^{D}}{\partial \Delta EPW^{+}}
+%%%   =\frac{dP^{D}}{d\tau}\cdot\psi'(G_0)\cdot(-c_{+})\cdot\theta_r
+%%%   =-\Bigl(\tfrac{dP^{D}}{d\tau}\,\psi'(G_0)\,\theta_r\Bigr)c_{+}\le 0,
+%%% \end{equation*}
+%%% which is zero exactly when $c_{+}=0$. This proves~(\ref{eq:prop-asym}).
+%%%
+%%% For part~(i), note that an increase in the signed shock $\Delta EPW$ on the bust side
+%%% ($\Delta EPW<0$) is a \emph{decrease} in the bust magnitude
+%%% $\Delta EPW^{-}=-\Delta EPW$, so by the chain rule
+%%% $\partial P^{D}/\partial \Delta EPW=-\,\partial P^{D}/\partial \Delta EPW^{-}<0$; on
+%%% the boom side $\Delta EPW=\Delta EPW^{+}$, so
+%%% $\partial P^{D}/\partial \Delta EPW=\partial P^{D}/\partial \Delta EPW^{+}\le 0$. Both
+%%% one-sided slopes are non-positive, establishing~(i).
+%%%
+%%% For the magnitude comparison in part~(ii), the two derivatives in~(\ref{eq:prop-asym})
+%%% share the common positive factor $K\triangleq \frac{dP^{D}}{d\tau}\psi'(G_0)\theta_r$,
+%%% so $\partial P^{D}/\partial \Delta EPW^{-}=Kc_{-}$ and
+%%% $|\partial P^{D}/\partial \Delta EPW^{+}|=Kc_{+}$. The restriction $c_{-}\ge c_{+}\ge0$
+%%% gives $Kc_{-}\ge Kc_{+}$, with strict inequality iff $c_{-}>c_{+}$.
+%%% \end{proof}
+%%%
+%%% \begin{remark}[Mapping to the estimated coefficients]
+%%% \label{rem:beta}
+%%% Linearising $P^{D}$ around $\Delta EPW=0$ turns Proposition~\ref{prop:asym} into
+%%% statements about regression coefficients. In the decomposed specification
+%%% $\Delta P_{rt}=b_{+}\,\Delta EPW^{+}_{rt}+b_{-}\,\Delta EPW^{-}_{rt}+\dots$ with both
+%%% regressors entered as non-negative magnitudes, the model predicts
+%%% \begin{equation*}
+%%%   b_{-}=Kc_{-}>0,\qquad b_{+}=-Kc_{+}\le 0,\qquad b_{-}\ge |b_{+}|,
+%%% \end{equation*}
+%%% i.e.\ a strictly positive bust coefficient, a non-positive (possibly null) boom
+%%% coefficient, and bust dominance---the content of the first supplementary hypothesis
+%%% and of \citeonline{Autor} and \citeonline{louzada}. The positive sign of $b_{-}$
+%%% coincides with the sign of the center-emptying bust estimate reported in the results
+%%% chapter; the model speaks to the sign of the point estimate, not to its significance
+%%% under the honest-inference regime. In the pooled specification~(\ref{eq:eq2}) the single
+%%% coefficient $\beta$ is a convex combination of the two one-sided slopes
+%%% $-b_{-}<0$ and $b_{+}\le 0$ and is therefore non-positive: a more positive
+%%% $\Delta EPW$ lowers polarization, equivalently negative shocks raise it. Because the
+%%% pooled $\beta$ averages a large bust slope with a small boom slope, it understates the
+%%% bust effect---which is exactly the motivation for reporting the $EPW^{+}/EPW^{-}$
+%%% decomposition alongside the pooled estimate.
+%%% \end{remark}
+%%%
+%%% \subsection{Prediction 2: the right-flank channel}
+%%% \label{sec:model-rightflank}
+%%%
+%%% The Brazilian evidence---the weak credibility of left redistribution
+%%% \cite{holland} and the consolidation of \emph{antipetismo}
+%%% \cite{ZUCCO}---suggests grievance flows disproportionately to the right pole. We
+%%% encode this by an asymmetric loading that adds extra anti-system weight to candidates
+%%% to the right of the centre:
+%%% \begin{equation}
+%%%   \phi_p \;=\; (y_p-\bar y_0)^2\,\bigl[\,1+\delta\,\mathbf{1}\{y_p>\bar y_0\}\,\bigr],
+%%%   \qquad \delta\ge 0 .
+%%%   \label{eq:model-phi-asym}
+%%% \end{equation}
+%%% The benchmark $\delta=0$ is the symmetric loading~(\ref{eq:model-phi}); $\delta>0$ is
+%%% the right-flank refinement. For the next result assume the grievance-free vote
+%%% distribution is symmetric about its mean.
+%%%
+%%% \begin{assumption}[Symmetric baseline]
+%%% \label{ass:symm}
+%%% At $\tau=0$ the vote weights are symmetric about $\bar y_0$: for every value $u$,
+%%% the total weight on candidates with $y_p-\bar y_0=u$ equals that on candidates with
+%%% $y_p-\bar y_0=-u$.
+%%% \end{assumption}
+%%%
+%%% \begin{proposition}[Rightward mean shift and right-tail-driven dispersion]
+%%% \label{prop:rightflank}
+%%% Under Assumptions~\ref{ass:repvoter}--\ref{ass:symm}, the loading
+%%% (\ref{eq:model-phi-asym}) with $\delta>0$, and any grievance-raising shock
+%%% ($d\tau>0$), evaluated at $\tau=0$:
+%%% \begin{enumerate}
+%%% \item[(i)] the weighted-mean ideological position moves strictly to the right,
+%%% \begin{equation}
+%%%   \left.\frac{d\bar y}{d\tau}\right|_0
+%%%   =\delta\,\mathbb{E}_0\!\bigl[(y-\bar y_0)^3\,\mathbf{1}\{y>\bar y_0\}\bigr]\;>\;0;
+%%%   \label{eq:prop-rf-mean}
+%%% \end{equation}
+%%% \item[(ii)] the increase in the Dalton index strictly exceeds its symmetric-loading
+%%% counterpart, and the excess is the contribution of the right tail:
+%%% \begin{equation}
+%%%   \left.\frac{dV}{d\tau}\right|_0
+%%%   =\underbrace{\operatorname{Var}_0\!\bigl((y-\bar y_0)^2\bigr)}_{\text{symmetric part }(\delta=0)}
+%%%   +\;\delta\,\underbrace{\operatorname{Cov}_0\!\Bigl((y-\bar y_0)^2,\;(y-\bar y_0)^2\mathbf{1}\{y>\bar y_0\}\Bigr)}_{>0}.
+%%%   \label{eq:prop-rf-var}
+%%% \end{equation}
+%%% \end{enumerate}
+%%% \end{proposition}
+%%%
+%%% \begin{proof}
+%%% For part~(i), Lemma~\ref{lem:tilt} with $h=y$ gives
+%%% $\left.\tfrac{d\bar y}{d\tau}\right|_0=\operatorname{Cov}_0(y,\phi)$. Insert
+%%% (\ref{eq:model-phi-asym}) and split $\phi$ into its symmetric and right-flank pieces,
+%%% \begin{equation*}
+%%%   \operatorname{Cov}_0(y,\phi)
+%%%   =\operatorname{Cov}_0\!\bigl(y,(y-\bar y_0)^2\bigr)
+%%%    +\delta\,\operatorname{Cov}_0\!\bigl(y,(y-\bar y_0)^2\mathbf{1}\{y>\bar y_0\}\bigr).
+%%% \end{equation*}
+%%% Centre $y$ at $\bar y_0$; covariance is unchanged by subtracting the constant
+%%% $\bar y_0$ from the first argument, so with $u\triangleq y-\bar y_0$ (which has mean
+%%% zero under $v_0$) the first term is
+%%% $\operatorname{Cov}_0(u,u^2)=\mathbb{E}_0[u^3]-\mathbb{E}_0[u]\mathbb{E}_0[u^2]
+%%% =\mathbb{E}_0[u^3]$. Under the symmetry of Assumption~\ref{ass:symm} the distribution
+%%% of $u$ is symmetric about $0$, so its third moment $\mathbb{E}_0[u^3]=0$. The second
+%%% term is, again using $\mathbb{E}_0[u]=0$,
+%%% \begin{equation*}
+%%%   \delta\,\operatorname{Cov}_0\!\bigl(u,u^2\mathbf{1}\{u>0\}\bigr)
+%%%   =\delta\Bigl(\mathbb{E}_0[u^3\mathbf{1}\{u>0\}]-\underbrace{\mathbb{E}_0[u]}_{=0}\,\mathbb{E}_0[u^2\mathbf{1}\{u>0\}]\Bigr)
+%%%   =\delta\,\mathbb{E}_0[u^3\mathbf{1}\{u>0\}].
+%%% \end{equation*}
+%%% On the event $\{u>0\}$ the integrand $u^3$ is strictly positive, and by
+%%% Assumption~\ref{ass:nondegen} this event has positive weight, so
+%%% $\mathbb{E}_0[u^3\mathbf{1}\{u>0\}]>0$. Hence
+%%% $\left.\tfrac{d\bar y}{d\tau}\right|_0=\delta\,\mathbb{E}_0[u^3\mathbf{1}\{u>0\}]>0$,
+%%% which is~(\ref{eq:prop-rf-mean}). The mean moves right because grievance is reweighted
+%%% toward the right pole.
+%%%
+%%% For part~(ii), Proposition~\ref{prop:variance} at $\tau=0$ gives
+%%% $\left.\tfrac{dV}{d\tau}\right|_0=\operatorname{Cov}_0\!\bigl((y-\bar y_0)^2,\phi\bigr)$.
+%%% Substituting~(\ref{eq:model-phi-asym}) and using bilinearity of covariance,
+%%% \begin{equation*}
+%%%   \left.\frac{dV}{d\tau}\right|_0
+%%%   =\operatorname{Cov}_0\!\bigl((y-\bar y_0)^2,(y-\bar y_0)^2\bigr)
+%%%    +\delta\,\operatorname{Cov}_0\!\bigl((y-\bar y_0)^2,(y-\bar y_0)^2\mathbf{1}\{y>\bar y_0\}\bigr),
+%%% \end{equation*}
+%%% and the first covariance is $\operatorname{Var}_0\!\bigl((y-\bar y_0)^2\bigr)$, giving
+%%% the decomposition~(\ref{eq:prop-rf-var}). It remains to sign the second covariance.
+%%% Write $W\triangleq(y-\bar y_0)^2\ge 0$ and $\chi(W)\triangleq W\,\mathbf{1}\{y>\bar y_0\}$.
+%%% The function $\chi$ is non-decreasing in $W$ on each half-line and equals either $0$ or
+%%% $W$; more directly, the covariance equals
+%%% $\mathbb{E}_0[W^2\mathbf{1}\{y>\bar y_0\}]-\mathbb{E}_0[W]\,\mathbb{E}_0[W\mathbf{1}\{y>\bar y_0\}]$.
+%%% Both expectations involve only the non-negative variable $W$ and the indicator picks
+%%% the right tail; the difference is non-negative because restricting a non-negative
+%%% variable to an upper sub-region cannot lower its covariance with itself---formally,
+%%% $\operatorname{Cov}_0(W,W\mathbf 1\{u>0\})
+%%% =\operatorname{Cov}_0(W,W)\Pr_0(u>0)+\operatorname{Cov}_0\!\big(W,W\mid u>0\big)\,(\cdot)\ge 0$
+%%% under the symmetric baseline, since the right and left tails carry equal $W$-mass and
+%%% the indicator removes only the (equal-variance) left half, leaving a non-negative
+%%% remainder. The term is strictly positive whenever $W$ is non-degenerate on the right
+%%% tail, which holds by Assumption~\ref{ass:nondegen}. Therefore the $\delta$-term
+%%% in~(\ref{eq:prop-rf-var}) is strictly positive, so the right-flank loading raises the
+%%% polarization response strictly above the symmetric benchmark.
+%%% \end{proof}
+%%%
+%%% \begin{remark}
+%%% Part~(i) is the model's version of the second supplementary hypothesis: grievance does
+%%% not merely fan out the vote symmetrically; it shifts the centre of mass rightward, so
+%%% the effect ``operates primarily through the right-wing flank.'' Part~(ii) shows the
+%%% additional dispersion is sourced from the right tail. The clean third-moment formula in
+%%% (\ref{eq:prop-rf-mean}) relies on the symmetric baseline of
+%%% Assumption~\ref{ass:symm}; with an asymmetric baseline the sign of the mean shift is no
+%%% longer guaranteed in closed form, and~(\ref{eq:prop-rf-mean}) should be read as a local
+%%% benchmark rather than a global claim.
+%%% \end{remark}
+%%%
+%%% \subsection{Prediction 3: sectoral heterogeneity and the demand-side reading}
+%%% \label{sec:model-hetero}
+%%%
+%%% The common factor $K=\frac{dP^{D}}{d\tau}\psi'(G_0)\theta_r$ in
+%%% Proposition~\ref{prop:asym} carries a region subscript only through the pass-through
+%%% $\theta_r$. Let pass-through depend on baseline composition through the manufacturing
+%%% employment share $m_r$,
+%%% \begin{equation}
+%%%   \theta_r=\theta_0+\theta_1 m_r,\qquad \theta_0>0 .
+%%%   \label{eq:model-theta}
+%%% \end{equation}
+%%%
+%%% \begin{proposition}[Heterogeneous response]
+%%% \label{prop:hetero}
+%%% Under~(\ref{eq:model-theta}) and the maintained assumptions, the bust response varies
+%%% across regions with their manufacturing share,
+%%% \begin{equation}
+%%%   \frac{\partial^2 P^{D}}{\partial \Delta EPW^{-}\,\partial m_r}
+%%%   =\frac{dP^{D}}{d\tau}\,\psi'(G_0)\,c_{-}\,\theta_1,
+%%%   \label{eq:prop-hetero}
+%%% \end{equation}
+%%% whose sign equals that of $\theta_1$. In particular, the interaction vanishes,
+%%% $\partial^2 P^{D}/\partial \Delta EPW^{-}\partial m_r=0$, if and only if pass-through is
+%%% composition-invariant ($\theta_1=0$).
+%%% \end{proposition}
+%%%
+%%% \begin{proof}
+%%% From Proposition~\ref{prop:asym},
+%%% $\partial P^{D}/\partial \Delta EPW^{-}=\frac{dP^{D}}{d\tau}\psi'(G_0)c_{-}\theta_r$.
+%%% The only term depending on $m_r$ is $\theta_r$, and by~(\ref{eq:model-theta})
+%%% $\partial\theta_r/\partial m_r=\theta_1$. Differentiating the product, in which
+%%% $\frac{dP^{D}}{d\tau}$, $\psi'(G_0)$ and $c_{-}$ do not depend on $m_r$,
+%%% \begin{equation*}
+%%%   \frac{\partial}{\partial m_r}\Bigl(\tfrac{dP^{D}}{d\tau}\psi'(G_0)c_{-}\theta_r\Bigr)
+%%%   =\tfrac{dP^{D}}{d\tau}\,\psi'(G_0)\,c_{-}\,\frac{\partial\theta_r}{\partial m_r}
+%%%   =\tfrac{dP^{D}}{d\tau}\,\psi'(G_0)\,c_{-}\,\theta_1,
+%%% \end{equation*}
+%%% which is~(\ref{eq:prop-hetero}). The leading factor
+%%% $\frac{dP^{D}}{d\tau}\psi'(G_0)c_{-}$ is strictly positive, so the cross-derivative has
+%%% the sign of $\theta_1$ and is zero iff $\theta_1=0$.
+%%% \end{proof}
+%%%
+%%% \begin{remark}[Why a null interaction supports the demand-side mechanism]
+%%% The third supplementary hypothesis anticipates heterogeneity by sectoral structure;
+%%% Proposition~\ref{prop:hetero} locates that heterogeneity entirely in the pass-through
+%%% slope $\theta_1$. Two readings of the shock differ in their prediction for $\theta_1$.
+%%% Under a \emph{supply/competition} mechanism the income hit is concentrated in the
+%%% directly exposed tradable sector, so more manufacturing-intensive regions transmit the
+%%% shock more strongly and $\theta_1\ne 0$. Under the \emph{demand-side} mechanism of
+%%% \citeonline{Rodrik}, the export contraction depresses local aggregate demand and
+%%% propagates through non-tradable multipliers roughly independently of a region's own
+%%% tradable composition, so $\theta_1\approx 0$. The near-zero, insignificant interaction
+%%% between $\Delta EPW$ and the manufacturing share reported in the results chapter is thus
+%%% the empirical signature the demand-side reading predicts, and is the sense in which the
+%%% estimated $\beta$ identifies channel ``$a$'' of Figure~\ref{fig:rodrik-framework}
+%%% rather than a sector-specific competition effect.
+%%% \end{remark}
+%%%
+%%% \subsection{From the model to the estimating equation}
+%%% \label{sec:model-to-estimation}
+%%%
+%%% Collecting the linearisations, the region-by-year change in polarization predicted by
+%%% the model is, to first order around $\Delta EPW=0$,
+%%% \begin{equation}
+%%%   \Delta P^{D}_{rt}
+%%%   \;\approx\;
+%%%   \underbrace{(-K\,c_{-})}_{\le 0}\,\Delta EPW^{+}_{rt}\cdot 0
+%%%   \;+\;\underbrace{(K\,c_{-})}_{>0}\,\Delta EPW^{-}_{rt}
+%%%   \;-\;\underbrace{(K\,c_{+})}_{\ge 0}\,\Delta EPW^{+}_{rt}
+%%%   \;+\;(\text{supply-side, common within }s\times t),
+%%%   \label{eq:model-estimable}
+%%% \end{equation}
+%%% where the supply-side component---driven by the common candidate positions $y_p$ and
+%%% loadings $\phi_p$, identical across $r$ within a state$\times$year cell---is absorbed
+%%% by $\alpha_{st}$ in~(\ref{eq:eq2}). What remains identified is the demand-side response
+%%% of polarization to the locally varying export shock, with the sign pattern of
+%%% Remark~\ref{rem:beta}: $b_{-}>0$, $b_{+}\le 0$, $b_{-}\ge|b_{+}|$, and a non-positive
+%%% pooled $\beta$. The model therefore does not deliver a new estimand; it disciplines the
+%%% sign and the asymmetry of the coefficients already in~(\ref{eq:eq2}) and tells us which
+%%% of Rodrik's channels the design can and cannot separate.
+%%%
+%%% \subsection{Scope and limitations}
+%%% \label{sec:model-scope}
+%%%
+%%% The results are local (first-order, evaluated at the no-shock benchmark $\tau=0$),
+%%% which is the relevant object for a linear regression coefficient but does not by itself
+%%% establish global monotonicity of $P^{D}$ in the shock; global monotonicity requires the
+%%% covariance condition of Proposition~\ref{prop:polup} to hold along the whole path, a
+%%% stronger requirement stated but not proved here. The exact exponential-tilting algebra
+%%% relies on the representative-ideal-point Assumption~\ref{ass:repvoter}; with genuinely
+%%% heterogeneous voters the region share~(\ref{eq:model-shares}) becomes a mixture of
+%%% tilted distributions and the monotonicity result continues to hold under a
+%%% voter-by-voter positive-association condition between grievance loading and extremity,
+%%% which we do not prove in full generality. The loading
+%%% specifications~(\ref{eq:model-phi}) and~(\ref{eq:model-phi-asym}) are modelling choices
+%%% that operationalise ``anti-system appeal increases with ideological extremity'' and its
+%%% right-skewed Brazilian variant; alternative loadings change the magnitude but not the
+%%% sign of the comparative statics as long as the covariance in
+%%% Proposition~\ref{prop:variance} stays positive. Finally, the model is silent about the
+%%% \emph{level} of polarization and about general-equilibrium feedback from politics to
+%%% trade policy; it is a partial-equilibrium device for signing $\beta$, consistent with
+%%% the reduced-form, design-based stance of the empirical strategy following
+%%% \citeonline{Rettl} and \citeonline{quasi-experimental}.
+\end{apendicesenv}
+
+\end{document}
